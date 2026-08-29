@@ -1,4 +1,7 @@
-FROM node:20-alpine
+FROM node:22-alpine
+
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
 
 WORKDIR /app
 
