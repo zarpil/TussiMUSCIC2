@@ -18,14 +18,6 @@ const nextConfig = {
     
     return [
       {
-        source: '/socket.io',
-        destination: `${backendUrl}/socket.io`,
-      },
-      {
-        source: '/socket.io/:path*',
-        destination: `${backendUrl}/socket.io/:path*`,
-      },
-      {
         source: '/api/user-guilds/:path*',
         destination: `${backendUrl}/api/user-guilds/:path*`,
       },
