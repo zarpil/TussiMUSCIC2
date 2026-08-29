@@ -43,13 +43,49 @@ export default async function disconnect_on_vc_empty(client, oldState, newState)
 
   // Normal mode (24/7 OFF) -> Destroy player if VC is empty or bot was disconnected
   if (nonBotMembers.size === 0) {
-    await player.destroy("Finished playing");
+    console.log(`[Voice] Channel empty in ${guild.name}. Waiting 60s before leaving...`);
+    
+    // Clear any existing timeout
+    if (client.emptyVcTimeouts?.has(guild.id)) {
+      clearTimeout(client.emptyVcTimeouts.get(guild.id));
+    }
+    
+    if (!client.emptyVcTimeouts) client.emptyVcTimeouts = new Map();
+    
+    const timeout = setTimeout(async () => {
+      const currentPlayer = client.moonlink?.players?.get(guild.id);
+      if (currentPlayer && currentPlayer.connected) {
+        const currentBotVc = guild.channels.cache.get(currentPlayer.voiceChannelId || currentPlayer.voiceChannel);
+        if (currentBotVc) {
+          const currentNonBotMembers = currentBotVc.members.filter(member => !member.user.bot);
+          if (currentNonBotMembers.size === 0) {
+            console.log(`[Voice] Channel still empty in ${guild.name} after 60s. Leaving...`);
+            await currentPlayer.destroy("Empty channel timeout");
+          }
+        }
+      }
+      client.emptyVcTimeouts.delete(guild.id);
+    }, 60000); // 60 seconds
+    
+    client.emptyVcTimeouts.set(guild.id, timeout);
+  } else {
+    // Human joined, clear timeout
+    if (client.emptyVcTimeouts?.has(guild.id)) {
+      console.log(`[Voice] Human joined ${guild.name}. Cancelling leave timeout.`);
+      clearTimeout(client.emptyVcTimeouts.get(guild.id));
+      client.emptyVcTimeouts.delete(guild.id);
+    }
   }
 
+  // Handle manual bot kick
   if (oldState.channelId &&
       !newState.channelId &&
       oldState.member.id === client.user.id
   ) {
-    await player.destroy("Finished playing");
+    if (client.emptyVcTimeouts?.has(guild.id)) {
+      clearTimeout(client.emptyVcTimeouts.get(guild.id));
+      client.emptyVcTimeouts.delete(guild.id);
+    }
+    await player.destroy("Bot was disconnected");
   }
 }
