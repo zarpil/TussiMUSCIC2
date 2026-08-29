@@ -111,10 +111,11 @@ class SocketHandler {
         // Send player_sync every 1 second for smooth 60fps interpolation and status tracking
         socket.syncInterval = setInterval(() => {
           const player = this.manager.players.get(guildId);
-          if (player && player.current) {
+          if (player) {
             socket.emit('player_sync', {
               position: typeof player.position === 'number' ? player.position : (player.current?.position || 0),
-              isPlaying: !player.paused,
+              isPlaying: player.current ? !player.paused : false,
+              isDestroyed: false,
               timestamp: Date.now()
             });
           } else {
@@ -609,22 +610,29 @@ class SocketHandler {
 
   async sendCurrentState(socket, guildId) {
     const player = this.manager.players.get(guildId);
-    if (!player || !player.current) {
-      console.log('[Socket Handler] No player or current track for guild:', guildId);
+    if (!player) {
+      console.log('[Socket Handler] No player active for guild:', guildId);
+      socket.emit('current-state', {
+        track: null,
+        queue: [],
+        settings: {
+          volume: 100,
+          paused: true,
+          loopMode: 'off',
+          autoplay: false
+        },
+        guildSettings: {}
+      });
       return;
     }
 
     const guildConfig = await GuildConfig.findOne({ guildId });
-
-    // Get queue tracks properly
     const queueTracks = player.queue.all || player.queue || [];
-
-    // Get current position - try multiple properties
     const currentPosition = typeof player.position === 'number' ? player.position : (player.current?.position || 0);
 
     console.log('[Socket Handler] Sending current state to socket:', socket.id);
     socket.emit('current-state', {
-      track: {
+      track: player.current ? {
         title: player.current.title,
         author: player.current.author,
         duration: player.current.duration,
@@ -636,7 +644,7 @@ class SocketHandler {
           id: player.current.requester?.id || null,
           avatar: player.current.requester?.avatar || null
         }
-      },
+      } : null,
       queue: queueTracks.map(t => ({
         title: t.title,
         author: t.author,
