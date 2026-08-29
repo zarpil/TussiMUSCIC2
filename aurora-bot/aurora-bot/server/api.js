@@ -537,6 +537,9 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
           volume: 100,
           requesterId: userId
         });
+        if (!player.connected) {
+          await player.connect({ setDeaf: true });
+        }
       }
 
       // 1. Direct search (identical to Discord /play command)
@@ -582,7 +585,9 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
           track.requester = member.user;
           player.queue.add(track);
         }
-        if (!player.playing && !player.paused) player.play();
+        if (!player.playing && !player.paused && !player.current) {
+          player.play();
+        }
         
         // Send Discord notification
         if (boundChannel) {
@@ -616,8 +621,11 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
         const track = searchResult.tracks[0];
         track.requester = member.user;
         player.queue.add(track);
-        if (!player.playing && !player.paused) player.play();
         
+        // Prevent race condition on batch additions
+        if (!player.playing && !player.paused && !player.current) {
+          player.play();
+        }
         // Send Discord notification
         // For batch operations (liked songs), only send message for first track
         if (boundChannel && (!isBatch || batchIndex === 0)) {
