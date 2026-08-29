@@ -108,7 +108,7 @@ class SocketHandler {
           clearInterval(socket.syncInterval);
         }
 
-        // Send player_sync every 2 seconds for smooth 60fps interpolation and status tracking
+        // Send player_sync every 1 second for smooth 60fps interpolation and status tracking
         socket.syncInterval = setInterval(() => {
           const player = this.manager.players.get(guildId);
           if (player && player.current) {
@@ -125,7 +125,7 @@ class SocketHandler {
               timestamp: Date.now()
             });
           }
-        }, 2000); // Match playerUpdateInterval
+        }, 1000);
 
         // Clean up interval on disconnect
         socket.on('disconnect', () => {
@@ -296,6 +296,7 @@ class SocketHandler {
           player.pause();
           player.manuallyPaused = true;
           player.autoPausedBy247 = false;
+          this.broadcastStateUpdate(guildId);
           await this.sendBotMessage(boundChannel, `${pause_emoji} Song is paused by <@${userId}> (Web Control)`);
           this.sendQueueUpdate(player);
           break;
@@ -307,12 +308,14 @@ class SocketHandler {
           player.resume();
           player.manuallyPaused = false;
           player.autoPausedBy247 = false;
+          this.broadcastStateUpdate(guildId);
           await this.sendBotMessage(boundChannel, `${play_button_emoji} Song is resumed by <@${userId}> (Web Control)`);
           this.sendQueueUpdate(player);
           break;
 
         case 'seek':
           player.seek(value);
+          this.broadcastStateUpdate(guildId);
           // Debounced message - only send after 10s of no interaction
           this.sendDebouncedBotMessage(
             guildId,
@@ -332,6 +335,7 @@ class SocketHandler {
             guildConfig.settings.volume = value;
             await guildConfig.save();
           }
+          this.broadcastStateUpdate(guildId);
           // Debounced message - only send after 10s of no interaction
           this.sendDebouncedBotMessage(
             guildId,
@@ -348,6 +352,7 @@ class SocketHandler {
             guildConfig.settings.loopMode = value;
             await guildConfig.save();
           }
+          this.broadcastStateUpdate(guildId);
           const loopText = value === 'off' ? 'disabled' : value === 'track' ? 'track' : 'queue';
           await this.sendBotMessage(boundChannel, `${loop_emoji} Loop mode set to **${loopText}** by <@${userId}> (Web Control)`);
           break;
@@ -358,6 +363,7 @@ class SocketHandler {
             guildConfig.settings.autoplay = value;
             await guildConfig.save();
           }
+          this.broadcastStateUpdate(guildId);
           await this.sendBotMessage(boundChannel, `${autoplay_emoji} Autoplay **${value ? 'enabled' : 'disabled'}** by <@${userId}> (Web Control)`);
           break;
 
@@ -542,9 +548,44 @@ class SocketHandler {
       this.io.to(`guild:${player.guildId}`).emit('queue-update', []);
     });
 
+    // Live high-precision player position update from audio engine
+    this.manager.on('playerUpdate', (player) => {
+      if (!player || !player.guildId) return;
+      const position = typeof player.position === 'number' ? player.position : (player.current?.position || 0);
+      this.io.to(`guild:${player.guildId}`).emit('player_sync', {
+        position,
+        isPlaying: !player.paused,
+        timestamp: Date.now()
+      });
+    });
+
     // Player destroyed
     this.manager.on('playerDestroy', (player) => {
       this.io.to(`guild:${player.guildId}`).emit('player-destroyed');
+      this.io.to(`guild:${player.guildId}`).emit('player_sync', {
+        position: 0,
+        isPlaying: false,
+        isDestroyed: true,
+        timestamp: Date.now()
+      });
+    });
+  }
+
+  broadcastStateUpdate(guildId) {
+    const player = this.manager.players.get(guildId);
+    if (!player) return;
+    const position = typeof player.position === 'number' ? player.position : (player.current?.position || 0);
+    this.io.to(`guild:${guildId}`).emit('player_sync', {
+      position,
+      isPlaying: !player.paused,
+      timestamp: Date.now()
+    });
+    this.io.to(`guild:${guildId}`).emit('player-update', {
+      paused: player.paused,
+      volume: player.volume,
+      loopMode: player.loop || 'off',
+      autoplay: player.autoPlay || false,
+      position
     });
   }
 
