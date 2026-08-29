@@ -254,8 +254,15 @@ class SocketHandler {
       }
 
       // Verify user is in same voice channel as bot
-      const botVoiceChannel = guild.members.me.voice.channel;
-      if (!member.voice.channel || member.voice.channel.id !== botVoiceChannel?.id) {
+      const botVoiceChannel = guild.members.me?.voice?.channel;
+      
+      // If player exists but bot is physically disconnected, it's a bugged state
+      if (!botVoiceChannel) {
+        player.destroy();
+        return socket.emit('error', { message: '🔄 Player state was desynced and has been reset. Please add the song again.' });
+      }
+
+      if (!member.voice.channel || member.voice.channel.id !== botVoiceChannel.id) {
         return socket.emit('error', { message: '❌ You need to be in the same voice channel as the bot!' });
       }
 

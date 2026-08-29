@@ -527,6 +527,14 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
       }
 
       let player = manager.players.get(targetGuildId);
+      const botVoiceChannel = guild.members.me?.voice?.channel;
+
+      // Clean up bugged stale player if bot is physically disconnected
+      if (player && !botVoiceChannel) {
+        console.log(`[API] Destroying stale player for guild ${targetGuildId} (bot disconnected)`);
+        player.destroy();
+        player = null;
+      }
       
       if (!player) {
         player = manager.players.create({
