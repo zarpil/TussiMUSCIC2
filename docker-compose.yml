@@ -1,25 +1,21 @@
 version: "3.8"
 
 services:
-  # 1. Base de datos MongoDB
+  # 1. Base de datos MongoDB (Interna, sin colisiones de host)
   mongodb:
     image: mongo:7.0
     container_name: tussi-mongodb
     restart: unless-stopped
-    ports:
-      - "27017:27017"
     volumes:
       - mongodb_data:/data/db
     networks:
       - tussi-network
 
-  # 2. Servidor de Audio NodeLink (Lavalink replacement)
+  # 2. Servidor de Audio NodeLink (Interno, sin colisiones de host)
   nodelink:
     image: ghcr.io/performanc/nodelink:latest
     container_name: tussi-nodelink
     restart: unless-stopped
-    ports:
-      - "3008:3008"
     environment:
       - NODELINK_PASSWORD=youshallnotpass
     networks:
@@ -33,7 +29,7 @@ services:
     container_name: tussi-bot
     restart: unless-stopped
     ports:
-      - "3001:3001"
+      - "2729:3001"
     env_file:
       - ./aurora-bot/aurora-bot/.env
     environment:
@@ -57,7 +53,7 @@ services:
     container_name: tussi-web
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "2728:3000"
     env_file:
       - ./aurora-web/aurora-web/.env.local
     environment:
