@@ -1,0 +1,20 @@
+services:
+  # Aurora Backend (Bot + API Server)
+  backend:
+    build: .
+    container_name: aurora-backend
+    restart: unless-stopped
+    ports:
+      - "30001:3001" # API + WS
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+      - ./.env:/app/.env:ro
+    networks:
+      - aurora-network
+
+networks:
+  aurora-network:
+    name: aurora-network
+    driver: bridge

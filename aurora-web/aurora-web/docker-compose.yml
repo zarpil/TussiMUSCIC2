@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aurora-frontend
+    restart: unless-stopped
+    ports:
+      - "30000:3000"
+    env_file:
+      - .env.local
+    networks:
+      - aurora-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  aurora-network:
+    name: aurora-network
+    external: true

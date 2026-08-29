@@ -1,0 +1,39 @@
+import { SlashCommandBuilder, MessageFlags, EmbedBuilder,ContainerBuilder,TextDisplayBuilder } from 'discord.js';
+import { cross_emoji, tick_emoji } from '../../emoji/emoji.js';
+
+export const pausecmd = new SlashCommandBuilder()
+  .setName('pause')
+  .setDescription('Pausa la reproducción actual');
+const embed = new EmbedBuilder().setColor("#FF2D87");
+export default async function pause_music(client, interaction) {
+  await interaction.deferReply({flags: MessageFlags.Ephemeral});
+  let container = new ContainerBuilder();
+  let containerExtra = new ContainerBuilder();
+  const player = client.moonlink.players.get(interaction.guild.id);
+    if (!player) {
+      container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${cross_emoji} ¡No hay nada reproduciéndose en este servidor!`));
+      return await interaction.editReply({components:[container],flags: [MessageFlags.IsComponentsV2]});
+    }
+
+    if (interaction.member.voice.channel?.id !== player.voiceChannelId) {
+      container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${cross_emoji} ¡Debes estar en el mismo canal de voz que el bot para usar este comando!`));
+      return await interaction.editReply({components:[container],flags: [MessageFlags.IsComponentsV2]});
+    }
+
+    if (player.paused) {
+    container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${cross_emoji} ¡La reproducción ya está pausada!`));
+    return await interaction.editReply({components:[container],flags: [MessageFlags.IsComponentsV2]});
+    }
+
+    player.pause();
+    player.manuallyPaused = true;
+    player.autoPausedBy247 = false;
+    if (client.webServer?.socketHandler) {
+      client.webServer.socketHandler.sendQueueUpdate(player);
+    }
+    container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Pausado con éxito`));
+    await interaction.editReply({components:[container],flags: [MessageFlags.IsComponentsV2]});
+    containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Canción pausada por <@${interaction.user.id}>`))
+    return await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+}
+

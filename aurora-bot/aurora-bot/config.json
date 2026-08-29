@@ -1,0 +1,34 @@
+{
+"nodelink":{
+    "nodes": [
+      {
+        "identifier": "tussi-nodelink",
+        "host": "127.0.0.1",
+        "port": 3008, 
+        "password": "youshallnotpass", 
+        "secure": false, 
+        "priority": 1
+      }
+    ]
+  },
+  "moonlink": {
+    "options": {
+      "clientName": "TussiMusicBot/1.0.0",
+
+      "node": {
+        "selectionStrategy": "leastLoad",
+        "avoidUnhealthyNodes": true,
+        "maxCpuLoad": 80,
+        "maxMemoryUsage": 0.9,
+        "autoMovePlayers": true,
+        "retryAmount": 10,
+        "retryDelay": 5000
+      },
+
+      "defaultPlayer": {
+        "autoPlay": false,
+        "selfDeaf": true
+      }
+    }
+  }
+}

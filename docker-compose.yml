@@ -1,0 +1,79 @@
+version: "3.8"
+
+services:
+  # 1. Base de datos MongoDB
+  mongodb:
+    image: mongo:7.0
+    container_name: tussi-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - tussi-network
+
+  # 2. Servidor de Audio NodeLink (Lavalink replacement)
+  nodelink:
+    image: ghcr.io/performanc/nodelink:latest
+    container_name: tussi-nodelink
+    restart: unless-stopped
+    ports:
+      - "3008:3008"
+    environment:
+      - NODELINK_PASSWORD=youshallnotpass
+    networks:
+      - tussi-network
+
+  # 3. Bot de Discord + API Server & WebSockets
+  bot:
+    build:
+      context: ./aurora-bot/aurora-bot
+      dockerfile: Dockerfile
+    container_name: tussi-bot
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./aurora-bot/aurora-bot/.env
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/tussimusic
+      - BACKEND_PORT=3001
+      - NODELINK_HOST=nodelink
+      - NODELINK_PORT=3008
+    depends_on:
+      - mongodb
+      - nodelink
+    volumes:
+      - bot_logs:/app/logs
+    networks:
+      - tussi-network
+
+  # 4. Frontend Web Dashboard (Next.js)
+  web:
+    build:
+      context: ./aurora-web/aurora-web
+      dockerfile: Dockerfile
+    container_name: tussi-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./aurora-web/aurora-web/.env.local
+    environment:
+      - INTERNAL_API_URL=http://bot:3001
+      - MONGODB_URI=mongodb://mongodb:27017/tussimusic
+    depends_on:
+      - bot
+      - mongodb
+    networks:
+      - tussi-network
+
+networks:
+  tussi-network:
+    name: tussi-network
+    driver: bridge
+
+volumes:
+  mongodb_data:
+  bot_logs:

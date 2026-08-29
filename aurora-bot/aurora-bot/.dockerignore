@@ -1,0 +1,11 @@
+node_modules
+web-dashboard/node_modules
+web-dashboard/.next
+.git
+.gitignore
+*.md
+logs
+.env.example
+certbot
+nginx
+nodelink-config
