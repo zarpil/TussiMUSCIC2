@@ -550,32 +550,34 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
         }
       }
 
-      // 1. Direct search (identical to Discord /play command)
+      // 1. Determine search query (default to scsearch for plain text to ensure rock-solid playback without YouTube 403 blocks)
+      const isUrl = query.startsWith('http://') || query.startsWith('https://');
+      const cleanQuery = query.replace(/^(ytmsearch:|scsearch:|spsearch:|ytsearch:)+/gi, '').trim();
+      const primaryQuery = isUrl ? query : (query.startsWith('scsearch:') || query.startsWith('spsearch:') || query.startsWith('ytsearch:') || query.startsWith('ytmsearch:') ? query : `scsearch:${cleanQuery}`);
+
       let searchResult = await manager.search({
-        query: query,
+        query: primaryQuery,
         requester: userId
       });
 
-      // 2. If no tracks found and query is plain text, try ytmsearch, scsearch, spsearch fallbacks
+      // 2. If no tracks found and query is plain text, try spsearch, ytmsearch, ytsearch fallbacks
       if (!searchResult || !searchResult.tracks || searchResult.tracks.length === 0) {
-        if (!query.startsWith('http://') && !query.startsWith('https://')) {
-          const cleanQuery = query.replace(/^(ytmsearch:|scsearch:|spsearch:|ytsearch:)+/gi, '').trim();
-          
+        if (!isUrl) {
           searchResult = await manager.search({
-            query: `ytmsearch:${cleanQuery}`,
+            query: `spsearch:${cleanQuery}`,
             requester: userId
           });
 
           if (!searchResult || !searchResult.tracks || searchResult.tracks.length === 0) {
             searchResult = await manager.search({
-              query: `scsearch:${cleanQuery}`,
+              query: `ytmsearch:${cleanQuery}`,
               requester: userId
             });
           }
 
           if (!searchResult || !searchResult.tracks || searchResult.tracks.length === 0) {
             searchResult = await manager.search({
-              query: `spsearch:${cleanQuery}`,
+              query: `ytsearch:${cleanQuery}`,
               requester: userId
             });
           }

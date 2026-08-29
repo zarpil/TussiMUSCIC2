@@ -41,8 +41,11 @@ export default async function playmusic(client, interaction) {
       volume: 100,
       requesterId: interaction.user.id
     });
+    const isUrl = query.startsWith('http://') || query.startsWith('https://');
+    const searchQuery = isUrl ? query : (query.startsWith('scsearch:') || query.startsWith('spsearch:') || query.startsWith('ytsearch:') || query.startsWith('ytmsearch:') ? query : `scsearch:${query}`);
+    
     const searchResult = await client.moonlink.search({
-      query,
+      query: searchQuery,
       requester: interaction.user.id,
     });
     if (!searchResult.tracks.length) {

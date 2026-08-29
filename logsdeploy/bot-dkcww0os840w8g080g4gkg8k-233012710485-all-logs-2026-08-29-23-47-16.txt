@@ -1,0 +1,410 @@
+
+2026-08-29T23:32:42.460903222Z 🚀 Starting Tussi Music Bot...
+2026-08-29T23:32:45.136561499Z ✅ Logged in as TussiMusic#7948
+2026-08-29T23:32:45.137921603Z ✅ Moonlink Is Initialized Successfully
+2026-08-29T23:32:45.154567267Z [Lyrics Service] 🎵 Moonlink v5 lyrics listeners registered
+2026-08-29T23:32:45.155276898Z 🌐 Web Dashboard server started successfully!
+2026-08-29T23:32:45.156014584Z ✅ Discord Rich Presence initialized (Priority: Web > .env, Default: OFF)
+2026-08-29T23:32:45.156300839Z ⏳ Registering global slash commands...
+2026-08-29T23:32:45.157155375Z (node:19) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2026-08-29T23:32:45.157176918Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-08-29T23:32:45.158256439Z [Web Server] Running on http://0.0.0.0:3001
+2026-08-29T23:32:45.158268202Z [Web Server] CORS enabled for: https://tussi.zarpil.dev
+2026-08-29T23:32:45.158623132Z [Web Server] Test the API: curl http://localhost:3001/health
+2026-08-29T23:32:45.169431375Z [MongoDB] Connected successfully
+2026-08-29T23:32:45.190894758Z [Moonlink] Initializing database-dependent features...
+2026-08-29T23:32:45.215110544Z [Premium Cache] Loaded 0 premium users.
+2026-08-29T23:32:45.226415687Z [Moonlink DB] Overwriting node configurations with 1 merged nodes (DB + config.json).
+2026-08-29T23:32:45.226431689Z [Moonlink DB] Node connection verified online: tussi-nodelink
+2026-08-29T23:32:45.241441985Z [State Restoration] Found 1 saved player states to restore.
+2026-08-29T23:32:45.770062523Z [Socket.io] User connected: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:32:45.770093144Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:32:45.857569459Z [Socket.io] User CZTCIhH7MAqk9fb4AAAB joined guild:1494309584322433124
+2026-08-29T23:32:45.870903968Z [Socket Handler] Sending current state to socket: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:32:45.871479724Z [Socket Handler] 🎵 Fetching lyrics for socket: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:32:45.871597386Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:32:45.974923565Z ✅ Global slash commands registered successfully!
+2026-08-29T23:32:48.823276677Z [Socket.io] User CZTCIhH7MAqk9fb4AAAB joined guild:1494309584322433124
+2026-08-29T23:32:48.827704536Z [Socket Handler] Sending current state to socket: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:32:48.827988707Z [Socket Handler] 🎵 Fetching lyrics for socket: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:32:48.828000130Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:32:48.903932089Z [Socket.io] Sync requested by socket: CZTCIhH7MAqk9fb4AAAB for guild: 1494309584322433124
+2026-08-29T23:32:48.905719577Z [Socket Handler] Sending current state to socket: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:32:48.905912718Z [Socket Handler] 🎵 Fetching lyrics for socket: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:32:48.905918510Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:32:48.907191963Z [Socket.io] User connected: n4D4jAnwif_zaVpFAAAD
+2026-08-29T23:32:48.907201793Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:32:48.985503119Z [Socket.io] User n4D4jAnwif_zaVpFAAAD joined guild:1494309584322433124
+2026-08-29T23:32:48.989212571Z [Socket Handler] Sending current state to socket: n4D4jAnwif_zaVpFAAAD
+2026-08-29T23:32:48.989320403Z [Socket Handler] 🎵 Fetching lyrics for socket: n4D4jAnwif_zaVpFAAAD
+2026-08-29T23:32:48.989356284Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:32:50.749712686Z [Socket.io] User connected: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:32:50.749729990Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:32:50.832466410Z [Socket.io] User connected: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:32:50.832493604Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:32:50.838798037Z [Socket.io] User sj21fjgVfRrmpVzaAAAG joined guild:1494309584322433124
+2026-08-29T23:32:50.841790994Z [Socket Handler] Sending current state to socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:32:50.841931652Z [Socket Handler] 🎵 Fetching lyrics for socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:32:50.841938075Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:32:50.852468850Z [Socket.io] User connected: nHyW5lytG5bSWtweAAAK
+2026-08-29T23:32:50.852490392Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:32:50.911451286Z [Socket.io] User BaHBxgXu6f1TBdytAAAJ joined guild:1494309584322433124
+2026-08-29T23:32:50.914158228Z [Socket Handler] Sending current state to socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:32:50.914286632Z [Socket Handler] 🎵 Fetching lyrics for socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:32:50.914293425Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:32:50.923711694Z [Socket.io] User nHyW5lytG5bSWtweAAAK joined guild:1494309584322433124
+2026-08-29T23:32:50.925424595Z [Socket Handler] Sending current state to socket: nHyW5lytG5bSWtweAAAK
+2026-08-29T23:32:50.925681222Z [Socket Handler] 🎵 Fetching lyrics for socket: nHyW5lytG5bSWtweAAAK
+2026-08-29T23:32:50.925689759Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:32:53.895158250Z [State Restoration] Successfully restored playback in test.
+2026-08-29T23:32:54.689571263Z [Socket.io] Lyrics requested by socket: nHyW5lytG5bSWtweAAAK for guild: 1494309584322433124 forceRefresh: false
+2026-08-29T23:32:54.695287665Z [Lyrics Service] ✅ Cache hit (synced): BAD BUNNY - MONACO (Official Video) | nadie sabe lo que va a pasar mañana - Bad Bunny
+2026-08-29T23:32:54.695304298Z [Socket Handler] ✅ Sending lyrics to requesting socket: nHyW5lytG5bSWtweAAAK
+2026-08-29T23:32:56.397266174Z [API] Sending immediate queue update for track: Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti
+2026-08-29T23:32:56.397388906Z [Queue Update] Sending 3 tracks for guild 1494309584322433124
+2026-08-29T23:33:08.331609263Z [Queue Update] Sending 2 tracks for guild 1494309584322433124
+2026-08-29T23:33:15.114115350Z [Queue Update] Sending 1 tracks for guild 1494309584322433124
+2026-08-29T23:33:20.581248235Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-29T23:33:22.679107027Z [Socket.io] Lyrics requested by socket: nHyW5lytG5bSWtweAAAK for guild: 1494309584322433124 forceRefresh: false
+2026-08-29T23:33:22.680297146Z [Lyrics Service] 🔍 Fetching fresh synced lyrics for: Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-29T23:33:22.680734439Z [Lyrics Service] 🌐 Fetching LRCLIB for: "Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti" by "Bad Bunny"
+2026-08-29T23:33:22.791648194Z [Lyrics Service] ✅ Found LRCLIB exact synced lyrics (44 lines)
+2026-08-29T23:33:22.801126221Z [Lyrics Service] 💾 Saved synced lyrics in MongoDB: Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-29T23:33:22.801143215Z [Socket Handler] ✅ Sending lyrics to requesting socket: nHyW5lytG5bSWtweAAAK
+2026-08-29T23:33:30.663141494Z [Socket.io] User disconnected: CZTCIhH7MAqk9fb4AAAB
+2026-08-29T23:33:33.825100782Z [Socket.io] User disconnected: n4D4jAnwif_zaVpFAAAD
+2026-08-29T23:33:34.348641914Z [Socket.io] User BaHBxgXu6f1TBdytAAAJ joined guild:1494309584322433124
+2026-08-29T23:33:34.350651681Z [Socket.io] User sj21fjgVfRrmpVzaAAAG joined guild:1494309584322433124
+2026-08-29T23:33:34.358487877Z [Socket Handler] Sending current state to socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:33:34.358626842Z [Socket Handler] 🎵 Fetching lyrics for socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:33:34.361190351Z [Socket Handler] Sending current state to socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:33:34.361213006Z [Socket Handler] 🎵 Fetching lyrics for socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:33:34.362480468Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-29T23:33:34.362505597Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:33:34.364190904Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-29T23:33:34.364204491Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:33:34.428088300Z [Socket.io] Sync requested by socket: BaHBxgXu6f1TBdytAAAJ for guild: 1494309584322433124
+2026-08-29T23:33:34.430055623Z [Socket Handler] Sending current state to socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:33:34.430168566Z [Socket Handler] 🎵 Fetching lyrics for socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:33:34.431256243Z [Socket.io] Sync requested by socket: sj21fjgVfRrmpVzaAAAG for guild: 1494309584322433124
+2026-08-29T23:33:34.432901571Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-29T23:33:34.432918384Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:33:34.434059967Z [Socket Handler] Sending current state to socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:33:34.434182248Z [Socket Handler] 🎵 Fetching lyrics for socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:33:34.436303655Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-29T23:33:34.436323925Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:33:42.263472418Z [API] Destroying stale player for guild 1494309584322433124 (bot disconnected)
+2026-08-29T23:33:42.280809547Z [State Sync] Deleted player state and flushed VC time for guild 1494309584322433124 due to playerDestroyed event
+2026-08-29T23:33:42.280965424Z [State Sync] Deleted player state and flushed VC time for guild 1494309584322433124 due to playerDestroyed event
+2026-08-29T23:33:44.611125259Z [Socket.io] User sj21fjgVfRrmpVzaAAAG joined guild:1494309584322433124
+2026-08-29T23:33:44.612313564Z [Socket.io] User BaHBxgXu6f1TBdytAAAJ joined guild:1494309584322433124
+2026-08-29T23:33:44.614400443Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-29T23:33:44.614830231Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-29T23:33:44.689811404Z [Socket.io] Sync requested by socket: BaHBxgXu6f1TBdytAAAJ for guild: 1494309584322433124
+2026-08-29T23:33:44.689835863Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-29T23:33:44.689839339Z [Socket.io] Sync requested by socket: sj21fjgVfRrmpVzaAAAG for guild: 1494309584322433124
+2026-08-29T23:33:44.689842285Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-29T23:33:57.265065104Z [API] Play error: Error: Voice connection timed out after 15000ms
+2026-08-29T23:33:57.265095274Z     at Timeout.<anonymous> (/app/node_modules/moonlink.js/dist/src/entities/Voice.js:92:28)
+2026-08-29T23:33:57.265101446Z     at listOnTimeout (node:internal/timers:585:17)
+2026-08-29T23:33:57.265106596Z     at process.processTimers (node:internal/timers:521:7)
+2026-08-29T23:33:57.397864586Z [API] Play error: Error: Connection was disconnected during connection attempt.
+2026-08-29T23:33:57.397895797Z     at Object.listener (/app/node_modules/moonlink.js/dist/src/entities/Voice.js:106:35)
+2026-08-29T23:33:57.397901008Z     at Voice.emit (/app/node_modules/moonlink.js/dist/src/Util.js:519:23)
+2026-08-29T23:33:57.397905486Z     at Voice.handleStateUpdate (/app/node_modules/moonlink.js/dist/src/entities/Voice.js:153:18)
+2026-08-29T23:33:57.397910196Z     at Manager.packetUpdate (/app/node_modules/moonlink.js/dist/src/core/Manager.js:277:30)
+2026-08-29T23:33:57.397914835Z     at MainClient.<anonymous> (file:///app/events/moonlinkEvents.js:386:48)
+2026-08-29T23:33:57.397933782Z     at MainClient.emit (node:events:519:28)
+2026-08-29T23:33:57.397936878Z     at WebSocketManager.<anonymous> (/app/node_modules/discord.js/src/client/websocket/WebSocketManager.js:233:19)
+2026-08-29T23:33:57.397940145Z     at WebSocketManager.emit (/app/node_modules/@vladfrangu/async_event_emitter/dist/index.cjs:2504:31)
+2026-08-29T23:33:57.397942329Z     at WebSocketShard.<anonymous> (/app/node_modules/@discordjs/ws/dist/index.js:1190:51)
+2026-08-29T23:33:57.397944554Z     at WebSocketShard.emit (/app/node_modules/@vladfrangu/async_event_emitter/dist/index.cjs:2504:31)
+2026-08-29T23:33:57.761741022Z [API] Sending immediate queue update for track: BAD BUNNY x DRAKE - MÍA (Video Oficial)
+2026-08-29T23:33:57.761767254Z [Queue Update] Sending 1 tracks for guild 1494309584322433124
+2026-08-29T23:36:06.039486638Z [Socket.io] User disconnected: sj21fjgVfRrmpVzaAAAG
+2026-08-29T23:36:06.221737333Z [Socket.io] User disconnected: BaHBxgXu6f1TBdytAAAJ
+2026-08-29T23:36:06.259826802Z [Socket.io] User disconnected: nHyW5lytG5bSWtweAAAK
+2026-08-29T23:38:45.162922135Z Possible AsyncEventEmitter memory leak detected. 11 error listeners added to WebSocketShard. Use emitter.setMaxListeners() to increase the limit.
+2026-08-29T23:39:15.164454817Z Possible AsyncEventEmitter memory leak detected. 11 ready listeners added to WebSocketShard. Use emitter.setMaxListeners() to increase the limit.
+2026-08-29T23:42:00.438225351Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:00.438249449Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:00.438253026Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:00.438256933Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:00.438263607Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:00.438267955Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:00.438271663Z }
+2026-08-29T23:42:00.943059312Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:00.943083731Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:00.943088760Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:00.943093640Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:00.943097959Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:00.943102367Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:00.943106335Z }
+2026-08-29T23:42:01.448014423Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:01.448036887Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:01.448041065Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:01.448044733Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:01.448059802Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:01.448062588Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:01.448065273Z }
+2026-08-29T23:42:01.952737986Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:01.952760050Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:01.952763176Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:01.952765410Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:01.952767514Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:01.952769609Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:01.952771763Z }
+2026-08-29T23:42:02.458884639Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:02.458910439Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:02.458913636Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:02.458915860Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:02.458917984Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:02.458920008Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:02.458922343Z }
+2026-08-29T23:42:02.964313033Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:02.964328434Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:02.964331029Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:02.964343083Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:02.964346750Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:02.964348934Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:02.964350597Z }
+2026-08-29T23:42:03.470516788Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:03.470542007Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:03.470545655Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:03.470548480Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:03.470550835Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:03.470553620Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:03.470556456Z }
+2026-08-29T23:42:03.975763313Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:03.975784034Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:03.975787110Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:03.975789325Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:03.975799595Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:03.975801899Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:03.975803994Z }
+2026-08-29T23:42:04.480728664Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:04.480749254Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:04.480752300Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:04.480754515Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:04.480756839Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:04.480758944Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:04.480761018Z }
+2026-08-29T23:42:04.986275823Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:04.986303537Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:04.986306914Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:04.986309519Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:04.986311944Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:04.986314379Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:04.986316583Z }
+2026-08-29T23:42:05.492797895Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:05.492819368Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:05.492822394Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:05.492824598Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:05.492826602Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:05.492828566Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:05.492830630Z }
+2026-08-29T23:42:05.997731613Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:05.997752545Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:05.997755711Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:05.997758176Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:05.997760390Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:05.997762775Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:05.997764859Z }
+2026-08-29T23:42:06.502452241Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:06.502468714Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:06.502472100Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:06.502474355Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:06.502476579Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:06.502487781Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:06.502489945Z }
+2026-08-29T23:42:07.008306376Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:07.008324802Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:07.008327467Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:07.008329371Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:07.008331105Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:07.008340603Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:07.008343389Z }
+2026-08-29T23:42:07.514434822Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:07.514455432Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:07.514458528Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:07.514460673Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:07.514462757Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:07.514464751Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:07.514466735Z }
+2026-08-29T23:42:08.019287019Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:08.019309233Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:08.019312419Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:08.019314704Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:08.019316798Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:08.019318942Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:08.019321327Z }
+2026-08-29T23:42:08.525070845Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:08.525094071Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:08.525096586Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:08.525098349Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:08.525100584Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:08.525102317Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:08.525103930Z }
+2026-08-29T23:42:09.029530498Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:09.029554655Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:09.029558884Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:09.029561860Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:09.029564896Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:09.029580797Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:09.029584103Z }
+2026-08-29T23:42:09.534810830Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:09.534833715Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:09.534836811Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:09.534838976Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:09.534841050Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:09.534843144Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:09.534845609Z }
+2026-08-29T23:42:10.039558761Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:10.039580083Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:10.039582568Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:10.039584362Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:10.039586556Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:10.039588219Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:10.039589853Z }
+2026-08-29T23:42:10.543714304Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:10.543734193Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:10.543737259Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:10.543739534Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:10.543741598Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:10.543743682Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:10.543745646Z }
+2026-08-29T23:42:31.556321672Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:31.556346661Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:31.556351521Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:31.556354256Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:31.556357282Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:31.556359827Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:31.556362162Z }
+2026-08-29T23:42:32.061539872Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:32.061557386Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:32.061559951Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:32.061562246Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:32.061563909Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:32.061565622Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:32.061576123Z }
+2026-08-29T23:42:32.566636862Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:32.566657603Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:32.566661861Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:32.566665639Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:32.566668645Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:32.566671891Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:32.566674857Z }
+2026-08-29T23:42:33.071008611Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:33.071033229Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:33.071035935Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:33.071037758Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:33.071039502Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:33.071041165Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:33.071042788Z }
+2026-08-29T23:42:33.575825108Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:33.575841780Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:33.575844366Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:33.575846239Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:33.575847892Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:33.575849606Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:33.575851279Z }
+2026-08-29T23:42:34.080196576Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:34.080220704Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:34.080223870Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:34.080226545Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:34.080228870Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:34.080231174Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:34.080233539Z }
+2026-08-29T23:42:34.584435863Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:34.584458137Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:34.584462957Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:34.584467275Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:34.584471384Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:34.584475291Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:34.584487085Z }
+2026-08-29T23:42:35.089895209Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:35.089921782Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:35.089925359Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:35.089927493Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:35.089929497Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:35.089931230Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:35.089932934Z }
+2026-08-29T23:42:35.595676520Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:35.595693334Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:35.595696360Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:35.595700107Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:35.595702221Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:35.595704215Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:35.595706279Z }
+2026-08-29T23:42:36.100706729Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:36.100729504Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:36.100732650Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:36.100734925Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:36.100737269Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:36.100739353Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:36.100741427Z }
+2026-08-29T23:42:36.605620748Z ❌ Shard error: Error: self-signed certificate
+2026-08-29T23:42:36.605641379Z     at TLSSocket.onConnectSecure (node:internal/tls/wrap:1787:34)
+2026-08-29T23:42:36.605644465Z     at TLSSocket.emit (node:events:519:28)
+2026-08-29T23:42:36.605646870Z     at TLSSocket._finishInit (node:internal/tls/wrap:1176:8)
+2026-08-29T23:42:36.605649495Z     at ssl.onhandshakedone (node:internal/tls/wrap:962:12) {
+2026-08-29T23:42:36.605651729Z   code: 'DEPTH_ZERO_SELF_SIGNED_CERT'
+2026-08-29T23:42:36.605653964Z }
+2026-08-29T23:42:41.123468042Z ❌ Shard error: Error: getaddrinfo ENOTFOUND gateway.discord.gg
+2026-08-29T23:42:41.123492581Z     at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26) {
+2026-08-29T23:42:41.123495707Z   errno: -3008,
+2026-08-29T23:42:41.123497991Z   code: 'ENOTFOUND',
+2026-08-29T23:42:41.123500135Z   syscall: 'getaddrinfo',
+2026-08-29T23:42:41.123502089Z   hostname: 'gateway.discord.gg'
+2026-08-29T23:42:41.123504043Z }
+2026-08-29T23:44:51.101585695Z [Socket.io] User connected: kXILULei0Eer3gkMAAAN
+2026-08-29T23:44:51.101629521Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:44:51.103671001Z [Socket.io] User connected: _NhZBWZwlexqMCTmAAAO
+2026-08-29T23:44:51.103689437Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:44:51.184954874Z [Socket.io] User _NhZBWZwlexqMCTmAAAO joined guild:1494309584322433124
+2026-08-29T23:44:51.188285858Z [Socket Handler] Sending current state to socket: _NhZBWZwlexqMCTmAAAO
+2026-08-29T23:44:51.188589107Z [Socket Handler] 🎵 Fetching lyrics for socket: _NhZBWZwlexqMCTmAAAO
+2026-08-29T23:44:51.188600750Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:44:51.200982047Z [Socket.io] User kXILULei0Eer3gkMAAAN joined guild:1494309584322433124
+2026-08-29T23:44:51.204654766Z [Socket Handler] Sending current state to socket: kXILULei0Eer3gkMAAAN
+2026-08-29T23:44:51.204677571Z [Socket Handler] 🎵 Fetching lyrics for socket: kXILULei0Eer3gkMAAAN
+2026-08-29T23:44:51.204681269Z [Lyrics Service] ⚠️ No current track
+2026-08-29T23:44:58.046455735Z [State Sync] Deleted player state and flushed VC time for guild 1494309584322433124 due to playerDestroyed event
+2026-08-29T23:45:08.814126912Z [Moonlink Events] trackStart fired for guild 1494309584322433124, track: MILO J - RARA VEZ (Prod. Taiu)
+2026-08-29T23:45:08.814166070Z [Moonlink Events] Voice Channel ID: 1540036113517772932
+2026-08-29T23:45:08.814463607Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-29T23:45:08.814585287Z [Socket Handler] 🎵 Fetching lyrics for: MILO J - RARA VEZ (Prod. Taiu) - Taiu 
+2026-08-29T23:45:08.819327747Z [Lyrics Service] 🔍 Fetching fresh synced lyrics for: MILO J - RARA VEZ (Prod. Taiu) - Taiu 
+2026-08-29T23:45:08.819362837Z [Lyrics Service] 🌐 Fetching LRCLIB for: "MILO J - RARA VEZ (Prod. Taiu)" by "Taiu"
+2026-08-29T23:45:08.962455083Z [Lyrics Service] ✅ Found LRCLIB exact synced lyrics (46 lines)
+2026-08-29T23:45:08.967828239Z [Lyrics Service] 💾 Saved synced lyrics in MongoDB: MILO J - RARA VEZ (Prod. Taiu) - Taiu 
+2026-08-29T23:45:08.967958396Z [Socket Handler] ✅ Emitting lyrics_data with 46 lines to guild: 1494309584322433124
+2026-08-29T23:45:08.984412752Z [API] Sending immediate queue update for track: MILO J - RARA VEZ (Prod. Taiu)
+2026-08-29T23:45:08.984438794Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-29T23:45:09.304084541Z [Moonlink Events] Voice status set successfully
+2026-08-29T23:45:33.937551048Z [Socket.io] User connected: 4lAwj6lm7w_MxJRqAAAS
+2026-08-29T23:45:33.937574374Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:45:34.007236118Z [Socket.io] User connected: fAe49Np9fw2mQBocAAAU
+2026-08-29T23:45:34.007257901Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:45:34.025410259Z [Socket.io] User 4lAwj6lm7w_MxJRqAAAS joined guild:1494309584322433124
+2026-08-29T23:45:34.031082014Z [Socket Handler] Sending current state to socket: 4lAwj6lm7w_MxJRqAAAS
+2026-08-29T23:45:34.031508776Z [Socket Handler] 🎵 Fetching lyrics for socket: 4lAwj6lm7w_MxJRqAAAS
+2026-08-29T23:45:34.037350155Z [Lyrics Service] ✅ Cache hit (synced): MILO J - RARA VEZ (Prod. Taiu) - Taiu 
+2026-08-29T23:45:34.037385455Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: 4lAwj6lm7w_MxJRqAAAS
+2026-08-29T23:45:34.057147009Z [Socket.io] User connected: LbFDNmFhOkZlm9kUAAAV
+2026-08-29T23:45:34.057168932Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-29T23:45:34.076267267Z [Socket.io] User fAe49Np9fw2mQBocAAAU joined guild:1494309584322433124
+2026-08-29T23:45:34.078239230Z [Socket Handler] Sending current state to socket: fAe49Np9fw2mQBocAAAU
+2026-08-29T23:45:34.078507229Z [Socket Handler] 🎵 Fetching lyrics for socket: fAe49Np9fw2mQBocAAAU
+2026-08-29T23:45:34.080663024Z [Lyrics Service] ✅ Cache hit (synced): MILO J - RARA VEZ (Prod. Taiu) - Taiu 
+2026-08-29T23:45:34.080678544Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: fAe49Np9fw2mQBocAAAU
+2026-08-29T23:45:34.123607385Z [Socket.io] User LbFDNmFhOkZlm9kUAAAV joined guild:1494309584322433124
+2026-08-29T23:45:34.126328946Z [Socket Handler] Sending current state to socket: LbFDNmFhOkZlm9kUAAAV
+2026-08-29T23:45:34.126402191Z [Socket Handler] 🎵 Fetching lyrics for socket: LbFDNmFhOkZlm9kUAAAV
+2026-08-29T23:45:34.127987199Z [Lyrics Service] ✅ Cache hit (synced): MILO J - RARA VEZ (Prod. Taiu) - Taiu 
+2026-08-29T23:45:34.128002089Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: LbFDNmFhOkZlm9kUAAAV
+2026-08-29T23:45:34.280094630Z [Socket.io] Lyrics requested by socket: fAe49Np9fw2mQBocAAAU for guild: 1494309584322433124 forceRefresh: false
+2026-08-29T23:45:34.282361284Z [Lyrics Service] ✅ Cache hit (synced): MILO J - RARA VEZ (Prod. Taiu) - Taiu 
+2026-08-29T23:45:34.282382766Z [Socket Handler] ✅ Sending lyrics to requesting socket: fAe49Np9fw2mQBocAAAU
+2026-08-29T23:46:01.100233081Z [Socket.io] User disconnected: kXILULei0Eer3gkMAAAN
+2026-08-29T23:46:01.100702828Z [Socket.io] User disconnected: _NhZBWZwlexqMCTmAAAO

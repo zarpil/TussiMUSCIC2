@@ -28,8 +28,12 @@ export default async function commands_handler(client) {
           if (!focusedValue) return await interaction.respond([]);
           
           try {
+            const cleanQuery = focusedValue.replace(/^(ytmsearch:|scsearch:|spsearch:|ytsearch:)+/gi, '').trim();
+            const isUrl = focusedValue.startsWith('http://') || focusedValue.startsWith('https://');
+            const searchQ = isUrl ? focusedValue : (focusedValue.startsWith('scsearch:') || focusedValue.startsWith('spsearch:') || focusedValue.startsWith('ytsearch:') ? focusedValue : `scsearch:${cleanQuery}`);
+
             const searchResult = await client.moonlink.search({
-              query: focusedValue,
+              query: searchQ,
               requester: interaction.user.id
             });
             if (searchResult && searchResult.tracks && searchResult.tracks.length > 0) {

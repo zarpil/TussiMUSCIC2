@@ -1,0 +1,12 @@
+
+2026-08-29T23:32:43.143457294Z 
+2026-08-29T23:32:43.143526501Z > tussi-dashboard@1.0.0 start
+2026-08-29T23:32:43.143532192Z > next start
+2026-08-29T23:32:43.143535879Z 
+2026-08-29T23:32:43.504996318Z   ▲ Next.js 14.2.35
+2026-08-29T23:32:43.505215250Z   - Local:        http://localhost:3000
+2026-08-29T23:32:43.505355256Z 
+2026-08-29T23:32:43.505468680Z  ✓ Starting...
+2026-08-29T23:32:43.765264228Z  ✓ Ready in 530ms
+2026-08-29T23:32:48.791833246Z (node:18) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2026-08-29T23:32:48.791867523Z (Use `node --trace-deprecation ...` to show where the warning was created)

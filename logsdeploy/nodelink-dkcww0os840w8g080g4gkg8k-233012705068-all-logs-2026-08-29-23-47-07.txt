@@ -1,0 +1,545 @@
+
+2026-08-29T23:32:42.972826514Z 
+2026-08-29T23:32:42.972875411Z > nodelink@3.8.0 start
+2026-08-29T23:32:42.972879118Z > node --dns-result-order=ipv4first --import tsx src/index.ts
+2026-08-29T23:32:42.972881893Z 
+2026-08-29T23:32:43.888310720Z [WARN] Config: config.js not found, using config.default.js. It is recommended to create a config.js file for your own configuration.
+2026-08-29T23:32:43.892152182Z 
+2026-08-29T23:32:43.892168203Z    ▄   ████▄ ██▄   ▄███▄   █    ▄█    ▄   █  █▀
+2026-08-29T23:32:43.892171510Z     █  █   █ █  █  █▀   ▀  █    ██     █  █▄█
+2026-08-29T23:32:43.892173604Z ██   █ █   █ █   █ ██▄▄    █    ██ ██   █ █▀▄   Cluster Mode
+2026-08-29T23:32:43.892175708Z █ █  █ ▀████ █  █  █▄   ▄▀ ███▄ ▐█ █ █  █ █  █  v3.8.0
+2026-08-29T23:32:43.892177832Z █  █ █       ███▀  ▀███▀       ▀ ▐ █  █ █   █   Powered by PerformanC;
+2026-08-29T23:32:43.892179796Z █   ██                             █   ██  ▀    rewritten by 1Lucas1.apk;
+2026-08-29T23:32:43.892181700Z 
+2026-08-29T23:32:43.892879798Z [23:32:43.892] [INFO] >: Git > Checking for updates...
+2026-08-29T23:32:43.896526726Z [23:32:43.896] [WARN] >: Git > Failed to check for updates: Command failed: git fetch
+2026-08-29T23:32:43.923889142Z [23:32:43.923] [INFO] >: Cluster > Primary PID 19 - WorkerManager initialized. Min: 1, Max: 4 workers
+2026-08-29T23:32:43.927985647Z [23:32:43.927] [INFO] >: Cluster > Forking worker 1/1
+2026-08-29T23:32:43.933714725Z [23:32:43.933] [INFO] >: Cluster > Spawned worker 40 (id: 1)
+2026-08-29T23:32:43.933813490Z [23:32:43.933] [INFO] >: Cluster > Scaling check started with interval: 5000ms
+2026-08-29T23:32:43.934446880Z [23:32:43.934] [INFO] >: StatsManager > Initialized.
+2026-08-29T23:32:43.937608310Z /bin/sh: git: not found
+2026-08-29T23:32:43.937909695Z [23:32:43.937] [WARN] >: Git > Unable to retrieve git information. Command failed: git rev-parse --abbrev-ref HEAD
+2026-08-29T23:32:43.937918011Z /bin/sh: git: not found
+2026-08-29T23:32:43.937921138Z 
+2026-08-29T23:32:43.939346351Z [23:32:43.938] [INFO] >: Server > version 3.8.0
+2026-08-29T23:32:43.939362573Z [23:32:43.938] [INFO] >: Server > git branch: unknown, commit: unknown, committed on: 1969-12-31T23:59:59.999Z
+2026-08-29T23:32:43.977722956Z [23:32:43.975] [INFO] >: Cluster > Event socket server listening at /tmp/nodelink-events-7fdb431673044553.sock
+2026-08-29T23:32:43.977745821Z [23:32:43.975] [INFO] >: Cluster > Command socket server listening at /tmp/nodelink-commands-7e90529815aed2d0.sock
+2026-08-29T23:32:44.093679945Z [23:32:44.093] [WARN] >: Server > Non-LTS preview runtime detected (v25.9.0), at or above latest LTS (v24.20.0). Accepted, but behavior may change between releases.
+2026-08-29T23:32:44.344893254Z [WARN] Config: config.js not found, using config.default.js. It is recommended to create a config.js file for your own configuration.
+2026-08-29T23:32:44.358909859Z [23:32:44.356] [INFO] >: Git > Checking for updates...
+2026-08-29T23:32:44.368459247Z [23:32:44.368] [WARN] >: Git > Failed to check for updates: Command failed: git fetch
+2026-08-29T23:32:44.375287304Z [23:32:44.374] [INFO] >: StatsManager > Prometheus metrics initialized.
+2026-08-29T23:32:44.375311762Z [23:32:44.374] [INFO] >: PluginManager > Initializing plugins in master context...
+2026-08-29T23:32:44.376037635Z [23:32:44.375] [INFO] >: PluginManager > Plugins processed for master.
+2026-08-29T23:32:44.393058489Z [23:32:44.392] [INFO] >: SourceCluster > Source server listening at /tmp/nodelink-source-4f81612b88eabd54.sock
+2026-08-29T23:32:44.423407089Z [23:32:44.422] [INFO] >: Server > Attempting to listen on host: 0.0.0.0, port: 2333
+2026-08-29T23:32:44.427330122Z [23:32:44.427] [INFO] >: ConnectionManager > Starting connection checks every 300000ms.
+2026-08-29T23:32:44.433389863Z [23:32:44.432] [STARTED] >: Server > Successfully listening on host 0.0.0.0, port 2333
+2026-08-29T23:32:44.540420774Z [23:32:44.540] [INFO] >: StatsManager > Initialized.
+2026-08-29T23:32:44.543757229Z [23:32:44.543] [INFO] >: Worker > Connected to Master event socket
+2026-08-29T23:32:44.544237387Z [23:32:44.544] [INFO] >: Worker > Connected to Master command socket
+2026-08-29T23:32:44.568244090Z [23:32:44.568] [INFO] >: Sources > Loaded source: vkmusic
+2026-08-29T23:32:44.576193650Z [23:32:44.576] [INFO] >: Sources > Loaded source: amazonmusic
+2026-08-29T23:32:44.584584702Z [23:32:44.584] [INFO] >: Sources > Loaded source: bluesky
+2026-08-29T23:32:44.589444043Z [23:32:44.589] [INFO] >: Sources > Loaded source: rss
+2026-08-29T23:32:44.596629415Z [23:32:44.596] [INFO] >: Sources > Loaded source: songlink
+2026-08-29T23:32:44.604241629Z [23:32:44.604] [INFO] >: Sources > Loaded source: mixcloud
+2026-08-29T23:32:44.613224108Z [23:32:44.613] [INFO] >: Sources > Loaded Audiomack source (official public API).
+2026-08-29T23:32:44.613542597Z [23:32:44.613] [INFO] >: Sources > Loaded source: audiomack
+2026-08-29T23:32:44.635638599Z [23:32:44.635] [INFO] >: Sources > Initializing Deezer source...
+2026-08-29T23:32:44.662261064Z [23:32:44.662] [INFO] >: Sources > Loaded BandCamp source.
+2026-08-29T23:32:44.662291945Z [23:32:44.662] [INFO] >: Sources > Loaded source: bandcamp
+2026-08-29T23:32:44.689780881Z [23:32:44.689] [INFO] >: Sources > Loaded source: local
+2026-08-29T23:32:44.710416010Z [23:32:44.705] [INFO] >: Sources > Loaded source: http
+2026-08-29T23:32:44.738931391Z [23:32:44.737] [INFO] >: PluginManager > Initializing plugins in source-worker context...
+2026-08-29T23:32:44.741991511Z [23:32:44.741] [INFO] >: PluginManager > Plugins processed for source-worker.
+2026-08-29T23:32:44.742214121Z [23:32:44.742] [INFO] >: SourceWorker > Starting 1/2 micro-worker(s) for API tasks...
+2026-08-29T23:32:44.743732588Z [23:32:44.743] [INFO] >: SourceCluster > Source worker manager 62 ready
+2026-08-29T23:32:44.776067418Z [23:32:44.775] [INFO] >: Sources > Loaded Eternalbox source.
+2026-08-29T23:32:44.776169370Z [23:32:44.775] [INFO] >: Sources > Loaded source: eternalbox
+2026-08-29T23:32:44.796162270Z [23:32:44.796] [INFO] >: Sources > Loaded source: vimeo
+2026-08-29T23:32:44.803665459Z [23:32:44.803] [INFO] >: Sources > Loaded iHeartRadio source.
+2026-08-29T23:32:44.803731931Z [23:32:44.803] [INFO] >: Sources > Loaded source: iheartradio
+2026-08-29T23:32:44.809180294Z [23:32:44.809] [INFO] >: Sources > Loaded Telegram source.
+2026-08-29T23:32:44.809197438Z [23:32:44.809] [INFO] >: Sources > Loaded source: telegram
+2026-08-29T23:32:44.815946399Z [23:32:44.815] [INFO] >: Sources > Loaded source: shazam
+2026-08-29T23:32:44.824997713Z [23:32:44.824] [INFO] >: Sources > Loaded Bilibili source (Video, Audio, Live, Space, Lyrics, Login).
+2026-08-29T23:32:44.825020538Z [23:32:44.824] [INFO] >: Sources > Loaded source: bilibili
+2026-08-29T23:32:44.831491070Z [23:32:44.831] [INFO] >: Sources > Loaded Genius source (Video/Audio/Article).
+2026-08-29T23:32:44.832496213Z [23:32:44.831] [INFO] >: Sources > Loaded source: genius
+2026-08-29T23:32:44.837254154Z [23:32:44.837] [INFO] >: Sources > Loaded source: pinterest
+2026-08-29T23:32:44.845006786Z [23:32:44.844] [INFO] >: Sources > Loaded Flowery TTS source.
+2026-08-29T23:32:44.874614434Z [23:32:44.874] [INFO] >: JioSaavn > JioSaavn source initialized.
+2026-08-29T23:32:44.874636197Z [23:32:44.874] [INFO] >: Sources > Loaded source: jiosaavn
+2026-08-29T23:32:44.886075856Z [23:32:44.885] [INFO] >: Sources > Loaded Gaana source.
+2026-08-29T23:32:44.886102709Z [23:32:44.885] [INFO] >: Sources > Loaded source: gaana
+2026-08-29T23:32:44.891125182Z [23:32:44.890] [INFO] >: Sources > Loaded Google TTS source.
+2026-08-29T23:32:44.891144490Z [23:32:44.891] [INFO] >: Sources > Loaded source: google-tts
+2026-08-29T23:32:45.107074319Z [23:32:45.106] [INFO] >: YouTube > Setting up YouTube source...
+2026-08-29T23:32:45.107407496Z [23:32:45.107] [DEBUG] >: YouTube > Initialized clients: Android, AndroidVR, IOS, Music, WebRemix, TV, TVCast, Web, WebEmbedded
+2026-08-29T23:32:45.121423089Z [23:32:45.120] [INFO] >: Sources > Checking Instagram API parameters...
+2026-08-29T23:32:45.136002676Z [23:32:45.132] [INFO] >: Sources > Loaded Kwai source.
+2026-08-29T23:32:45.136024328Z [23:32:45.132] [INFO] >: Sources > Loaded source: kwai
+2026-08-29T23:32:45.196508218Z [23:32:45.196] [INFO] >: Audius > Audius source initialized successfully.
+2026-08-29T23:32:45.196615329Z [23:32:45.196] [INFO] >: Sources > Loaded source: audius
+2026-08-29T23:32:45.214693040Z [23:32:45.214] [INFO] >: Server > TussiMusicBot/v1.0.0 connected from [External] (10.0.4.5:51786) | URL: /v4/websocket
+2026-08-29T23:32:45.243647488Z [23:32:45.241] [INFO] >: Pandora > Fetching tokens from remote provider: https://get.1lucas1apk.fun/pandora/gettoken
+2026-08-29T23:32:45.252435393Z [23:32:45.252] [INFO] >: Request > GET | [External] (10.0.4.5:51800) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/info {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:45.257194046Z [23:32:45.256] [INFO] >: Sources > Loaded NicoVideo source.
+2026-08-29T23:32:45.257213594Z [23:32:45.256] [INFO] >: Sources > Loaded source: nicovideo
+2026-08-29T23:32:45.273377387Z [23:32:45.273] [INFO] >: Sources > Loaded source: reddit
+2026-08-29T23:32:45.286871411Z [23:32:45.286] [INFO] >: Sources > Loaded Tumblr source.
+2026-08-29T23:32:45.286946489Z [23:32:45.286] [INFO] >: Sources > Loaded source: tumblr
+2026-08-29T23:32:45.324788209Z [23:32:45.321] [INFO] >: Sources > Loaded Last.fm source.
+2026-08-29T23:32:45.324803940Z [23:32:45.321] [INFO] >: Sources > Loaded source: lastfm
+2026-08-29T23:32:45.332638633Z [23:32:45.332] [INFO] >: Sources > Loaded Netease Cloud Music source.
+2026-08-29T23:32:45.332773149Z [23:32:45.332] [INFO] >: Sources > Loaded source: netease
+2026-08-29T23:32:45.348289464Z [23:32:45.348] [INFO] >: Sources > Loaded LetrasMus source.
+2026-08-29T23:32:45.350078746Z [23:32:45.349] [INFO] >: Sources > Loaded source: letrasmus
+2026-08-29T23:32:45.373678445Z [23:32:45.373] [INFO] >: Monochrome > Initializing latency check for 10 instances...
+2026-08-29T23:32:45.409557561Z [23:32:45.409] [WARN] >: YandexMusic > Missing access token. API resolution disabled; falling back to Song.link.
+2026-08-29T23:32:45.409646497Z [23:32:45.409] [INFO] >: Sources > Loaded source: yandexmusic
+2026-08-29T23:32:45.429377420Z [23:32:45.429] [INFO] >: Sources > Google Drive source initialized
+2026-08-29T23:32:45.430425559Z [23:32:45.429] [INFO] >: Sources > Loaded source: googledrive
+2026-08-29T23:32:45.522293071Z [23:32:45.522] [INFO] >: Sources > Deezer source setup successfully.
+2026-08-29T23:32:45.522815643Z [23:32:45.522] [INFO] >: Sources > Loaded source: deezer
+2026-08-29T23:32:45.529390821Z [23:32:45.529] [INFO] >: Pandora > Successfully initialized with remote tokens (bypass active).
+2026-08-29T23:32:45.529415038Z [23:32:45.529] [INFO] >: Sources > Loaded source: pandora
+2026-08-29T23:32:45.532393617Z [23:32:45.532] [DEBUG] >: Sources > SoundCloud client_id (Pb72ranhoyt6gw7hM7TkzUItXlMWSNSo) Found from main page
+2026-08-29T23:32:45.532414779Z [23:32:45.532] [INFO] >: Sources > Loaded SoundCloud (clientId: Pb72ranhoyt6gw7hM7TkzUItXlMWSNSo)
+2026-08-29T23:32:45.532418577Z [23:32:45.532] [INFO] >: Sources > Loaded source: soundcloud
+2026-08-29T23:32:45.542742373Z [23:32:45.541] [WARN] >: YandexMusic > Missing access token. API resolution disabled; falling back to Song.link.
+2026-08-29T23:32:45.543860720Z [23:32:45.543] [INFO] >: Cluster > Worker 1 (PID 40) ready
+2026-08-29T23:32:45.605838889Z [23:32:45.605] [INFO] >: Sources > Loaded Twitter (X) source.
+2026-08-29T23:32:45.605864059Z [23:32:45.605] [INFO] >: Sources > Loaded source: twitter
+2026-08-29T23:32:45.636907460Z [23:32:45.636] [DEBUG] >: YouTube > visitorData refreshed and cached.
+2026-08-29T23:32:45.636930957Z [23:32:45.636] [DEBUG] >: YouTube > Player script URL: /s/player/e937390a/player_embed.vflset/en_US/base.js
+2026-08-29T23:32:45.636934113Z [23:32:45.636] [DEBUG] >: YouTube-Cipher > Explicit player script URL set: https://www.youtube.com/s/player/e937390a/player_embed.vflset/en_US/base.js
+2026-08-29T23:32:45.642355112Z [23:32:45.642] [INFO] >: Spotify > Source initialized. Official: false, Anonymous: true, Mobile: true
+2026-08-29T23:32:45.642570728Z [23:32:45.642] [INFO] >: Sources > Loaded source: spotify
+2026-08-29T23:32:45.643834713Z [23:32:45.643] [INFO] >: Twitch > Twitch source primed. Client ID: kimne78kx3ncx6brgo4mv6wki5h1ko
+2026-08-29T23:32:45.643969659Z [23:32:45.643] [INFO] >: Sources > Loaded source: twitch
+2026-08-29T23:32:45.654603718Z [23:32:45.654] [INFO] >: Sources > Loaded Instagram source.
+2026-08-29T23:32:45.657003234Z [23:32:45.654] [INFO] >: Sources > Loaded source: instagram
+2026-08-29T23:32:45.682261066Z [23:32:45.682] [INFO] >: Request > PATCH | [External] (10.0.4.5:51800) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/undefined/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:32:45.682284893Z Body: {"voice":{"sessionId":"c88937626391fdc34abebe07e6423f66","token":"cc816a3cc64d853f","endpoint":"c-mrs06-4a2c0af0.discord.media:2053","channelId":"1540036113517772932"}}
+2026-08-29T23:32:45.694399124Z [23:32:45.693] [INFO] >: Tidal > Fetched new token.
+2026-08-29T23:32:45.694426297Z [23:32:45.694] [INFO] >: Sources > Loaded source: tidal
+2026-08-29T23:32:45.719297897Z [23:32:45.719] [INFO] >: Sources > Loaded LazyPy TTS source.
+2026-08-29T23:32:45.719325151Z [23:32:45.719] [INFO] >: Sources > Loaded source: lazypytts
+2026-08-29T23:32:45.746283119Z [23:32:45.746] [INFO] >: Sources > Loaded source: applemusic
+2026-08-29T23:32:45.880188864Z [23:32:45.880] [INFO] >: YouTube-Cipher > Cipher server at https://cipher.kikkia.dev/api is online.
+2026-08-29T23:32:45.880225606Z [23:32:45.880] [INFO] >: YouTube > YouTube source setup complete.
+2026-08-29T23:32:45.880322808Z [23:32:45.880] [INFO] >: Sources > Loaded source: youtube
+2026-08-29T23:32:46.035063405Z [23:32:46.034] [INFO] >: Qobuz > Initialized with appId: 798273057 (UserToken: false)
+2026-08-29T23:32:46.035124787Z [23:32:46.034] [INFO] >: Sources > Loaded source: qobuz
+2026-08-29T23:32:46.169475079Z [23:32:46.168] [INFO] >: Flowery > Default voice set to: Andrew (4ba7bd1b-cb5f-5c3f-9e1c-9ee8be2b0bdd)
+2026-08-29T23:32:46.172844399Z [23:32:46.172] [INFO] >: Sources > Loaded source: flowery
+2026-08-29T23:32:46.691554707Z [23:32:46.691] [INFO] >: Request > PATCH | [External] (10.0.4.5:51814) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/undefined/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:32:46.691580007Z Body: {"voice":{"sessionId":"c88937626391fdc34abebe07e6423f66","token":"cc816a3cc64d853f","endpoint":"c-mrs06-4a2c0af0.discord.media:2053","channelId":"1540036113517772932"}}
+2026-08-29T23:32:47.627019830Z [23:32:47.626] [NETWORK] >: ConnectionManager > Connection speed: 465.83 Mbps (good). Status: good (quality rating). Download speed: 465.83 Mbps from Cachefly. Time to first byte (TTFB, how fast the server starts sending data): 30ms. DNS lookup (name resolution) is online via google.com in 12ms. Ping (round-trip latency) to 1.1.1.1 averages 3ms with 0% packet loss. Network connection: Ethernet on interface eth0 with IP 10.0.4.4, gateway 10.0.4.1, DNS servers 127.0.0.11.
+2026-08-29T23:32:47.632838765Z [23:32:47.631] [INFO] >: Request > PATCH | [External] (10.0.4.5:51826) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"30","connection":"keep-alive"}
+2026-08-29T23:32:47.632858965Z Body: {"resuming":true,"timeout":60}
+2026-08-29T23:32:47.632861830Z [23:32:47.631] [DEBUG] >: Session > Received PATCH for session yFiEEHfNUycCZPon: { resuming: true, timeout: 60 }
+2026-08-29T23:32:47.632864175Z [23:32:47.631] [DEBUG] >: Session > Updated session yFiEEHfNUycCZPon: { resuming: true, timeout: 60 }
+2026-08-29T23:32:48.496077591Z [23:32:48.495] [INFO] >: Monochrome > Source is ready with 10 API (0 reachable) and 10 streaming instances.
+2026-08-29T23:32:48.496100547Z [23:32:48.496] [WARN] >: Monochrome > No reachable Monochrome instances at startup. Source will stay loaded but degraded.
+2026-08-29T23:32:48.496104174Z [23:32:48.496] [INFO] >: Sources > Loaded source: monochrome
+2026-08-29T23:32:48.527350536Z [23:32:48.527] [INFO] >: StatsManager > Prometheus metrics initialized.
+2026-08-29T23:32:48.527398070Z [23:32:48.527] [INFO] >: PluginManager > Initializing plugins in voice-worker context...
+2026-08-29T23:32:48.527716869Z [23:32:48.527] [INFO] >: PluginManager > Plugins processed for voice-worker.
+2026-08-29T23:32:48.527723953Z [23:32:48.527] [INFO] >: Worker > Worker process 40 started and initialized.
+2026-08-29T23:32:48.609057174Z [23:32:48.608] [WARN] >: Monochrome > No reachable Monochrome instances at startup. Source will stay loaded but degraded.
+2026-08-29T23:32:48.609249072Z [23:32:48.609] [INFO] >: SourceWorker > Micro-worker 1 is ready.
+2026-08-29T23:32:48.695365033Z [23:32:48.695] [INFO] >: Request > PATCH | [External] (10.0.4.5:51826) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/undefined/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:32:48.695390523Z Body: {"voice":{"sessionId":"c88937626391fdc34abebe07e6423f66","token":"cc816a3cc64d853f","endpoint":"c-mrs06-4a2c0af0.discord.media:2053","channelId":"1540036113517772932"}}
+2026-08-29T23:32:50.626592579Z [23:32:50.626] [INFO] >: Request > GET | [External] (10.0.4.5:51828) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.640076603Z [23:32:50.639] [INFO] >: Request > GET | [External] (10.0.4.5:51832) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.658494986Z [23:32:50.658] [INFO] >: Request > GET | [External] (10.0.4.5:51840) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.658923963Z [23:32:50.658] [INFO] >: Request > GET | [External] (10.0.4.5:51854) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.672356275Z [23:32:50.672] [INFO] >: Request > GET | [External] (10.0.4.5:51868) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.683907845Z [23:32:50.683] [INFO] >: Request > GET | [External] (10.0.4.5:51874) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.686025374Z [23:32:50.685] [INFO] >: Request > GET | [External] (10.0.4.5:51890) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.689069603Z [23:32:50.688] [INFO] >: Request > GET | [External] (10.0.4.5:51898) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.700007501Z [23:32:50.699] [INFO] >: Request > GET | [External] (10.0.4.5:51906) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.705422058Z [23:32:50.705] [INFO] >: Request > GET | [External] (10.0.4.5:51910) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.705806457Z [23:32:50.705] [INFO] >: Request > GET | [External] (10.0.4.5:51916) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.725467683Z [23:32:50.724] [INFO] >: Request > GET | [External] (10.0.4.5:51928) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.729414844Z [23:32:50.728] [INFO] >: Request > GET | [External] (10.0.4.5:51938) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.746091960Z [23:32:50.743] [INFO] >: Request > GET | [External] (10.0.4.5:51946) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.766264585Z [23:32:50.766] [INFO] >: Request > GET | [External] (10.0.4.5:51958) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.858123190Z [23:32:50.858] [INFO] >: Request > GET | [External] (10.0.4.5:51960) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.858460696Z [23:32:50.858] [INFO] >: Request > GET | [External] (10.0.4.5:51962) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:50.858760438Z [23:32:50.858] [INFO] >: Request > GET | [External] (10.0.4.5:51972) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:52.225284708Z [23:32:52.225] [INFO] >: Request > GET | [External] (10.0.4.5:51840) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:52.768225781Z [23:32:52.768] [INFO] >: Request > GET | [External] (10.0.4.5:51916) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:53.198804160Z [23:32:53.198] [INFO] >: Request > PATCH | [External] (10.0.4.5:51840) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/undefined/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:32:53.198841122Z Body: {"voice":{"sessionId":"c88937626391fdc34abebe07e6423f66","token":"cc816a3cc64d853f","endpoint":"c-mrs06-4a2c0af0.discord.media:2053","channelId":"1540036113517772932"}}
+2026-08-29T23:32:53.209580098Z [23:32:53.209] [INFO] >: Request > GET | [External] (10.0.4.5:51972) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:53.703613371Z [23:32:53.703] [INFO] >: Request > PATCH | [External] (10.0.4.5:51874) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"14","connection":"keep-alive"}
+2026-08-29T23:32:53.703687227Z Body: {"volume":100}
+2026-08-29T23:32:53.705086569Z [23:32:53.705] [INFO] >: Request > PATCH | [External] (10.0.4.5:51938) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"413","connection":"keep-alive"}
+2026-08-29T23:32:53.705106468Z Body: {"track":{"encoded":"QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==","userData":{"requester":"1018617208554934332"}},"position":0,"volume":100}
+2026-08-29T23:32:53.705221084Z [23:32:53.705] [INFO] >: Request > PATCH | [External] (10.0.4.5:51962) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"430","connection":"keep-alive"}
+2026-08-29T23:32:53.705226505Z Body: {"track":{"encoded":"QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==","userData":{"requester":"1018617208554934332"}},"volume":100,"playing":true,"paused":false}
+2026-08-29T23:32:53.873613366Z [23:32:53.873] [DEBUG] >: Player > New player created for guild 1494309584322433124 in session yFiEEHfNUycCZPon
+2026-08-29T23:32:53.880986629Z [23:32:53.879] [DEBUG] >: Player > Setting volume to 100 for guild 1494309584322433124
+2026-08-29T23:32:53.881010727Z [23:32:53.880] [DEBUG] >: Player > play() called for guild 1494309584322433124 {
+2026-08-29T23:32:53.881013693Z   encoded: 'QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==',
+2026-08-29T23:32:53.881016368Z   noReplace: false,
+2026-08-29T23:32:53.881018192Z   startTime: 0,
+2026-08-29T23:32:53.881019945Z   endTime: 0,
+2026-08-29T23:32:53.881021588Z   track: {
+2026-08-29T23:32:53.881023241Z     title: 'BAD BUNNY - MONACO (Official Video) | nadie sabe lo que va a pasar mañana',
+2026-08-29T23:32:53.881025516Z     author: 'Bad Bunny',
+2026-08-29T23:32:53.881027189Z     length: 440000,
+2026-08-29T23:32:53.881028822Z     identifier: '_PJvpq8uOZM',
+2026-08-29T23:32:53.881030536Z     isSeekable: true,
+2026-08-29T23:32:53.881032179Z     isStream: false,
+2026-08-29T23:32:53.881033862Z     uri: 'https://www.youtube.com/watch?v=_PJvpq8uOZM',
+2026-08-29T23:32:53.881044063Z     artworkUrl: 'https://i.ytimg.com/vi_webp/_PJvpq8uOZM/sddefault.webp',
+2026-08-29T23:32:53.881045886Z     isrc: null,
+2026-08-29T23:32:53.881047549Z     sourceName: 'youtube',
+2026-08-29T23:32:53.881049233Z     position: 0
+2026-08-29T23:32:53.881050876Z   }
+2026-08-29T23:32:53.881052519Z }
+2026-08-29T23:32:53.881420826Z [23:32:53.881] [DEBUG] >: Player > No voice state for guild 1494309584322433124, track is enqueued and will play when voice state is provided.
+2026-08-29T23:32:53.881904721Z [23:32:53.881] [DEBUG] >: Player > play() called for guild 1494309584322433124 {
+2026-08-29T23:32:53.881911324Z   encoded: 'QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==',
+2026-08-29T23:32:53.881914951Z   noReplace: false,
+2026-08-29T23:32:53.881917286Z   startTime: undefined,
+2026-08-29T23:32:53.881919831Z   endTime: 0,
+2026-08-29T23:32:53.881922106Z   track: {
+2026-08-29T23:32:53.881924420Z     title: 'BAD BUNNY - MONACO (Official Video) | nadie sabe lo que va a pasar mañana',
+2026-08-29T23:32:53.881927125Z     author: 'Bad Bunny',
+2026-08-29T23:32:53.881929500Z     length: 440000,
+2026-08-29T23:32:53.881932065Z     identifier: '_PJvpq8uOZM',
+2026-08-29T23:32:53.881934460Z     isSeekable: true,
+2026-08-29T23:32:53.881936734Z     isStream: false,
+2026-08-29T23:32:53.881939099Z     uri: 'https://www.youtube.com/watch?v=_PJvpq8uOZM',
+2026-08-29T23:32:53.881941514Z     artworkUrl: 'https://i.ytimg.com/vi_webp/_PJvpq8uOZM/sddefault.webp',
+2026-08-29T23:32:53.881943959Z     isrc: null,
+2026-08-29T23:32:53.881946123Z     sourceName: 'youtube',
+2026-08-29T23:32:53.881965211Z     position: 0
+2026-08-29T23:32:53.881967736Z   }
+2026-08-29T23:32:53.881970110Z }
+2026-08-29T23:32:53.882918121Z [23:32:53.882] [DEBUG] >: Player > No voice state for guild 1494309584322433124, track is enqueued and will play when voice state is provided.
+2026-08-29T23:32:53.883679745Z [23:32:53.883] [DEBUG] >: Player > Setting volume to 100 for guild 1494309584322433124
+2026-08-29T23:32:53.883979587Z [23:32:53.883] [DEBUG] >: Player > Setting volume to 100 for guild 1494309584322433124
+2026-08-29T23:32:53.965557730Z [23:32:53.965] [INFO] >: Request > GET | [External] (10.0.4.5:51916) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:54.396586237Z [23:32:54.396] [INFO] >: Request > GET | [External] (10.0.4.5:51938) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:55.083248668Z [23:32:55.083] [INFO] >: Request > GET | [External] (10.0.4.5:51916) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:32:55.918028785Z [23:32:55.917] [INFO] >: Request > GET | [External] (10.0.4.5:51916) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:33:07.913322114Z [23:33:07.913] [INFO] >: Request > PATCH | [External] (10.0.4.5:59258) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"413","connection":"keep-alive"}
+2026-08-29T23:33:07.913345369Z Body: {"track":{"encoded":"QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==","userData":{"requester":"1018617208554934332"}},"position":0,"volume":100}
+2026-08-29T23:33:07.916051761Z [23:33:07.915] [DEBUG] >: Player > play() called for guild 1494309584322433124 {
+2026-08-29T23:33:07.916063775Z   encoded: 'QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==',
+2026-08-29T23:33:07.916067101Z   noReplace: false,
+2026-08-29T23:33:07.916069366Z   startTime: 0,
+2026-08-29T23:33:07.916071400Z   endTime: 0,
+2026-08-29T23:33:07.916073444Z   track: {
+2026-08-29T23:33:07.916075438Z     title: 'BAD BUNNY - MONACO (Official Video) | nadie sabe lo que va a pasar mañana',
+2026-08-29T23:33:07.916078173Z     author: 'Bad Bunny',
+2026-08-29T23:33:07.916080227Z     length: 440000,
+2026-08-29T23:33:07.916082251Z     identifier: '_PJvpq8uOZM',
+2026-08-29T23:33:07.916084225Z     isSeekable: true,
+2026-08-29T23:33:07.916086259Z     isStream: false,
+2026-08-29T23:33:07.916097060Z     uri: 'https://www.youtube.com/watch?v=_PJvpq8uOZM',
+2026-08-29T23:33:07.916099295Z     artworkUrl: 'https://i.ytimg.com/vi_webp/_PJvpq8uOZM/sddefault.webp',
+2026-08-29T23:33:07.916101429Z     isrc: null,
+2026-08-29T23:33:07.916103463Z     sourceName: 'youtube',
+2026-08-29T23:33:07.916105477Z     position: 0
+2026-08-29T23:33:07.916107461Z   }
+2026-08-29T23:33:07.916109425Z }
+2026-08-29T23:33:07.916111419Z [23:33:07.915] [DEBUG] >: Player > No voice state for guild 1494309584322433124, track is enqueued and will play when voice state is provided.
+2026-08-29T23:33:07.916620884Z [23:33:07.916] [DEBUG] >: Player > Setting volume to 100 for guild 1494309584322433124
+2026-08-29T23:33:07.919434959Z [23:33:07.919] [INFO] >: Request > GET | [External] (10.0.4.5:59258) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:33:14.714933760Z [23:33:14.714] [INFO] >: Request > PATCH | [External] (10.0.4.5:59272) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"413","connection":"keep-alive"}
+2026-08-29T23:33:14.714954632Z Body: {"track":{"encoded":"QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==","userData":{"requester":"1018617208554934332"}},"position":0,"volume":100}
+2026-08-29T23:33:14.716906855Z [23:33:14.716] [DEBUG] >: Player > play() called for guild 1494309584322433124 {
+2026-08-29T23:33:14.716923768Z   encoded: 'QAAA5wMASkJBRCBCVU5OWSAtIE1PTkFDTyAoT2ZmaWNpYWwgVmlkZW8pIHwgbmFkaWUgc2FiZSBsbyBxdWUgdmEgYSBwYXNhciBtYcOxYW5hAAlCYWQgQnVubnkAAAAAAAa2wAALX1BKdnBxOHVPWk0AAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fUEp2cHE4dU9aTQEANmh0dHBzOi8vaS55dGltZy5jb20vdmlfd2VicC9fUEp2cHE4dU9aTS9zZGRlZmF1bHQud2VicAAAB3lvdXR1YmUAAAAAAAAAAA==',
+2026-08-29T23:33:14.716928457Z   noReplace: false,
+2026-08-29T23:33:14.716931774Z   startTime: 0,
+2026-08-29T23:33:14.716934820Z   endTime: 0,
+2026-08-29T23:33:14.716937706Z   track: {
+2026-08-29T23:33:14.716940531Z     title: 'BAD BUNNY - MONACO (Official Video) | nadie sabe lo que va a pasar mañana',
+2026-08-29T23:33:14.716943948Z     author: 'Bad Bunny',
+2026-08-29T23:33:14.716946924Z     length: 440000,
+2026-08-29T23:33:14.716950631Z     identifier: '_PJvpq8uOZM',
+2026-08-29T23:33:14.716953427Z     isSeekable: true,
+2026-08-29T23:33:14.716970190Z     isStream: false,
+2026-08-29T23:33:14.716973366Z     uri: 'https://www.youtube.com/watch?v=_PJvpq8uOZM',
+2026-08-29T23:33:14.716976362Z     artworkUrl: 'https://i.ytimg.com/vi_webp/_PJvpq8uOZM/sddefault.webp',
+2026-08-29T23:33:14.716979378Z     isrc: null,
+2026-08-29T23:33:14.716982203Z     sourceName: 'youtube',
+2026-08-29T23:33:14.716984949Z     position: 0
+2026-08-29T23:33:14.716987955Z   }
+2026-08-29T23:33:14.716990750Z }
+2026-08-29T23:33:14.717477060Z [23:33:14.717] [DEBUG] >: Player > No voice state for guild 1494309584322433124, track is enqueued and will play when voice state is provided.
+2026-08-29T23:33:14.718109348Z [23:33:14.718] [DEBUG] >: Player > Setting volume to 100 for guild 1494309584322433124
+2026-08-29T23:33:14.721035844Z [23:33:14.720] [INFO] >: Request > GET | [External] (10.0.4.5:59272) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:33:20.005185078Z [23:33:20.005] [INFO] >: Request > PATCH | [External] (10.0.4.5:59272) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"417","connection":"keep-alive"}
+2026-08-29T23:33:20.005210708Z Body: {"track":{"encoded":"QAAA6gMAU0JhZCBCdW5ueSBmdC4gQ2hlbmNobyBDb3JsZW9uZSAtIE1lIFBvcnRvIEJvbml0byAoVmlkZW8gT2ZpY2lhbCkgfCBVbiBWZXJhbm8gU2luIFRpAAlCYWQgQnVubnkAAAAAAALqGAALc2FHWU1oQXBhSDgAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1zYUdZTWhBcGFIOAEAMGh0dHBzOi8vaS55dGltZy5jb20vdmkvc2FHWU1oQXBhSDgvc2RkZWZhdWx0LmpwZwAAB3lvdXR1YmUAAAAAAAAAAA==","userData":{"requester":"1018617208554934332"}},"position":0,"volume":100}
+2026-08-29T23:33:20.007144856Z [23:33:20.006] [DEBUG] >: Player > play() called for guild 1494309584322433124 {
+2026-08-29T23:33:20.007161348Z   encoded: 'QAAA6gMAU0JhZCBCdW5ueSBmdC4gQ2hlbmNobyBDb3JsZW9uZSAtIE1lIFBvcnRvIEJvbml0byAoVmlkZW8gT2ZpY2lhbCkgfCBVbiBWZXJhbm8gU2luIFRpAAlCYWQgQnVubnkAAAAAAALqGAALc2FHWU1oQXBhSDgAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1zYUdZTWhBcGFIOAEAMGh0dHBzOi8vaS55dGltZy5jb20vdmkvc2FHWU1oQXBhSDgvc2RkZWZhdWx0LmpwZwAAB3lvdXR1YmUAAAAAAAAAAA==',
+2026-08-29T23:33:20.007164835Z   noReplace: false,
+2026-08-29T23:33:20.007167430Z   startTime: 0,
+2026-08-29T23:33:20.007169965Z   endTime: 0,
+2026-08-29T23:33:20.007173342Z   track: {
+2026-08-29T23:33:20.007177089Z     title: 'Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti',
+2026-08-29T23:33:20.007181418Z     author: 'Bad Bunny',
+2026-08-29T23:33:20.007185185Z     length: 191000,
+2026-08-29T23:33:20.007188953Z     identifier: 'saGYMhApaH8',
+2026-08-29T23:33:20.007204233Z     isSeekable: true,
+2026-08-29T23:33:20.007206117Z     isStream: false,
+2026-08-29T23:33:20.007207800Z     uri: 'https://www.youtube.com/watch?v=saGYMhApaH8',
+2026-08-29T23:33:20.007209684Z     artworkUrl: 'https://i.ytimg.com/vi/saGYMhApaH8/sddefault.jpg',
+2026-08-29T23:33:20.007212519Z     isrc: null,
+2026-08-29T23:33:20.007215034Z     sourceName: 'youtube',
+2026-08-29T23:33:20.007218040Z     position: 0
+2026-08-29T23:33:20.007220736Z   }
+2026-08-29T23:33:20.007223471Z }
+2026-08-29T23:33:20.007236346Z [23:33:20.007] [DEBUG] >: Player > No voice state for guild 1494309584322433124, track is enqueued and will play when voice state is provided.
+2026-08-29T23:33:20.007927490Z [23:33:20.007] [DEBUG] >: Player > Setting volume to 100 for guild 1494309584322433124
+2026-08-29T23:33:20.010375743Z [23:33:20.010] [INFO] >: Request > GET | [External] (10.0.4.5:59272) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:33:40.276273660Z [23:33:40.276] [INFO] >: Request > GET | [External] (10.0.4.5:41622) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:33:41.009961437Z [23:33:41.009] [INFO] >: Request > GET | [External] (10.0.4.5:41622) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:33:42.264971076Z [23:33:42.264] [INFO] >: Request > DELETE | [External] (10.0.4.5:41622) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:33:42.265842826Z [23:33:42.265] [DEBUG] >: Player > Destroying player for guild 1494309584322433124
+2026-08-29T23:33:57.182900553Z [23:33:57.182] [INFO] >: Request > GET | [External] (10.0.4.5:43402) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:44:58.043739644Z [23:44:58.043] [INFO] >: Request > DELETE | [External] (10.0.4.5:43746) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:07.733036050Z [23:45:07.732] [INFO] >: Request > PATCH | [External] (10.0.4.5:60356) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:45:07.733062782Z Body: {"voice":{"sessionId":"3444049d59de266d503af496d32e3a4a","token":"b34c298e489906fe","endpoint":"c-mrs01-7fcc57de.discord.media:2087","channelId":"1540036113517772932"}}
+2026-08-29T23:45:07.733810669Z [23:45:07.733] [DEBUG] >: Player > New player created for guild 1494309584322433124 in session yFiEEHfNUycCZPon
+2026-08-29T23:45:07.734755824Z [23:45:07.734] [DEBUG] >: Player > Updating voice state for guild 1494309584322433124
+2026-08-29T23:45:07.736120407Z [23:45:07.736] [DEBUG] >: Player > Voice connection state change for guild 1494309584322433124 in session yFiEEHfNUycCZPon: connecting
+2026-08-29T23:45:07.741762093Z [23:45:07.741] [INFO] >: Request > GET | [External] (10.0.4.5:60356) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:07.909749807Z [23:45:07.909] [DEBUG] >: Player > Voice connection state change for guild 1494309584322433124 in session yFiEEHfNUycCZPon: connected
+2026-08-29T23:45:07.909772942Z [23:45:07.909] [INFO] >: Player > Voice connection established for guild 1494309584322433124 in session yFiEEHfNUycCZPon
+2026-08-29T23:45:07.910128915Z [23:45:07.910] [DEBUG] >: Player > Player state change for guild 1494309584322433124 in session yFiEEHfNUycCZPon: idle (reason: connected)
+2026-08-29T23:45:08.213103458Z [23:45:08.212] [INFO] >: Request > PATCH | [External] (10.0.4.5:60356) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"341","connection":"keep-alive"}
+2026-08-29T23:45:08.213123999Z Body: {"track":{"encoded":"QAAAsQMAHk1JTE8gSiAtIFJBUkEgVkVaIChQcm9kLiBUYWl1KQAFVGFpdSAAAAAAAAIXKAALYUJTa3ZJMENrZ1UAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1hQlNrdkkwQ2tnVQEAMGh0dHBzOi8vaS55dGltZy5jb20vdmkvYUJTa3ZJMENrZ1Uvc2RkZWZhdWx0LmpwZwAAB3lvdXR1YmUAAAAAAAAAAA==","userData":{"requester":"1018617208554934332"}},"position":0,"volume":100}
+2026-08-29T23:45:08.214672725Z [23:45:08.214] [DEBUG] >: Player > play() called for guild 1494309584322433124 {
+2026-08-29T23:45:08.214689198Z   encoded: 'QAAAsQMAHk1JTE8gSiAtIFJBUkEgVkVaIChQcm9kLiBUYWl1KQAFVGFpdSAAAAAAAAIXKAALYUJTa3ZJMENrZ1UAAQAraHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1hQlNrdkkwQ2tnVQEAMGh0dHBzOi8vaS55dGltZy5jb20vdmkvYUJTa3ZJMENrZ1Uvc2RkZWZhdWx0LmpwZwAAB3lvdXR1YmUAAAAAAAAAAA==',
+2026-08-29T23:45:08.214703967Z   noReplace: false,
+2026-08-29T23:45:08.214707133Z   startTime: 0,
+2026-08-29T23:45:08.214710230Z   endTime: 0,
+2026-08-29T23:45:08.214712364Z   track: {
+2026-08-29T23:45:08.214714107Z     title: 'MILO J - RARA VEZ (Prod. Taiu)',
+2026-08-29T23:45:08.214715931Z     author: 'Taiu ',
+2026-08-29T23:45:08.214717664Z     length: 137000,
+2026-08-29T23:45:08.214719398Z     identifier: 'aBSkvI0CkgU',
+2026-08-29T23:45:08.214721392Z     isSeekable: true,
+2026-08-29T23:45:08.214723115Z     isStream: false,
+2026-08-29T23:45:08.214724818Z     uri: 'https://www.youtube.com/watch?v=aBSkvI0CkgU',
+2026-08-29T23:45:08.214726652Z     artworkUrl: 'https://i.ytimg.com/vi/aBSkvI0CkgU/sddefault.jpg',
+2026-08-29T23:45:08.214728435Z     isrc: null,
+2026-08-29T23:45:08.214730149Z     sourceName: 'youtube',
+2026-08-29T23:45:08.214731982Z     position: 0
+2026-08-29T23:45:08.214733706Z   }
+2026-08-29T23:45:08.214735449Z }
+2026-08-29T23:45:08.215367978Z [23:45:08.215] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:08.219701180Z [23:45:08.219] [DEBUG] >: Player > Setting volume to 100 for guild 1494309584322433124
+2026-08-29T23:45:08.222653688Z [23:45:08.222] [INFO] >: Request > GET | [External] (10.0.4.5:60356) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:08.545694977Z [23:45:08.545] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:08.545994819Z [23:45:08.545] [DEBUG] >: Player > Got track URL for guild 1494309584322433124 {
+2026-08-29T23:45:08.546002133Z   urlData: {
+2026-08-29T23:45:08.546006292Z     url: 'https://rr3---sn-vg5obxn25po-cjor.googlevideo.com/videoplayback?expire=1788068708&ei=BG-TatrQEejKmLAPmNyPqAk&ip=149.74.154.25&id=o-AEM5PnYoVbiYGrxlX9KpmJsIG2mlOeJrZPXRfhOIVHkr&itag=251&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=587&met=1788047108%2C&mh=Nf&mm=18%2C29&mn=sn-vg5obxn25po-cjor%2Csn-h5qzen7l&ms=aub%2Crdu&mv=m&mvi=3&pl=22&rms=aub%2Caub&gcr=es&initcwndbps=3403750&bui=AR3QkAmsU_1U9fkVnGA3aRM7N-3Wd60W2Io38h_Ok4dCROPQAuCHgtABr3RCDGsVhgEMjDoX6elEnpuk&spc=KBGBclYzXrqsjSzbbiAHOlPRyB6ZeC0IPh2EeLG9uA&vprv=1&svpuc=1&mime=audio%2Fwebm&rqh=1&gir=yes&clen=2360660&dur=136.741&lmt=1787419048594318&mt=1788046602&fvip=4&keepalive=yes&fexp=51565115%2C52135441&c=ANDROID_VR&txp=5532234&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cgcr%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AE0s2JYwRAIgB1yTcjA7d0tenRRixd43YKhr6N_7RH4Gap-GxFYd2A0CIC9im22PGEroX3jOdoTUBw2ksHKAY498PIL3Fpolwo9u&lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgds8JHjdxbDKWylZPFTaJBJ2f8aeKJoG5G_itORmm0s4CIHPwdDWqYeM_vK2zhK8QWFaFHfeOBTD-Pg7bNkv61cLm',
+2026-08-29T23:45:08.546024367Z     protocol: 'http',
+2026-08-29T23:45:08.546026572Z     format: 'webm/opus',
+2026-08-29T23:45:08.546028676Z     hlsUrl: null,
+2026-08-29T23:45:08.546030670Z     formats: '[27 format(s) omitted]',
+2026-08-29T23:45:08.546032804Z     additionalData: { contentLength: 2360660, proxy: undefined }
+2026-08-29T23:45:08.546034848Z   }
+2026-08-29T23:45:08.546036922Z }
+2026-08-29T23:45:08.742945118Z [23:45:08.742] [DEBUG] >: YouTube > Loading stream for "MILO J - RARA VEZ (Prod. Taiu)" with protocol http
+2026-08-29T23:45:08.742972221Z [23:45:08.742] [DEBUG] >: YouTube > Using range buffering for MILO J - RARA VEZ (Prod. Taiu) (2MB)
+2026-08-29T23:45:08.753564337Z [23:45:08.753] [DEBUG] >: Player > Applying filters for guild 1494309584322433124: {}
+2026-08-29T23:45:08.753660928Z [23:45:08.753] [DEBUG] >: Player > Playing resource for guild 1494309584322433124
+2026-08-29T23:45:08.812504099Z [23:45:08.812] [DEBUG] >: Player > Player state change for guild 1494309584322433124 in session yFiEEHfNUycCZPon: playing (reason: requested)
+2026-08-29T23:45:08.813242376Z [23:45:08.813] [DEBUG] >: Player > [SponsorBlock][1494309584322433124] Auto-skip disabled, skipping segment fetch for aBSkvI0CkgU
+2026-08-29T23:45:08.917024926Z [23:45:08.916] [INFO] >: Request > GET | [External] (10.0.4.5:60370) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.882912245Z [23:45:33.882] [INFO] >: Request > GET | [External] (10.0.4.5:47126) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.883549523Z [23:45:33.883] [INFO] >: Request > GET | [External] (10.0.4.5:47140) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.885020306Z [23:45:33.884] [INFO] >: Request > GET | [External] (10.0.4.5:47144) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.885049563Z [23:45:33.884] [INFO] >: Request > GET | [External] (10.0.4.5:47152) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.885053281Z [23:45:33.884] [INFO] >: Request > GET | [External] (10.0.4.5:47166) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.890022539Z [23:45:33.889] [INFO] >: Request > GET | [External] (10.0.4.5:47178) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.911408028Z [23:45:33.911] [INFO] >: Request > GET | [External] (10.0.4.5:47190) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.924813607Z [23:45:33.924] [INFO] >: Request > GET | [External] (10.0.4.5:47194) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.926316343Z [23:45:33.926] [INFO] >: Request > GET | [External] (10.0.4.5:47198) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.926784878Z [23:45:33.926] [INFO] >: Request > GET | [External] (10.0.4.5:47210) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.927122374Z [23:45:33.927] [INFO] >: Request > GET | [External] (10.0.4.5:47222) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.938911844Z [23:45:33.938] [INFO] >: Request > GET | [External] (10.0.4.5:47236) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.939886357Z [23:45:33.939] [INFO] >: Request > GET | [External] (10.0.4.5:47242) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.944472048Z [23:45:33.944] [INFO] >: Request > GET | [External] (10.0.4.5:47256) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:33.944823892Z [23:45:33.944] [INFO] >: Request > GET | [External] (10.0.4.5:47270) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:34.008543919Z [23:45:34.008] [INFO] >: Request > GET | [External] (10.0.4.5:47286) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:34.034345355Z [23:45:34.034] [INFO] >: Request > GET | [External] (10.0.4.5:47300) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:34.040436647Z [23:45:34.040] [INFO] >: Request > GET | [External] (10.0.4.5:47314) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:34.040673885Z [23:45:34.040] [INFO] >: Request > GET | [External] (10.0.4.5:47324) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/loadtracks {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:40.499441736Z [23:45:40.499] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:40.499707812Z [23:45:40.499] [DEBUG] >: YouTube > Retrying same URL for recovery first (cause: undefined)...
+2026-08-29T23:45:40.514523604Z [23:45:40.514] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:40.514535818Z [23:45:40.514] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:40.694044762Z [23:45:40.693] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:40.694078659Z [23:45:40.693] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 2, cause: undefined)
+2026-08-29T23:45:40.708622425Z [23:45:40.708] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:40.708649588Z [23:45:40.708] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:40.863709717Z [23:45:40.863] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:40.863737842Z [23:45:40.863] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 3, cause: undefined)
+2026-08-29T23:45:40.879114201Z [23:45:40.878] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:40.879239749Z [23:45:40.879] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:41.012411055Z [23:45:41.012] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:41.012435232Z [23:45:41.012] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 4, cause: undefined)
+2026-08-29T23:45:41.027542681Z [23:45:41.027] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:41.027562780Z [23:45:41.027] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:41.171005910Z [23:45:41.170] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:41.171027182Z [23:45:41.170] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 5, cause: undefined)
+2026-08-29T23:45:41.185516019Z [23:45:41.185] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:41.185543513Z [23:45:41.185] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:41.308672317Z [23:45:41.308] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:41.308695112Z [23:45:41.308] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 6, cause: undefined)
+2026-08-29T23:45:41.322914508Z [23:45:41.322] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:41.322937223Z [23:45:41.322] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:41.458019911Z [23:45:41.457] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:41.458037526Z [23:45:41.457] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 7, cause: undefined)
+2026-08-29T23:45:41.472662371Z [23:45:41.472] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:41.472691078Z [23:45:41.472] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:41.602776824Z [23:45:41.602] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:41.602828235Z [23:45:41.602] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 8, cause: undefined)
+2026-08-29T23:45:41.617200522Z [23:45:41.617] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:41.617222646Z [23:45:41.617] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:41.736430682Z [23:45:41.736] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:41.737484492Z [23:45:41.736] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 9, cause: undefined)
+2026-08-29T23:45:41.749555287Z [23:45:41.749] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:41.749571599Z [23:45:41.749] [DEBUG] >: YouTube > Attempting to get track URL for MILO J - RARA VEZ (Prod. Taiu) with client: AndroidVR
+2026-08-29T23:45:41.884914931Z [23:45:41.884] [DEBUG] >: YouTube > URL pre-flight check successful for client AndroidVR.
+2026-08-29T23:45:41.884947375Z [23:45:41.884] [DEBUG] >: YouTube > URL recovered for MILO J - RARA VEZ (Prod. Taiu) (resume at 983040 bytes, attempt 10, cause: undefined)
+2026-08-29T23:45:41.898465356Z [23:45:41.898] [WARN] >: YouTube > Got 403 at pos 983040 → forcing recovery
+2026-08-29T23:45:41.898485666Z [23:45:41.898] [ERROR] >: YouTube > Max URL refresh attempts reached
+2026-08-29T23:45:41.901110377Z [23:45:41.900] [ERROR] >: Server > Uncaught Exception: Error: Failed to recover stream
+2026-08-29T23:45:41.901125396Z     at recover (/app/src/sources/youtube/YouTube.ts:2355:26)
+2026-08-29T23:45:41.901128022Z     at fetchNext (/app/src/sources/youtube/YouTube.ts:2229:13)
+2026-08-29T23:45:41.901130116Z     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-29T23:45:41.901254351Z [23:45:41.901] [ERROR] >: Worker–Crash > Uncaught Exception: Error: Failed to recover stream
+2026-08-29T23:45:41.901270302Z     at recover (/app/src/sources/youtube/YouTube.ts:2355:26)
+2026-08-29T23:45:41.901273258Z     at fetchNext (/app/src/sources/youtube/YouTube.ts:2229:13)
+2026-08-29T23:45:41.901275332Z     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-29T23:45:41.934678912Z [23:45:41.934] [WARN] >: Cluster > Player yFiEEHfNUycCZPon:1494309584322433124 unassigned due to worker 1 exit. Will be reassigned on next request.
+2026-08-29T23:45:41.934754251Z [23:45:41.934] [WARN] >: Cluster > Worker 1 failed. Notifying clients for affected players: yFiEEHfNUycCZPon:1494309584322433124
+2026-08-29T23:45:41.934977331Z [23:45:41.934] [INFO] >: Cluster > Terminated worker 40 (id: 1)
+2026-08-29T23:45:41.935074583Z [23:45:41.935] [INFO] >: Cluster > Respawning worker...
+2026-08-29T23:45:42.044615639Z [23:45:42.044] [INFO] >: Request > DELETE | [External] (10.0.4.5:35558) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","connection":"keep-alive"}
+2026-08-29T23:45:42.938796119Z [23:45:42.938] [INFO] >: Cluster > Spawned worker 103 (id: 3)
+2026-08-29T23:45:43.040635944Z [23:45:43.040] [INFO] >: Request > PATCH | [External] (10.0.4.5:35558) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:45:43.040651785Z Body: {"voice":{"sessionId":"3444049d59de266d503af496d32e3a4a","token":"821912e19893ffeb","endpoint":"c-mrs01-7fcc57de.discord.media:2087","channelId":"1540036113517772932"}}
+2026-08-29T23:45:43.171863593Z [WARN] Config: config.js not found, using config.default.js. It is recommended to create a config.js file for your own configuration.
+2026-08-29T23:45:43.173360177Z [23:45:43.173] [INFO] >: Git > Checking for updates...
+2026-08-29T23:45:43.176424886Z [23:45:43.176] [WARN] >: Git > Failed to check for updates: Command failed: git fetch
+2026-08-29T23:45:43.210132757Z [23:45:43.210] [INFO] >: StatsManager > Initialized.
+2026-08-29T23:45:43.213682713Z [23:45:43.213] [INFO] >: Worker > Connected to Master event socket
+2026-08-29T23:45:43.214364779Z [23:45:43.214] [INFO] >: Worker > Connected to Master command socket
+2026-08-29T23:45:43.232038242Z [23:45:43.231] [INFO] >: Sources > Loaded source: vkmusic
+2026-08-29T23:45:43.235466108Z [23:45:43.235] [INFO] >: Sources > Loaded source: amazonmusic
+2026-08-29T23:45:43.239779251Z [23:45:43.239] [INFO] >: Sources > Loaded source: bluesky
+2026-08-29T23:45:43.242010555Z [23:45:43.241] [INFO] >: Sources > Loaded source: rss
+2026-08-29T23:45:43.244670415Z [23:45:43.244] [INFO] >: Sources > Loaded source: songlink
+2026-08-29T23:45:43.247695255Z [23:45:43.247] [INFO] >: Sources > Loaded source: mixcloud
+2026-08-29T23:45:43.250937124Z [23:45:43.250] [INFO] >: Sources > Loaded Audiomack source (official public API).
+2026-08-29T23:45:43.251031099Z [23:45:43.250] [INFO] >: Sources > Loaded source: audiomack
+2026-08-29T23:45:43.254091891Z [23:45:43.253] [INFO] >: Sources > Loaded BandCamp source.
+2026-08-29T23:45:43.254126048Z [23:45:43.254] [INFO] >: Sources > Loaded source: bandcamp
+2026-08-29T23:45:43.259892219Z [23:45:43.259] [INFO] >: Sources > Initializing Deezer source...
+2026-08-29T23:45:43.259915254Z [23:45:43.259] [INFO] >: Sources > Loaded Deezer credentials from CredentialManager.
+2026-08-29T23:45:43.259959351Z [23:45:43.259] [INFO] >: Sources > Loaded source: deezer
+2026-08-29T23:45:43.267301864Z [23:45:43.267] [INFO] >: Sources > Loaded SoundCloud (clientId: Pb72ranhoyt6gw7hM7TkzUItXlMWSNSo) from CredentialManager
+2026-08-29T23:45:43.267319809Z [23:45:43.267] [INFO] >: Sources > Loaded source: soundcloud
+2026-08-29T23:45:43.269788141Z [23:45:43.269] [INFO] >: Sources > Loaded source: local
+2026-08-29T23:45:43.272697844Z [23:45:43.272] [INFO] >: Sources > Loaded source: http
+2026-08-29T23:45:43.296840686Z [23:45:43.296] [INFO] >: Sources > Loaded Eternalbox source.
+2026-08-29T23:45:43.296862639Z [23:45:43.296] [INFO] >: Sources > Loaded source: eternalbox
+2026-08-29T23:45:43.305805109Z [23:45:43.305] [INFO] >: Sources > Loaded source: vimeo
+2026-08-29T23:45:43.308561219Z [23:45:43.308] [INFO] >: Sources > Loaded iHeartRadio source.
+2026-08-29T23:45:43.308598422Z [23:45:43.308] [INFO] >: Sources > Loaded source: iheartradio
+2026-08-29T23:45:43.310753025Z [23:45:43.310] [INFO] >: Sources > Loaded Telegram source.
+2026-08-29T23:45:43.310786782Z [23:45:43.310] [INFO] >: Sources > Loaded source: telegram
+2026-08-29T23:45:43.313257428Z [23:45:43.313] [INFO] >: Sources > Loaded source: shazam
+2026-08-29T23:45:43.317124110Z [23:45:43.317] [INFO] >: Sources > Loaded Genius source (Video/Audio/Article).
+2026-08-29T23:45:43.317144560Z [23:45:43.317] [INFO] >: Sources > Loaded source: genius
+2026-08-29T23:45:43.321160537Z [23:45:43.321] [INFO] >: Sources > Loaded Bilibili source (Video, Audio, Live, Space, Lyrics, Login).
+2026-08-29T23:45:43.321175125Z [23:45:43.321] [INFO] >: Sources > Loaded source: bilibili
+2026-08-29T23:45:43.323889453Z [23:45:43.323] [INFO] >: Sources > Loaded source: pinterest
+2026-08-29T23:45:43.327119909Z [23:45:43.327] [INFO] >: Sources > Loaded Flowery TTS source.
+2026-08-29T23:45:43.329134215Z [23:45:43.329] [INFO] >: Sources > Loaded source: flowery
+2026-08-29T23:45:43.334977838Z [23:45:43.334] [INFO] >: Sources > Loaded LazyPy TTS source.
+2026-08-29T23:45:43.335006465Z [23:45:43.334] [INFO] >: Sources > Loaded source: lazypytts
+2026-08-29T23:45:43.341953507Z [23:45:43.341] [INFO] >: JioSaavn > JioSaavn source initialized.
+2026-08-29T23:45:43.341979718Z [23:45:43.341] [INFO] >: Sources > Loaded source: jiosaavn
+2026-08-29T23:45:43.347436689Z [23:45:43.347] [INFO] >: Sources > Loaded Gaana source.
+2026-08-29T23:45:43.347455115Z [23:45:43.347] [INFO] >: Sources > Loaded source: gaana
+2026-08-29T23:45:43.349762209Z [23:45:43.349] [INFO] >: Sources > Loaded Google TTS source.
+2026-08-29T23:45:43.349787288Z [23:45:43.349] [INFO] >: Sources > Loaded source: google-tts
+2026-08-29T23:45:43.398942909Z [23:45:43.398] [INFO] >: YouTube > Setting up YouTube source...
+2026-08-29T23:45:43.399466082Z [23:45:43.399] [DEBUG] >: YouTube > Initialized clients: Android, AndroidVR, IOS, Music, WebRemix, TV, TVCast, Web, WebEmbedded
+2026-08-29T23:45:43.399745283Z [23:45:43.399] [DEBUG] >: YouTube-Cipher > Explicit player script URL set: https://www.youtube.com/s/player/e937390a/player_embed.vflset/en_US/base.js
+2026-08-29T23:45:43.399748639Z [23:45:43.399] [DEBUG] >: YouTube > Player script URL loaded from cache.
+2026-08-29T23:45:43.415617300Z [23:45:43.415] [INFO] >: Sources > Checking Instagram API parameters...
+2026-08-29T23:45:43.415636818Z [23:45:43.415] [INFO] >: Sources > Loaded Instagram parameters from CredentialManager.
+2026-08-29T23:45:43.415653201Z [23:45:43.415] [INFO] >: Sources > Loaded source: instagram
+2026-08-29T23:45:43.417888863Z [23:45:43.417] [INFO] >: Sources > Loaded Kwai source.
+2026-08-29T23:45:43.417941607Z [23:45:43.417] [INFO] >: Sources > Loaded source: kwai
+2026-08-29T23:45:43.420993872Z [23:45:43.420] [INFO] >: Twitch > Successfully loaded parameters from CredentialManager.
+2026-08-29T23:45:43.421017929Z [23:45:43.420] [INFO] >: Sources > Loaded source: twitch
+2026-08-29T23:45:43.427246904Z [23:45:43.427] [INFO] >: Spotify > Source initialized. Official: false, Anonymous: true, Mobile: true
+2026-08-29T23:45:43.427292053Z [23:45:43.427] [INFO] >: Sources > Loaded source: spotify
+2026-08-29T23:45:43.429791937Z [23:45:43.429] [INFO] >: Sources > Loaded source: applemusic
+2026-08-29T23:45:43.432348272Z [23:45:43.432] [INFO] >: Audius > Audius source initialized successfully.
+2026-08-29T23:45:43.432374264Z [23:45:43.432] [INFO] >: Sources > Loaded source: audius
+2026-08-29T23:45:43.435949430Z [23:45:43.435] [INFO] >: Tidal > Loaded valid token from CredentialManager.
+2026-08-29T23:45:43.436037574Z [23:45:43.435] [INFO] >: Sources > Loaded source: tidal
+2026-08-29T23:45:43.439691787Z [23:45:43.439] [INFO] >: Pandora > Loaded Pandora credentials from CredentialManager.
+2026-08-29T23:45:43.439702117Z [23:45:43.439] [INFO] >: Sources > Loaded source: pandora
+2026-08-29T23:45:43.444985816Z [23:45:43.444] [INFO] >: Sources > Loaded NicoVideo source.
+2026-08-29T23:45:43.445000885Z [23:45:43.444] [INFO] >: Sources > Loaded source: nicovideo
+2026-08-29T23:45:43.447202210Z [23:45:43.447] [INFO] >: Sources > Loaded source: reddit
+2026-08-29T23:45:43.449230113Z [23:45:43.449] [INFO] >: Sources > Loaded Tumblr source.
+2026-08-29T23:45:43.449239551Z [23:45:43.449] [INFO] >: Sources > Loaded source: tumblr
+2026-08-29T23:45:43.463575216Z [23:45:43.463] [INFO] >: Sources > Loaded Netease Cloud Music source.
+2026-08-29T23:45:43.463591749Z [23:45:43.463] [INFO] >: Sources > Loaded source: netease
+2026-08-29T23:45:43.466233984Z [23:45:43.466] [INFO] >: Sources > Loaded LetrasMus source.
+2026-08-29T23:45:43.466328591Z [23:45:43.466] [INFO] >: Sources > Loaded source: letrasmus
+2026-08-29T23:45:43.471037214Z [23:45:43.470] [INFO] >: Sources > Loaded Last.fm source.
+2026-08-29T23:45:43.471056873Z [23:45:43.470] [INFO] >: Sources > Loaded source: lastfm
+2026-08-29T23:45:43.476520347Z [23:45:43.476] [WARN] >: YandexMusic > Missing access token. API resolution disabled; falling back to Song.link.
+2026-08-29T23:45:43.476533222Z [23:45:43.476] [INFO] >: Sources > Loaded source: yandexmusic
+2026-08-29T23:45:43.482170929Z [23:45:43.482] [INFO] >: Monochrome > Initializing latency check for 10 instances...
+2026-08-29T23:45:43.497834335Z [23:45:43.497] [INFO] >: Sources > Google Drive source initialized
+2026-08-29T23:45:43.497896738Z [23:45:43.497] [INFO] >: Sources > Loaded source: googledrive
+2026-08-29T23:45:43.638596823Z [23:45:43.638] [DEBUG] >: YouTube > visitorData refreshed and cached.
+2026-08-29T23:45:43.638655960Z [23:45:43.638] [DEBUG] >: YouTube > Player script URL: /s/player/e937390a/player_embed.vflset/en_US/base.js
+2026-08-29T23:45:43.638766829Z [23:45:43.638] [DEBUG] >: YouTube-Cipher > Explicit player script URL set: https://www.youtube.com/s/player/e937390a/player_embed.vflset/en_US/base.js
+2026-08-29T23:45:43.658620134Z [23:45:43.658] [INFO] >: Sources > Loaded Twitter (X) source.
+2026-08-29T23:45:43.658645725Z [23:45:43.658] [INFO] >: Sources > Loaded source: twitter
+2026-08-29T23:45:43.762837753Z [23:45:43.762] [INFO] >: Monochrome > Source is ready with 10 API (0 reachable) and 10 streaming instances.
+2026-08-29T23:45:43.762856249Z [23:45:43.762] [WARN] >: Monochrome > No reachable Monochrome instances at startup. Source will stay loaded but degraded.
+2026-08-29T23:45:43.762859025Z [23:45:43.762] [INFO] >: Sources > Loaded source: monochrome
+2026-08-29T23:45:43.989872871Z [23:45:43.989] [INFO] >: YouTube-Cipher > Cipher server at https://cipher.kikkia.dev/api is online.
+2026-08-29T23:45:43.989896578Z [23:45:43.989] [INFO] >: YouTube > YouTube source setup complete.
+2026-08-29T23:45:43.989899304Z [23:45:43.989] [INFO] >: Sources > Loaded source: youtube
+2026-08-29T23:45:44.126233001Z [23:45:44.126] [INFO] >: Qobuz > Initialized with appId: 798273057 (UserToken: false)
+2026-08-29T23:45:44.126258020Z [23:45:44.126] [INFO] >: Sources > Loaded source: qobuz
+2026-08-29T23:45:44.174994273Z [23:45:44.174] [INFO] >: StatsManager > Prometheus metrics initialized.
+2026-08-29T23:45:44.175028390Z [23:45:44.174] [INFO] >: PluginManager > Initializing plugins in voice-worker context...
+2026-08-29T23:45:44.175156824Z [23:45:44.175] [INFO] >: PluginManager > Plugins processed for voice-worker.
+2026-08-29T23:45:44.175190029Z [23:45:44.175] [INFO] >: Worker > Worker process 103 started and initialized.
+2026-08-29T23:45:44.217473175Z [23:45:44.217] [INFO] >: Cluster > Worker 3 (PID 103) ready
+2026-08-29T23:45:45.247498146Z [23:45:45.247] [INFO] >: Request > PATCH | [External] (10.0.4.5:52346) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:45:45.247534137Z Body: {"voice":{"sessionId":"3444049d59de266d503af496d32e3a4a","token":"821912e19893ffeb","endpoint":"c-mrs01-7fcc57de.discord.media:2087","channelId":"1540036113517772932"}}
+2026-08-29T23:45:47.251501990Z [23:45:47.251] [INFO] >: Request > PATCH | [External] (10.0.4.5:52350) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:45:47.251525877Z Body: {"voice":{"sessionId":"3444049d59de266d503af496d32e3a4a","token":"821912e19893ffeb","endpoint":"c-mrs01-7fcc57de.discord.media:2087","channelId":"1540036113517772932"}}
+2026-08-29T23:45:51.255291971Z [23:45:51.255] [INFO] >: Request > PATCH | [External] (10.0.4.5:52354) [Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)] - /v4/sessions/yFiEEHfNUycCZPon/players/1494309584322433124 {"authorization":"[REDACTED]","user-agent":"Moonlink.js/5.3.0-dev.2 (Onsra/10.01.2026)","content-type":"application/json","accept-encoding":"gzip, deflate, br, zstd","host":"[REDACTED]","content-length":"168","connection":"keep-alive"}
+2026-08-29T23:45:51.255316339Z Body: {"voice":{"sessionId":"3444049d59de266d503af496d32e3a4a","token":"821912e19893ffeb","endpoint":"c-mrs01-7fcc57de.discord.media:2087","channelId":"1540036113517772932"}}
