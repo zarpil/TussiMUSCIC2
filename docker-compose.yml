@@ -17,6 +17,7 @@ services:
     container_name: tussi-nodelink
     restart: unless-stopped
     environment:
+      - NODELINK_SERVER_PASSWORD=youshallnotpass
       - NODELINK_PASSWORD=youshallnotpass
     networks:
       - tussi-network
@@ -33,10 +34,18 @@ services:
     env_file:
       - ./aurora-bot/aurora-bot/.env
     environment:
-      - MONGODB_URI=mongodb://mongodb:27017/tussimusic
+      - BOT_TOKEN=${BOT_TOKEN}
+      - CLIENT_ID=${CLIENT_ID}
+      - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+      - DISCORD_CLIENT_SECRET=${DISCORD_CLIENT_SECRET}
+      - MONGODB_URI=${MONGODB_URI:-mongodb://mongodb:27017/tussimusic}
       - BACKEND_PORT=3001
+      - WEB_DASHBOARD_URL=${WEB_DASHBOARD_URL:-https://tussi.zarpil.dev}
+      - NEXTAUTH_URL=${NEXTAUTH_URL:-https://tussi.zarpil.dev}
       - NODELINK_HOST=nodelink
-      - NODELINK_PORT=3008
+      - NODELINK_PORT=2333
+      - NODELINK_PASSWORD=youshallnotpass
+      - NODELINK_SERVER_PASSWORD=youshallnotpass
     depends_on:
       - mongodb
       - nodelink
@@ -58,7 +67,13 @@ services:
       - ./aurora-web/aurora-web/.env.local
     environment:
       - INTERNAL_API_URL=http://bot:3001
-      - MONGODB_URI=mongodb://mongodb:27017/tussimusic
+      - MONGODB_URI=${MONGODB_URI:-mongodb://mongodb:27017/tussimusic}
+      - NEXT_PUBLIC_SOCKET_URL=${NEXT_PUBLIC_SOCKET_URL:-https://tussi.zarpil.dev}
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL:-https://tussi.zarpil.dev}
+      - NEXTAUTH_URL=${NEXTAUTH_URL:-https://tussi.zarpil.dev}
+      - DISCORD_CLIENT_ID=${DISCORD_CLIENT_ID}
+      - DISCORD_CLIENT_SECRET=${DISCORD_CLIENT_SECRET}
+      - DISCORD_REDIRECT_URI=${DISCORD_REDIRECT_URI:-https://tussi.zarpil.dev/api/auth/discord/callback}
     depends_on:
       - bot
       - mongodb

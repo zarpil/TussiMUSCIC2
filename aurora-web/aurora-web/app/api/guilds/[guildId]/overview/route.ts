@@ -5,6 +5,8 @@ export const dynamic = 'force-dynamic';
 const getCandidateUrls = () => {
   const urls = [
     process.env.INTERNAL_API_URL,
+    'http://bot:3001',
+    'http://tussi-bot:3001',
     'http://aurora-backend:3001',
     'http://backend:3001',
     'http://host.docker.internal:3001',

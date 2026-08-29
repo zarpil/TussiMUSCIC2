@@ -17,17 +17,17 @@ export default async function connectMoonlink(client) {
   // Initialize nodes using config.json with environment variable overrides for Docker/Coolify support
   const nodes = (config.nodelink?.nodes || []).map(n => ({
     ...n,
-    host: process.env.NODELINK_HOST || n.host || "127.0.0.1",
-    port: Number(process.env.NODELINK_PORT || n.port || 3008),
-    password: process.env.NODELINK_PASSWORD || n.password || "youshallnotpass"
+    host: process.env.NODELINK_HOST || n.host || "nodelink",
+    port: Number(process.env.NODELINK_PORT || n.port || 2333),
+    password: process.env.NODELINK_SERVER_PASSWORD || process.env.NODELINK_PASSWORD || n.password || "youshallnotpass"
   }));
 
   client.moonlink = new Manager({
     nodes: nodes.length > 0 ? nodes : [{
       identifier: "tussi-nodelink",
-      host: process.env.NODELINK_HOST || "127.0.0.1",
-      port: Number(process.env.NODELINK_PORT || 3008),
-      password: process.env.NODELINK_PASSWORD || "youshallnotpass",
+      host: process.env.NODELINK_HOST || "nodelink",
+      port: Number(process.env.NODELINK_PORT || 2333),
+      password: process.env.NODELINK_SERVER_PASSWORD || process.env.NODELINK_PASSWORD || "youshallnotpass",
       secure: false,
       priority: 1
     }],
