@@ -101,7 +101,7 @@ export function useMusicPlayer(guildId: string, userId: string) {
     // Connect to Socket.io server
     const socket = io(socketUrl as any, {
       path: '/socket.io/',
-      transports: ['websocket', 'polling'],
+      transports: ['polling', 'websocket'],
       reconnection: true,
       auth: {
         userId: currentUserId
