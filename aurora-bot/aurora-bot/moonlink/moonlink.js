@@ -200,9 +200,9 @@ export async function initializeDbFeatures(client) {
       for (const n of config.nodelink.nodes) {
         mergedNodes.set(n.identifier, {
           identifier: n.identifier,
-          host: n.host,
-          port: Number(n.port),
-          password: n.password,
+          host: process.env.NODELINK_HOST || n.host || 'nodelink',
+          port: Number(process.env.NODELINK_PORT || n.port || 2333),
+          password: process.env.NODELINK_SERVER_PASSWORD || process.env.NODELINK_PASSWORD || n.password || 'youshallnotpass',
           secure: n.secure ?? false,
           userType: 'all',
           priority: n.priority ?? 1

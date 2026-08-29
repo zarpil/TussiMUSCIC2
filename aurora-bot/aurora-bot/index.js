@@ -30,15 +30,17 @@ manager.on("clusterCreate", async(cluster) =>{
             timestamp: new Date().toISOString()
         }]
     };
-     await fetch(process.env.WEBHOOK, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(send),
-            });
+    if (process.env.WEBHOOK && typeof process.env.WEBHOOK === 'string' && process.env.WEBHOOK.startsWith('http')) {
+      await fetch(process.env.WEBHOOK, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(send),
+      });
     }
-    catch(err)
+  }
+  catch(err)
         {
             console.log(err)
         }
