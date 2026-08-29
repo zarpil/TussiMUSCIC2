@@ -291,9 +291,14 @@ export async function moonlinkEvents(client) {
     console.warn(`[Moonlink Events] ⚠️ trackError for guild ${player?.guildId}, track: ${track?.title || 'Unknown'}, payload:`, payload);
     player.consecutiveErrors = (player.consecutiveErrors || 0) + 1;
 
-    if (player.consecutiveErrors > 4) {
+    if (player.consecutiveErrors > 3) {
       console.error(`[Moonlink Events] ⛔ Stopped skip cascade for guild ${player?.guildId}: ${player.consecutiveErrors} consecutive errors.`);
       player.consecutiveErrors = 0;
+      await deletePlayerState(player?.guildId);
+      if (client.webServer?.socketHandler) {
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('player-destroyed');
+        client.webServer.socketHandler.sendQueueUpdate(player);
+      }
       return;
     }
 
@@ -309,6 +314,13 @@ export async function moonlinkEvents(client) {
           console.error('[Moonlink Events] Error auto-skipping failed track:', e.message);
         }
       }, 1000);
+    } else {
+      // Queue empty and track failed - clean state immediately so dashboard resets smoothly
+      await deletePlayerState(player?.guildId);
+      if (client.webServer?.socketHandler) {
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('queue-end');
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('queue-update', []);
+      }
     }
   });
 
@@ -316,9 +328,14 @@ export async function moonlinkEvents(client) {
     console.warn(`[Moonlink Events] ⚠️ trackException for guild ${player?.guildId}, track: ${track?.title || 'Unknown'}, payload:`, payload);
     player.consecutiveErrors = (player.consecutiveErrors || 0) + 1;
 
-    if (player.consecutiveErrors > 4) {
+    if (player.consecutiveErrors > 3) {
       console.error(`[Moonlink Events] ⛔ Stopped skip cascade for guild ${player?.guildId}: ${player.consecutiveErrors} consecutive exceptions.`);
       player.consecutiveErrors = 0;
+      await deletePlayerState(player?.guildId);
+      if (client.webServer?.socketHandler) {
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('player-destroyed');
+        client.webServer.socketHandler.sendQueueUpdate(player);
+      }
       return;
     }
 
@@ -334,6 +351,13 @@ export async function moonlinkEvents(client) {
           console.error('[Moonlink Events] Error auto-skipping exception track:', e.message);
         }
       }, 1000);
+    } else {
+      // Queue empty and track had exception - clean state immediately
+      await deletePlayerState(player?.guildId);
+      if (client.webServer?.socketHandler) {
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('queue-end');
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('queue-update', []);
+      }
     }
   });
 
@@ -350,9 +374,14 @@ export async function moonlinkEvents(client) {
     console.warn(`[Moonlink Events] ⚠️ trackStuck for guild ${player?.guildId}, track: ${track?.title || 'Unknown'}`);
     player.consecutiveErrors = (player.consecutiveErrors || 0) + 1;
 
-    if (player.consecutiveErrors > 4) {
+    if (player.consecutiveErrors > 3) {
       console.error(`[Moonlink Events] ⛔ Stopped skip cascade for guild ${player?.guildId}: ${player.consecutiveErrors} consecutive stuck tracks.`);
       player.consecutiveErrors = 0;
+      await deletePlayerState(player?.guildId);
+      if (client.webServer?.socketHandler) {
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('player-destroyed');
+        client.webServer.socketHandler.sendQueueUpdate(player);
+      }
       return;
     }
 
@@ -368,12 +397,28 @@ export async function moonlinkEvents(client) {
           console.error('[Moonlink Events] Error skipping stuck track:', e.message);
         }
       }, 1000);
+    } else {
+      // Queue empty and track stuck - clean state immediately
+      await deletePlayerState(player?.guildId);
+      if (client.webServer?.socketHandler) {
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('queue-end');
+        client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('queue-update', []);
+      }
     }
   });
 
   client.moonlink.on("playerDestroyed", async (player) => {
     await deletePlayerState(player.guildId);
     await flushVcConnectedTime(player.guildId);
+    if (client.webServer?.socketHandler) {
+      client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('player-destroyed');
+      client.webServer.socketHandler.io.to(`guild:${player.guildId}`).emit('player_sync', {
+        position: 0,
+        isPlaying: false,
+        isDestroyed: true,
+        timestamp: Date.now()
+      });
+    }
     console.log(`[State Sync] Deleted player state and flushed VC time for guild ${player.guildId} due to playerDestroyed event`);
   });
 
