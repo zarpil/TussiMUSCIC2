@@ -37,7 +37,7 @@ export default function LyricsPanel({ isOpen, onClose, trackTitle, trackAuthor, 
     setError(null);
     
     try {
-      const socketUrl = (typeof window !== 'undefined' && window.self !== window.top) ? undefined : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+      const socketUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://bot:3001');
       const response = await fetch(
         `${socketUrl}/api/lyrics?title=${encodeURIComponent(trackTitle)}&artist=${encodeURIComponent(trackAuthor)}`
       );

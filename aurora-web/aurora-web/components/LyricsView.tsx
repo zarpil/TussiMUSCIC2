@@ -72,7 +72,7 @@ export default function LyricsView({
     };
     const currentUserId = getUserId();
 
-    const socketUrl = (typeof window !== 'undefined' && window.self !== window.top) ? undefined : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+    const socketUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://bot:3001');
     const socket = io(socketUrl, {
       auth: {
         userId: currentUserId

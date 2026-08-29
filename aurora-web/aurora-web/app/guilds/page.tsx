@@ -46,7 +46,7 @@ export default function GuildsPage() {
 
   const fetchFilteredGuilds = async (userId: string) => {
     try {
-      const socketUrl = (typeof window !== 'undefined' && window.self !== window.top) ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+      const socketUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://bot:3001');
       
       const userGuildsRes = await fetch(`${socketUrl}/api/user-guilds/${userId}`, {
         credentials: 'include'

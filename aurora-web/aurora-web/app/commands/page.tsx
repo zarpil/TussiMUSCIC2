@@ -223,7 +223,7 @@ export default function CommandsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const socketUrl = (typeof window !== 'undefined' && window.self !== window.top) ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+    const socketUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://bot:3001');
     fetch(`${socketUrl}/api/commands`, { credentials: 'include' })
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch commands');

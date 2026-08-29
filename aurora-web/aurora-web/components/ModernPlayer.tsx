@@ -52,7 +52,7 @@ const getCleanArtwork = (url: string | null | undefined) => {
   }
   return url;
 };
-const socketUrl = isEmbedded ? undefined : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+const socketUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://bot:3001');
 
 interface ToastData {
   id: number;
@@ -1188,7 +1188,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
       ? `${currentTrack.artwork}&t=${Date.now()}`
       : `${currentTrack.artwork}?t=${Date.now()}`;
 
-    const proxyUrl = `${process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001'}/api/proxy-image?url=${encodeURIComponent(imageUrl)}`;
+    const proxyUrl = `/api/proxy-image?url=${encodeURIComponent(imageUrl)}`;
     img.src = proxyUrl;
 
     img.onload = () => {
