@@ -1,11 +1,10 @@
 FROM node:22-alpine
 
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV NODE_ENV=production
-
 WORKDIR /app
 
-# Copy package files and install dependencies
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Copy package files and install all dependencies (including devDependencies needed for build)
 COPY package*.json ./
 RUN npm install
 
@@ -14,6 +13,9 @@ COPY . .
 
 # Build the Next.js app
 RUN npm run build
+
+# Set NODE_ENV to production for runtime
+ENV NODE_ENV=production
 
 # Expose Next.js port
 EXPOSE 3000
