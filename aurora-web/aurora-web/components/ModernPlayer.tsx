@@ -1069,12 +1069,26 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     }
   };
 
-  // Listen for lyrics events on the main socket
+  // Socket.io for lyrics - single persistent connection
   useEffect(() => {
-    const socket = live.socket;
-    if (!socket) return;
+    const socketUrl = (typeof window !== 'undefined' && window.self !== window.top) ? undefined : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+    const socket = io(socketUrl, {
+      transports: ['polling', 'websocket'],
+      reconnection: true,
+      reconnectionDelay: 1000,
+      reconnectionAttempts: 5,
+      auth: {
+        userId
+      }
+    });
+    lyricsSocketRef.current = socket;
 
-    const handleLyricsData = (data: any) => {
+    socket.on('connect', () => {
+      socket.emit('join-guild', guildId);
+    });
+
+    socket.on('lyrics_data', (data: any) => {
+      // Always accept lyrics data without strict matching
       if (data.lyrics && Array.isArray(data.lyrics) && data.lyrics.length > 0) {
         setLyrics(data.lyrics);
         const isFakeTiming = data.lyrics.every((l: any, idx: number) => l.time === idx * 3 || l.time <= 0);
@@ -1083,28 +1097,29 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
         setLyricsLoading(false);
         setLyricsError(null);
 
+        // Clear timeout
         if (loadingTimeoutRef.current) {
           clearTimeout(loadingTimeoutRef.current);
           loadingTimeoutRef.current = null;
         }
       }
-    };
+    });
 
-    const handleLyricsNotFound = () => {
-      setLyricsError('Letras no disponibles');
+    socket.on('lyrics_not_found', (data: any) => {
+      setLyricsError('No lyrics available');
       setLyrics([]);
       setLyricsLoading(false);
 
+      // Clear timeout
       if (loadingTimeoutRef.current) {
         clearTimeout(loadingTimeoutRef.current);
         loadingTimeoutRef.current = null;
       }
-    };
-
-    socket.on('lyrics_data', handleLyricsData);
-    socket.on('lyrics_not_found', handleLyricsNotFound);
+    });
 
     return () => {
+      if (loadingTimeoutRef.current) {
+        clearTimeout(loadingTimeoutRef.current);
       }
       socket.offAny();
       socket.disconnect();
@@ -1124,9 +1139,9 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
       setLyricsError(null);
       setLyrics([]);
 
-      // Request lyrics from server via main socket
-      if (live.socket?.connected) {
-        live.socket.emit('request-lyrics', { guildId });
+      // Request lyrics from server
+      if (lyricsSocketRef.current?.connected) {
+        lyricsSocketRef.current.emit('request-lyrics', { guildId });
       }
 
       // Set timeout to prevent infinite loading
