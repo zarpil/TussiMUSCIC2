@@ -18,6 +18,10 @@ const nextConfig = {
     
     return [
       {
+        source: '/socket.io',
+        destination: `${backendUrl}/socket.io`,
+      },
+      {
         source: '/socket.io/:path*',
         destination: `${backendUrl}/socket.io/:path*`,
       },
