@@ -5,7 +5,7 @@ const DISCORD_CLIENT_ID = process.env.DISCORD_CLIENT_ID || process.env.NEXT_PUBL
 const DISCORD_CLIENT_SECRET = process.env.DISCORD_CLIENT_SECRET || '';
 const DISCORD_REDIRECT_URI = process.env.DISCORD_REDIRECT_URI || process.env.NEXT_PUBLIC_REDIRECT_URI || 'http://localhost:3000/api/auth/discord/callback';
 const BASE_URL = process.env.NEXTAUTH_URL || process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-const API_URL = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001';
+const API_URL = process.env.INTERNAL_API_URL || 'http://bot:3001';
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;

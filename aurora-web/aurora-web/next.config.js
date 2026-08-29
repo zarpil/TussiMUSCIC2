@@ -14,7 +14,7 @@ const nextConfig = {
     return 'aurora-stable-build';
   },
   async rewrites() {
-    const backendUrl = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_SOCKET_URL || 'http://backend:3001';
+    const backendUrl = process.env.INTERNAL_API_URL || 'http://bot:3001';
     
     return [
       {

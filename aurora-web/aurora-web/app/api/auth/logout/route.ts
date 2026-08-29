@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const API_URL = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001';
+const API_URL = process.env.INTERNAL_API_URL || 'http://bot:3001';
 
 export async function POST(request: NextRequest) {
   const sessionCookie = request.cookies.get('session_id');

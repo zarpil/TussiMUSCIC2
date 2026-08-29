@@ -4,7 +4,7 @@ import fs from 'fs';
 
 export const dynamic = 'force-dynamic';
 
-let API_URL = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001';
+let API_URL = process.env.INTERNAL_API_URL || 'http://bot:3001';
 const isDocker = fs.existsSync('/.dockerenv');
 if (!isDocker && API_URL.includes('host.docker.internal')) {
   API_URL = API_URL.replace('host.docker.internal', 'localhost');

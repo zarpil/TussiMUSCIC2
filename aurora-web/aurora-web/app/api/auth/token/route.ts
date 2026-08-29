@@ -3,7 +3,7 @@ import { randomBytes } from 'crypto';
 
 const DISCORD_CLIENT_ID = process.env.DISCORD_CLIENT_ID || process.env.NEXT_PUBLIC_DISCORD_CLIENT_ID || '';
 const DISCORD_CLIENT_SECRET = process.env.DISCORD_CLIENT_SECRET || '';
-const API_URL = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001';
+const API_URL = process.env.INTERNAL_API_URL || 'http://bot:3001';
 
 export async function POST(request: NextRequest) {
   try {
