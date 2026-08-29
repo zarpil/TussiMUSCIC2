@@ -4,10 +4,10 @@ import { ExternalLink, LogIn } from "lucide-react";
 
 export default function HeroSection({ settings }: { settings?: any }) {
   const siteName = settings?.siteName || "TUSSI MUSIC";
-  const heroSubtitle = settings?.heroSubtitle || "Discord's finest music experience";
-  const heroTitleLine1 = settings?.heroTitleLine1 || "Experience Sound";
-  const heroTitleLine2 = settings?.heroTitleLine2 || "With Tussi Music.";
-  const heroDescription = settings?.heroDescription || "High-fidelity audio streaming for your Discord server. Let the rhythm flow in pure vibrant sound.";
+  const heroSubtitle = settings?.heroSubtitle || "La mejor experiencia musical en Discord";
+  const heroTitleLine1 = settings?.heroTitleLine1 || "Vive la Música";
+  const heroTitleLine2 = settings?.heroTitleLine2 || "Con Tussi Music.";
+  const heroDescription = settings?.heroDescription || "Música en alta fidelidad para tu servidor de Discord. Deja que el ritmo fluya con sonido nítido y vibrante.";
   const botInviteUrl = settings?.botInviteUrl || "https://discord.com/oauth2/authorize?client_id=1310246126712127508&scope=bot&permissions=2151017536";
 
   return (

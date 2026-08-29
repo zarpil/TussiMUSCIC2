@@ -16,70 +16,70 @@ import ScrollReveal from "./ScrollReveal";
 const commands = [
   {
     cmd: "/play",
-    desc: "Play a song or playlist from any supported source.",
+    desc: "Reproduce una canción o lista desde cualquier enlace o búsqueda.",
     icon: Play,
-    example: "/play never gonna give you up",
+    example: "/play bad bunny ojitos lindos",
     color: "hsl(var(--glow-green))",
   },
   {
     cmd: "/skip",
-    desc: "Skip the currently playing track instantly.",
+    desc: "Salta a la siguiente canción de la cola al instante.",
     icon: SkipForward,
     example: "/skip",
     color: "hsl(var(--glow-blue))",
   },
   {
     cmd: "/listqueue",
-    desc: "View and manage your current music queue.",
+    desc: "Consulta y gestiona la cola de reproducción actual.",
     icon: ListMusic,
     example: "/listqueue",
     color: "hsl(var(--glow-purple))",
   },
   {
     cmd: "/repeat",
-    desc: "Loop the current track or the entire queue.",
+    desc: "Activa el bucle para la canción actual o toda la cola.",
     icon: Repeat,
     example: "/repeat",
     color: "hsl(var(--glow-green))",
   },
   {
     cmd: "/volume",
-    desc: "Adjust playback volume from 0 to 200%.",
+    desc: "Ajusta el volumen de reproducción del bot de 0 a 100%.",
     icon: Volume2,
     example: "/volume 75",
     color: "hsl(var(--glow-blue))",
   },
   {
     cmd: "/shuffle",
-    desc: "Shuffle the queue for a fresh listening order.",
+    desc: "Mezcla aleatoriamente las canciones en la cola.",
     icon: Shuffle,
     example: "/shuffle",
     color: "hsl(var(--glow-purple))",
   },
   {
     cmd: "/pause",
-    desc: "Pause playback at any moment.",
+    desc: "Pausa la música en cualquier momento.",
     icon: Pause,
     example: "/pause",
     color: "hsl(var(--glow-green))",
   },
   {
     cmd: "/resume",
-    desc: "Resume playback after pausing.",
+    desc: "Reanuda la reproducción pausada.",
     icon: Play,
     example: "/resume",
     color: "hsl(var(--glow-blue))",
   },
   {
     cmd: "/stop",
-    desc: "Stop playback and clear the queue.",
+    desc: "Detiene la música y vacía la cola del reproductor.",
     icon: Pause,
     example: "/stop",
     color: "hsl(var(--glow-purple))",
   },
   {
     cmd: "/autoplay",
-    desc: "Enable autoplay to keep the music going.",
+    desc: "Activa la reproducción automática de canciones relacionadas.",
     icon: Shuffle,
     example: "/autoplay",
     color: "hsl(var(--glow-green))",
@@ -225,14 +225,13 @@ export default function CommandsSection() {
         <ScrollReveal className="text-center mb-14 sm:mb-20">
           <span className="inline-flex items-center gap-2 rounded-full glass border border-glass-border/15 px-3 py-1 text-xs uppercase tracking-wider text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-aurora-green animate-pulse" />
-            Slash Commands
+            Comandos Slash
           </span>
           <h2 className="mt-5 font-heading text-4xl md:text-5xl font-bold text-gradient">
-            A command for every moment
+            Un comando para cada ocasión
           </h2>
           <p className="mt-4 text-muted-foreground text-base sm:text-lg max-w-xl mx-auto">
-            Hover any card to feel the depth. Aurora's commands are crafted to
-            be as delightful as they are fast.
+            Comandos rápidos y fluidos diseñados para controlar tu música con facilidad desde cualquier canal de Discord.
           </p>
         </ScrollReveal>
 

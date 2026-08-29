@@ -10,29 +10,29 @@ const features = [
 ];
 
 export default function FeaturesSection({ settings }: { settings?: any }) {
-  const featuresTitle = settings?.featuresTitle || "Why Tussi Music?";
-  const featuresSubtitle = settings?.featuresSubtitle || "Everything you need for the ultimate listening experience.";
+  const featuresTitle = settings?.featuresTitle || "¿Por qué elegir Tussi Music?";
+  const featuresSubtitle = settings?.featuresSubtitle || "Todo lo que necesitas para la mejor experiencia musical en Discord.";
 
   const features = [
     { 
       icon: Headphones, 
-      title: settings?.feature1Title || "High-Fidelity Audio", 
-      desc: settings?.feature1Desc || "Crystal clear streaming with lossless quality support." 
+      title: settings?.feature1Title || "Audio de Alta Fidelidad", 
+      desc: settings?.feature1Desc || "Streaming nítido y de calidad superior sin pérdidas." 
     },
     { 
       icon: Globe, 
-      title: settings?.feature2Title || "24/7 Playback", 
-      desc: settings?.feature2Desc || "The music never stops. Always on, always ready." 
+      title: settings?.feature2Title || "Reproducción 24/7", 
+      desc: settings?.feature2Desc || "La música nunca se detiene. Siempre activo y listo en tu canal de voz." 
     },
     { 
       icon: SlidersHorizontal, 
-      title: settings?.feature3Title || "Audio Filters", 
-      desc: settings?.feature3Desc || "Bassboost, nightcore, 8D, and many more effects." 
+      title: settings?.feature3Title || "Filtros de Audio", 
+      desc: settings?.feature3Desc || "Bassboost, nightcore, 8D, karaoke, ecualizador y más efectos." 
     },
     { 
       icon: LayoutDashboard, 
-      title: settings?.feature4Title || "Live Web Dashboard", 
-      desc: settings?.feature4Desc || "Manage queues, synced lyrics and playback in real time from any browser." 
+      title: settings?.feature4Title || "Panel Web en Directo", 
+      desc: settings?.feature4Desc || "Gestiona la cola, letras sincronizadas y reproducción en tiempo real desde el navegador." 
     },
   ];
 

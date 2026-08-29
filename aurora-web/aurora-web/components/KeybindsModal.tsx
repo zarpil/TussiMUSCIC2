@@ -35,28 +35,28 @@ export const DEFAULT_KEYBINDS: Record<string, string> = {
 };
 
 export const KEYBIND_DEFINITIONS: KeybindItem[] = [
-  { id: 'playPause', label: 'Play / Pause', category: 'playback', defaultKey: 'Space', icon: Play },
-  { id: 'nextTrack', label: 'Next Track', category: 'playback', defaultKey: 'KeyN', icon: SkipForward },
-  { id: 'prevTrack', label: 'Previous Track', category: 'playback', defaultKey: 'KeyP', icon: SkipBack },
-  { id: 'seekForward', label: 'Seek Forward (+5s)', category: 'playback', defaultKey: 'ArrowRight', icon: SkipForward },
-  { id: 'seekBackward', label: 'Seek Backward (-5s)', category: 'playback', defaultKey: 'ArrowLeft', icon: SkipBack },
-  { id: 'volumeUp', label: 'Volume Up (+5%)', category: 'playback', defaultKey: 'ArrowUp', icon: Volume2 },
-  { id: 'volumeDown', label: 'Volume Down (-5%)', category: 'playback', defaultKey: 'ArrowDown', icon: Volume2 },
-  { id: 'toggleMute', label: 'Mute / Unmute', category: 'playback', defaultKey: 'KeyM', icon: VolumeX },
+  { id: 'playPause', label: 'Reproducir / Pausar', category: 'playback', defaultKey: 'Space', icon: Play },
+  { id: 'nextTrack', label: 'Siguiente Canción', category: 'playback', defaultKey: 'KeyN', icon: SkipForward },
+  { id: 'prevTrack', label: 'Canción Anterior', category: 'playback', defaultKey: 'KeyP', icon: SkipBack },
+  { id: 'seekForward', label: 'Avanzar (+5s)', category: 'playback', defaultKey: 'ArrowRight', icon: SkipForward },
+  { id: 'seekBackward', label: 'Retroceder (-5s)', category: 'playback', defaultKey: 'ArrowLeft', icon: SkipBack },
+  { id: 'volumeUp', label: 'Subir Volumen (+5%)', category: 'playback', defaultKey: 'ArrowUp', icon: Volume2 },
+  { id: 'volumeDown', label: 'Bajar Volumen (-5%)', category: 'playback', defaultKey: 'ArrowDown', icon: Volume2 },
+  { id: 'toggleMute', label: 'Silenciar / Activar Sonido', category: 'playback', defaultKey: 'KeyM', icon: VolumeX },
   
-  { id: 'navPlayer', label: 'Go to Player View', category: 'navigation', defaultKey: 'Digit1', icon: Disc },
-  { id: 'navExplore', label: 'Go to Explore View', category: 'navigation', defaultKey: 'Digit2', icon: Compass },
-  { id: 'navPlaylists', label: 'Go to Playlists View', category: 'navigation', defaultKey: 'Digit3', icon: ListMusic },
-  { id: 'navOverview', label: 'Go to Server Overview', category: 'navigation', defaultKey: 'Digit4', icon: BarChart3 },
-  { id: 'navPremium', label: 'Go to Premium View', category: 'navigation', defaultKey: 'Digit5', icon: Crown },
+  { id: 'navPlayer', label: 'Ir al Reproductor', category: 'navigation', defaultKey: 'Digit1', icon: Disc },
+  { id: 'navExplore', label: 'Ir a Explorar', category: 'navigation', defaultKey: 'Digit2', icon: Compass },
+  { id: 'navPlaylists', label: 'Ir a Listas de Reproducción', category: 'navigation', defaultKey: 'Digit3', icon: ListMusic },
+  { id: 'navOverview', label: 'Ir al Resumen del Servidor', category: 'navigation', defaultKey: 'Digit4', icon: BarChart3 },
+  { id: 'navPremium', label: 'Ir a Premium', category: 'navigation', defaultKey: 'Digit5', icon: Crown },
 
-  { id: 'navExploreArtists', label: 'Explore ➔ Popular Artists', category: 'navigation', defaultKey: 'KeyA', icon: Music },
-  { id: 'navExploreLiked', label: 'Explore ➔ Liked Songs', category: 'navigation', defaultKey: 'KeyH', icon: Heart },
-  { id: 'navExploreDiscover', label: 'Explore ➔ Discover', category: 'navigation', defaultKey: 'KeyD', icon: Compass },
-  { id: 'navExploreMoods', label: 'Explore ➔ Moods & Genres', category: 'navigation', defaultKey: 'KeyG', icon: Sliders },
+  { id: 'navExploreArtists', label: 'Explorar ➔ Artistas Populares', category: 'navigation', defaultKey: 'KeyA', icon: Music },
+  { id: 'navExploreLiked', label: 'Explorar ➔ Canciones Favoritas', category: 'navigation', defaultKey: 'KeyH', icon: Heart },
+  { id: 'navExploreDiscover', label: 'Explorar ➔ Descubrir', category: 'navigation', defaultKey: 'KeyD', icon: Compass },
+  { id: 'navExploreMoods', label: 'Explorar ➔ Géneros y Estados de Ánimo', category: 'navigation', defaultKey: 'KeyG', icon: Sliders },
 
-  { id: 'toggleQueue', label: 'Toggle Queue Panel', category: 'panels', defaultKey: 'KeyQ', icon: ListMusic },
-  { id: 'toggleSearch', label: 'Open Search', category: 'panels', defaultKey: 'KeyS', icon: Search }
+  { id: 'toggleQueue', label: 'Mostrar/Ocultar Cola', category: 'panels', defaultKey: 'KeyQ', icon: ListMusic },
+  { id: 'toggleSearch', label: 'Abrir Búsqueda', category: 'panels', defaultKey: 'KeyS', icon: Search }
 ];
 
 export function formatKeyDisplay(code: string): string {
@@ -177,12 +177,12 @@ export default function KeybindsModal({
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-white font-black text-lg tracking-wide">Custom Keybinds</h3>
+                  <h3 className="text-white font-black text-lg tracking-wide">Atajos de Teclado</h3>
                   <span className="bg-gradient-to-r from-amber-400 to-yellow-500 text-black text-[10px] font-black uppercase px-2 py-0.5 rounded-full tracking-wider flex items-center gap-1 shadow-md">
-                    <Sparkles className="w-3 h-3 fill-black" /> PRO FEATURE
+                    <Sparkles className="w-3 h-3 fill-black" /> FUNCIÓN PRO
                   </span>
                 </div>
-                <p className="text-white/40 text-xs mt-0.5">Customize shortcuts for instant playback control and navigation</p>
+                <p className="text-white/40 text-xs mt-0.5">Personaliza atajos para control instantáneo y navegación rápida</p>
               </div>
             </div>
 
@@ -200,9 +200,9 @@ export default function KeybindsModal({
               <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
                 <Crown className="w-8 h-8" />
               </div>
-              <h4 className="text-white font-bold text-xl">Unlock Custom Keybinds</h4>
+              <h4 className="text-white font-bold text-xl">Desbloquear Atajos de Teclado</h4>
               <p className="text-white/60 text-sm max-w-md">
-                Custom keyboard shortcuts & hotkeys are an exclusive Premium feature. Upgrade to Aurora Premium to customize playback & navigation keybinds!
+                Los atajos de teclado personalizados son una función exclusiva de Premium. ¡Mejora tu cuenta para activar y personalizar atajos de reproducción y navegación!
               </p>
               <button
                 onClick={() => {
@@ -211,7 +211,7 @@ export default function KeybindsModal({
                 }}
                 className="mt-2 px-8 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-black rounded-full shadow-xl hover:scale-105 transition duration-300"
               >
-                Upgrade to Premium
+                Mejorar a Premium
               </button>
             </div>
           ) : (
@@ -227,15 +227,15 @@ export default function KeybindsModal({
                   </div>
                   <div>
                     <div className="text-white font-bold text-sm flex items-center gap-2">
-                      <span>Enable Keyboard Shortcuts</span>
+                      <span>Activar Atajos de Teclado</span>
                       <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-full ${
                         keybindsEnabled ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
                       }`}>
-                        {keybindsEnabled ? 'ON' : 'OFF (DEFAULT)'}
+                        {keybindsEnabled ? 'ACTIVO' : 'INACTIVO'}
                       </span>
                     </div>
                     <p className="text-white/40 text-xs mt-0.5">
-                      Shortcuts will only work when this website tab is active and focused
+                      Los atajos solo funcionarán cuando esta pestaña de la web esté activa y visible
                     </p>
                   </div>
                 </div>
@@ -270,10 +270,10 @@ export default function KeybindsModal({
               <div className="px-6 py-3 bg-white/5 border-b border-white/5 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-2">
                   {[
-                    { id: 'all', label: 'All Keybinds' },
-                    { id: 'playback', label: 'Playback' },
-                    { id: 'navigation', label: 'Navigation' },
-                    { id: 'panels', label: 'Panels' }
+                    { id: 'all', label: 'Todos' },
+                    { id: 'playback', label: 'Reproducción' },
+                    { id: 'navigation', label: 'Navegación' },
+                    { id: 'panels', label: 'Paneles' }
                   ].map(cat => (
                     <button
                       key={cat.id}
@@ -291,10 +291,10 @@ export default function KeybindsModal({
 
                 <button
                   onClick={handleReset}
-                  className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition px-3 py-1 rounded-lg hover:bg-white/5"
+                  className="flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition px-3 py-1 rounded-lg hover:bg-white/5 cursor-pointer"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
-                  <span>Reset Defaults</span>
+                  <span>Restablecer por Defecto</span>
                 </button>
               </div>
 
@@ -328,7 +328,7 @@ export default function KeybindsModal({
                       <div>
                         {isEditing ? (
                           <span className="px-4 py-2 bg-amber-500 text-black font-black text-xs rounded-xl animate-pulse shadow-lg">
-                            Press any key... (Esc to cancel)
+                            Pulsa una tecla... (Esc para cancelar)
                           </span>
                         ) : (
                           <button
@@ -336,7 +336,7 @@ export default function KeybindsModal({
                             className="px-4 py-2 bg-white/10 hover:bg-amber-500/20 border border-white/15 hover:border-amber-500/50 rounded-xl text-amber-300 font-mono font-bold text-xs transition flex items-center gap-2 group cursor-pointer"
                           >
                             <span>{formatKeyDisplay(currentCode)}</span>
-                            <span className="text-[10px] text-white/30 group-hover:text-amber-300 transition">Edit</span>
+                            <span className="text-[10px] text-white/30 group-hover:text-amber-300 transition">Editar</span>
                           </button>
                         )}
                       </div>
@@ -349,27 +349,27 @@ export default function KeybindsModal({
               <div className="p-5 bg-white/5 border-t border-white/10 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-2 text-xs text-white/40">
                   <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span>Shortcuts are automatically paused while typing in any search box or input field.</span>
+                  <span>Los atajos se pausan automáticamente al escribir en campos de búsqueda o texto.</span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <button
                     onClick={onClose}
-                    className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition"
+                    className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition cursor-pointer"
                   >
-                    Cancel
+                    Cancelar
                   </button>
                   <button
                     onClick={handleSave}
-                    className="px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-black text-xs shadow-lg hover:scale-105 transition flex items-center gap-1.5"
+                    className="px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-black text-xs shadow-lg hover:scale-105 transition flex items-center gap-1.5 cursor-pointer"
                   >
                     {savedSuccess ? (
                       <>
                         <Check className="w-4 h-4" />
-                        <span>Saved!</span>
+                        <span>¡Guardado!</span>
                       </>
                     ) : (
-                      <span>Save Keybinds</span>
+                      <span>Guardar Atajos</span>
                     )}
                   </button>
                 </div>

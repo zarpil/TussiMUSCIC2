@@ -136,65 +136,65 @@ interface MoodGenreCard {
 }
 
 const MOODS: MoodGenreCard[] = [
-  { id: 'chill', name: 'Chill & Relax', query: 'chill relaxing lofi acoustic', color: 'from-blue-600/30 to-indigo-800/30 hover:shadow-blue-500/10 border-blue-500/20', icon: Coffee },
-  { id: 'focus', name: 'Focus & Study', query: 'focus study deep work synthwave lofi', color: 'from-emerald-600/30 to-teal-800/30 hover:shadow-emerald-500/10 border-emerald-500/20', icon: Activity },
-  { id: 'energy', name: 'Energy Boost', query: 'energy workout electronic high energy', color: 'from-amber-500/30 to-orange-700/30 hover:shadow-orange-500/10 border-orange-500/20', icon: Zap },
-  { id: 'workout', name: 'Workout & Gym', query: 'workout running motivation phonk beast mode', color: 'from-rose-600/30 to-red-800/30 hover:shadow-rose-500/10 border-rose-500/20', icon: Flame },
-  { id: 'sleep', name: 'Sleep & Ambient', query: 'sleep ambient rain white noise calm sleep', color: 'from-violet-600/30 to-fuchsia-800/30 hover:shadow-violet-500/10 border-violet-500/20', icon: Headphones },
-  { id: 'romance', name: 'Romance & Love', query: 'love songs romantic acoustic r&b love', color: 'from-pink-500/30 to-rose-700/30 hover:shadow-pink-500/10 border-pink-500/20', icon: Heart },
-  { id: 'feel_good', name: 'Feel Good & Happy', query: 'happy feel good upbeat pop summer vibes', color: 'from-cyan-500/30 to-blue-700/30 hover:shadow-cyan-500/10 border-cyan-500/20', icon: Star },
-  { id: 'party', name: 'Party & Dance', query: 'party dance club hits edm house music', color: 'from-purple-500/30 to-violet-700/30 hover:shadow-purple-500/10 border-purple-500/20', icon: Disc },
-  { id: 'melancholy', name: 'Melancholy & Sad', query: 'sad songs emotional heartbreak acoustic sad', color: 'from-slate-700/30 to-zinc-900/30 hover:shadow-slate-500/10 border-slate-500/20', icon: Cloud },
-  { id: 'retro', name: 'Retro & Nostalgia', query: '80s hits synthwave retro 90s nostalgia', color: 'from-amber-600/30 to-rose-800/30 hover:shadow-amber-500/10 border-amber-500/20', icon: History },
-  { id: 'adventure', name: 'Road Trip & Adventure', query: 'road trip driving music upbeat rock indie', color: 'from-teal-600/30 to-emerald-800/30 hover:shadow-teal-500/10 border-teal-500/20', icon: Compass },
-  { id: 'gaming', name: 'Gaming Beats', query: 'gaming lofi phonk speed up gaming music', color: 'from-violet-600/30 to-indigo-800/30 hover:shadow-violet-500/10 border-violet-500/20', icon: Activity }
+  { id: 'chill', name: 'Chill y Relax', query: 'chill relaxing lofi acoustic', color: 'from-blue-600/30 to-indigo-800/30 hover:shadow-blue-500/10 border-blue-500/20', icon: Coffee },
+  { id: 'focus', name: 'Concentración y Estudio', query: 'focus study deep work synthwave lofi', color: 'from-emerald-600/30 to-teal-800/30 hover:shadow-emerald-500/10 border-emerald-500/20', icon: Activity },
+  { id: 'energy', name: 'Energía al Máximo', query: 'energy workout electronic high energy', color: 'from-amber-500/30 to-orange-700/30 hover:shadow-orange-500/10 border-orange-500/20', icon: Zap },
+  { id: 'workout', name: 'Entrenamiento y Gimnasio', query: 'workout running motivation phonk beast mode', color: 'from-rose-600/30 to-red-800/30 hover:shadow-rose-500/10 border-rose-500/20', icon: Flame },
+  { id: 'sleep', name: 'Dormir y Ambiente', query: 'sleep ambient rain white noise calm sleep', color: 'from-violet-600/30 to-fuchsia-800/30 hover:shadow-violet-500/10 border-violet-500/20', icon: Headphones },
+  { id: 'romance', name: 'Romance y Amor', query: 'love songs romantic acoustic r&b love', color: 'from-pink-500/30 to-rose-700/30 hover:shadow-pink-500/10 border-pink-500/20', icon: Heart },
+  { id: 'feel_good', name: 'Buen Rollo y Alegría', query: 'happy feel good upbeat pop summer vibes', color: 'from-cyan-500/30 to-blue-700/30 hover:shadow-cyan-500/10 border-cyan-500/20', icon: Star },
+  { id: 'party', name: 'Fiesta y Baile', query: 'party dance club hits edm house music', color: 'from-purple-500/30 to-violet-700/30 hover:shadow-purple-500/10 border-purple-500/20', icon: Disc },
+  { id: 'melancholy', name: 'Melancolía y Baladas', query: 'sad songs emotional heartbreak acoustic sad', color: 'from-slate-700/30 to-zinc-900/30 hover:shadow-slate-500/10 border-slate-500/20', icon: Cloud },
+  { id: 'retro', name: 'Retro y Nostalgia', query: '80s hits synthwave retro 90s nostalgia', color: 'from-amber-600/30 to-rose-800/30 hover:shadow-amber-500/10 border-amber-500/20', icon: History },
+  { id: 'adventure', name: 'Viaje y Carretera', query: 'road trip driving music upbeat rock indie', color: 'from-teal-600/30 to-emerald-800/30 hover:shadow-teal-500/10 border-teal-500/20', icon: Compass },
+  { id: 'gaming', name: 'Ritmos Gaming', query: 'gaming lofi phonk speed up gaming music', color: 'from-violet-600/30 to-indigo-800/30 hover:shadow-violet-500/10 border-violet-500/20', icon: Activity }
 ];
 
 const GENRES: MoodGenreCard[] = [
   { id: 'pop', name: 'Pop', query: 'pop hits billboard pop currents', color: 'from-pink-600/30 to-rose-800/30 hover:shadow-pink-500/10 border-pink-500/20', icon: Mic },
-  { id: 'hiphop', name: 'Hip-Hop & Rap', query: 'hip hop rap hit rap caviar trap', color: 'from-emerald-600/30 to-green-800/30 hover:shadow-green-500/10 border-green-500/20', icon: Headphones },
-  { id: 'rock', name: 'Rock & Metal', query: 'classic rock hard rock heavy metal rock hits', color: 'from-slate-600/30 to-zinc-800/30 hover:shadow-slate-500/10 border-slate-500/20', icon: Activity },
-  { id: 'electronic', name: 'Electronic & EDM', query: 'edm techno house music electro mint', color: 'from-cyan-600/30 to-blue-800/30 hover:shadow-cyan-500/10 border-cyan-500/20', icon: Zap },
-  { id: 'rnb', name: 'R&B & Soul', query: 'r&b soul smooth r&b neo soul', color: 'from-indigo-600/30 to-purple-800/30 hover:shadow-indigo-500/10 border-indigo-500/20', icon: Mic },
-  { id: 'lofi', name: 'Lofi & Chillhop', query: 'lofi lofi hiphop chillhop study beats', color: 'from-amber-700/30 to-yellow-900/30 hover:shadow-amber-600/10 border-amber-600/20', icon: Coffee },
+  { id: 'hiphop', name: 'Hip-Hop y Rap', query: 'hip hop rap hit rap caviar trap', color: 'from-emerald-600/30 to-green-800/30 hover:shadow-green-500/10 border-green-500/20', icon: Headphones },
+  { id: 'rock', name: 'Rock y Metal', query: 'classic rock hard rock heavy metal rock hits', color: 'from-slate-600/30 to-zinc-800/30 hover:shadow-slate-500/10 border-slate-500/20', icon: Activity },
+  { id: 'electronic', name: 'Electrónica y EDM', query: 'edm techno house music electro mint', color: 'from-cyan-600/30 to-blue-800/30 hover:shadow-cyan-500/10 border-cyan-500/20', icon: Zap },
+  { id: 'rnb', name: 'R&B y Soul', query: 'r&b soul smooth r&b neo soul', color: 'from-indigo-600/30 to-purple-800/30 hover:shadow-indigo-500/10 border-indigo-500/20', icon: Mic },
+  { id: 'lofi', name: 'Lofi y Chillhop', query: 'lofi lofi hiphop chillhop study beats', color: 'from-amber-700/30 to-yellow-900/30 hover:shadow-amber-600/10 border-amber-600/20', icon: Coffee },
   { id: 'kpop', name: 'K-Pop', query: 'kpop bts blackpink newjeans twice', color: 'from-fuchsia-600/30 to-pink-800/30 hover:shadow-fuchsia-500/10 border-fuchsia-500/20', icon: Star },
-  { id: 'anime', name: 'Anime & J-Pop', query: 'anime ost anime opening jpop vocaloid', color: 'from-violet-600/30 to-purple-800/30 hover:shadow-violet-500/10 border-violet-500/20', icon: Zap },
-  { id: 'latin', name: 'Latin & Reggaeton', query: 'latin hits bad bunny reggaeton salsa', color: 'from-orange-600/30 to-red-800/30 hover:shadow-orange-500/10 border-orange-500/20', icon: Disc },
-  { id: 'jazz', name: 'Jazz & Blues', query: 'jazz swing blues smooth jazz classic jazz', color: 'from-yellow-700/30 to-amber-900/30 hover:shadow-yellow-600/10 border-yellow-600/20', icon: Radio },
-  { id: 'classical', name: 'Classical & Instrumental', query: 'classical piano orchestral violin chill study', color: 'from-emerald-700/30 to-teal-900/30 hover:shadow-emerald-600/10 border-emerald-600/20', icon: Music },
-  { id: 'metal', name: 'Heavy Metal & Core', query: 'heavy metal slipknot metallica deathcore doom', color: 'from-stone-800/30 to-red-950/30 hover:shadow-red-950/20 border-red-950/30', icon: Flame },
-  { id: 'folk', name: 'Folk & Acoustic', query: 'indie folk acoustic guitar fingerstyle bon iver', color: 'from-yellow-800/30 to-amber-950/30 hover:shadow-yellow-800/10 border-yellow-800/20', icon: Heart }
+  { id: 'anime', name: 'Anime y J-Pop', query: 'anime ost anime opening jpop vocaloid', color: 'from-violet-600/30 to-purple-800/30 hover:shadow-violet-500/10 border-violet-500/20', icon: Zap },
+  { id: 'latin', name: 'Latino y Reggaeton', query: 'latin hits bad bunny reggaeton salsa', color: 'from-orange-600/30 to-red-800/30 hover:shadow-orange-500/10 border-orange-500/20', icon: Disc },
+  { id: 'jazz', name: 'Jazz y Blues', query: 'jazz swing blues smooth jazz classic jazz', color: 'from-yellow-700/30 to-amber-900/30 hover:shadow-yellow-600/10 border-yellow-600/20', icon: Radio },
+  { id: 'classical', name: 'Clásica e Instrumental', query: 'classical piano orchestral violin chill study', color: 'from-emerald-700/30 to-teal-900/30 hover:shadow-emerald-600/10 border-emerald-600/20', icon: Music },
+  { id: 'metal', name: 'Heavy Metal y Core', query: 'heavy metal slipknot metallica deathcore doom', color: 'from-stone-800/30 to-red-950/30 hover:shadow-red-950/20 border-red-950/30', icon: Flame },
+  { id: 'folk', name: 'Folk y Acústico', query: 'indie folk acoustic guitar fingerstyle bon iver', color: 'from-yellow-800/30 to-amber-950/30 hover:shadow-yellow-800/10 border-yellow-800/20', icon: Heart }
 ];
 
 const CATEGORIES = [
-  { id: 'playlists', name: 'Community Playlists', queries: [''], icon: Disc, color: 'from-fuchsia-500 to-purple-600', isGlobalPlaylists: true },
-  { id: 'foryou', name: 'Made For You', queries: [''], icon: Star, color: 'from-blue-400 to-indigo-600', isPersonalized: true },
-  { id: 'trending_podcasts', name: 'Trending Podcasts', queries: ['joe rogan podcast', 'lex fridman podcast', 'huberman lab podcast', 'ted radio hour'], icon: Radio, color: 'from-amber-600 to-amber-900' },
-  { id: 'top_charts', name: 'Top Music Charts', queries: ['billboard top 100', 'global hits', 'spotify top 50 global'], icon: Flame, color: 'from-purple-600 to-indigo-800' },
-  { id: 'weekly_trends', name: 'Hot Weekly Trends', queries: ['trending music hits 2026', 'hot hits tiktok', 'viral hits'], icon: Zap, color: 'from-teal-600 to-cyan-800' },
-  { id: 'artists', name: 'Popular Artists', queries: ['Drake', 'Taylor Swift', 'The Weeknd', 'Bad Bunny', 'Billie Eilish', 'Kendrick Lamar', 'Ariana Grande', 'Post Malone', 'Dua Lipa', 'Bruno Mars', 'Eminem', 'Coldplay', 'Rihanna', 'Kanye West', 'Travis Scott', 'Justin Bieber', 'Beyonce', 'Olivia Rodrigo', 'Lana Del Rey', 'Sabrina Carpenter', 'SZA', 'Harry Styles'], icon: User, color: 'from-purple-500 to-pink-500', isArtist: true },
-  { id: 'tophits', name: 'Today\'s Top Hits', queries: ['pop hits', 'billboard', 'popular song'], icon: Flame, color: 'from-orange-500 to-red-500' },
-  { id: 'pop', name: 'Pop Currents', queries: ['latest pop', 'dance pop', 'pop rock'], icon: Mic, color: 'from-pink-400 to-rose-600' },
-  { id: 'hiphop', name: 'RapCaviar', queries: ['hip hop', 'rap hit', 'chill rap'], icon: Headphones, color: 'from-green-500 to-emerald-700' },
-  { id: 'rnb', name: 'Are & Be', queries: ['r&b', 'soul music', 'smooth rnb'], icon: Mic, color: 'from-indigo-600 to-cyan-800' },
-  { id: 'rock', name: 'Rock Classics', queries: ['classic rock', 'hard rock', 'indie rock'], icon: Activity, color: 'from-gray-600 to-gray-900' },
-  { id: 'workout', name: 'Beast Mode', queries: ['workout', 'gym motivation', 'pump up'], icon: Zap, color: 'from-red-600 to-black' },
-  { id: 'kpop', name: 'K-Pop ON!', queries: ['k-pop', 'bts', 'blackpink'], icon: Star, color: 'from-pink-500 to-purple-500' },
-  { id: 'electronic', name: 'mint', queries: ['edm', 'house music', 'techno'], icon: Zap, color: 'from-cyan-400 to-blue-600' },
-  { id: 'lofi', name: 'lofi beats', queries: ['lofi', 'chillhop', 'relaxing beats'], icon: Coffee, color: 'from-amber-700 to-orange-900' },
-  { id: 'acoustic', name: 'Chill Tracks', queries: ['acoustic covers', 'unplugged', 'chill acoustic'], icon: Headphones, color: 'from-amber-600 to-yellow-800' },
-  { id: 'anime', name: 'Anime Now', queries: ['anime ost', 'anime opening', 'j-pop'], icon: Zap, color: 'from-fuchsia-600 to-pink-700' },
+  { id: 'playlists', name: 'Listas de la Comunidad', queries: [''], icon: Disc, color: 'from-fuchsia-500 to-purple-600', isGlobalPlaylists: true },
+  { id: 'foryou', name: 'Hecho Para Ti', queries: [''], icon: Star, color: 'from-blue-400 to-indigo-600', isPersonalized: true },
+  { id: 'trending_podcasts', name: 'Podcasts en Tendencia', queries: ['the wild project', 'jordi wild podcast', 'lex fridman podcast', 'huberman lab podcast', 'ted radio hour'], icon: Radio, color: 'from-amber-600 to-amber-900' },
+  { id: 'top_charts', name: 'Top Listas y Éxitos', queries: ['billboard top 100', 'global hits', 'spotify top 50 global', 'top 50 espana'], icon: Flame, color: 'from-purple-600 to-indigo-800' },
+  { id: 'weekly_trends', name: 'Tendencias Semanales', queries: ['trending music hits 2026', 'hot hits tiktok', 'viral hits'], icon: Zap, color: 'from-teal-600 to-cyan-800' },
+  { id: 'artists', name: 'Artistas Populares', queries: ['Bad Bunny', 'Rauw Alejandro', 'Quevedo', 'Feid', 'Rosalia', 'Taylor Swift', 'The Weeknd', 'Drake', 'Billie Eilish', 'Kendrick Lamar', 'Ariana Grande', 'Post Malone', 'Dua Lipa', 'Bruno Mars', 'Eminem', 'Coldplay', 'Rihanna', 'Kanye West', 'Travis Scott', 'Justin Bieber', 'Bizarrap'], icon: User, color: 'from-purple-500 to-pink-500', isArtist: true },
+  { id: 'tophits', name: 'Éxitos de Hoy', queries: ['pop hits', 'billboard', 'canciones populares'], icon: Flame, color: 'from-orange-500 to-red-500' },
+  { id: 'pop', name: 'Pop Actual', queries: ['latest pop', 'dance pop', 'pop rock'], icon: Mic, color: 'from-pink-400 to-rose-600' },
+  { id: 'hiphop', name: 'Rap y Trap', queries: ['hip hop', 'rap hit', 'trap latino'], icon: Headphones, color: 'from-green-500 to-emerald-700' },
+  { id: 'rnb', name: 'R&B y Soul', queries: ['r&b', 'soul music', 'smooth rnb'], icon: Mic, color: 'from-indigo-600 to-cyan-800' },
+  { id: 'rock', name: 'Clásicos del Rock', queries: ['classic rock', 'hard rock', 'indie rock'], icon: Activity, color: 'from-gray-600 to-gray-900' },
+  { id: 'workout', name: 'Modo Entrenamiento', queries: ['workout', 'gym motivation', 'pump up'], icon: Zap, color: 'from-red-600 to-black' },
+  { id: 'kpop', name: 'Éxitos K-Pop', queries: ['k-pop', 'bts', 'blackpink'], icon: Star, color: 'from-pink-500 to-purple-500' },
+  { id: 'electronic', name: 'Electrónica / Dance', queries: ['edm', 'house music', 'techno'], icon: Zap, color: 'from-cyan-400 to-blue-600' },
+  { id: 'lofi', name: 'Ritmos Lofi', queries: ['lofi', 'chillhop', 'relaxing beats'], icon: Coffee, color: 'from-amber-700 to-orange-900' },
+  { id: 'acoustic', name: 'Pistas Acústicas', queries: ['acoustic covers', 'unplugged', 'chill acoustic'], icon: Headphones, color: 'from-amber-600 to-yellow-800' },
+  { id: 'anime', name: 'Anime y J-Pop', queries: ['anime ost', 'anime opening', 'j-pop'], icon: Zap, color: 'from-fuchsia-600 to-pink-700' },
 ];
 
-const PROMO_QUERIES_1 = ['The Weeknd', 'Taylor Swift', 'Drake', 'Bad Bunny', 'Billie Eilish'];
+const PROMO_QUERIES_1 = ['Bad Bunny', 'The Weeknd', 'Taylor Swift', 'Drake', 'Billie Eilish'];
 const PROMO_QUERIES_2 = ['Kendrick Lamar', 'Ariana Grande', 'Post Malone', 'Dua Lipa', 'Bruno Mars'];
 const PROMO_QUERIES_3 = ['Eminem', 'Coldplay', 'Imagine Dragons', 'Ed Sheeran', 'Adele'];
 
 const getGreeting = () => {
   const hour = new Date().getHours();
-  if (hour < 12) return 'Good morning';
-  if (hour < 18) return 'Good afternoon';
-  return 'Good evening';
+  if (hour < 12) return 'Buenos días';
+  if (hour < 18) return 'Buenas tardes';
+  return 'Buenas noches';
 };
 
 const CarouselBanner = ({ queries, onBannerClick }: { queries: string[], onBannerClick: (q: string) => void }) => {
@@ -1184,10 +1184,10 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                 setActiveSubTab('discover');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }} 
-              className="ml-2 px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-bold flex items-center gap-2 transition"
-              title="Return to Explore Home"
+              className="ml-2 px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-bold flex items-center gap-2 transition cursor-pointer"
+              title="Volver al Inicio de Explorar"
             >
-               <Home className="w-4 h-4" /> Home
+               <Home className="w-4 h-4" /> Inicio
             </button>
           </div>
           
@@ -1197,7 +1197,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="What do you want to play?"
+              placeholder="¿Qué te apetece escuchar?"
               className="w-full pl-10 pr-4 py-3 bg-[#242424] hover:bg-[#2a2a2a] border border-transparent hover:border-white/20 rounded-full text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white transition-all text-sm font-medium"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
@@ -1215,14 +1215,14 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                 setSearchResults(null);
                 setSearchQuery('');
               }}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeSubTab === 'discover' && !searchResults
                   ? 'bg-white text-black shadow-lg shadow-white/10 scale-105'
                   : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
               }`}
             >
               <Compass className="w-4 h-4" />
-              Discover
+              Descubrir
             </button>
             <button
               onClick={() => {
@@ -1230,14 +1230,14 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                 setSearchResults(null);
                 setSearchQuery('');
               }}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeSubTab === 'liked' && !searchResults
                   ? 'bg-pink-500 text-white shadow-lg shadow-pink-500/20 scale-105'
                   : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
               }`}
             >
               <Heart className="w-4 h-4 fill-current text-pink-300" />
-              Liked Songs
+              Favoritas
             </button>
             <button
               onClick={() => {
@@ -1245,14 +1245,14 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                 setSearchResults(null);
                 setSearchQuery('');
               }}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeSubTab === 'artists' && !searchResults
                   ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/20 scale-105'
                   : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
               }`}
             >
               <User className="w-4 h-4" />
-              Popular Artists
+              Artistas Populares
             </button>
             <button
               onClick={() => {
@@ -1260,14 +1260,14 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                 setSearchResults(null);
                 setSearchQuery('');
               }}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeSubTab === 'moods_genres' && !searchResults
                   ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/20 scale-105'
                   : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
               }`}
             >
               <Zap className="w-4 h-4 text-purple-400 fill-current animate-pulse" />
-              Moods & Genres
+              Géneros y Estados de Ánimo
             </button>
           </div>
 
@@ -1277,7 +1277,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               <div className="mb-10 w-full overflow-hidden relative rounded-2xl bg-white/5 border border-white/5 py-4">
                 <div className="flex items-center gap-2 mb-3 px-6">
                   <Flame className="w-5 h-5 text-orange-500 animate-bounce" />
-                  <h3 className="text-lg font-bold text-white tracking-tight">Trending Now</h3>
+                  <h3 className="text-lg font-bold text-white tracking-tight">Tendencias Actuales</h3>
                 </div>
                 <div className="relative w-full overflow-hidden flex">
                   <div className="flex gap-4 animate-marquee whitespace-nowrap">
@@ -1362,37 +1362,37 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
             <div>
               <div className="flex items-center gap-2 mb-6 mt-4">
                 <Search className="w-6 h-6 text-white" />
-                <h3 className="text-2xl font-bold text-white">Search Results ({searchResults.length})</h3>
+                <h3 className="text-2xl font-bold text-white">Resultados de Búsqueda ({searchResults.length})</h3>
                 
                 {searchResults.length > 0 && (
                   <button 
-                    onClick={() => playItem({ name: `Search: ${searchQuery}`, tracks: searchResults }, true)}
-                    className="ml-4 px-4 py-2 bg-[#1ed760] text-black font-bold rounded-full hover:scale-105 transition-all flex items-center gap-2 text-sm shadow-xl"
+                    onClick={() => playItem({ name: `Búsqueda: ${searchQuery}`, tracks: searchResults }, true)}
+                    className="ml-4 px-4 py-2 bg-[#1ed760] text-black font-bold rounded-full hover:scale-105 transition-all flex items-center gap-2 text-sm shadow-xl cursor-pointer"
                   >
-                    <Play className="w-4 h-4" fill="black" /> Play All ({searchResults.length})
+                    <Play className="w-4 h-4" fill="black" /> Reproducir Todo ({searchResults.length})
                   </button>
                 )}
 
                 <button 
                   onClick={() => setSearchResults(null)}
-                  className="ml-auto text-sm text-white/50 hover:text-white bg-white/5 px-4 py-2 rounded-full font-bold transition"
+                  className="ml-auto text-sm text-white/50 hover:text-white bg-white/5 px-4 py-2 rounded-full font-bold transition cursor-pointer"
                 >
-                  Clear
+                  Limpiar
                 </button>
               </div>
 
               {searchResults.length === 0 ? (
                 <div className="text-center py-20">
                   <Music className="w-16 h-16 text-white/20 mx-auto mb-4" />
-                  <p className="text-white/50 text-lg">No results found for "{searchQuery}"</p>
-                  <p className="text-white/40 text-sm mt-2">Please make sure your words are spelled correctly or use less or different keywords.</p>
+                  <p className="text-white/50 text-lg">No se encontraron resultados para "{searchQuery}"</p>
+                  <p className="text-white/40 text-sm mt-2">Comprueba que las palabras estén bien escritas o prueba con otros términos.</p>
                 </div>
               ) : (
                 <div className="space-y-8">
                   {/* Top Result Card (Spotify Style) */}
                   {searchResults.length > 0 && (
                     <div>
-                      <h4 className="text-[#a7a7a7] text-xs font-bold uppercase tracking-wider mb-3">Top Result</h4>
+                      <h4 className="text-[#a7a7a7] text-xs font-bold uppercase tracking-wider mb-3">Resultado Principal</h4>
                       <div
                         onClick={() => playItem(searchResults[0], false)}
                         onMouseEnter={() => setHoveredArtwork(searchResults[0].artwork || null)}
@@ -1408,7 +1408,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                         <div className="flex-1 min-w-0 pr-12">
                           <h2 className="text-2xl font-black text-white truncate drop-shadow-sm">{searchResults[0].title}</h2>
                           <div className="flex items-center gap-2 mt-2">
-                            <span className="text-[10px] font-extrabold bg-[#1ed760]/20 text-[#1ed760] px-2.5 py-0.5 rounded-full uppercase tracking-wider">Top Match</span>
+                            <span className="text-[10px] font-extrabold bg-[#1ed760]/20 text-[#1ed760] px-2.5 py-0.5 rounded-full uppercase tracking-wider">Mejor Coincidencia</span>
                             <span className="text-sm font-semibold text-[#a7a7a7] truncate">{searchResults[0].author}</span>
                           </div>
                         </div>
@@ -1423,7 +1423,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
 
                   {/* Songs Grid (Spotify 6-Column Responsive Card Grid) */}
                   <div>
-                    <h4 className="text-[#a7a7a7] text-xs font-bold uppercase tracking-wider mb-3">All Matching Songs ({searchResults.length})</h4>
+                    <h4 className="text-[#a7a7a7] text-xs font-bold uppercase tracking-wider mb-3">Todas las Canciones ({searchResults.length})</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
                       {searchResults.map((track, i) => (
                         <motion.div
@@ -1462,8 +1462,8 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-pink-900/30 via-purple-950/20 to-transparent p-6 rounded-2xl border border-pink-500/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Liked Songs</h2>
-                  <p className="text-white/60 text-sm mt-0.5">{likedSongsList.length} {likedSongsList.length === 1 ? 'song' : 'songs'} saved</p>
+                  <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Canciones Favoritas</h2>
+                  <p className="text-white/60 text-sm mt-0.5">{likedSongsList.length} {likedSongsList.length === 1 ? 'canción guardada' : 'canciones guardadas'}</p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -1471,7 +1471,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                     <Search className="absolute left-3.5 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
                     <input
                       type="text"
-                      placeholder="Search saved songs..."
+                      placeholder="Buscar canciones guardadas..."
                       value={likedSearchQuery}
                       onChange={(e) => setLikedSearchQuery(e.target.value)}
                       className="w-full sm:w-60 pl-10 pr-4 py-2.5 bg-white/5 hover:bg-white/10 focus:bg-white/10 border border-white/10 rounded-full text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-pink-500/30 transition-all text-sm"
@@ -1480,9 +1480,9 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                   {likedSongsList.length > 0 && (
                     <button
                       onClick={playAllLikedSongs}
-                      className="px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-green-600 text-black font-black rounded-full hover:scale-105 transition-all flex items-center justify-center gap-2 text-sm shadow-xl shadow-green-900/20"
+                      className="px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-green-600 text-black font-black rounded-full hover:scale-105 transition-all flex items-center justify-center gap-2 text-sm shadow-xl shadow-green-900/20 cursor-pointer"
                     >
-                      <Play className="w-4 h-4 fill-black text-black" /> Play All
+                      <Play className="w-4 h-4 fill-black text-black" /> Reproducir Todo
                     </button>
                   )}
                 </div>
@@ -1495,13 +1495,13 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               ) : likedSongsList.length === 0 ? (
                 <div className="text-center py-20 bg-white/5 rounded-2xl border border-white/5 flex flex-col items-center justify-center p-6">
                   <Heart className="w-16 h-16 text-white/10 mb-4 animate-pulse" />
-                  <h3 className="text-white font-bold text-lg">No Liked Songs Yet</h3>
-                  <p className="text-white/40 text-sm mt-1 max-w-sm">Songs you like while playing will appear here. Press the heart button next to any track!</p>
+                  <h3 className="text-white font-bold text-lg">Aún no tienes canciones favoritas</h3>
+                  <p className="text-white/40 text-sm mt-1 max-w-sm">Las canciones que guardes con el botón ♥ aparecerán aquí automáticamente.</p>
                   <button
                     onClick={() => setActiveSubTab('discover')}
-                    className="mt-6 px-6 py-2 bg-white text-black font-bold rounded-full text-sm hover:scale-105 transition-all shadow-md"
+                    className="mt-6 px-6 py-2 bg-white text-black font-bold rounded-full text-sm hover:scale-105 transition-all shadow-md cursor-pointer"
                   >
-                    Discover Music
+                    Descubrir Música
                   </button>
                 </div>
               ) : (
@@ -1517,7 +1517,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                     return (
                       <div className="text-center py-20 text-white/50">
                         <Music className="w-12 h-12 text-white/20 mx-auto mb-3" />
-                        No results found for "{likedSearchQuery}"
+                        No se encontraron resultados para "{likedSearchQuery}"
                       </div>
                     );
                   }
@@ -1552,8 +1552,8 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                                   e.stopPropagation();
                                   handleUnlikeSong(track.identifier, track.title);
                                 }}
-                                className="absolute top-2 right-2 p-2 bg-black/60 hover:bg-red-600/80 rounded-full text-white/80 hover:text-white transition-all opacity-0 group-hover:opacity-100 z-20 shadow-lg"
-                                title="Remove from Liked Songs"
+                                className="absolute top-2 right-2 p-2 bg-black/60 hover:bg-red-600/80 rounded-full text-white/80 hover:text-white transition-all opacity-0 group-hover:opacity-100 z-20 shadow-lg cursor-pointer"
+                                title="Eliminar de Favoritas"
                               >
                                 <Trash2 className="w-3.5 h-3.5" />
                               </button>
@@ -1582,15 +1582,15 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               <div className="space-y-6">
                 <div className="bg-gradient-to-r from-purple-900/30 via-pink-950/20 to-transparent p-6 rounded-2xl border border-purple-500/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
-                    <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Popular Artists</h2>
-                    <p className="text-white/60 text-sm mt-0.5">Explore music and full profiles from creators around the world</p>
+                    <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Artistas Populares</h2>
+                    <p className="text-white/60 text-sm mt-0.5">Explora música y perfiles completos de artistas de todo el mundo</p>
                   </div>
 
                   <div className="relative">
                     <Search className="absolute left-3.5 top-1/2 transform -translate-y-1/2 text-white/40 w-4 h-4" />
                     <input
                       type="text"
-                      placeholder="Search creators..."
+                      placeholder="Buscar artistas..."
                       value={artistSearchQuery}
                       onChange={(e) => setArtistSearchQuery(e.target.value)}
                       className="w-full sm:w-60 pl-10 pr-4 py-2.5 bg-white/5 hover:bg-white/10 focus:bg-white/10 border border-white/10 rounded-full text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500/30 transition-all text-sm"
@@ -1600,25 +1600,28 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
 
                 {/* Language Filter Pills for Artists */}
                 <div className="flex items-center gap-2 overflow-x-auto pb-1 mb-2 custom-scrollbar-horizontal hide-scrollbar">
-                  {(['All', 'English', 'Spanish', 'K-Pop', 'Hindi', 'Tamil'] as const).map((lang) => (
-                    <button
-                      key={lang}
-                      onClick={() => setSelectedLanguage(lang)}
-                      className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
-                        selectedLanguage === lang
-                          ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/20 scale-105'
-                          : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
-                      }`}
-                    >
-                      {lang}
-                    </button>
-                  ))}
+                  {(['All', 'English', 'Spanish', 'K-Pop', 'Hindi', 'Tamil'] as const).map((lang) => {
+                    const label = lang === 'All' ? 'Todos' : lang === 'Spanish' ? 'Español' : lang === 'English' ? 'Inglés' : lang;
+                    return (
+                      <button
+                        key={lang}
+                        onClick={() => setSelectedLanguage(lang)}
+                        className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 cursor-pointer ${
+                          selectedLanguage === lang
+                            ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/20 scale-105'
+                            : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {artistsLoading && artistsList.length === 0 ? (
                   <div className="flex flex-col items-center justify-center py-20">
                     <div className="w-10 h-10 border-4 border-transparent border-t-purple-500 rounded-full animate-spin mb-3" />
-                    <p className="text-white/50 text-xs font-semibold uppercase tracking-wider">Loading...</p>
+                    <p className="text-white/50 text-xs font-semibold uppercase tracking-wider">Cargando...</p>
                   </div>
                 ) : (
                   (() => {
@@ -1632,7 +1635,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                       return (
                         <div className="text-center py-20 text-white/50">
                           <Music className="w-12 h-12 text-white/20 mx-auto mb-3" />
-                          No artists found in {selectedLanguage} {artistSearchQuery ? `matching "${artistSearchQuery}"` : ''}
+                          No se encontraron artistas {selectedLanguage !== 'All' ? `en ${selectedLanguage}` : ''} {artistSearchQuery ? `coincidentes con "${artistSearchQuery}"` : ''}
                         </div>
                       );
                     }
@@ -1671,12 +1674,12 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                               />
                               <div className="absolute inset-0 bg-purple-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <span className="px-3 py-1 bg-purple-600 text-white text-xs font-bold rounded-full shadow-lg scale-95 group-hover:scale-100 transition">
-                                  View Profile
+                                  Ver Perfil
                                 </span>
                               </div>
                             </div>
                             <h4 className="text-white font-bold text-sm sm:text-base truncate w-full group-hover:text-purple-400 transition">{artist.title}</h4>
-                            <p className="text-[#a7a7a7] text-xs mt-1 font-medium">{artist.language || 'Artist'}</p>
+                            <p className="text-[#a7a7a7] text-xs mt-1 font-medium">{artist.language || 'Artista'}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -1690,8 +1693,8 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               {/* Header Banner */}
               <div className="bg-gradient-to-r from-indigo-900/30 via-purple-950/20 to-transparent p-8 rounded-3xl border border-indigo-500/10 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                  <h2 className="text-3xl font-black text-white tracking-tight">Moods & Genres</h2>
-                  <p className="text-white/60 text-sm mt-0.5">Find the perfect music for any moment or style</p>
+                  <h2 className="text-3xl font-black text-white tracking-tight">Géneros y Estados de Ánimo</h2>
+                  <p className="text-white/60 text-sm mt-0.5">Encuentra la música perfecta para cualquier momento o estilo</p>
                 </div>
               </div>
 
@@ -1699,7 +1702,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <Heart className="w-5 h-5 text-purple-400" />
-                  <h3 className="text-xl font-bold text-white tracking-tight">Moods & Moments</h3>
+                  <h3 className="text-xl font-bold text-white tracking-tight">Momentos y Estados de Ánimo</h3>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {MOODS.map((mood, i) => {
@@ -1730,7 +1733,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <Disc className="w-5 h-5 text-purple-400" />
-                  <h3 className="text-xl font-bold text-white tracking-tight">Popular Genres</h3>
+                  <h3 className="text-xl font-bold text-white tracking-tight">Géneros Populares</h3>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                   {GENRES.map((genre, i) => {
@@ -1850,14 +1853,15 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
             animate={{ opacity: 1, scale: 1, y: 0 }}
             className="bg-[#121212] border border-white/10 p-6 md:p-8 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar-vertical shadow-2xl relative z-50"
           >
-            <h2 className="text-3xl font-black text-white tracking-tight mb-2">Welcome to {siteName} Explore</h2>
-            <p className="text-white/60 text-sm mb-6">Select your favorite music languages and genres to customize your feed. You can select multiple, or skip to use default settings.</p>
+            <h2 className="text-3xl font-black text-white tracking-tight mb-2">Bienvenido a Explorar en {siteName}</h2>
+            <p className="text-white/60 text-sm mb-6">Selecciona tus idiomas y géneros musicales favoritos para personalizar tu panel. Puedes elegir varios o continuar con la configuración por defecto.</p>
             
             {/* Languages Selection */}
             <div className="mb-6">
-              <h3 className="text-lg font-bold text-white mb-3">Favorite Languages</h3>
+              <h3 className="text-lg font-bold text-white mb-3">Idiomas Favoritos</h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {['English', 'Hindi', 'Tamil', 'Telugu', 'Spanish', 'Punjabi', 'French', 'Japanese', 'German', 'Korean', 'Arabic', 'Portuguese'].map((lang) => {
+                {['Spanish', 'English', 'French', 'Japanese', 'German', 'Korean', 'Italian', 'Portuguese'].map((lang) => {
+                  const label = lang === 'Spanish' ? 'Español' : lang === 'English' ? 'Inglés' : lang === 'French' ? 'Francés' : lang === 'Japanese' ? 'Japonés' : lang === 'German' ? 'Alemán' : lang === 'Korean' ? 'Coreano' : lang === 'Italian' ? 'Italiano' : 'Portugués';
                   const selected = prefLangs.includes(lang);
                   return (
                     <button
@@ -1867,13 +1871,13 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                           prev.includes(lang) ? prev.filter(l => l !== lang) : [...prev, lang]
                         );
                       }}
-                      className={`py-2 px-4 rounded-xl text-xs font-bold border transition-all duration-300 ${
+                      className={`py-2 px-4 rounded-xl text-xs font-bold border transition-all duration-300 cursor-pointer ${
                         selected 
                           ? 'bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20' 
                           : 'bg-white/5 text-white/70 border-white/5 hover:bg-white/10 hover:border-white/10'
                       }`}
                     >
-                      {lang}
+                      {label}
                     </button>
                   );
                 })}
@@ -1882,7 +1886,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
 
             {/* Genres Selection */}
             <div className="mb-8">
-              <h3 className="text-lg font-bold text-white mb-3">Favorite Genres</h3>
+              <h3 className="text-lg font-bold text-white mb-3">Géneros Favoritos</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {['Pop', 'Hip-Hop', 'Rock', 'Electronic', 'R&B', 'Lofi', 'Classical', 'J-Pop/Anime', 'Metal', 'Jazz', 'K-Pop', 'Blues', 'Folk'].map((genre) => {
                   const selected = prefGenres.includes(genre);
@@ -1894,7 +1898,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                           prev.includes(genre) ? prev.filter(g => g !== genre) : [...prev, genre]
                         );
                       }}
-                      className={`py-2 px-4 rounded-xl text-xs font-bold border transition-all duration-300 ${
+                      className={`py-2 px-4 rounded-xl text-xs font-bold border transition-all duration-300 cursor-pointer ${
                         selected 
                           ? 'bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20' 
                           : 'bg-white/5 text-white/70 border-white/5 hover:bg-white/10 hover:border-white/10'
@@ -1914,9 +1918,9 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                   localStorage.setItem(`aurora_onboarding_completed_${userId}`, 'true');
                   setOnboardingCompleted(true);
                 }}
-                className="px-6 py-2 rounded-full text-sm font-semibold text-white/60 hover:text-white transition-colors"
+                className="px-6 py-2 rounded-full text-sm font-semibold text-white/60 hover:text-white transition-colors cursor-pointer"
               >
-                Skip & Use Defaults
+                Omitir y Usar por Defecto
               </button>
               <button
                 onClick={() => {
@@ -1926,9 +1930,9 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                   setOnboardingCompleted(true);
                   window.dispatchEvent(new CustomEvent('history-updated'));
                 }}
-                className="px-8 py-2 rounded-full text-sm font-bold bg-[#1ed760] text-black hover:scale-105 transition-all shadow-lg"
+                className="px-8 py-2 rounded-full text-sm font-bold bg-[#1ed760] text-black hover:scale-105 transition-all shadow-lg cursor-pointer"
               >
-                Save Preferences
+                Guardar Preferencias
               </button>
             </div>
           </motion.div>

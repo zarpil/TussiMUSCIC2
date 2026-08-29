@@ -1579,7 +1579,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
       <button
         onClick={() => setIsSidebarOpen(true)}
         className="md:hidden fixed top-4 left-4 z-40 p-2.5 bg-black/70 backdrop-blur-xl border border-white/15 rounded-full text-white shadow-lg cursor-pointer active:scale-95 flex items-center justify-center"
-        title="Open Navigation Menu"
+        title="Abrir Menú de Navegación"
       >
         <Menu className="w-5 h-5" />
       </button>
@@ -1590,7 +1590,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
         <button
           onClick={() => setIsSidebarOpen(true)}
           className="p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all hover:scale-115 hover:rotate-6 shadow-lg cursor-pointer border border-white/10"
-          title="Open Menu"
+          title="Abrir Menú"
         >
           <Menu className="w-6 h-6" />
         </button>
@@ -1606,7 +1606,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
           <Disc className="w-6 h-6 animate-pulse-slow transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
           {/* Hover Tooltip */}
           <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-            Player
+            Reproductor
           </div>
         </button>
 
@@ -1620,7 +1620,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
           <Compass className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
           {/* Hover Tooltip */}
           <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-            Explore
+            Explorar
           </div>
         </button>
 
@@ -1634,7 +1634,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
           <ListMusic className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
           {/* Hover Tooltip */}
           <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-            Playlists
+            Listas de Reproducción
           </div>
         </button>
 
@@ -1648,7 +1648,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
           <BarChart3 className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
           {/* Hover Tooltip */}
           <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-            Server Overview
+            Resumen del Servidor
           </div>
         </button>
 
@@ -1663,7 +1663,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
             <Crown className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
             {/* Hover Tooltip */}
             <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-              Upgrade Premium
+              Mejorar a Premium
             </div>
           </button>
         )}
@@ -1684,7 +1684,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
             >
               <Paintbrush className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
               <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-                Themes Customizer
+                Temas y Fondos
               </div>
             </button>
 
@@ -1702,7 +1702,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
             >
               <Palette className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
               <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-                Lyrics Customizer
+                Personalizar Letras
               </div>
             </button>
 
@@ -1720,7 +1720,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
             >
               <Pencil className="w-6 h-6 transition-transform duration-200 group-hover:scale-125 group-hover:rotate-12" />
               <div className="absolute left-full ml-4 px-2.5 py-1.5 bg-black/90 border border-white/10 rounded-xl text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl translate-x-2 group-hover:translate-x-0">
-                {isEditMode ? 'Exit Edit Mode' : 'Edit Layout'}
+                {isEditMode ? 'Salir del Modo Edición' : 'Editar Diseño'}
               </div>
             </button>
           </>
@@ -1752,7 +1752,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               <div className="space-y-8 flex-1 flex flex-col min-h-0">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
                   <span className="text-white font-bold text-base tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-                    {siteName.toUpperCase()} NAVIGATION
+                    {siteName.toUpperCase()} NAVEGACIÓN
                   </span>
                   <button
                     onClick={() => setIsSidebarOpen(false)}
@@ -1773,8 +1773,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   >
                     <Disc className="w-6 h-6 shrink-0" />
                     <div>
-                      <div className="font-bold text-sm">Music Player</div>
-                      <div className="text-[10px] text-white/40">View currently playing song & lyrics</div>
+                      <div className="font-bold text-sm">Reproductor de Música</div>
+                      <div className="text-[10px] text-white/40">Ver canción en reproducción y letras</div>
                     </div>
                   </button>
 
@@ -1787,8 +1787,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   >
                     <Compass className="w-6 h-6 shrink-0" />
                     <div>
-                      <div className="font-bold text-sm">Explore</div>
-                      <div className="text-[10px] text-white/40">Discover songs and load streams</div>
+                      <div className="font-bold text-sm">Explorar</div>
+                      <div className="text-[10px] text-white/40">Descubrir canciones y reproducir streams</div>
                     </div>
                   </button>
 
@@ -1801,8 +1801,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   >
                     <ListMusic className="w-6 h-6 shrink-0" />
                     <div>
-                      <div className="font-bold text-sm">Playlists</div>
-                      <div className="text-[10px] text-white/40">Access curated &amp; custom playlists</div>
+                      <div className="font-bold text-sm">Listas de Reproducción</div>
+                      <div className="text-[10px] text-white/40">Acceder a listas personalizadas</div>
                     </div>
                   </button>
 
@@ -1815,8 +1815,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   >
                     <BarChart3 className="w-6 h-6 shrink-0 text-cyan-400" />
                     <div>
-                      <div className="font-bold text-sm">Server Overview</div>
-                      <div className="text-[10px] text-white/40">VC hours, leaderboard & 24/7 VC mode</div>
+                      <div className="font-bold text-sm">Resumen del Servidor</div>
+                      <div className="text-[10px] text-white/40">Estadísticas, ranking y modo 24/7</div>
                     </div>
                   </button>
 
@@ -1832,10 +1832,10 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       <Crown className="w-6 h-6 shrink-0" />
                       <div>
                         <div className="font-bold text-sm flex items-center gap-1.5">
-                          Upgrade to Premium
+                          Mejorar a Premium
                           <span className="text-[9px] px-1.5 py-0.5 bg-amber-500/30 text-amber-300 rounded-full font-bold">PRO</span>
                         </div>
-                        <div className="text-[10px] text-amber-400/60">Unlock playlists, likes &amp; themes</div>
+                        <div className="text-[10px] text-amber-400/60">Desbloquea listas, favoritos y temas</div>
                       </div>
                     </button>
                   )}
@@ -1846,7 +1846,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               {isPremium && (
                 <div className="border-t border-white/10 pt-4 space-y-2">
                   <div className="text-[10px] font-bold text-amber-400/70 uppercase tracking-widest mb-2 flex items-center gap-1.5">
-                    <span>⭐</span> Premium Tools
+                    <span>⭐</span> Herramientas Premium
                   </div>
                   <button
                     onClick={() => { setShowKeybindsModal(true); setIsSidebarOpen(false); }}
@@ -1855,10 +1855,10 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                     <Keyboard className="w-5 h-5 shrink-0 text-amber-400" />
                     <div>
                       <div className="font-bold text-sm flex items-center gap-1.5">
-                        Key Shortcuts
+                        Atajos de Teclado
                         <span className="text-[9px] px-1.5 py-0.5 bg-amber-500/30 text-amber-300 rounded-full font-bold">PRO</span>
                       </div>
-                      <div className="text-[10px] text-white/40">Custom shortcuts for controls &amp; nav</div>
+                      <div className="text-[10px] text-white/40">Atajos para control y navegación</div>
                     </div>
                   </button>
 
@@ -1870,8 +1870,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       >
                         <Paintbrush className="w-5 h-5 shrink-0" />
                         <div>
-                          <div className="font-bold text-sm">Themes Customizer</div>
-                          <div className="text-[10px] text-white/40">Change background preset theme</div>
+                          <div className="font-bold text-sm">Temas y Fondos</div>
+                          <div className="text-[10px] text-white/40">Cambiar tema visual de fondo</div>
                         </div>
                       </button>
                       <button
@@ -1880,8 +1880,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       >
                         <Palette className="w-5 h-5 shrink-0" />
                         <div>
-                          <div className="font-bold text-sm">Lyrics Style</div>
-                          <div className="text-[10px] text-white/40">Customize font, color &amp; glow</div>
+                          <div className="font-bold text-sm">Estilo de Letras</div>
+                          <div className="text-[10px] text-white/40">Personalizar fuente, color y brillo</div>
                         </div>
                       </button>
                       <button
@@ -1890,8 +1890,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       >
                         <Pencil className="w-5 h-5 shrink-0" />
                         <div>
-                          <div className="font-bold text-sm">{isEditMode ? 'Exit Edit Mode' : 'Edit Layout'}</div>
-                          <div className="text-[10px] text-white/40">Drag &amp; resize player components</div>
+                          <div className="font-bold text-sm">{isEditMode ? 'Salir del Modo Edición' : 'Editar Diseño'}</div>
+                          <div className="text-[10px] text-white/40">Arrastra y redimensiona componentes</div>
                         </div>
                       </button>
                     </>
@@ -2291,14 +2291,14 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       value={searchQuery}
                       onChange={(e) => handleSearchChange(e.target.value)}
                       onKeyPress={(e) => e.key === 'Enter' && executeSearch()}
-                      placeholder="Search songs or paste link..."
+                      placeholder="Buscar canciones o pegar enlace..."
                       className="w-full pl-12 pr-20 py-3 bg-white/5 hover:bg-white/10 focus:bg-white/10 border border-white/10 rounded-full text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-all text-sm shadow-[0_4px_12px_rgba(0,0,0,0.2)]"
                     />
                     <button
                       onClick={() => executeSearch()}
                       className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-1.5 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full font-bold text-xs transition-all shadow-md cursor-pointer"
                     >
-                      Play
+                      Reproducir
                     </button>
                   </div>
 
@@ -2337,7 +2337,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   )}
                   {isSearching && searchQuery.trim() !== '' && searchResults.length === 0 && (
                     <div className="absolute top-full left-0 right-0 mt-2 p-3 text-center text-xs text-white/50 bg-black/85 rounded-2xl border border-white/10">
-                      Searching...
+                      Buscando...
                     </div>
                   )}
                 </div>
@@ -2345,7 +2345,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 {/* Active Viewers (Mobile) */}
                 {activeUsers && activeUsers.length > 0 && (
                   <div className="flex md:hidden -space-x-3 items-center z-30 mb-2">
-                    <div className="mr-4 text-sm font-medium text-white/70">Watching now:</div>
+                    <div className="mr-4 text-sm font-medium text-white/70">Oyentes activos:</div>
                     {activeUsers.slice(0, 5).map((u: any, i: number) => (
                       <div key={u.id} className="relative group" style={{ zIndex: 10 - i }}>
                         {u.avatar ? (
@@ -2399,7 +2399,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 >
                   {isPremium && (
                     <div className="absolute top-2 right-2 bg-amber-500/20 backdrop-blur-md border border-amber-500/30 px-2 py-0.5 rounded-full text-[8px] text-amber-300 font-bold z-40 opacity-0 group-hover:opacity-100 transition-opacity">
-                      DRAGGABLE
+                      ARRASTRABLE
                     </div>
                   )}
 
@@ -2438,7 +2438,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                     ) : (
                       <div className="flex flex-col items-center gap-4 text-white/20">
                         <Music className="w-16 h-16 animate-pulse" />
-                        <span className="text-xs uppercase tracking-widest font-bold text-white/30">No Track Playing</span>
+                        <span className="text-xs uppercase tracking-widest font-bold text-white/30">Sin Reproducción Activa</span>
                       </div>
                     )}
 
@@ -2518,14 +2518,14 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 >
                   <div className="flex items-center justify-center gap-3 w-full">
                     <h1 className="text-xl lg:text-2xl font-bold text-white drop-shadow-lg truncate min-w-0">
-                      {currentTrack?.title || 'No track playing'}
+                      {currentTrack?.title || 'Sin reproducción activa'}
                     </h1>
                     {currentTrack && (
                       <div className="relative shrink-0">
                         <button
                           onClick={handlePlaylistAddClick}
                           className="p-2 bg-white/10 hover:bg-white/20 rounded-full transition-all text-white/70 hover:text-white cursor-pointer"
-                          title="Add to Playlist"
+                          title="Añadir a lista"
                         >
                           <ListPlus className="w-5 h-5" />
                         </button>
@@ -2538,9 +2538,9 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                               exit={{ opacity: 0, y: 10, scale: 0.95 }}
                               className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 bg-black/90 backdrop-blur-3xl border border-white/20 rounded-xl shadow-2xl p-2 z-[100]"
                             >
-                              <div className="text-xs font-bold text-white/50 mb-2 px-2 uppercase text-left">Your Playlists</div>
+                              <div className="text-xs font-bold text-white/50 mb-2 px-2 uppercase text-left">Tus Listas</div>
                               {userPlaylists.length === 0 ? (
-                                <div className="px-2 pb-2 text-xs text-white/60 text-left">No playlists found.</div>
+                                <div className="px-2 pb-2 text-xs text-white/60 text-left">No se encontraron listas.</div>
                               ) : (
                                 <div className="max-h-40 overflow-y-auto custom-scrollbar-vertical">
                                   {userPlaylists.map(pl => (
@@ -2558,7 +2558,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                                 onClick={() => setShowPlaylistAdd(false)}
                                 className="w-full text-center mt-2 pt-2 border-t border-white/10 text-[10px] text-white/50 hover:text-white cursor-pointer"
                               >
-                                Cancel
+                                Cancelar
                               </button>
                             </motion.div>
                           )}
@@ -2568,7 +2568,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   </div>
 
                   <p className="text-lg text-white/80 drop-shadow-md">
-                    {currentTrack?.author || 'Unknown Artist'}
+                    {currentTrack?.author || 'Artista Desconocido'}
                   </p>
 
                   {/* Requester Info */}
@@ -2598,7 +2598,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                           ? 'text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 font-bold drop-shadow-[0_0_6px_rgba(251,191,36,0.4)] animate-pulse'
                           : 'text-white/70'
                       }`}>
-                        Requested by {currentTrack.requester.tag || 'Unknown'}
+                        Pedido por {currentTrack.requester.tag || 'Desconocido'}
                         {isRequesterPremium && <span className="text-amber-400 text-[10px]">👑</span>}
                       </span>
                     </div>
@@ -2692,7 +2692,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       }}
                       className={`p-3 rounded-full backdrop-blur-xl transition-all cursor-pointer ${autoplay ? 'bg-white/30 text-white' : 'bg-white/10 text-white/60 hover:bg-white/20'
                         }`}
-                      title={`Autoplay: ${autoplay ? 'On' : 'Off'}`}
+                      title={`Reproducción automática: ${autoplay ? 'Activada' : 'Desactivada'}`}
                     >
                       <Shuffle className="w-5 h-5" />
                     </button>
@@ -2730,7 +2730,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       }}
                       className={`p-3 rounded-full backdrop-blur-xl transition-all cursor-pointer ${loopMode !== 'off' ? 'bg-white/30 text-white' : 'bg-white/10 text-white/60 hover:bg-white/20'
                         }`}
-                      title={`Loop: ${loopMode === 'off' ? 'Off' : loopMode === 'track' ? 'Track' : 'Queue'}`}
+                      title={`Bucle: ${loopMode === 'off' ? 'Desactivado' : loopMode === 'track' ? 'Canción' : 'Cola'}`}
                     >
                       {getLoopIcon()}
                     </button>
@@ -2743,7 +2743,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                         onClick={() => setShowFilters(!showFilters)}
                         className={`p-3 rounded-full backdrop-blur-xl transition-all cursor-pointer ${activeFilter !== 'none' ? 'bg-purple-500/30 text-purple-300' : 'bg-white/10 text-white/60 hover:bg-white/20'
                           }`}
-                        title="Audio Filters"
+                        title="Filtros de Audio"
                       >
                         <Sliders className="w-5 h-5" />
                       </button>
@@ -2778,13 +2778,13 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                               onClick={() => handleFilterChange('rotation')}
                               className="w-full text-left px-4 py-2 rounded-lg text-white hover:bg-white/20 transition-all text-sm cursor-pointer"
                             >
-                              🔄 Rotation
+                              🔄 Rotación 8D
                             </button>
                             <button
                               onClick={() => handleFilterChange('equalizer')}
                               className="w-full text-left px-4 py-2 rounded-lg text-white hover:bg-white/20 transition-all text-sm cursor-pointer"
                             >
-                              🎚️ Equalizer
+                              🎚️ Ecualizador
                             </button>
                             <button
                               onClick={() => handleFilterChange('lowpass')}
@@ -2796,7 +2796,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                               onClick={() => handleFilterChange('distortion')}
                               className="w-full text-left px-4 py-2 rounded-lg text-white hover:bg-white/20 transition-all text-sm cursor-pointer"
                             >
-                              🎛️ Distortion
+                              🎛️ Distorsión
                             </button>
                             <button
                               onClick={() => handleFilterChange('tremolo')}
@@ -2809,7 +2809,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                               onClick={() => handleFilterChange('reset')}
                               className="w-full text-left px-4 py-2 rounded-lg text-red-300 hover:bg-red-500/20 transition-all text-sm cursor-pointer"
                             >
-                              ❌ Clear Filters
+                              ❌ Restablecer Filtros
                             </button>
                           </div>
                         </motion.div>
@@ -2823,7 +2823,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                         }
                       }}
                       className="p-3 rounded-full backdrop-blur-xl bg-white/10 text-white/60 hover:text-cyan-300 hover:bg-cyan-500/20 border border-transparent hover:border-cyan-500/30 transition-all cursor-pointer"
-                      title="Pop out Floating Desktop Player (PiP Window)"
+                      title="Abrir Mini Reproductor Flotante (PiP)"
                     >
                       <PictureInPicture2 className="w-5 h-5" />
                     </button>
@@ -2831,7 +2831,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                     <button
                       onClick={handleStop}
                       className="p-3 rounded-full backdrop-blur-xl bg-white/10 text-white/60 hover:bg-red-500/30 hover:text-red-300 transition-all cursor-pointer"
-                      title="Stop Player"
+                      title="Detener Reproductor"
                     >
                       <Square className="w-5 h-5" />
                     </button>
@@ -2850,7 +2850,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                         if (!showLikedSongs) fetchLikedSongs();
                       }}
                       className="p-3 rounded-full backdrop-blur-xl bg-white/10 text-white/60 hover:bg-white/20 transition-all cursor-pointer"
-                      title="View Liked Songs"
+                      title="Ver Canciones Favoritas"
                     >
                       <Music className="w-5 h-5" />
                     </button>
@@ -2894,12 +2894,12 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   <div className="flex flex-wrap items-center justify-center gap-3">
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl bg-white/10">
                       <Shuffle className={`w-4 h-4 ${autoplay ? 'text-white' : 'text-white/40'}`} />
-                      <span className="text-sm text-white/70">Autoplay: {autoplay ? 'On' : 'Off'}</span>
+                      <span className="text-sm text-white/70">Reproducción automática: {autoplay ? 'Activada' : 'Desactivada'}</span>
                     </div>
                     <div className="flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-xl bg-white/10">
                       <Repeat className={`w-4 h-4 ${loopMode !== 'off' ? 'text-white' : 'text-white/40'}`} />
                       <span className="text-sm text-white/70">
-                        Loop: {loopMode === 'off' ? 'Off' : loopMode === 'track' ? 'Track' : 'Queue'}
+                        Bucle: {loopMode === 'off' ? 'Desactivado' : loopMode === 'track' ? 'Canción' : 'Cola'}
                       </span>
                     </div>
                   </div>
@@ -2921,15 +2921,10 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   className={`w-full max-w-3xl flex flex-col justify-center min-h-[520px] transition-all select-none ${isEditMode ? 'cursor-grab border-2 border-dashed border-amber-400 rounded-3xl p-3 bg-amber-500/5 shadow-[0_0_15px_rgba(245,158,11,0.25)] z-40' : ''
                     }`}
                 >
-
-
-
-
-
                   {lyricsLoading && (
                     <div className="flex flex-col items-center justify-center h-96">
                       <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin mb-4" />
-                      <p className="text-white/60 text-lg">Loading lyrics...</p>
+                      <p className="text-white/60 text-lg">Cargando letras...</p>
                     </div>
                   )}
 
@@ -2953,7 +2948,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       </motion.div>
                       <div>
                         <p className="text-white/50 text-base font-semibold">{lyricsError}</p>
-                        <p className="text-white/25 text-xs mt-1">No synced lyrics found for this track</p>
+                        <p className="text-white/25 text-xs mt-1">No se encontraron letras sincronizadas para esta canción</p>
                       </div>
                     </motion.div>
                   )}
@@ -2963,7 +2958,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       {!isLyricsSynced && (
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold mb-3 shadow-sm select-none">
                           <Info className="w-3.5 h-3.5" />
-                          <span>Unsynced Lyrics</span>
+                          <span>Letras no sincronizadas</span>
                         </div>
                       )}
 
@@ -3065,11 +3060,11 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                             className="px-4 py-2 rounded-full backdrop-blur-2xl bg-white/15 hover:bg-white/25 border border-white/20 text-white font-semibold text-xs flex items-center gap-2 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:scale-105 active:scale-95"
                           >
                             <RefreshCw className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
-                            <span>Re-Sync View</span>
+                            <span>Re-sincronizar</span>
                           </button>
                         )}
                         <button
-                          title="Re-fetch fresh millisecond synced lyrics from LRCLIB"
+                          title="Recargar letras sincronizadas con milisegundos desde LRCLIB"
                           onClick={() => {
                             setLyricsLoading(true);
                             setLyricsError(null);
@@ -3078,7 +3073,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                           className="px-4 py-2 rounded-full backdrop-blur-2xl bg-amber-400/20 hover:bg-amber-400/30 border border-amber-400/40 text-amber-300 font-semibold text-xs flex items-center gap-2 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:scale-105 active:scale-95"
                         >
                           <RefreshCw className="w-3.5 h-3.5" />
-                          <span>Re-Fetch Synced Lyrics</span>
+                          <span>Recargar Letras</span>
                         </button>
                       </div>
                     </div>
@@ -3098,8 +3093,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                         <Music className="w-10 h-10 text-white/30" />
                       </motion.div>
                       <div>
-                        <p className="text-white/50 text-base font-semibold">No lyrics available</p>
-                        <p className="text-white/25 text-xs mt-1">Lyrics not found for this track</p>
+                        <p className="text-white/50 text-base font-semibold">No hay letras disponibles</p>
+                        <p className="text-white/25 text-xs mt-1">No se encontraron letras para esta pista</p>
                       </div>
                     </motion.div>
                   )}
@@ -3117,13 +3112,13 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               >
                 <div className="backdrop-blur-2xl bg-white/10 rounded-2xl p-6 shadow-2xl border border-white/20">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-white font-bold text-xl drop-shadow-md">Up Next</h3>
-                    <span className="text-white/60 text-sm">{localQueue.length} songs</span>
+                    <h3 className="text-white font-bold text-xl drop-shadow-md">A Continuación</h3>
+                    <span className="text-white/60 text-sm">{localQueue.length} canciones</span>
                   </div>
 
                   {localQueue.length === 0 ? (
                     <div className="text-center py-8">
-                      <p className="text-white/50">Queue is empty</p>
+                      <p className="text-white/50">La cola de reproducción está vacía</p>
                     </div>
                   ) : (
                     <DndContext
@@ -3159,15 +3154,15 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               >
                 <div className="backdrop-blur-2xl bg-white/10 rounded-2xl p-6 shadow-2xl border border-white/20">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-white font-bold text-xl drop-shadow-md">Liked Songs</h3>
+                    <h3 className="text-white font-bold text-xl drop-shadow-md">Canciones Favoritas</h3>
                     <div className="flex items-center gap-3">
-                      <span className="text-white/60 text-sm">{likedSongs.length} songs</span>
+                      <span className="text-white/60 text-sm">{likedSongs.length} canciones</span>
                       {likedSongs.length > 0 && (
                         <button
                           onClick={playAllLikedSongs}
                           className="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg text-sm font-semibold transition-all"
                         >
-                          Play All
+                          Reproducir Todo
                         </button>
                       )}
                     </div>
@@ -3180,8 +3175,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       className="text-center py-12 flex flex-col items-center gap-3"
                     >
                       <Heart className="w-10 h-10 text-white/20" />
-                      <p className="text-white/50 text-sm">No liked songs yet</p>
-                      <p className="text-white/25 text-xs">Like a song using the ♥ button while it plays</p>
+                      <p className="text-white/50 text-sm">No tienes canciones favoritas aún</p>
+                      <p className="text-white/25 text-xs">Guarda canciones pulsando el botón ♥ mientras suena la música</p>
                     </motion.div>
                   ) : (
                     <div className="flex gap-4 overflow-x-auto pb-2 custom-scrollbar-horizontal">
@@ -3387,14 +3382,14 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               <div className="flex-1 w-full space-y-4">
                 <div className="text-xs font-black text-amber-400 uppercase tracking-widest flex items-center gap-1.5 mb-1">
                   <Pencil className="w-4 h-4 animate-bounce-slow" />
-                  <span>Premium Component Resizer</span>
+                  <span>Redimensionar Componentes</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {/* Album Art Slider */}
                   <div className="space-y-1 bg-white/5 p-3 rounded-2xl border border-white/5">
                     <div className="flex justify-between text-[10px] font-bold text-white/50 uppercase">
-                      <span>Album Art Size</span>
+                      <span>Tamaño de Portada</span>
                       <span className="text-amber-400">{Math.round(albumArtScale * 100)}%</span>
                     </div>
                     <input
@@ -3411,7 +3406,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   {/* Metadata Slider */}
                   <div className="space-y-1 bg-white/5 p-3 rounded-2xl border border-white/5">
                     <div className="flex justify-between text-[10px] font-bold text-white/50 uppercase">
-                      <span>Metadata Size</span>
+                      <span>Tamaño de Título/Autor</span>
                       <span className="text-amber-400">{Math.round(metadataScale * 100)}%</span>
                     </div>
                     <input
@@ -3428,7 +3423,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   {/* Controls Slider */}
                   <div className="space-y-1 bg-white/5 p-3 rounded-2xl border border-white/5">
                     <div className="flex justify-between text-[10px] font-bold text-white/50 uppercase">
-                      <span>Controls Size</span>
+                      <span>Tamaño de Controles</span>
                       <span className="text-amber-400">{Math.round(controlsScale * 100)}%</span>
                     </div>
                     <input
@@ -3444,26 +3439,25 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 </div>
               </div>
 
-
               {/* Action Buttons */}
               <div className="w-full md:w-auto flex flex-col gap-2 shrink-0">
                 <button
                   onClick={handleSaveLayout}
                   className="w-full py-2.5 px-4 bg-green-500 hover:bg-green-600 active:scale-98 transition-all text-xs font-black uppercase tracking-wider rounded-xl text-black cursor-pointer text-center"
                 >
-                  Save Settings
+                  Guardar Cambios
                 </button>
                 <button
                   onClick={handleCancelLayout}
                   className="w-full py-2.5 px-4 bg-red-500 hover:bg-red-600 active:scale-98 transition-all text-xs font-black uppercase tracking-wider rounded-xl text-white cursor-pointer text-center"
                 >
-                  Cancel
+                  Cancelar
                 </button>
                 <button
                   onClick={handleResetLayout}
                   className="w-full py-2.5 px-4 bg-white/10 hover:bg-white/20 active:scale-98 transition-all text-xs font-black uppercase tracking-wider rounded-xl text-white cursor-pointer text-center"
                 >
-                  Reset Layout
+                  Restablecer
                 </button>
               </div>
 
@@ -3495,13 +3489,13 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 <div className="flex justify-between items-center border-b border-white/10 pb-2">
                   <div className="text-xs font-black text-amber-400 uppercase tracking-widest flex items-center gap-1.5">
                     <Paintbrush className="w-4 h-4" />
-                    <span>Choose Theme Preset (20 Options)</span>
+                    <span>Elegir Tema de Fondo (20 Opciones)</span>
                   </div>
                   <button
                     onClick={() => setShowBgCustomizer(false)}
                     className="text-white/60 hover:text-white text-xs font-bold transition cursor-pointer"
                   >
-                    Close
+                    Cerrar
                   </button>
                 </div>
                 <div className="grid grid-cols-5 sm:grid-cols-10 gap-3 max-h-36 overflow-y-auto custom-scrollbar-vertical pr-1 py-1">
@@ -3526,7 +3520,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                         )}
                       </button>
                       {p.id === 'auto' && (
-                        <span className="text-[7px] text-amber-400 font-bold leading-none">Default</span>
+                        <span className="text-[7px] text-amber-400 font-bold leading-none">Por Defecto</span>
                       )}
                     </div>
                   ))}
@@ -3560,19 +3554,19 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 <div className="flex justify-between items-center border-b border-white/10 pb-2">
                   <div className="text-xs font-black text-amber-400 uppercase tracking-widest flex items-center gap-1.5">
                     <Palette className="w-4 h-4" />
-                    <span>Customize Lyrics style font and neon glow</span>
+                    <span>Personalizar Estilo y Brillo Neón de Letras</span>
                   </div>
                   <button
                     onClick={() => setShowLyricsCustomizer(false)}
                     className="text-white/60 hover:text-white text-xs font-bold transition cursor-pointer"
                   >
-                    Close
+                    Cerrar
                   </button>
                 </div>
                 <div className="flex flex-wrap gap-6 items-center justify-between">
                   {/* Font Size */}
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">Font Size</label>
+                    <label className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">Tamaño de Fuente</label>
                     <select
                       value={lyricsFontSize}
                       onChange={(e) => {
@@ -3581,16 +3575,16 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       }}
                       className="bg-black/60 border border-white/15 px-3 py-1.5 rounded-lg text-xs text-white font-semibold cursor-pointer focus:outline-none"
                     >
-                      <option value="text-xl lg:text-2xl">Small</option>
-                      <option value="text-2xl lg:text-3xl">Medium</option>
-                      <option value="text-3xl lg:text-4xl">Large</option>
-                      <option value="text-4xl lg:text-5xl">X-Large</option>
+                      <option value="text-xl lg:text-2xl">Pequeño</option>
+                      <option value="text-2xl lg:text-3xl">Mediano</option>
+                      <option value="text-3xl lg:text-4xl">Grande</option>
+                      <option value="text-4xl lg:text-5xl">Muy Grande</option>
                     </select>
                   </div>
 
                   {/* Color Palette */}
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">Text Color</label>
+                    <label className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">Color del Texto</label>
                     <div className="flex gap-2 items-center flex-wrap">
                       {[
                         { class: 'auto', name: 'AUTO', isAuto: true },
@@ -3603,7 +3597,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       ].map((c) => (
                         <button
                           key={c.class}
-                          title={c.isAuto ? "Auto (Changes color dynamically with background theme)" : c.class}
+                          title={c.isAuto ? "Auto (Cambia de color dinámicamente con el fondo)" : c.class}
                           onClick={() => {
                             setLyricsColor(c.class);
                             localStorage.setItem(`aurora_lyrics_clr_${userId}`, c.class);
@@ -3636,7 +3630,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
 
                   {/* Neon Glow Toggle */}
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">Neon Glow</label>
+                    <label className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">Brillo Neón</label>
                     <button
                       onClick={() => {
                         const newVal = !lyricsGlow;
@@ -3646,7 +3640,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                       className={`px-4 py-1.5 rounded-lg border font-bold text-xs transition-colors cursor-pointer ${lyricsGlow ? 'bg-amber-400/20 border-amber-400 text-amber-300' : 'border-white/10 text-white/60 hover:bg-white/5'
                         }`}
                     >
-                      {lyricsGlow ? 'ON' : 'OFF'}
+                      {lyricsGlow ? 'SÍ' : 'NO'}
                     </button>
                   </div>
                 </div>

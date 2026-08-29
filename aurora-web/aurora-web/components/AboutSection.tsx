@@ -30,24 +30,24 @@ export default function AboutSection({ settings }: { settings?: any }) {
 
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.85], ["0%", "100%"]);
 
-  const aboutTitle = settings?.aboutTitle || "The Story Behind Tussi Music";
-  const aboutSubtitle = settings?.aboutSubtitle || "More than a bot — a commitment to bringing people together through music.";
+  const aboutTitle = settings?.aboutTitle || "La Historia Detrás de Tussi Music";
+  const aboutSubtitle = settings?.aboutSubtitle || "Más que un bot — la mejor forma de disfrutar de la música en comunidad.";
 
   const storyItems = [
     {
       icon: Sparkles,
-      title: settings?.aboutCard1Title || "Born from passion",
-      text: settings?.aboutCard1Text || "Tussi Music was created by music lovers who believed Discord deserved a bot that sounds as good as a dedicated music player.",
+      title: settings?.aboutCard1Title || "Nacido de la pasión",
+      text: settings?.aboutCard1Text || "Tussi Music fue creado para quienes buscan un bot en Discord con calidad de reproductor profesional.",
     },
     {
       icon: Zap,
-      title: settings?.aboutCard2Title || "Built for performance",
-      text: settings?.aboutCard2Text || "Every millisecond matters. We've optimized our audio pipeline for zero-lag, crystal-clear playback across thousands of servers simultaneously.",
+      title: settings?.aboutCard2Title || "Máximo rendimiento",
+      text: settings?.aboutCard2Text || "Cada milisegundo cuenta. Audio optimizado sin lag, con sonido ultra nítido y disponible 24/7.",
     },
     {
       icon: Heart,
-      title: settings?.aboutCard3Title || "Loved by communities",
-      text: settings?.aboutCard3Text || "From small friend groups to massive gaming communities — Tussi Music adapts to your server's vibe and keeps the energy flowing.",
+      title: settings?.aboutCard3Title || "La opción favorita de tu servidor",
+      text: settings?.aboutCard3Text || "Desde servidores de amigos hasta grandes comunidades gaming — Tussi Music se adapta al ambiente de tu servidor.",
     },
   ];
 

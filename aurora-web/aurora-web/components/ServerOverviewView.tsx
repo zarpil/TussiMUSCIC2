@@ -240,7 +240,7 @@ export default function ServerOverviewView({
               </span>
               <span className="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-purple-400" />
-                VERIFIED BOT
+                BOT OFICIAL
               </span>
             </div>
 
@@ -251,11 +251,11 @@ export default function ServerOverviewView({
             <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-white/70 mt-2 font-medium">
               <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-xl border border-white/10">
                 <Users className="w-4 h-4 text-cyan-400" />
-                {guild.memberCount ? guild.memberCount.toLocaleString() : '0'} Server Members
+                {guild.memberCount ? guild.memberCount.toLocaleString() : '0'} Miembros
               </span>
               <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-xl border border-white/10 text-emerald-400 font-bold">
                 <Activity className="w-4 h-4 text-emerald-400" />
-                {twentyFourSeven.isConnected ? 'Voice Channel Connected' : 'Ready to Connect'}
+                {twentyFourSeven.isConnected ? 'Canal de Voz Conectado' : 'Listo para Conectar'}
               </span>
             </div>
           </div>
@@ -267,7 +267,7 @@ export default function ServerOverviewView({
           className="z-10 px-5 py-3 bg-white/10 hover:bg-cyan-500/20 hover:text-cyan-300 text-white rounded-2xl transition-all border border-white/10 hover:border-cyan-500/40 shrink-0 cursor-pointer disabled:opacity-50 flex items-center gap-2 font-bold text-xs uppercase tracking-wider shadow-lg active:scale-95"
         >
           <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin' : ''}`} />
-          <span>Refresh Data</span>
+          <span>Actualizar</span>
         </button>
       </div>
 
@@ -291,14 +291,14 @@ export default function ServerOverviewView({
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-                    24/7 Voice Channel Mode
+                    Modo 24/7 en Canal de Voz
                     {twentyFourSeven.enabled && (
                       <span className="text-[10px] bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-black uppercase">
-                        Active
+                        Activo
                       </span>
                     )}
                   </h3>
-                  <p className="text-xs text-white/60 mt-0.5">Keep Aurora bot in Voice Channel continuously 24 hours a day</p>
+                  <p className="text-xs text-white/60 mt-0.5">Mantiene el bot en el canal de voz de forma continua</p>
                 </div>
               </div>
 
@@ -327,7 +327,7 @@ export default function ServerOverviewView({
             {/* Status Information Box */}
             <div className="bg-black/50 border border-white/10 p-4 sm:p-5 rounded-2xl space-y-3 mb-5 backdrop-blur-md">
               <div className="flex items-center justify-between text-xs sm:text-sm">
-                <span className="text-white/60 font-medium">Mode Status:</span>
+                <span className="text-white/60 font-medium">Estado del Modo:</span>
                 <span className={`font-black flex items-center gap-1.5 text-xs px-3 py-1 rounded-full uppercase tracking-wider ${
                   twentyFourSeven.enabled
                     ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
@@ -336,12 +336,12 @@ export default function ServerOverviewView({
                   {twentyFourSeven.enabled ? (
                     <>
                       <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                      <span>24/7 MODE ACTIVE</span>
+                      <span>MODO 24/7 ACTIVO</span>
                     </>
                   ) : (
                     <>
                       <XCircle className="w-4 h-4 text-white/40" />
-                      <span>DISABLED</span>
+                      <span>DESACTIVADO</span>
                     </>
                   )}
                 </span>
@@ -349,10 +349,10 @@ export default function ServerOverviewView({
 
               {twentyFourSeven.enabled && (
                 <div className="flex items-center justify-between text-xs sm:text-sm pt-2 border-t border-white/10">
-                  <span className="text-white/60 font-medium">Voice Channel:</span>
+                  <span className="text-white/60 font-medium">Canal de Voz:</span>
                   <span className="font-bold text-cyan-300 flex items-center gap-1.5 bg-cyan-500/10 px-2.5 py-1 rounded-lg border border-cyan-500/20">
                     <Headphones className="w-3.5 h-3.5 text-cyan-400" />
-                    #{twentyFourSeven.voiceChannelName || 'Connected Channel'}
+                    #{twentyFourSeven.voiceChannelName || 'Canal Conectado'}
                   </span>
                 </div>
               )}
@@ -361,8 +361,8 @@ export default function ServerOverviewView({
             <div className="p-4 bg-cyan-500/5 border border-cyan-500/20 rounded-2xl text-xs text-white/70 leading-relaxed flex items-start gap-2.5">
               <Info className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
               <div>
-                <span className="font-bold text-white block mb-0.5">How 24/7 Mode Works:</span>
-                When toggled ON, the bot immediately joins your voice channel and stays connected even when queue finishes. If the bot restarts, it automatically reconnects. If the voice channel is deleted on Discord, 24/7 mode automatically toggles OFF.
+                <span className="font-bold text-white block mb-0.5">Cómo Funciona el Modo 24/7:</span>
+                Al activarse, el bot se conectará a tu canal de voz y permanecerá allí incluso si la cola termina. Si el bot se reinicia, se reconectará automáticamente.
               </div>
             </div>
           </div>
@@ -380,30 +380,30 @@ export default function ServerOverviewView({
                 <Clock className="w-7 h-7" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white tracking-tight">Voice Channel Listening Hours</h3>
-                <p className="text-xs text-white/60 mt-0.5">Total bot voice stream duration in this server</p>
+                <h3 className="text-xl font-bold text-white tracking-tight">Horas de Reproducción en Voz</h3>
+                <p className="text-xs text-white/60 mt-0.5">Tiempo total de música reproducida en este servidor</p>
               </div>
             </div>
 
             <div className="my-6 p-6 bg-black/40 border border-white/10 rounded-2xl relative">
               <div className="text-4xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 tracking-tight">
-                {stats.totalVcHours} <span className="text-xl sm:text-2xl text-white/70 font-bold">Hours</span>
+                {stats.totalVcHours} <span className="text-xl sm:text-2xl text-white/70 font-bold">Horas</span>
               </div>
               <p className="text-xs text-cyan-400/80 mt-2 font-mono flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-                Equivalent to {Math.round(stats.totalVcHours * 60)} active minutes streamed in Voice Channels
+                Equivalente a {Math.round(stats.totalVcHours * 60)} minutos activos en canales de voz
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10 text-xs">
             <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-              <span className="text-white/50 block text-[10px] uppercase font-bold tracking-wider">Active Bot Users</span>
-              <span className="text-white font-black text-base mt-1 block">{userActivity.length} Members</span>
+              <span className="text-white/50 block text-[10px] uppercase font-bold tracking-wider">Usuarios Activos</span>
+              <span className="text-white font-black text-base mt-1 block">{userActivity.length} Miembros</span>
             </div>
             <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-              <span className="text-white/50 block text-[10px] uppercase font-bold tracking-wider">Unique Tracks</span>
-              <span className="text-white font-black text-base mt-1 block">{topSongs.length} Songs Played</span>
+              <span className="text-white/50 block text-[10px] uppercase font-bold tracking-wider">Canciones Reproducidas</span>
+              <span className="text-white font-black text-base mt-1 block">{topSongs.length} Pistas</span>
             </div>
           </div>
         </div>
@@ -419,8 +419,8 @@ export default function ServerOverviewView({
                 <Trophy className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white tracking-tight">Top Bot Users</h3>
-                <p className="text-xs text-white/50">Members who queued & played the most songs in server</p>
+                <h3 className="text-xl font-bold text-white tracking-tight">Usuarios Más Activos</h3>
+                <p className="text-xs text-white/50">Miembros que más canciones han pedido en el servidor</p>
               </div>
             </div>
           </div>
@@ -429,8 +429,8 @@ export default function ServerOverviewView({
             {userActivity.length === 0 ? (
               <div className="py-12 text-center text-white/40 text-xs bg-white/5 rounded-2xl border border-dashed border-white/10 p-6">
                 <Trophy className="w-10 h-10 text-white/20 mx-auto mb-2" />
-                <p className="font-bold text-white/60 mb-1">No user statistics recorded yet</p>
-                <p className="text-[11px] text-white/40">Play songs in this server to populate the top user leaderboard!</p>
+                <p className="font-bold text-white/60 mb-1">Aún no hay estadísticas de usuarios</p>
+                <p className="text-[11px] text-white/40">¡Pide canciones en este servidor para aparecer en el ranking!</p>
               </div>
             ) : (
               userActivity.map((user: any, index: number) => {
@@ -465,7 +465,7 @@ export default function ServerOverviewView({
 
                     <div className="flex items-center gap-2 shrink-0">
                       <span className="px-3.5 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-xs font-black">
-                        {user.count} songs
+                        {user.count} canciones
                       </span>
                     </div>
                   </div>
@@ -483,8 +483,8 @@ export default function ServerOverviewView({
                 <Flame className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white tracking-tight">Most Played Songs</h3>
-                <p className="text-xs text-white/50">Top requested tracks in this server</p>
+                <h3 className="text-xl font-bold text-white tracking-tight">Canciones Más Escuchadas</h3>
+                <p className="text-xs text-white/50">Las pistas más reproducidas en este servidor</p>
               </div>
             </div>
           </div>
@@ -493,8 +493,8 @@ export default function ServerOverviewView({
             {topSongs.length === 0 ? (
               <div className="py-12 text-center text-white/40 text-xs bg-white/5 rounded-2xl border border-dashed border-white/10 p-6">
                 <Flame className="w-10 h-10 text-white/20 mx-auto mb-2" />
-                <p className="font-bold text-white/60 mb-1">No top songs recorded yet</p>
-                <p className="text-[11px] text-white/40">Play songs in this server to populate top requested tracks!</p>
+                <p className="font-bold text-white/60 mb-1">Aún no hay canciones registradas</p>
+                <p className="text-[11px] text-white/40">¡Pide canciones en el servidor para ver el ranking musical!</p>
               </div>
             ) : (
               topSongs.map((song: any, index: number) => (
@@ -523,7 +523,7 @@ export default function ServerOverviewView({
 
                   <div className="flex items-center gap-3 shrink-0">
                     <span className="px-3 py-1 bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 rounded-full text-xs font-mono font-bold">
-                      {song.count} plays
+                      {song.count} repros
                     </span>
                   </div>
                 </div>

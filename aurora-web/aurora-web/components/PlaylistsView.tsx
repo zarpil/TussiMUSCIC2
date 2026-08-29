@@ -483,14 +483,14 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
         <div className="w-full max-w-7xl mx-auto flex flex-col h-full overflow-y-auto custom-scrollbar-vertical p-6 md:p-10 pb-48 md:pb-64">
           {!selectedPlaylist && (
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 w-full">
-          <h2 className="text-3xl font-bold text-white drop-shadow-md">Playlists</h2>
+          <h2 className="text-3xl font-bold text-white drop-shadow-md">Listas de Reproducción</h2>
           
           <div className="w-full sm:flex-1 sm:max-w-md mx-0 sm:mx-4 relative">
              <input
                type="text"
                value={searchQuery}
                onChange={e => setSearchQuery(e.target.value)}
-               placeholder="Search by playlist name or username..."
+               placeholder="Buscar por nombre o creador..."
                className="w-full pl-10 pr-4 py-2.5 bg-black/40 border border-white/10 rounded-full text-white placeholder-white/40 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all text-sm"
              />
              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
@@ -512,7 +512,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                   />
                 )}
                 <span className="relative z-20 flex items-center gap-2">
-                  <Globe className="w-4 h-4" /> Public
+                  <Globe className="w-4 h-4" /> Públicas
                 </span>
               </button>
               <button
@@ -529,7 +529,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                   />
                 )}
                 <span className="relative z-20 flex items-center gap-2">
-                  <Music className="w-4 h-4" /> Your Playlists
+                  <Music className="w-4 h-4" /> Tus Listas
                 </span>
               </button>
             </div>
@@ -537,7 +537,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
               onClick={() => {
                 if (premiumSystemActive && !isPremium) {
                   window.dispatchEvent(new CustomEvent('show-toast', {
-                    detail: { message: '🔒 Playlist creation is a Premium-only feature!', type: 'warning' }
+                    detail: { message: '🔒 ¡La creación de listas es una función exclusiva de Premium!', type: 'warning' }
                   }));
                   return;
                 }
@@ -545,7 +545,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
               }}
               className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-xl font-bold hover:scale-105 transition-all shadow-lg cursor-pointer"
             >
-              <Plus className="w-5 h-5" /> Create
+              <Plus className="w-5 h-5" /> Crear
             </button>
           </div>
         </div>
@@ -570,11 +570,11 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
               </div>
             </div>
             <div className="flex-1 w-full">
-              <button onClick={() => setSelectedPlaylist(null)} className="text-white/50 hover:text-white mb-2 flex items-center gap-1 transition-colors">
-                ← Back
+              <button onClick={() => setSelectedPlaylist(null)} className="text-white/50 hover:text-white mb-2 flex items-center gap-1 transition-colors cursor-pointer">
+                ← Volver
               </button>
               <h2 className="text-4xl md:text-5xl font-black text-white drop-shadow-xl mb-4">{selectedPlaylist.name}</h2>
-              <p className="text-white/70 text-lg mb-6">{selectedPlaylist.description || 'No description provided.'}</p>
+              <p className="text-white/70 text-lg mb-6">{selectedPlaylist.description || 'Sin descripción.'}</p>
               
               {selectedPlaylist.tags && selectedPlaylist.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -585,16 +585,16 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
               )}
               
               <div className="flex items-center gap-4 border-b border-white/10 pb-6 mb-6">
-                <button onClick={() => playPlaylist(selectedPlaylist)} className="px-6 py-2.5 bg-white text-black font-bold rounded-xl hover:scale-105 transition-all shadow-xl flex items-center gap-2">
-                  <Play className="w-4 h-4" fill="black" /> Play All
+                <button onClick={() => playPlaylist(selectedPlaylist)} className="px-6 py-2.5 bg-white text-black font-bold rounded-xl hover:scale-105 transition-all shadow-xl flex items-center gap-2 cursor-pointer">
+                  <Play className="w-4 h-4" fill="black" /> Reproducir Todo
                 </button>
-                <button onClick={toggleLike} className={`px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 border ${selectedPlaylist.likes?.includes(userId) ? 'bg-purple-500/20 border-purple-500/50 text-purple-400' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'}`}>
+                <button onClick={toggleLike} className={`px-4 py-2.5 rounded-xl transition-all flex items-center gap-2 border cursor-pointer ${selectedPlaylist.likes?.includes(userId) ? 'bg-purple-500/20 border-purple-500/50 text-purple-400' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'}`}>
                   <Heart className="w-4 h-4" fill={selectedPlaylist.likes?.includes(userId) ? 'currentColor' : 'none'} />
                   {selectedPlaylist.likes?.length || 0}
                 </button>
                 <button
                   onClick={() => document.getElementById('comments-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all flex items-center gap-2"
+                  className="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4" />
                   {selectedPlaylist.comments?.length || 0}
@@ -602,7 +602,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                 {selectedPlaylist.userId === userId && (
                   <button onClick={() => togglePrivacy(selectedPlaylist)} className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-all flex items-center gap-2 border border-white/10 cursor-pointer">
                     {selectedPlaylist.isPublic ? <Globe className="w-4 h-4 text-purple-400" /> : <Lock className="w-4 h-4" />}
-                    {selectedPlaylist.isPublic ? 'Public' : 'Private'}
+                    {selectedPlaylist.isPublic ? 'Pública' : 'Privada'}
                   </button>
                 )}
                 <div className="flex items-center gap-3 ml-auto">
@@ -613,7 +613,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                     className="w-8 h-8 md:w-10 md:h-10 rounded-full shadow-lg" 
                   />
                   <div className="flex flex-col">
-                     <span className="text-white/40 text-[10px] uppercase tracking-wider font-bold">Created by</span>
+                     <span className="text-white/40 text-[10px] uppercase tracking-wider font-bold">Creado por</span>
                      <span className="text-white font-semibold text-sm md:text-base">{selectedPlaylist.creatorName}</span>
                   </div>
                 </div>
@@ -626,11 +626,11 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                     type="text"
                     value={addLinkUrl}
                     onChange={e => setAddLinkUrl(e.target.value)}
-                    placeholder="Import URL (Spotify/YouTube/Ganna) or Search track..."
+                    placeholder="Importar URL (Spotify/YouTube/Deezer) o buscar canción..."
                     className="flex-1 bg-transparent px-4 py-2 text-white outline-none placeholder-white/40"
                   />
-                  <button onClick={handleAddLink} disabled={isAdding} className="px-4 py-2 bg-purple-500 rounded-lg text-white font-bold hover:bg-purple-600 disabled:opacity-50">
-                    {isAdding ? 'Adding...' : 'Add'}
+                  <button onClick={handleAddLink} disabled={isAdding} className="px-4 py-2 bg-purple-500 rounded-lg text-white font-bold hover:bg-purple-600 disabled:opacity-50 cursor-pointer">
+                    {isAdding ? 'Añadiendo...' : 'Añadir'}
                   </button>
                 </div>
               )}
@@ -650,8 +650,8 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                       {selectedPlaylist.userId === userId && (
                         <button 
                           onClick={(e) => { e.stopPropagation(); removeTrack(idx); }}
-                          className="p-2 opacity-0 group-hover:opacity-100 hover:bg-red-500/20 text-red-400 rounded-lg transition-all"
-                          title="Remove Track"
+                          className="p-2 opacity-0 group-hover:opacity-100 hover:bg-red-500/20 text-red-400 rounded-lg transition-all cursor-pointer"
+                          title="Eliminar Canción"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -659,13 +659,13 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                     </div>
                   ))
                 ) : (
-                  <div className="text-center py-10 text-white/50">This playlist is empty.</div>
+                  <div className="text-center py-10 text-white/50">Esta lista de reproducción está vacía.</div>
                 )}
               </div>
 
               {/* Comments Section */}
               <div className="mt-12" id="comments-section">
-                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2"><MessageSquare className="w-6 h-6" /> Comments <span className="text-white/40 text-lg font-normal">({selectedPlaylist.comments?.length || 0})</span></h3>
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2"><MessageSquare className="w-6 h-6" /> Comentarios <span className="text-white/40 text-lg font-normal">({selectedPlaylist.comments?.length || 0})</span></h3>
                 
                 <div className="flex gap-4 mb-8">
                   <img src={getAvatarUrl(user)} className="w-10 h-10 rounded-full" alt="Avatar" />
@@ -673,11 +673,11 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                     <textarea 
                       value={commentText}
                       onChange={e => setCommentText(e.target.value)}
-                      placeholder="Add a comment..."
+                      placeholder="Añade un comentario..."
                       className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-purple-500 resize-none h-20"
                     />
                     <div className="flex justify-end mt-2">
-                      <button onClick={postComment} disabled={!commentText.trim()} className="px-4 py-2 bg-purple-500 text-white rounded-lg font-bold disabled:opacity-50">Post</button>
+                      <button onClick={postComment} disabled={!commentText.trim()} className="px-4 py-2 bg-purple-500 text-white rounded-lg font-bold disabled:opacity-50 cursor-pointer">Publicar</button>
                     </div>
                   </div>
                 </div>
@@ -696,15 +696,15 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                           <div className="flex justify-between items-start mb-2">
                             <span className="font-bold text-white">{comment.username}</span>
                             {(comment.userId === userId || selectedPlaylist.userId === userId) && (
-                              <button onClick={() => deleteComment(comment.id)} className="text-white/40 hover:text-red-400"><Trash2 className="w-4 h-4" /></button>
+                              <button onClick={() => deleteComment(comment.id)} className="text-white/40 hover:text-red-400 cursor-pointer"><Trash2 className="w-4 h-4" /></button>
                             )}
                           </div>
                           <p className="text-white/80">{comment.text}</p>
                           <div className="flex items-center gap-4 mt-3 text-white/50 text-sm">
-                            <button onClick={() => toggleCommentLike(comment.id)} className={`flex items-center gap-1 hover:text-white transition-colors ${comment.likes?.includes(userId) ? 'text-purple-400' : ''}`}>
+                            <button onClick={() => toggleCommentLike(comment.id)} className={`flex items-center gap-1 hover:text-white transition-colors cursor-pointer ${comment.likes?.includes(userId) ? 'text-purple-400' : ''}`}>
                               <Heart className="w-4 h-4" fill={comment.likes?.includes(userId) ? 'currentColor' : 'none'} /> {comment.likes?.length || 0}
                             </button>
-                            <button onClick={() => setReplyTo(replyTo === comment.id ? null : comment.id)} className="hover:text-white transition-colors">Reply</button>
+                            <button onClick={() => setReplyTo(replyTo === comment.id ? null : comment.id)} className="hover:text-white transition-colors cursor-pointer">Responder</button>
                           </div>
                         </div>
 
@@ -714,10 +714,10 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                               type="text" 
                               value={replyText}
                               onChange={e => setReplyText(e.target.value)}
-                              placeholder="Write a reply..."
+                              placeholder="Escribe una respuesta..."
                               className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-purple-500"
                             />
-                            <button onClick={() => postReply(comment.id)} disabled={!replyText.trim()} className="px-3 py-2 bg-purple-500 text-white rounded-lg text-sm font-bold disabled:opacity-50">Reply</button>
+                            <button onClick={() => postReply(comment.id)} disabled={!replyText.trim()} className="px-3 py-2 bg-purple-500 text-white rounded-lg text-sm font-bold disabled:opacity-50 cursor-pointer">Responder</button>
                           </div>
                         )}
 
@@ -736,7 +736,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                                   <div className="flex justify-between items-start mb-1">
                                     <span className="font-bold text-white text-sm">{reply.username}</span>
                                     {(reply.userId === userId || comment.userId === userId || selectedPlaylist.userId === userId) && (
-                                      <button onClick={() => deleteReply(comment.id, reply.id)} className="text-white/40 hover:text-red-400"><Trash2 className="w-3 h-3" /></button>
+                                      <button onClick={() => deleteReply(comment.id, reply.id)} className="text-white/40 hover:text-red-400 cursor-pointer"><Trash2 className="w-3 h-3" /></button>
                                     )}
                                   </div>
                                   <p className="text-white/80 text-sm">{reply.text}</p>
@@ -760,8 +760,8 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
       ) : playlists.length === 0 ? (
         <div className="text-center py-20 bg-white/5 rounded-2xl border border-white/10">
           <Music className="w-16 h-16 text-white/30 mx-auto mb-4" />
-          <h3 className="text-xl text-white font-semibold">No playlists found</h3>
-          <p className="text-white/50 mt-2">Create one to get started or try a different search!</p>
+          <h3 className="text-xl text-white font-semibold">No se encontraron listas</h3>
+          <p className="text-white/50 mt-2">¡Crea una lista para comenzar o prueba con otra búsqueda!</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -799,7 +799,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                 </div>
               </div>
               <h3 className="text-lg font-bold text-white truncate">{playlist.name}</h3>
-              <p className="text-white/60 text-sm truncate">{playlist.description || 'No description'}</p>
+              <p className="text-white/60 text-sm truncate">{playlist.description || 'Sin descripción'}</p>
               
               <div className="mt-auto pt-4 flex items-center justify-between text-xs text-white/50">
                 <div className="flex items-center gap-2">
@@ -809,14 +809,14 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                 <div className="flex items-center gap-3">
                   <span className="flex items-center gap-1"><Heart className="w-3 h-3" /> {playlist.likes?.length || 0}</span>
                   <span className="flex items-center gap-1"><MessageSquare className="w-3 h-3" /> {playlist.comments?.length || 0}</span>
-                  <span>{playlist.tracks?.length || 0} tracks</span>
+                  <span>{playlist.tracks?.length || 0} canciones</span>
                 </div>
               </div>
               
               {playlist.userId === userId && (
                 <button
                   onClick={(e) => { e.stopPropagation(); deletePlaylist(playlist.id || playlist._id); }}
-                  className="absolute top-2 left-2 p-2 rounded-full bg-black/60 text-red-400 opacity-0 group-hover:opacity-100 transition-all hover:bg-red-500 hover:text-white z-20"
+                  className="absolute top-2 left-2 p-2 rounded-full bg-black/60 text-red-400 opacity-0 group-hover:opacity-100 transition-all hover:bg-red-500 hover:text-white z-20 cursor-pointer"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -839,34 +839,34 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
             >
               <button 
                 onClick={() => setShowCreateModal(false)}
-                className="absolute top-4 right-4 text-white/50 hover:text-white"
+                className="absolute top-4 right-4 text-white/50 hover:text-white cursor-pointer"
               >
                 <X className="w-6 h-6" />
               </button>
-              <h2 className="text-2xl font-bold text-white mb-6">Create Playlist</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">Crear Lista de Reproducción</h2>
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-white/70 text-sm font-medium mb-2">Playlist Name</label>
+                  <label className="block text-white/70 text-sm font-medium mb-2">Nombre de la Lista</label>
                   <input
                     type="text"
                     value={newPlaylistName}
                     onChange={e => setNewPlaylistName(e.target.value)}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    placeholder="My Awesome Mix"
+                    placeholder="Mi Mezcla Favorita"
                   />
                 </div>
                 <div>
-                  <label className="block text-white/70 text-sm font-medium mb-2">Description</label>
+                  <label className="block text-white/70 text-sm font-medium mb-2">Descripción</label>
                   <textarea
                     value={newPlaylistDesc}
                     onChange={e => setNewPlaylistDesc(e.target.value)}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none h-24"
-                    placeholder="Vibes only..."
+                    placeholder="Las mejores canciones para escuchar..."
                   />
                 </div>
                 <div>
-                  <label className="block text-white/70 text-sm font-medium mb-2">Tags</label>
+                  <label className="block text-white/70 text-sm font-medium mb-2">Etiquetas</label>
                   <div className="flex flex-wrap gap-2 mb-2">
                     {newTags.map(tag => (
                       <span key={tag} className="px-2 py-1 bg-purple-500/30 text-purple-200 text-xs rounded-full flex items-center gap-1">
@@ -888,37 +888,37 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
                       }
                     }}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    placeholder="Press enter to add tag..."
+                    placeholder="Pulsa enter para añadir etiqueta..."
                   />
                 </div>
                 <div>
-                  <label className="block text-white/70 text-sm font-medium mb-2">Import Link (Optional)</label>
+                  <label className="block text-white/70 text-sm font-medium mb-2">Importar Lista (Opcional)</label>
                   <input
                     type="text"
                     value={importUrl}
                     onChange={e => setImportUrl(e.target.value)}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    placeholder="Paste Spotify/YouTube/Gaana Playlist Link"
+                    placeholder="Pega enlace de Spotify, YouTube o Deezer"
                   />
                 </div>
                 <div className="flex items-center gap-3 pt-2">
                   <button
                     onClick={() => setIsPublic(!isPublic)}
-                    className={`w-12 h-6 rounded-full transition-colors relative ${isPublic ? 'bg-purple-500' : 'bg-white/20'}`}
+                    className={`w-12 h-6 rounded-full transition-colors relative cursor-pointer ${isPublic ? 'bg-purple-500' : 'bg-white/20'}`}
                   >
                     <div className={`w-4 h-4 rounded-full bg-white absolute top-1 transition-all ${isPublic ? 'left-7' : 'left-1'}`} />
                   </button>
                   <span className="text-white font-medium flex items-center gap-2">
                     {isPublic ? <Globe className="w-4 h-4 text-purple-400" /> : <Lock className="w-4 h-4 text-white/50" />}
-                    {isPublic ? 'Public' : 'Private'}
+                    {isPublic ? 'Pública' : 'Privada'}
                   </span>
                 </div>
                 <button
                   disabled={!newPlaylistName}
                   onClick={handleCreatePlaylist}
-                  className="w-full py-3 bg-purple-500 text-white rounded-xl font-bold text-lg mt-6 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-purple-600 transition-colors"
+                  className="w-full py-3 bg-purple-500 text-white rounded-xl font-bold text-lg mt-6 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-purple-600 transition-colors cursor-pointer"
                 >
-                  Create
+                  Crear Lista
                 </button>
               </div>
             </motion.div>

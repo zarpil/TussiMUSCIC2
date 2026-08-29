@@ -36,7 +36,7 @@ export default function GuildsPage() {
         }
       } catch (error) {
         console.error('Error loading data:', error);
-        setError('Failed to load data');
+        setError('Error al cargar los datos');
         setLoading(false);
       }
     };
@@ -95,7 +95,7 @@ export default function GuildsPage() {
         
         setGuilds(guildsWithInfo);
       } else {
-        setError('Failed to fetch user servers');
+        setError('Error al obtener los servidores del usuario');
         setLoading(false);
         return;
       }
@@ -103,14 +103,14 @@ export default function GuildsPage() {
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch guilds:', error);
-      setError('Failed to connect to bot');
+      setError('Error al conectar con el servicio del bot');
       setLoading(false);
     }
   };
 
   const handleGuildClick = (guildId: string) => {
     if (!user) {
-      setError('Please login to access the dashboard');
+      setError('Por favor inicia sesión para acceder al panel');
       return;
     }
     router.push(`/dashboard/${guildId}`);
