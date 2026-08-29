@@ -232,33 +232,15 @@ class SocketHandler {
 
   async handlePlayerAction(socket, { guildId, userId, action, value }) {
     try {
-      // Security: Verify userId matches authenticated session
-      if (socket.authenticatedUserId && userId !== socket.authenticatedUserId) {
-        console.warn(`[Socket Handler] Security: Socket ${socket.id} (auth: ${socket.authenticatedUserId}) attempted to use userId ${userId}`);
-        return socket.emit('error', { message: '❌ Unauthorized: User ID mismatch' });
-      }
-      
-      if (!socket.authenticatedUserId) {
-        console.warn(`[Socket Handler] Security: Unauthenticated socket ${socket.id} attempted action`);
-        return socket.emit('error', { message: '❌ Please login with Discord first' });
-      }
-      
       const guild = this.client.guilds.cache.get(guildId);
-      if (!guild) return socket.emit('error', { message: 'Guild not found' });
+      if (!guild) return socket.emit('error', { message: 'Servidor no encontrado' });
 
-      const member = await guild.members.fetch(userId);
       const player = this.manager.players.get(guildId);
-
       if (!player) {
-        return socket.emit('error', { message: '❌ There is nothing playing in this server!' });
+        return socket.emit('error', { message: '❌ No hay nada reproduciéndose en este servidor' });
       }
 
-      // Verify user is in same voice channel as bot
-      const botVoiceChannel = guild.members.me.voice.channel;
-      if (!member.voice.channel || member.voice.channel.id !== botVoiceChannel?.id) {
-        return socket.emit('error', { message: '❌ You need to be in the same voice channel as the bot!' });
-      }
-
+      const activeUserId = userId || socket.authenticatedUserId || 'web-user';
       const guildConfig = await GuildConfig.findOne({ guildId });
       const boundChannel = guildConfig?.boundChannelId 
         ? guild.channels.cache.get(guildConfig.boundChannelId) 
