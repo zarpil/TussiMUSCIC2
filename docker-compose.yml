@@ -11,9 +11,9 @@ services:
     networks:
       - tussi-network
 
-  # 2. Servidor de Audio NodeLink (Interno, sin colisiones de host)
+  # 2. Servidor de Audio NodeLink (Docker Hub oficial)
   nodelink:
-    image: ghcr.io/performanc/nodelink:latest
+    image: performanc/nodelink:latest
     container_name: tussi-nodelink
     restart: unless-stopped
     environment:
