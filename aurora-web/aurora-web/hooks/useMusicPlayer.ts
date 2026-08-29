@@ -94,15 +94,15 @@ export function useMusicPlayer(guildId: string, userId: string) {
     const activeGuildId = guildId || (typeof window !== 'undefined' ? localStorage.getItem('aurora_active_guildId') : '') || '';
     console.log('[Socket] User ID:', currentUserId, 'Guild ID:', activeGuildId);
 
-    // If embedded inside Discord, we proxy. If standalone, we connect directly using the socket env URL.
-    const isEmbedded = typeof window !== 'undefined' && window.self !== window.top;
-    const socketUrl = isEmbedded ? undefined : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+    // Use relative URL in browser to leverage Next.js /socket.io rewrite proxy
+    const socketUrl = (typeof window !== 'undefined' && window.location.origin) ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
 
     // Connect to Socket.io server
     const socket = io(socketUrl as any, {
       path: '/socket.io/',
       transports: ['polling', 'websocket'],
       reconnection: true,
+      reconnectionDelay: 1000,
       auth: {
         userId: currentUserId
       }
@@ -110,23 +110,77 @@ export function useMusicPlayer(guildId: string, userId: string) {
 
     socketRef.current = socket;
 
-    socket.on('connect', () => {
-      console.log('[Socket] Connected');
-      if (activeGuildId) {
-        socket.emit('join-guild', { guildId: activeGuildId, userId: currentUserId });
+    const emitJoinGuild = () => {
+      const gId = guildId || (typeof window !== 'undefined' ? localStorage.getItem('aurora_active_guildId') : '') || '';
+      if (gId) {
+        console.log('[Socket] Joining guild room:', gId);
+        socket.emit('join-guild', { guildId: gId, userId: currentUserId });
       }
+    };
+
+    socket.on('connect', () => {
+      console.log('[Socket] Connected to server');
+      emitJoinGuild();
     });
+
+    if (socket.connected) {
+      emitJoinGuild();
+    }
 
     // Handle tab visibility changes - request fresh sync when tab becomes visible
     const handleVisibilityChange = () => {
-      if (!document.hidden && socket.connected) {
+      const gId = guildId || (typeof window !== 'undefined' ? localStorage.getItem('aurora_active_guildId') : '') || '';
+      if (!document.hidden && socket.connected && gId) {
         console.log('[Socket] Tab visible - requesting fresh sync');
-        // Request fresh current state from server
-        socket.emit('request-sync', { guildId });
+        emitJoinGuild();
+        socket.emit('request-sync', { guildId: gId });
       }
     };
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // 4-second REST polling fallback loop to guarantee player state is never out of sync
+    const syncInterval = setInterval(async () => {
+      const gId = guildId || (typeof window !== 'undefined' ? localStorage.getItem('aurora_active_guildId') : '') || '';
+      if (!gId) return;
+      
+      try {
+        const res = await fetch(`/api/guild/${gId}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.player && data.player.connected) {
+            setState(prev => {
+              // Only update if currentTrack or queue actually changed to prevent unnecessary re-renders
+              const currentTrackChanged = JSON.stringify(prev.currentTrack) !== JSON.stringify(data.player.current);
+              const queueChanged = (prev.queue?.length || 0) !== (data.player.queue?.length || 0);
+              const isPlayingChanged = prev.isPlaying !== !data.player.paused;
+
+              if (currentTrackChanged || queueChanged || isPlayingChanged) {
+                console.log('[REST Sync Fallback] Updating player state');
+                return {
+                  ...prev,
+                  currentTrack: data.player.current ? {
+                    title: data.player.current.title,
+                    author: data.player.current.author,
+                    duration: data.player.current.duration,
+                    artwork: data.player.current.artwork,
+                    url: data.player.current.url
+                  } : null,
+                  queue: data.player.queue || [],
+                  isPlaying: !data.player.paused,
+                  volume: data.player.volume ?? prev.volume,
+                  loopMode: data.player.loop ?? prev.loopMode,
+                  autoplay: data.player.autoplay ?? prev.autoplay
+                };
+              }
+              return prev;
+            });
+          }
+        }
+      } catch (err) {
+        // Silent catch for background polling
+      }
+    }, 4000);
 
     socket.on('current-state', (data) => {
       setState((prev) => ({
@@ -316,6 +370,7 @@ export function useMusicPlayer(guildId: string, userId: string) {
     });
 
     return () => {
+      clearInterval(syncInterval);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       socket.disconnect();
       if (progressIntervalRef.current) {
