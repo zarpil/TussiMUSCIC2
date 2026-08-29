@@ -1,7 +1,7 @@
 export default {
   server: {
     host: '0.0.0.0',
-    port: 3000,
+    port: 2333,
     password: 'youshallnotpass',
     useBunServer: false // set to true to use Bun.serve websocket (experimental)
   },
@@ -319,7 +319,7 @@ export default {
       enabled: true,
       allowItag: [], // additional itags for audio streams, e.g., [140, 141]
       targetItag: null, // force a specific itag for audio streams, overriding the quality option
-      getOAuthToken: false,
+      getOAuthToken: true,
       hl: 'en',
       gl: 'US',
       proxies: [

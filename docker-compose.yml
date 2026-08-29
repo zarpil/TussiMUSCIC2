@@ -11,9 +11,11 @@ services:
     networks:
       - tussi-network
 
-  # 2. Servidor de Audio NodeLink (Docker Hub oficial)
+  # 2. Servidor de Audio NodeLink (Con config.js incorporado)
   nodelink:
-    image: performanc/nodelink:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.nodelink
     container_name: tussi-nodelink
     restart: unless-stopped
     environment:
@@ -21,8 +23,6 @@ services:
       - NODELINK_SERVER_PORT=2333
       - NODELINK_SERVER_PASSWORD=youshallnotpass
       - NODELINK_PASSWORD=youshallnotpass
-    volumes:
-      - ./nodelink-config.js:/app/config.js
     networks:
       - tussi-network
 

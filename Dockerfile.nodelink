@@ -1,0 +1,6 @@
+FROM performanc/nodelink:latest
+
+WORKDIR /app
+COPY nodelink-config.js /app/config.js
+
+EXPOSE 2333
