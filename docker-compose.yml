@@ -21,6 +21,8 @@ services:
       - NODELINK_SERVER_PORT=2333
       - NODELINK_SERVER_PASSWORD=youshallnotpass
       - NODELINK_PASSWORD=youshallnotpass
+    volumes:
+      - ./nodelink-config.js:/app/config.js
     networks:
       - tussi-network
 
