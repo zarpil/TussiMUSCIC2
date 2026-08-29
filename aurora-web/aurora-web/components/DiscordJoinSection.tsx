@@ -6,7 +6,7 @@ import { ExternalLink, MessageCircle, Users } from "lucide-react";
 export default function DiscordJoinSection({ settings }: { settings?: any }) {
   const joinTitle = settings?.joinTitle || "Tussi Music Community";
   const joinSubtitle = settings?.joinSubtitle || "Get support, suggest features, stay updated, and hang out with thousands of music lovers on our Discord server.";
-  const supportServerUrl = settings?.supportServerUrl || "https://discord.gg/jhag8t57eH";
+  const supportServerUrl = settings?.supportServerUrl || "https://discord.gg/zTTMRnU9G";
   const botInviteUrl = settings?.botInviteUrl || "https://discord.com/oauth2/authorize?client_id=1310246126712127508&scope=bot&permissions=2151017536";
 
   return (

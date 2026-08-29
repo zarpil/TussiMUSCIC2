@@ -28,7 +28,7 @@ export default function TermsOfService() {
     <div className="min-h-screen relative">
       <AuroraBackground />
       <CursorGlow />
-      
+
       <button
         onClick={() => router.push('/')}
         className="fixed top-6 left-6 z-50 text-gray-400 hover:text-white transition-colors flex items-center gap-2 glass-strong px-4 py-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aurora-green"
@@ -59,58 +59,58 @@ export default function TermsOfService() {
 
           <div className="space-y-8 text-gray-300 animate-fade-in">
             {terms ? (
-              <div 
+              <div
                 className="leading-relaxed font-sans text-gray-300 text-base glass p-6 md:p-8 rounded-2xl border border-white/5 markdown-content"
                 dangerouslySetInnerHTML={{ __html: parseMarkdown(terms) }}
               />
             ) : (
               <>
                 <section>
-              <h2 className="text-xl font-semibold text-white mb-3">1. Aceptación de los Términos</h2>
-              <p className="leading-relaxed">
-                Al utilizar Tussi Music ("el Bot" o "el Servicio"), aceptas estos Términos de Servicio. Si no estás de acuerdo, debes dejar de usar el bot y el panel inmediatamente.
-              </p>
-            </section>
+                  <h2 className="text-xl font-semibold text-white mb-3">1. Aceptación de los Términos</h2>
+                  <p className="leading-relaxed">
+                    Al utilizar Tussi Music ("el Bot" o "el Servicio"), aceptas estos Términos de Servicio. Si no estás de acuerdo, debes dejar de usar el bot y el panel inmediatamente.
+                  </p>
+                </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-3">2. Descripción del Servicio</h2>
-              <p className="leading-relaxed">
-                Tussi Music es un bot y panel de música para Discord que proporciona reproducción de audio de alta calidad desde diversas fuentes públicas. Incluye funciones de reproducción continua, letras sincronizadas, filtros de sonido e integración web.
-              </p>
-            </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-3">2. Descripción del Servicio</h2>
+                  <p className="leading-relaxed">
+                    Tussi Music es un bot y panel de música para Discord que proporciona reproducción de audio de alta calidad desde diversas fuentes públicas. Incluye funciones de reproducción continua, letras sincronizadas, filtros de sonido e integración web.
+                  </p>
+                </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-3">3. Reglas de Uso</h2>
-              <ul className="list-disc list-inside space-y-2 leading-relaxed">
-                <li>No debes abusar, explotar errores ni hacer un mal uso del bot o su infraestructura.</li>
-                <li>Debes cumplir las Condiciones de Servicio de Discord.</li>
-                <li>No debes utilizar el bot para actividades ilegales o perjudiciales.</li>
-              </ul>
-            </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-3">3. Reglas de Uso</h2>
+                  <ul className="list-disc list-inside space-y-2 leading-relaxed">
+                    <li>No debes abusar, explotar errores ni hacer un mal uso del bot o su infraestructura.</li>
+                    <li>Debes cumplir las Condiciones de Servicio de Discord.</li>
+                    <li>No debes utilizar el bot para actividades ilegales o perjudiciales.</li>
+                  </ul>
+                </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-3">4. Disponibilidad</h2>
-              <p className="leading-relaxed">
-                No garantizamos que el servicio esté disponible en todo momento sin interrupciones. Las funciones pueden modificarse o actualizarse en cualquier momento para mejorar el servicio.
-              </p>
-            </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-3">4. Disponibilidad</h2>
+                  <p className="leading-relaxed">
+                    No garantizamos que el servicio esté disponible en todo momento sin interrupciones. Las funciones pueden modificarse o actualizarse en cualquier momento para mejorar el servicio.
+                  </p>
+                </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-3">5. Contacto</h2>
-              <div className="space-y-2 leading-relaxed">
-                <p>
-                  <strong className="text-white">Servidor de Soporte:</strong>{' '}
-                  <a 
-                    href="https://discord.gg/jhag8t57eH" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-tussi-pink hover:underline"
-                  >
-                    https://discord.gg/jhag8t57eH
-                  </a>
-                </p>
-              </div>
-            </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-3">5. Contacto</h2>
+                  <div className="space-y-2 leading-relaxed">
+                    <p>
+                      <strong className="text-white">Servidor de Soporte:</strong>{' '}
+                      <a
+                        href="https://discord.gg/zTTMRnU9G"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-tussi-pink hover:underline"
+                      >
+                        https://discord.gg/zTTMRnU9G
+                      </a>
+                    </p>
+                  </div>
+                </section>
               </>
             )}
           </div>

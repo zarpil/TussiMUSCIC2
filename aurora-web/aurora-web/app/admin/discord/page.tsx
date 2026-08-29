@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { 
+import {
   ArrowLeft, FileText, CheckCircle2, AlertCircle, Save, RotateCcw,
-  Bold, Italic, Link2, List, Quote, Code, Eye, Edit3, MessageSquare, 
+  Bold, Italic, Link2, List, Quote, Code, Eye, Edit3, MessageSquare,
   Smile, Sliders, Radio, Sparkles, Plus, Trash2
 } from 'lucide-react';
 import AuroraBackground from '../../../components/AuroraBackground';
@@ -50,7 +50,7 @@ const DEFAULT_CARD = {
   cardHeading: "# {music_disc_emoji} **Now Playing**",
   cardBody: "●  **Track Title: ** **[{title} - {artist}]({track_uri})**\n●  **Source: ** {source}\n●  **Duration: ** {duration}\n● **Next Song:** {next_song}\n● **Number Of Songs:** {songs_count}\n● **Requested by: ** <@{requester_id}>",
   cardSupportLabel: "Support Server",
-  cardSupportUrl: "https://discord.gg/jhag8t57eH",
+  cardSupportUrl: "https://discord.gg/zTTMRnU9G",
   cardWebPlayerLabel: "Web Player",
   cardWebPlayerUrl: "http://localhost:3000",
   cardShowHeading: true,
@@ -184,7 +184,7 @@ export default function DiscordCustomizerPage() {
 
   const compileMockTemplate = (template: string) => {
     if (!template) return '';
-    
+
     const getEmoji = (name: string) => {
       const val = emojis[name] || DEFAULT_EMOJIS[name as keyof typeof DEFAULT_EMOJIS] || '';
       if (val.startsWith('<')) {
@@ -248,7 +248,7 @@ export default function DiscordCustomizerPage() {
       try {
         const authRes = await fetch('/api/auth/check-admin', { credentials: 'include' });
         const authData = await authRes.json();
-        
+
         if (!authData.isAdmin) {
           router.push('/?error=admin_only');
           return;
@@ -374,7 +374,7 @@ export default function DiscordCustomizerPage() {
     <div className="min-h-screen relative">
       <AuroraBackground />
       <CursorGlow />
-      
+
       <div className="relative z-10 p-4 md:p-8 pt-24 md:pt-28">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -390,18 +390,17 @@ export default function DiscordCustomizerPage() {
               <h1 className="text-4xl font-bold text-white mb-2">Discord Bot Customizer</h1>
               <p className="text-gray-400">Configure dynamically loaded emojis and construct customized playing cards layouts (Components v2)</p>
             </div>
-            
+
             <div className="flex bg-black/40 p-1 rounded-2xl border border-white/10 self-start md:self-auto gap-1">
               {(['emojis', 'card', 'presence'] as const).map((tab) => (
                 <button
                   key={tab}
                   type="button"
                   onClick={() => setActiveDiscordTab(tab)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap ${
-                    activeDiscordTab === tab
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap ${activeDiscordTab === tab
                       ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/25'
                       : 'text-gray-400 hover:text-white hover:bg-white/5'
-                  }`}
+                    }`}
                 >
                   {tab === 'emojis' ? <Smile className="w-4 h-4" /> : tab === 'card' ? <Sliders className="w-4 h-4" /> : <Radio className="w-4 h-4" />}
                   {tab === 'emojis' ? 'Emojis Manager' : tab === 'card' ? 'Playing Card' : 'Rich Presence'}
@@ -574,7 +573,7 @@ export default function DiscordCustomizerPage() {
 
                     <div className="border-t border-white/10 pt-4 space-y-4">
                       <h3 className="text-xs font-bold text-gray-300 uppercase tracking-wider">Visibility Toggles & Separators</h3>
-                      
+
                       <div className="grid grid-cols-2 gap-x-6 gap-y-3">
                         <label className="flex items-center gap-3 cursor-pointer text-sm text-gray-300 hover:text-white transition-colors">
                           <input
@@ -674,17 +673,17 @@ export default function DiscordCustomizerPage() {
                             <span className="bg-[#5865f2] text-white text-[9px] font-bold px-1 py-0.2 rounded uppercase tracking-wider">BOT</span>
                             <span className="text-gray-400 text-[10px]">Today at 12:34 PM</span>
                           </div>
-                          
+
                           {/* Discord Components V2 Container */}
                           <div className="mt-2 bg-[#2b2d31] rounded-lg border border-[#1e1f22] p-3 flex flex-col gap-2 max-w-full">
                             {/* Render Header */}
                             {cardShowHeading && (
-                              <div 
-                                className="text-white text-xs leading-relaxed markdown-content font-sans" 
+                              <div
+                                className="text-white text-xs leading-relaxed markdown-content font-sans"
                                 dangerouslySetInnerHTML={{ __html: parseMarkdown(compileMockTemplate(cardHeading)) }}
                               />
                             )}
-                            
+
                             {/* Separator */}
                             {cardShowHeading && cardShowTrackImage && cardSeparatorStyle === 'divider' && (
                               <hr className={`border-[#3f4147] ${cardSeparatorSize === 'small' ? 'my-0.5' : cardSeparatorSize === 'medium' ? 'my-1.5' : 'my-3'}`} />
@@ -730,7 +729,7 @@ export default function DiscordCustomizerPage() {
                             {/* Info Section with Thumbnail */}
                             {cardShowInfo && (
                               <div className="flex gap-3 justify-between items-start">
-                                <div 
+                                <div
                                   className="flex-1 text-[#dbdee1] text-xs leading-relaxed markdown-content font-sans"
                                   dangerouslySetInnerHTML={{ __html: parseMarkdown(compileMockTemplate(cardBody)) }}
                                 />
@@ -843,11 +842,10 @@ export default function DiscordCustomizerPage() {
                             key={opt.value}
                             type="button"
                             onClick={() => setPresenceMode(opt.value as 'unset' | 'enabled' | 'disabled')}
-                            className={`p-3 rounded-xl border text-left transition-all ${
-                              presenceMode === opt.value
+                            className={`p-3 rounded-xl border text-left transition-all ${presenceMode === opt.value
                                 ? 'bg-indigo-500/20 border-indigo-500 text-white shadow-lg shadow-indigo-500/10'
                                 : 'bg-black/30 border-white/10 text-gray-400 hover:text-white hover:bg-white/5'
-                            }`}
+                              }`}
                           >
                             <div className="font-semibold text-xs text-white mb-0.5">{opt.label}</div>
                             <div className="text-[10px] text-gray-400">{opt.desc}</div>
@@ -948,12 +946,11 @@ export default function DiscordCustomizerPage() {
                           <div className="w-16 h-16 rounded-full border-4 border-[#232428] bg-[#313338] flex items-center justify-center relative">
                             <img src={navbarIconUrl} alt="Bot Avatar" className="w-10 h-10 rounded-full" />
                             {/* Status indicator dot */}
-                            <span 
-                              className={`absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-[#232428] ${
-                                presenceStatus === 'online' ? 'bg-emerald-500' :
-                                presenceStatus === 'idle' ? 'bg-amber-500' :
-                                presenceStatus === 'dnd' ? 'bg-red-500' : 'bg-gray-500'
-                              }`}
+                            <span
+                              className={`absolute bottom-0 right-0 w-4 h-4 rounded-full border-2 border-[#232428] ${presenceStatus === 'online' ? 'bg-emerald-500' :
+                                  presenceStatus === 'idle' ? 'bg-amber-500' :
+                                    presenceStatus === 'dnd' ? 'bg-red-500' : 'bg-gray-500'
+                                }`}
                             />
                           </div>
                         </div>

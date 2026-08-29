@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Nosotros", href: "#about" },
   { label: "Características", href: "#features" },
   { label: "Comandos", href: "#commands" },
-  { label: "Equipo", href: "#team" },
 ];
 
 interface NavbarProps {

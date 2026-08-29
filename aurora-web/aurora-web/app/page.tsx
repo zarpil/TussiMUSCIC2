@@ -9,7 +9,6 @@ import AboutSection from '../components/AboutSection';
 import ShowcaseSection from '../components/ShowcaseSection';
 import FeaturesSection from '../components/FeaturesSection';
 import CommandsSection from '../components/CommandsSection';
-import TeamSection from '../components/TeamSection';
 import DiscordJoinSection from '../components/DiscordJoinSection';
 import Footer from '../components/Footer';
 
@@ -62,7 +61,6 @@ export default function Home() {
         <ShowcaseSection />
         <FeaturesSection settings={settings} />
         <CommandsSection />
-        <TeamSection settings={settings} />
         <DiscordJoinSection settings={settings} />
       </main>
       <Footer />

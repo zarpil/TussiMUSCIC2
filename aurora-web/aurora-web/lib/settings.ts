@@ -36,14 +36,14 @@ export interface SiteSettings {
   primaryColorHex: string; // "#10b981" format
   privacyPolicy: string;
   termsOfService: string;
-  
+
   // Background Customization
   bgType: 'aurora' | 'solid' | 'image' | 'gif';
   bgColor: string;
   bgUrl: string;
   auroraColor: 'green' | 'purple' | 'red' | 'cyan' | 'custom';
   auroraCustomColor: string;
-  
+
   // Hero section
   heroSubtitle: string;
   heroTitleLine1: string;
@@ -140,14 +140,14 @@ const DEFAULT_SETTINGS: SiteSettings = {
   primaryColorHex: '#ff2d87',
   privacyPolicy: '',
   termsOfService: '',
-  
+
   // Background defaults
   bgType: 'aurora',
   bgColor: '#0e0714',
   bgUrl: '',
   auroraColor: 'purple',
   auroraCustomColor: '#ff2d87',
-  
+
   // Hero Defaults
   heroSubtitle: "La mejor experiencia musical para Discord",
   heroTitleLine1: "Siente el Sonido",
@@ -180,20 +180,20 @@ const DEFAULT_SETTINGS: SiteSettings = {
   // Join Defaults
   joinTitle: "Únete a la Comunidad Tussi Music",
   joinSubtitle: "Obtén soporte, sugiere nuevas funciones, entérate de novedades y disfruta con miles de amantes de la música en nuestro servidor de Discord.",
-  supportServerUrl: "https://discord.gg/jhag8t57eH",
+  supportServerUrl: "https://discord.gg/zTTMRnU9G",
 
   // Team Defaults
-  teamTitle: "Conoce al Equipo",
-  teamSubtitle: "Los desarrolladores detrás de Tussi Music.",
-  teamMember1Name: "Desarrollador Principal",
-  teamMember1Role: "Lead Developer",
-  teamMember1Bio: "Creando el futuro de los bots de música para Discord.",
-  teamMember1DiscordId: "775429424979378216",
+  teamTitle: "",
+  teamSubtitle: "",
+  teamMember1Name: "",
+  teamMember1Role: "",
+  teamMember1Bio: "",
+  teamMember1DiscordId: "",
   teamMember1Avatar: "",
-  teamMember2Name: "Desarrollador Core",
-  teamMember2Role: "Core Developer",
-  teamMember2Bio: "Diseñando experiencias de audio fluidas y modernas.",
-  teamMember2DiscordId: "775015391487197206",
+  teamMember2Name: "",
+  teamMember2Role: "",
+  teamMember2Bio: "",
+  teamMember2DiscordId: "",
   teamMember2Avatar: "",
 
   // Default Emojis
@@ -227,7 +227,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
   cardHeading: "# {music_disc_emoji} **Reproduciendo Ahora**",
   cardBody: "●  **Título: ** **[{title} - {artist}]({track_uri})**\n●  **Fuente: ** {source}\n●  **Duración: ** {duration}\n● **Siguiente Canción:** {next_song}\n● **Canciones en Cola:** {songs_count}\n● **Pedido por: ** <@{requester_id}>",
   cardSupportLabel: "Servidor de Soporte",
-  cardSupportUrl: "https://discord.gg/jhag8t57eH",
+  cardSupportUrl: "https://discord.gg/zTTMRnU9G",
   cardWebPlayerLabel: "Reproductor Web",
   cardWebPlayerUrl: "http://localhost:3000",
   cardShowHeading: true,
@@ -258,7 +258,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
   premiumCurrencySymbol: '€',
   razorpayKeyId: '',
   razorpayKeySecret: '',
-  premiumSupportLink: 'https://discord.gg/jhag8t57eH'
+  premiumSupportLink: 'https://discord.gg/zTTMRnU9G'
 };
 
 // Cache settings in memory for 10 seconds to avoid querying MongoDB on every request
@@ -280,7 +280,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
     const client = await getClient();
     const db = client.db('aurora');
     const config = await db.collection('settings').findOne({ _id: 'site_config' as any });
-    
+
     if (config) {
       cachedSettings = {
         ...DEFAULT_SETTINGS,
@@ -301,13 +301,13 @@ export async function saveSiteSettings(settings: Partial<SiteSettings>): Promise
   try {
     const client = await getClient();
     const db = client.db('aurora');
-    
+
     await db.collection('settings').updateOne(
       { _id: 'site_config' as any },
       { $set: { ...settings, updatedAt: new Date() } },
       { upsert: true }
     );
-    
+
     // Clear cache
     cachedSettings = null;
     lastFetched = 0;

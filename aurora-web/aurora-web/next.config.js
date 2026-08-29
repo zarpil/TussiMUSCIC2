@@ -16,6 +16,18 @@ const nextConfig = {
         destination: `${backendUrl}/socket.io/:path*`,
       },
       {
+        source: '/api/user-guilds/:path*',
+        destination: `${backendUrl}/api/user-guilds/:path*`,
+      },
+      {
+        source: '/api/auth/session/:path*',
+        destination: `${backendUrl}/api/auth/session/:path*`,
+      },
+      {
+        source: '/api/auth/session',
+        destination: `${backendUrl}/api/auth/session`,
+      },
+      {
         source: '/api/playlists/:path*',
         destination: `${backendUrl}/api/playlists/:path*`,
       },

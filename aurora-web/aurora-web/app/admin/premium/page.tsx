@@ -29,7 +29,7 @@ export default function ManagePremium() {
   const [premiumCurrencySymbol, setPremiumCurrencySymbol] = useState('Rs.');
   const [razorpayKeyId, setRazorpayKeyId] = useState('');
   const [razorpayKeySecret, setRazorpayKeySecret] = useState('');
-  const [premiumSupportLink, setPremiumSupportLink] = useState('https://discord.gg/jhag8t57eH');
+  const [premiumSupportLink, setPremiumSupportLink] = useState('https://discord.gg/zTTMRnU9G');
   const [savingSettings, setSavingSettings] = useState(false);
 
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
@@ -39,7 +39,7 @@ export default function ManagePremium() {
       try {
         const response = await fetch('/api/auth/check-admin', { credentials: 'include' });
         const data = await response.json();
-        
+
         if (data.isAdmin) {
           setIsAdmin(true);
           fetchData();
@@ -80,7 +80,7 @@ export default function ManagePremium() {
         setPremiumCurrencySymbol(settingsData.premiumCurrencySymbol || 'Rs.');
         setRazorpayKeyId(settingsData.razorpayKeyId || '');
         setRazorpayKeySecret(settingsData.razorpayKeySecret || '');
-        setPremiumSupportLink(settingsData.premiumSupportLink || 'https://discord.gg/jhag8t57eH');
+        setPremiumSupportLink(settingsData.premiumSupportLink || 'https://discord.gg/zTTMRnU9G');
       }
     } catch (error) {
       console.error('Failed to fetch premium data:', error);
@@ -271,11 +271,10 @@ export default function ManagePremium() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`mb-6 rounded-xl p-4 flex items-center gap-3 border ${
-              message.type === 'success'
+            className={`mb-6 rounded-xl p-4 flex items-center gap-3 border ${message.type === 'success'
                 ? 'bg-green-500/10 border-green-500/30 text-green-300'
                 : 'bg-red-500/10 border-red-500/30 text-red-300'
-            }`}
+              }`}
           >
             {message.type === 'success' ? (
               <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
@@ -290,27 +289,24 @@ export default function ManagePremium() {
         <div className="flex bg-white/5 p-1 rounded-xl border border-white/10 mb-8 max-w-md">
           <button
             onClick={() => setActiveTab('users')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
-              activeTab === 'users' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
-            }`}
+            className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer ${activeTab === 'users' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
+              }`}
           >
             <Shield className="w-4 h-4" />
             Premium Users
           </button>
           <button
             onClick={() => setActiveTab('codes')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
-              activeTab === 'codes' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
-            }`}
+            className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer ${activeTab === 'codes' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
+              }`}
           >
             <Ticket className="w-4 h-4" />
             Redeem Codes
           </button>
           <button
             onClick={() => setActiveTab('settings')}
-            className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer ${
-              activeTab === 'settings' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
-            }`}
+            className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer ${activeTab === 'settings' ? 'bg-amber-500 text-black' : 'text-gray-400 hover:text-white'
+              }`}
           >
             <Settings className="w-4 h-4" />
             Settings
@@ -545,7 +541,7 @@ export default function ManagePremium() {
             </div>
           </div>
         )}
-        
+
         {activeTab === 'settings' && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

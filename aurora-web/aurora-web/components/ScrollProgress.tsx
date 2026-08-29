@@ -8,7 +8,6 @@ const chapters = [
   { id: "features", label: "Powers" },
   { id: "commands", label: "Commands" },
   { id: "stats", label: "Impact" },
-  { id: "team", label: "The Makers" },
 ];
 
 export default function ScrollProgress() {

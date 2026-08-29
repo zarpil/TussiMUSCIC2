@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen relative">
       <AuroraBackground />
       <CursorGlow />
-      
+
       <button
         onClick={() => router.push('/')}
         className="fixed top-6 left-6 z-50 text-gray-400 hover:text-white transition-colors flex items-center gap-2 glass-strong px-4 py-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aurora-green"
@@ -59,55 +59,55 @@ export default function PrivacyPolicy() {
 
           <div className="space-y-8 text-gray-300 animate-fade-in">
             {policy ? (
-              <div 
+              <div
                 className="leading-relaxed font-sans text-gray-300 text-base glass p-6 md:p-8 rounded-2xl border border-white/5 markdown-content"
                 dangerouslySetInnerHTML={{ __html: parseMarkdown(policy) }}
               />
             ) : (
               <>
                 <section>
-              <h2 className="text-xl font-semibold text-white mb-3">1. Información que Recopilamos</h2>
-              <p className="leading-relaxed mb-2">Podemos recopilar los siguientes datos mínimos necesarios:</p>
-              <ul className="list-disc list-inside space-y-2 leading-relaxed">
-                <li>ID de usuario de Discord</li>
-                <li>Nombre de usuario / Tag de Discord</li>
-                <li>ID del servidor (Guild ID)</li>
-              </ul>
-            </section>
+                  <h2 className="text-xl font-semibold text-white mb-3">1. Información que Recopilamos</h2>
+                  <p className="leading-relaxed mb-2">Podemos recopilar los siguientes datos mínimos necesarios:</p>
+                  <ul className="list-disc list-inside space-y-2 leading-relaxed">
+                    <li>ID de usuario de Discord</li>
+                    <li>Nombre de usuario / Tag de Discord</li>
+                    <li>ID del servidor (Guild ID)</li>
+                  </ul>
+                </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-3">2. Uso de la Información</h2>
-              <p className="leading-relaxed mb-2">Utilizamos estos datos para:</p>
-              <ul className="list-disc list-inside space-y-2 leading-relaxed">
-                <li>Funcionalidades del bot (reproducción de música, colas, playlists y favoritos)</li>
-                <li>Autenticación segura en el panel web mediante Discord OAuth2</li>
-                <li>Configuración de servidores y modos 24/7</li>
-              </ul>
-            </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-3">2. Uso de la Información</h2>
+                  <p className="leading-relaxed mb-2">Utilizamos estos datos para:</p>
+                  <ul className="list-disc list-inside space-y-2 leading-relaxed">
+                    <li>Funcionalidades del bot (reproducción de música, colas, playlists y favoritos)</li>
+                    <li>Autenticación segura en el panel web mediante Discord OAuth2</li>
+                    <li>Configuración de servidores y modos 24/7</li>
+                  </ul>
+                </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-3">3. Almacenamiento y Seguridad</h2>
-              <p className="leading-relaxed">
-                Tus datos se almacenan de forma segura en bases de datos MongoDB protegidas. <strong className="text-white">NO</strong> vendemos ni compartimos información con terceros.
-              </p>
-            </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-3">3. Almacenamiento y Seguridad</h2>
+                  <p className="leading-relaxed">
+                    Tus datos se almacenan de forma segura en bases de datos MongoDB protegidas. <strong className="text-white">NO</strong> vendemos ni compartimos información con terceros.
+                  </p>
+                </section>
 
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-3">4. Contacto y Soporte</h2>
-              <div className="space-y-2 leading-relaxed">
-                <p>
-                  <strong className="text-white">Servidor de Soporte:</strong>{' '}
-                  <a 
-                    href="https://discord.gg/jhag8t57eH" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-tussi-pink hover:underline"
-                  >
-                    https://discord.gg/jhag8t57eH
-                  </a>
-                </p>
-              </div>
-            </section>
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-3">4. Contacto y Soporte</h2>
+                  <div className="space-y-2 leading-relaxed">
+                    <p>
+                      <strong className="text-white">Servidor de Soporte:</strong>{' '}
+                      <a
+                        href="https://discord.gg/zTTMRnU9G"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-tussi-pink hover:underline"
+                      >
+                        https://discord.gg/zTTMRnU9G
+                      </a>
+                    </p>
+                  </div>
+                </section>
               </>
             )}
           </div>
