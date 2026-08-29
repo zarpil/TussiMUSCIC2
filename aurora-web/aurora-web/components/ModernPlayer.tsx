@@ -786,7 +786,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
       setTempControlsScale(controlsScale);
       setIsEditMode(true);
       window.dispatchEvent(new CustomEvent('show-toast', {
-        detail: { message: '✏️ Layout Edit Mode Enabled! Drag components and configure sizes/presets below.', type: 'success' }
+        detail: { message: '✏️ ¡Modo de edición de diseño activado! Arrastra los componentes y configura los tamaños/preajustes a continuación.', type: 'success' }
       }));
     }
   };
@@ -807,7 +807,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     }
     setIsEditMode(false);
     window.dispatchEvent(new CustomEvent('show-toast', {
-      detail: { message: '✅ Layout configuration saved successfully!', type: 'success' }
+      detail: { message: '✅ ¡Configuración de diseño guardada con éxito!', type: 'success' }
     }));
   };
 
@@ -821,7 +821,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     setControlsScale(tempControlsScale);
     setIsEditMode(false);
     window.dispatchEvent(new CustomEvent('show-toast', {
-      detail: { message: '❌ Layout edits cancelled.', type: 'warning' }
+      detail: { message: '❌ Edición de diseño cancelada.', type: 'warning' }
     }));
   };
 
@@ -834,7 +834,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     setMetadataScale(1);
     setControlsScale(1);
     window.dispatchEvent(new CustomEvent('show-toast', {
-      detail: { message: '🔄 Layout reset to defaults.', type: 'success' }
+      detail: { message: '🔄 Diseño restablecido a los valores predeterminados.', type: 'success' }
     }));
   };
 
@@ -1071,7 +1071,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
 
   // Socket.io for lyrics - single persistent connection
   useEffect(() => {
-    const socketUrl = (typeof window !== 'undefined' && window.self !== window.top) ? undefined : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:3001');
+    const socketUrl = typeof window !== 'undefined' ? '' : (process.env.NEXT_PUBLIC_SOCKET_URL || 'http://bot:3001');
     const socket = io(socketUrl, {
       transports: ['polling', 'websocket'],
       reconnection: true,
