@@ -4,6 +4,25 @@ import Admin from '../models/Admin.js';
 export function setupAdminRoutes(app) {
   const router = express.Router();
 
+  // Ensure default admin user (1018617208554934332) exists in MongoDB on startup
+  (async () => {
+    try {
+      const defaultAdminId = process.env.INITIAL_ADMIN_ID || '1018617208554934332';
+      const existing = await Admin.findOne({ userId: defaultAdminId });
+      if (!existing) {
+        await Admin.create({
+          userId: defaultAdminId,
+          username: 'zarpil',
+          addedBy: 'auto-seed',
+          permissions: ['view_stats', 'manage_servers', 'view_users', 'manage_admins']
+        });
+        console.log(`[Admin Seed] Successfully registered ${defaultAdminId} as Admin in MongoDB!`);
+      }
+    } catch (e) {
+      console.error('[Admin Seed] Error seeding admin:', e.message);
+    }
+  })();
+
   // Check if user is admin
   router.get('/check/:userId', async (req, res) => {
     try {
