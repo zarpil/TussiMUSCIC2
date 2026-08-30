@@ -58,7 +58,6 @@ export function useMusicPlayer(guildId: string, userId: string) {
   });
 
   const socketRef = useRef<Socket | null>(null);
-  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const seekTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastSeekValueRef = useRef<number>(0);
   const lastSkipTimeRef = useRef<number>(0);
@@ -376,38 +375,10 @@ export function useMusicPlayer(guildId: string, userId: string) {
       clearInterval(syncInterval);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       socket.disconnect();
-      if (progressIntervalRef.current) {
-        clearInterval(progressIntervalRef.current);
-      }
     };
   }, [guildId]);
 
-  // Progress bar auto-update
-  useEffect(() => {
-    if (progressIntervalRef.current) {
-      clearInterval(progressIntervalRef.current);
-    }
-
-    if (state.isPlaying && state.currentTrack) {
-      progressIntervalRef.current = setInterval(() => {
-        setState(prev => {
-          if (!prev.currentTrack) return prev;
-          const newPosition = prev.position + 1000;
-          // Don't exceed track duration
-          if (newPosition >= prev.currentTrack.duration) {
-            return { ...prev, position: prev.currentTrack.duration };
-          }
-          return { ...prev, position: newPosition };
-        });
-      }, 1000);
-    }
-
-    return () => {
-      if (progressIntervalRef.current) {
-        clearInterval(progressIntervalRef.current);
-      }
-    };
-  }, [state.isPlaying, state.currentTrack?.title]); // Only restart on track change or play/pause
+  // Removed progressIntervalRef as useSmoothTime handles interpolation perfectly natively
 
   const emitAction = (action: string, value?: any) => {
     const activeGuildId = guildId || (typeof window !== 'undefined' ? localStorage.getItem('aurora_active_guildId') : '') || '';

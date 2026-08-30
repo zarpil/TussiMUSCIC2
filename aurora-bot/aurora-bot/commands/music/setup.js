@@ -7,6 +7,7 @@ import { send_idle_panel } from '../../music-card/idle.js';
 export const setupcmd = new SlashCommandBuilder()
   .setName('setup')
   .setDescription('Configura el canal dedicado para el bot de música')
+  .setDefaultMemberPermissions(PermissionsBitField.Flags.ManageChannels)
   .addChannelOption(option =>
     option.setName('canal')
       .setDescription('El canal de texto donde se enviará el panel de música')

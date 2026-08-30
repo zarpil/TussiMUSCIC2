@@ -104,60 +104,13 @@ class SocketHandler {
         
         // Send current state immediately
         await this.sendCurrentState(socket, guildId);
-        
-        // Clean up any existing sync interval on this socket to prevent memory leak
-        if (socket.syncInterval) {
-          clearInterval(socket.syncInterval);
-        }
 
-        // Send player_sync every 1 second for smooth 60fps interpolation and status tracking
-        socket.syncInterval = setInterval(() => {
-          const player = this.manager.players.get(guildId);
-          if (player && player.current) {
-            const now = Date.now();
-            if (!player.lastSyncTime || typeof player.estimatedPosition !== 'number') {
-              player.lastSyncTime = now;
-              player.estimatedPosition = typeof player.position === 'number' ? player.position : (player.current.position || 0);
-            }
-            if (!player.paused) {
-              const delta = now - player.lastSyncTime;
-              player.estimatedPosition += delta;
-            }
-            player.lastSyncTime = now;
+        // Note: We no longer run a per-socket setInterval here.
+        // We rely on Moonlink's playerUpdate event (every 5s) and the frontend's useSmoothTime interpolation (60fps).
 
-            // Realign if Lavalink position updated by seek or major drift (>3000ms)
-            if (typeof player.position === 'number' && Math.abs(player.estimatedPosition - player.position) > 3000) {
-              player.estimatedPosition = player.position;
-            }
-
-            socket.emit('player_sync', {
-              position: Math.round(player.estimatedPosition),
-              isPlaying: !player.paused,
-              isDestroyed: false,
-              timestamp: now
-            });
-          } else if (player) {
-            socket.emit('player_sync', {
-              position: 0,
-              isPlaying: false,
-              isDestroyed: false,
-              timestamp: Date.now()
-            });
-          } else {
-            socket.emit('player_sync', {
-              position: 0,
-              isPlaying: false,
-              isDestroyed: true,
-              timestamp: Date.now()
-            });
-          }
-        }, 1000);
-
-        // Clean up interval on disconnect
+        // Clean up on disconnect
         socket.on('disconnect', () => {
-          if (socket.syncInterval) {
-            clearInterval(socket.syncInterval);
-          }
+          // Additional socket cleanup if necessary
         });
       });
 
@@ -202,9 +155,6 @@ class SocketHandler {
 
       socket.on('disconnect', () => {
         console.log(`[Socket.io] User disconnected: ${socket.id}`);
-        if (socket.syncInterval) {
-          clearInterval(socket.syncInterval);
-        }
         if (socket.currentGuildId && this.activeUsers && this.activeUsers.has(socket.currentGuildId)) {
           this.activeUsers.get(socket.currentGuildId).delete(socket.id);
           this.io.to(`guild:${socket.currentGuildId}`).emit('active-users', Array.from(this.activeUsers.get(socket.currentGuildId).values()));
