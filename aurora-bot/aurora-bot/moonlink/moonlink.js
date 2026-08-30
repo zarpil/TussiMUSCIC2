@@ -139,7 +139,7 @@ export async function reconnect247Guilds(client) {
           player = client.moonlink.players.create({
             guildId: cfg.guildId,
             voiceChannelId: voiceChannelId,
-            textChannelId: cfg.settings?.twentyFourSeven?.textChannelId || cfg.boundChannelId || guild.channels.cache.find(c => c.isTextBased())?.id,
+            textChannelId: cfg.settings?.twentyFourSeven?.textChannelId || cfg.requestChannel?.channelId || guild.channels.cache.find(c => c.isTextBased())?.id,
             autoLeave: false
           });
         }

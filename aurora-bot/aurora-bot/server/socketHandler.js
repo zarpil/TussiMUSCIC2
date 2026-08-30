@@ -193,7 +193,8 @@ class SocketHandler {
     try {
       const container = new ContainerBuilder();
       container.addTextDisplayComponents(new TextDisplayBuilder().setContent(content));
-      await channel.send({ components: [container], flags: [MessageFlags.IsComponentsV2] });
+      const msg = await channel.send({ components: [container], flags: [MessageFlags.IsComponentsV2] });
+      setTimeout(() => msg.delete().catch(() => {}), 5000);
     } catch (error) {
       console.error('[Socket Handler] Failed to send message:', error.message);
     }
@@ -267,16 +268,9 @@ class SocketHandler {
       }
 
       const guildConfig = await GuildConfig.findOne({ guildId });
-      const boundChannel = guildConfig?.boundChannelId 
-        ? guild.channels.cache.get(guildConfig.boundChannelId) 
+      const boundChannel = guildConfig?.requestChannel?.channelId 
+        ? guild.channels.cache.get(guildConfig.requestChannel.channelId) 
         : null;
-
-      // Warn if web-link not set up
-      if (!boundChannel && action !== 'seek' && action !== 'volume') {
-        socket.emit('warning', { 
-          message: 'Consejo: ¡Ejecuta /web-link en Discord para recibir notificaciones cuando controles la música desde la web!' 
-        });
-      }
 
       const tick = tick_emoji;
       const currentTrack = player.current;

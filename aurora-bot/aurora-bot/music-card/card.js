@@ -4,6 +4,7 @@ import {cross_emoji, music_disc_emoji} from "../emoji/emoji.js";
 import {Bloom} from "aurora-music-card";
 import 'dotenv/config';
 import mongoose from 'mongoose';
+import GuildConfig from '../models/Guild.js';
 
 function compileTemplate(template, data) {
   if (!template) return '';
@@ -162,11 +163,41 @@ export async function music_card(client,player,track) {
       container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`[${cardWebPlayerLabel}](${web_url})`));
     }
 
-    player.musicCard = await channel.send({
-      components: [container],
-      files: [attachment],
-      flags: [MessageFlags.IsComponentsV2, MessageFlags.SuppressNotifications]
-    });
+    let config = null;
+    try {
+      config = await GuildConfig.findOne({ guildId: player.guildId });
+    } catch (err) {}
+
+    let editedPanel = false;
+    if (config && config.requestChannel && config.requestChannel.channelId && config.requestChannel.messageId) {
+      try {
+        const reqChannel = await client.channels.fetch(config.requestChannel.channelId);
+        if (reqChannel) {
+          const reqMessage = await reqChannel.messages.fetch(config.requestChannel.messageId);
+          if (reqMessage) {
+            await reqMessage.edit({
+              components: [container],
+              files: [attachment],
+              flags: [MessageFlags.IsComponentsV2, MessageFlags.SuppressNotifications]
+            });
+            player.musicCard = reqMessage;
+            player.isRequestChannelPanel = true;
+            editedPanel = true;
+          }
+        }
+      } catch (err) {
+        console.error("[Card] No se pudo editar el panel de música:", err);
+      }
+    }
+
+    if (!editedPanel) {
+      player.musicCard = await channel.send({
+        components: [container],
+        files: [attachment],
+        flags: [MessageFlags.IsComponentsV2, MessageFlags.SuppressNotifications]
+      });
+      player.isRequestChannelPanel = false;
+    }
 
   } catch (err) {
     console.log(err);

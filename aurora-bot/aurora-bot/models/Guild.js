@@ -22,9 +22,10 @@ const guildConfigSchema = new mongoose.Schema({
     unique: true,
     index: true
   },
-  boundChannelId: {
-    type: String,
-    default: null
+
+  requestChannel: {
+    channelId: { type: String, default: null },
+    messageId: { type: String, default: null }
   },
   settings: {
     autoplay: {

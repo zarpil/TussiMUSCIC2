@@ -12,13 +12,13 @@ import { invitecmd } from "./utils/invite.js";
 import { seekcmd } from './commands/music/seek.js';
 import { autoplaycmd } from './commands/music/autoplay.js';
 import { shufflecmd } from './commands/music/shuffle.js';
-import { weblinkcmd } from './commands/music/weblink.js';
 import { redeemcmd } from './commands/music/redeem.js';
+import { setupcmd } from './commands/music/setup.js';
 dotenv.config();
 
 const commands = [
   playcmd, pausecmd, stopcmd, loopenablecmd, skipcmd, resumecmd, listqueuecmd,
-  seekcmd, autoplaycmd, shufflecmd, volume_cmd, weblinkcmd, redeemcmd, invitecmd
+  seekcmd, autoplaycmd, shufflecmd, volume_cmd, redeemcmd, invitecmd, setupcmd
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.BOT_TOKEN);

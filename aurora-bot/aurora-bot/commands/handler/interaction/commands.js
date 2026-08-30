@@ -10,8 +10,8 @@ import {CreateInvite} from "../../../utils/invite.js"
 import {seekModal} from "../../music/seek.js";
 import { Autoplay } from "../../music/autoplay.js";
 import { Shuffle } from "../../music/shuffle.js";
-import weblink_execute from "../../music/weblink.js";
 import { RedeemCommand } from "../../music/redeem.js";
+import setupmusic from "../../music/setup.js";
 
 export async function command_interactions(interaction, client) {
     switch (interaction.commandName) {
@@ -27,8 +27,8 @@ export async function command_interactions(interaction, client) {
         case 'shuffle': await Shuffle(client,interaction); break;
         case 'listqueue': await Track_List(client,interaction); break;
         case 'volume': await Volume(interaction); break;
-        case 'web-link': await weblink_execute(client, interaction); break;
         case 'redeem': await RedeemCommand(client, interaction); break;
+        case 'setup': await setupmusic(client, interaction); break;
     }
 
 

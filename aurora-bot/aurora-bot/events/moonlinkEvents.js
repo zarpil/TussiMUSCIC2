@@ -3,6 +3,7 @@ import setVoiceStatus from "../utils/setVoiceStatus.js";
 import { music_card } from "../music-card/card.js";
 import { tick_emoji } from "../emoji/emoji.js";
 import { send_log } from "../log/log.js";
+import { edit_idle_panel } from "../music-card/idle.js";
 import fs from "fs";
 import path from "path";
 
@@ -259,9 +260,13 @@ export async function moonlinkEvents(client) {
     try {
       if (player?.musicCard) {
         const card = player.musicCard;
-        player.musicCard = null;
-        await card.delete().catch(() => {});
-        console.log(`[Moonlink Events] Music card deleted`);
+        if (!player.isRequestChannelPanel) {
+          player.musicCard = null;
+          await card.delete().catch(() => {});
+          console.log(`[Moonlink Events] Music card deleted`);
+        } else {
+          console.log(`[Moonlink Events] Kept music card (is RequestChannel panel)`);
+        }
       }
       
       if (reason !== "replaced") {
@@ -419,6 +424,12 @@ export async function moonlinkEvents(client) {
         timestamp: Date.now()
       });
     }
+    
+    // Reset the panel to idle if it was a request channel panel
+    if (player.isRequestChannelPanel && player.musicCard) {
+      await edit_idle_panel(client, player.musicCard);
+    }
+    
     console.log(`[State Sync] Deleted player state and flushed VC time for guild ${player.guildId} due to playerDestroyed event`);
   });
 

@@ -507,12 +507,12 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
 
       // Check if bound channel is set BEFORE allowing any operations
       const guildConfig = await GuildConfig.findOne({ guildId: targetGuildId });
-      const textChannelId = guildConfig?.boundChannelId || null;
+      const textChannelId = guildConfig?.requestChannel?.channelId || null;
       
       if (!textChannelId) {
         return res.json({ 
           success: false,
-          error: 'Por favor configura primero un canal de notificaciones usando el comando /web-link en Discord',
+          error: 'Por favor configura primero un panel de música usando el comando /setup en Discord',
           requiresWebLink: true
         });
       }
@@ -845,7 +845,7 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
           return res.status(400).json({ success: false, error: 'Canal de voz no encontrado' });
         }
 
-        const textChannelId = config.boundChannelId || (member?.voice?.channelId ? voiceChannel.id : (guild.channels.cache.find(c => c.isTextBased())?.id));
+        const textChannelId = config.requestChannel?.channelId || (member?.voice?.channelId ? voiceChannel.id : (guild.channels.cache.find(c => c.isTextBased())?.id));
 
         // Connect or update player
         if (!player) {
