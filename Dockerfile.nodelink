@@ -1,8 +1,6 @@
 FROM performanc/nodelink:latest
 
 WORKDIR /app
-# Force cache invalidation for updated nodelink-config.js
 COPY nodelink-config.js /app/config.js
 
 EXPOSE 2333
-
