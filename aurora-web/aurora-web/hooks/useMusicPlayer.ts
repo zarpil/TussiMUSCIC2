@@ -139,8 +139,11 @@ export function useMusicPlayer(guildId: string, userId: string) {
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // 4-second REST polling fallback loop to guarantee player state is never out of sync
+    // 4-second REST polling fallback loop - ONLY runs if WebSocket is disconnected
     const syncInterval = setInterval(async () => {
+      // Do not run REST fallback polling while WebSocket is connected to prevent race conditions & UI flickering
+      if (socketRef.current?.connected) return;
+
       const gId = guildId || (typeof window !== 'undefined' ? localStorage.getItem('aurora_active_guildId') : '') || '';
       if (!gId) return;
       
@@ -150,13 +153,12 @@ export function useMusicPlayer(guildId: string, userId: string) {
           const data = await res.json();
           if (data.player && data.player.connected) {
             setState(prev => {
-              // Only update if currentTrack or queue actually changed to prevent unnecessary re-renders
-              const currentTrackChanged = JSON.stringify(prev.currentTrack) !== JSON.stringify(data.player.current);
+              const currentTrackTitleChanged = prev.currentTrack?.title !== data.player.current?.title;
               const queueChanged = (prev.queue?.length || 0) !== (data.player.queue?.length || 0);
               const isPlayingChanged = prev.isPlaying !== !data.player.paused;
 
-              if (currentTrackChanged || queueChanged || isPlayingChanged) {
-                console.log('[REST Sync Fallback] Updating player state');
+              if (currentTrackTitleChanged || queueChanged || isPlayingChanged) {
+                console.log('[REST Sync Fallback] Updating player state (Socket disconnected)');
                 return {
                   ...prev,
                   currentTrack: data.player.current ? {
@@ -164,7 +166,8 @@ export function useMusicPlayer(guildId: string, userId: string) {
                     author: data.player.current.author,
                     duration: data.player.current.duration,
                     artwork: data.player.current.artwork,
-                    url: data.player.current.url
+                    url: data.player.current.url,
+                    requester: data.player.current.requester || prev.currentTrack?.requester
                   } : null,
                   queue: data.player.queue || [],
                   isPlaying: !data.player.paused,
