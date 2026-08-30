@@ -235,22 +235,22 @@ class SocketHandler {
       // Security: Verify userId matches authenticated session
       if (socket.authenticatedUserId && userId !== socket.authenticatedUserId) {
         console.warn(`[Socket Handler] Security: Socket ${socket.id} (auth: ${socket.authenticatedUserId}) attempted to use userId ${userId}`);
-        return socket.emit('error', { message: '❌ Unauthorized: User ID mismatch' });
+        return socket.emit('error', { message: '❌ No autorizado: El ID de usuario no coincide' });
       }
       
       if (!socket.authenticatedUserId) {
         console.warn(`[Socket Handler] Security: Unauthenticated socket ${socket.id} attempted action`);
-        return socket.emit('error', { message: '❌ Please login with Discord first' });
+        return socket.emit('error', { message: '❌ Por favor inicia sesión con Discord primero' });
       }
       
       const guild = this.client.guilds.cache.get(guildId);
-      if (!guild) return socket.emit('error', { message: 'Guild not found' });
+      if (!guild) return socket.emit('error', { message: 'Servidor no encontrado' });
 
       const member = await guild.members.fetch(userId);
       const player = this.manager.players.get(guildId);
 
       if (!player) {
-        return socket.emit('error', { message: '❌ There is nothing playing in this server!' });
+        return socket.emit('error', { message: '❌ ¡No hay nada reproduciéndose en este servidor!' });
       }
 
       // Verify user is in same voice channel as bot
@@ -259,11 +259,11 @@ class SocketHandler {
       // If player exists but bot is physically disconnected, it's a bugged state
       if (!botVoiceChannel) {
         player.destroy();
-        return socket.emit('error', { message: '🔄 Player state was desynced and has been reset. Please add the song again.' });
+        return socket.emit('error', { message: '🔄 El estado del reproductor se desincronizó y ha sido reiniciado. Por favor añade la canción de nuevo.' });
       }
 
       if (!member.voice.channel || member.voice.channel.id !== botVoiceChannel.id) {
-        return socket.emit('error', { message: '❌ You need to be in the same voice channel as the bot!' });
+        return socket.emit('error', { message: '❌ ¡Necesitas estar en el mismo canal de voz que el bot!' });
       }
 
       const guildConfig = await GuildConfig.findOne({ guildId });
@@ -274,7 +274,7 @@ class SocketHandler {
       // Warn if web-link not set up
       if (!boundChannel && action !== 'seek' && action !== 'volume') {
         socket.emit('warning', { 
-          message: 'Tip: Run /web-link in Discord to receive notifications when you control music from the web!' 
+          message: 'Consejo: ¡Ejecuta /web-link en Discord para recibir notificaciones cuando controles la música desde la web!' 
         });
       }
 
@@ -286,10 +286,10 @@ class SocketHandler {
         case 'skip':
           // Allow skip if queue has songs OR autoplay is enabled
           if (player.queue.all.length === 0 && !player.autoPlay) {
-            return socket.emit('error', { message: '❌ Queue is empty! Enable autoplay to skip to related songs.' });
+            return socket.emit('error', { message: '❌ ¡La cola está vacía! Activa la reproducción automática para saltar a canciones relacionadas.' });
           }
           player.skip();
-          await this.sendBotMessage(boundChannel, `${skip_emoji} Skipped: **${currentTrack?.title}** by <@${userId}> (Web Control)`);
+          await this.sendBotMessage(boundChannel, `${skip_emoji} Saltada: **${currentTrack?.title}** por <@${userId}> (Control Web)`);
           
           // Send queue update after a short delay to ensure skip is processed
           setTimeout(() => {
@@ -299,25 +299,25 @@ class SocketHandler {
 
         case 'pause':
           if (player.paused) {
-            return socket.emit('error', { message: '❌ The player is already paused!' });
+            return socket.emit('error', { message: '❌ ¡El reproductor ya está pausado!' });
           }
           player.pause();
           player.manuallyPaused = true;
           player.autoPausedBy247 = false;
           this.broadcastStateUpdate(guildId);
-          await this.sendBotMessage(boundChannel, `${pause_emoji} Song is paused by <@${userId}> (Web Control)`);
+          await this.sendBotMessage(boundChannel, `${pause_emoji} Canción pausada por <@${userId}> (Control Web)`);
           this.sendQueueUpdate(player);
           break;
 
         case 'resume':
           if (!player.paused) {
-            return socket.emit('error', { message: '❌ The player is already playing!' });
+            return socket.emit('error', { message: '❌ ¡El reproductor ya se está reproduciendo!' });
           }
           player.resume();
           player.manuallyPaused = false;
           player.autoPausedBy247 = false;
           this.broadcastStateUpdate(guildId);
-          await this.sendBotMessage(boundChannel, `${play_button_emoji} Song is resumed by <@${userId}> (Web Control)`);
+          await this.sendBotMessage(boundChannel, `${play_button_emoji} Canción reanudada por <@${userId}> (Control Web)`);
           this.sendQueueUpdate(player);
           break;
 
@@ -329,14 +329,14 @@ class SocketHandler {
             guildId,
             'seek',
             boundChannel,
-            `${seek_emoji} Seeked to **${this.formatTime(value)}** by <@${userId}> (Web Control)`,
+            `${seek_emoji} Adelantado a **${this.formatTime(value)}** por <@${userId}> (Control Web)`,
             value
           );
           break;
 
         case 'volume':
           if (value < 0 || value > 100) {
-            return socket.emit('error', { message: '❌ Volume must be between 0 and 100!' });
+            return socket.emit('error', { message: '❌ ¡El volumen debe estar entre 0 y 100!' });
           }
           player.setVolume(value);
           if (guildConfig) {
@@ -349,7 +349,7 @@ class SocketHandler {
             guildId,
             'volume',
             boundChannel,
-            `${volume_emoji} Volume set to **${value}%** by <@${userId}> (Web Control)`,
+            `${volume_emoji} Volumen establecido al **${value}%** por <@${userId}> (Control Web)`,
             value
           );
           break;
@@ -361,8 +361,8 @@ class SocketHandler {
             await guildConfig.save();
           }
           this.broadcastStateUpdate(guildId);
-          const loopText = value === 'off' ? 'disabled' : value === 'track' ? 'track' : 'queue';
-          await this.sendBotMessage(boundChannel, `${loop_emoji} Loop mode set to **${loopText}** by <@${userId}> (Web Control)`);
+          const loopText = value === 'off' ? 'desactivado' : value === 'track' ? 'canción' : 'cola';
+          await this.sendBotMessage(boundChannel, `${loop_emoji} Modo de bucle establecido en **${loopText}** por <@${userId}> (Control Web)`);
           break;
 
         case 'autoplay':
@@ -372,7 +372,7 @@ class SocketHandler {
             await guildConfig.save();
           }
           this.broadcastStateUpdate(guildId);
-          await this.sendBotMessage(boundChannel, `${autoplay_emoji} Autoplay **${value ? 'enabled' : 'disabled'}** by <@${userId}> (Web Control)`);
+          await this.sendBotMessage(boundChannel, `${autoplay_emoji} Reproducción automática **${value ? 'activada' : 'desactivada'}** por <@${userId}> (Control Web)`);
           break;
 
         case 'previous':
@@ -382,7 +382,7 @@ class SocketHandler {
           } else if (typeof player.previous === 'function') {
             player.previous();
           }
-          await this.sendBotMessage(boundChannel, `${skip_emoji} Playing previous track by <@${userId}> (Web Control)`);
+          await this.sendBotMessage(boundChannel, `${skip_emoji} Reproduciendo pista anterior por <@${userId}> (Control Web)`);
           
           // Send queue update after a short delay
           setTimeout(() => {
@@ -406,7 +406,7 @@ class SocketHandler {
               console.log(`[Socket Handler] 24/7 active for ${guildId}, stopped playback & cleared queue without destroying player or leaving VC.`);
               this.sendQueueUpdate(player);
             }
-            await this.sendBotMessage(boundChannel, `${stop_emoji} Player stopped by <@${userId}> (Web Control)`);
+            await this.sendBotMessage(boundChannel, `${stop_emoji} Reproductor detenido por <@${userId}> (Control Web)`);
           }
           break;
 
@@ -483,19 +483,19 @@ class SocketHandler {
                 player.filters.clear();
                 await player.filters.apply();
                 console.log(`[Socket Handler] Filters cleared successfully`);
-                await this.sendBotMessage(boundChannel, `${tick} Filters cleared by <@${userId}> (Web Control)`);
+                await this.sendBotMessage(boundChannel, `${tick} Filtros eliminados por <@${userId}> (Control Web)`);
                 return;
 
               default:
                 console.log(`[Socket Handler] Unknown filter: ${filterName}`);
-                return socket.emit('error', { message: `❌ Unknown filter: ${filterName}` });
+                return socket.emit('error', { message: `❌ Filtro desconocido: ${filterName}` });
             }
 
             console.log(`[Socket Handler] Filter ${appliedFilter} applied successfully`);
-            await this.sendBotMessage(boundChannel, `${tick} Filter applied: **${appliedFilter}** by <@${userId}> (Web Control)`);
+            await this.sendBotMessage(boundChannel, `${tick} Filtro aplicado: **${appliedFilter}** por <@${userId}> (Control Web)`);
           } catch (filterError) {
             console.error(`[Socket Handler] Filter error:`, filterError);
-            return socket.emit('error', { message: `❌ Failed to apply filter: ${filterError.message}` });
+            return socket.emit('error', { message: `❌ Error al aplicar el filtro: ${filterError.message}` });
           }
           break;
       }

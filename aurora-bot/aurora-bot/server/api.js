@@ -477,13 +477,13 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
       const { guildId, userId, query, isBatch, batchTotal, batchIndex } = req.body;
       
       if (!userId || !query) {
-        return res.json({ success: false, error: 'Missing required user ID or query' });
+        return res.json({ success: false, error: 'Falta el ID de usuario o la consulta requerida' });
       }
 
       // Security: Verify userId matches authenticated session
       if (userId !== req.authenticatedUserId) {
         console.warn(`[API] Security: User ${req.authenticatedUserId} attempted to use userId ${userId}`);
-        return res.json({ success: false, error: 'Unauthorized: User ID mismatch' });
+        return res.json({ success: false, error: 'No autorizado: El ID de usuario no coincide' });
       }
 
       // Determine guild: use requested guildId or fallback to first available guild
@@ -500,7 +500,7 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
       }
 
       if (!guild) {
-        return res.json({ success: false, error: 'Server not found. Please select a active Discord server from the header.' });
+        return res.json({ success: false, error: 'Servidor no encontrado. Por favor selecciona un servidor de Discord activo en el menú superior.' });
       }
 
       targetGuildId = guild.id;
@@ -512,7 +512,7 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
       if (!textChannelId) {
         return res.json({ 
           success: false,
-          error: 'Please set a notification channel first using /web-link command in Discord',
+          error: 'Por favor configura primero un canal de notificaciones usando el comando /web-link en Discord',
           requiresWebLink: true
         });
       }
@@ -523,7 +523,7 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
       } catch (e) {}
 
       if (!member || !member.voice || !member.voice.channel) {
-        return res.json({ success: false, error: 'You need to join a voice channel first!' });
+        return res.json({ success: false, error: '¡Primero necesitas unirte a un canal de voz!' });
       }
 
       let player = manager.players.get(targetGuildId);
@@ -585,7 +585,7 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
       }
 
       if (!searchResult || !searchResult.tracks || searchResult.tracks.length === 0) {
-        return res.json({ success: false, error: 'No results found for your query.' });
+        return res.json({ success: false, error: 'No se encontraron resultados para tu búsqueda.' });
       }
 
       const boundChannel = guild.channels.cache.get(textChannelId);
@@ -836,13 +836,13 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
         if (!targetVcId) {
           return res.status(400).json({
             success: false,
-            error: 'You or the bot must be in a Voice Channel to enable 24/7 mode!'
+            error: '¡Tú o el bot debéis estar en un canal de voz para activar el modo 24/7!'
           });
         }
 
         const voiceChannel = guild.channels.cache.get(targetVcId);
         if (!voiceChannel) {
-          return res.status(400).json({ success: false, error: 'Target Voice Channel not found' });
+          return res.status(400).json({ success: false, error: 'Canal de voz no encontrado' });
         }
 
         const textChannelId = config.boundChannelId || (member?.voice?.channelId ? voiceChannel.id : (guild.channels.cache.find(c => c.isTextBased())?.id));
