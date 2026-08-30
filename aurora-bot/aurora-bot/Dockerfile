@@ -1,4 +1,4 @@
-FROM node:22-bookworm
+FROM node:20-bookworm
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -20,7 +20,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install && npm cache clean --force
+RUN npm install --legacy-peer-deps && npm cache clean --force
 
 # Copy all files
 COPY . .
