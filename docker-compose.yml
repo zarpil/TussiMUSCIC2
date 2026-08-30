@@ -23,6 +23,7 @@ services:
       - NODELINK_SERVER_PORT=2333
       - NODELINK_SERVER_PASSWORD=youshallnotpass
       - NODELINK_PASSWORD=youshallnotpass
+      - YOUTUBE_REFRESH_TOKEN=${YOUTUBE_REFRESH_TOKEN:-1//03rHyTXitRv7DCgYIARAAGAMSNwF-L9IrY9BZaVWMogjMxLoOB9_5uW89BnypLNoSKOwzvt3badADnkohU4zprEhqQiKmJqnbwxk}
     networks:
       - tussi-network
 

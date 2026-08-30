@@ -319,7 +319,7 @@ export default {
       enabled: true,
       allowItag: [], // additional itags for audio streams, e.g., [140, 141]
       targetItag: null, // force a specific itag for audio streams, overriding the quality option
-      getOAuthToken: true,
+      getOAuthToken: false,
       hl: 'en',
       gl: 'US',
       proxies: [
@@ -370,7 +370,7 @@ export default {
         ], // Clients used for resolving detailed track information (channel, external links, etc.)
         settings: {
           TV: {
-            refreshToken: [''] // You can use a string "token" or an array ["token1", "token2"] for rotation/fallback
+            refreshToken: process.env.YOUTUBE_REFRESH_TOKEN ? [process.env.YOUTUBE_REFRESH_TOKEN] : [''] // Configured via environment variable
           }
         }
       },
