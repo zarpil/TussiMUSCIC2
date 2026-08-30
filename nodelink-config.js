@@ -347,10 +347,8 @@ export default {
         'nicovideo'
       ], // Internal fallback chain when YouTube stream URL fails
       clients: {
-        search: ['Android'], // Clients used for searching tracks
+        search: ['Android', 'Music', 'WebRemix'], // Clients used for searching tracks
         playback: [
-          'Music',
-          'WebRemix',
           'WebEmbedded',
           'TVCast',
           'AndroidVR',
