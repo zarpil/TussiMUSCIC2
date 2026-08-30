@@ -189,7 +189,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     handleSeek,
     handleVolumeChange,
     handleLoopChange,
-    handleAutoplayToggle
+    handleAutoplayToggle,
+    handleMove
   } = useMusicPlayer(guildId, userId);
 
   const [view, setView] = useState<'player' | 'explore' | 'playlists' | 'overview' | 'premium'>('player');
@@ -1303,12 +1304,16 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     const { active, over } = event;
 
     if (over && active.id !== over.id) {
+      let oldIndex = -1;
+      let newIndex = -1;
       setLocalQueue((items) => {
-        const oldIndex = items.findIndex((item) => item.id === active.id);
-        const newIndex = items.findIndex((item) => item.id === over.id);
+        oldIndex = items.findIndex((item) => item.id === active.id);
+        newIndex = items.findIndex((item) => item.id === over.id);
         return arrayMove(items, oldIndex, newIndex);
       });
-      // TODO: Emit queue reorder to server
+      if (oldIndex !== -1 && newIndex !== -1) {
+        handleMove(oldIndex, newIndex);
+      }
     }
   };
 

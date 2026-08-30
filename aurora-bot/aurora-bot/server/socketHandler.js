@@ -266,6 +266,19 @@ class SocketHandler {
           }, 100);
           break;
 
+        case 'move':
+          if (value && typeof value.from === 'number' && typeof value.to === 'number') {
+            const { from, to } = value;
+            // Moonlink's queue.all is the array of tracks
+            const allTracks = player.queue.all || player.queue;
+            if (Array.isArray(allTracks) && from >= 0 && to >= 0 && from < allTracks.length && to <= allTracks.length) {
+              const [track] = allTracks.splice(from, 1);
+              allTracks.splice(to, 0, track);
+              this.sendQueueUpdate(player);
+            }
+          }
+          break;
+
         case 'pause':
           if (player.paused) {
             return socket.emit('error', { message: '❌ ¡El reproductor ya está pausado!' });

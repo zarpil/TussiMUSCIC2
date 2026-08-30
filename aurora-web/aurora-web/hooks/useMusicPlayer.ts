@@ -462,6 +462,7 @@ export function useMusicPlayer(guildId: string, userId: string) {
     emitAction('loop', nextMode);
   };
   const handleAutoplayToggle = () => emitAction('autoplay', !state.autoplay);
+  const handleMove = (from: number, to: number) => emitAction('move', { from, to });
 
   return {
     ...state,
@@ -474,6 +475,7 @@ export function useMusicPlayer(guildId: string, userId: string) {
     handleSeek,
     handleVolumeChange,
     handleLoopChange,
-    handleAutoplayToggle
+    handleAutoplayToggle,
+    handleMove
   };
 }
