@@ -279,6 +279,19 @@ class SocketHandler {
           }
           break;
 
+        case 'remove':
+          if (typeof value === 'number' && value >= 0) {
+            const allTracks = player.queue.all || player.queue;
+            if (Array.isArray(allTracks) && value < allTracks.length) {
+              const removedTrack = allTracks.splice(value, 1)[0];
+              this.sendQueueUpdate(player);
+              if (removedTrack) {
+                await this.sendBotMessage(boundChannel, `🗑️ Eliminada de la cola: **${removedTrack.title}** por <@${userId}> (Control Web)`);
+              }
+            }
+          }
+          break;
+
         case 'pause':
           if (player.paused) {
             return socket.emit('error', { message: '❌ ¡El reproductor ya está pausado!' });

@@ -305,7 +305,7 @@ const fetchDeezerArtistImage = async (name: string): Promise<string> => {
   return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random&size=200`;
 };
 
-function CategoryRow({ category, userId, guildId, playItem, onHoverTrack }: { category: any, userId: string, guildId: string, playItem: (item: any, isPlaylist?: boolean) => void, onHoverTrack?: (artworkUrl: string | null) => void }) {
+function CategoryRow({ category, userId, guildId, playItem, onHoverTrack, onToggleLike, likedSongsList }: { category: any, userId: string, guildId: string, playItem: (item: any, isPlaylist?: boolean) => void, onHoverTrack?: (artworkUrl: string | null) => void, onToggleLike?: (track: any, e?: React.MouseEvent) => void, likedSongsList?: any[] }) {
   const [items, setItems] = useState<any[]>([]);
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -531,12 +531,12 @@ function CategoryRow({ category, userId, guildId, playItem, onHoverTrack }: { ca
           const title = item.title || item.name;
           const subtitle = item.subtitle || item.author;
           const artwork = item.artwork || 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80';
+          const isLiked = !item.isArtist && !isPlaylist && Array.isArray(likedSongsList) && likedSongsList.some(s => s.track?.identifier === (item.identifier || `${title}-${subtitle}`) || (s.track?.title === title && s.track?.author === subtitle));
 
           return (
             <motion.div
-              ref={isLast && !isPlaylist ? lastElementRef : null}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
               key={`${item.url || item._id}-${i}`}
               onClick={() => playItem(item, isPlaylist)}
@@ -550,6 +550,18 @@ function CategoryRow({ category, userId, guildId, playItem, onHoverTrack }: { ca
                   alt={title}
                   className="w-full h-full object-cover"
                 />
+                {!item.isArtist && !isPlaylist && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleLike?.({ title, author: subtitle, artwork, url: item.url, identifier: item.identifier || `${title}-${subtitle}` }, e);
+                    }}
+                    className="absolute top-2 right-2 p-2 bg-black/70 hover:bg-black/90 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-20 shadow-lg cursor-pointer hover:scale-110"
+                    title={isLiked ? "Eliminar de favoritas" : "Añadir a favoritas"}
+                  >
+                    <Heart className={`w-4 h-4 ${isLiked ? 'text-pink-500 fill-pink-500' : 'text-white'}`} />
+                  </button>
+                )}
                 <div className="absolute bottom-2 right-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
                   <button className="w-10 h-10 md:w-12 md:h-12 bg-[#1ed760] rounded-full flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#1fdf64]">
                     <Play className="w-5 h-5 md:w-6 md:h-6 text-black ml-1" fill="black" />
@@ -715,6 +727,73 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
         detail: { message: 'Network error', type: 'error' }
       }));
     }
+  };
+
+  const handleToggleLikeSong = async (track: any, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (!guildId || !userId) return;
+
+    const title = track.title || track.name || 'Canción';
+    const author = track.author || track.creatorName || 'Desconocido';
+    const identifier = track.identifier || `${title}-${author}`;
+    const artwork = track.artwork || track.thumbnail || 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80';
+    const url = track.url || track.link || `https://www.youtube.com/results?search_query=${encodeURIComponent(`${title} ${author}`)}`;
+
+    const isCurrentlyLiked = likedSongsList.some(
+      item => item.track?.identifier === identifier || (item.track?.title === title && item.track?.author === author)
+    );
+
+    try {
+      const apiUrl = '';
+      if (isCurrentlyLiked) {
+        const res = await fetch(`${apiUrl}/api/liked-songs/${guildId}/${userId}/${encodeURIComponent(identifier)}`, {
+          method: 'DELETE'
+        });
+        if (res.ok) {
+          setLikedSongsList(prev => prev.filter(item => item.track?.identifier !== identifier && (item.track?.title !== title || item.track?.author !== author)));
+          window.dispatchEvent(new CustomEvent('show-toast', {
+            detail: { message: `💔 Eliminada de Canciones Favoritas: ${title}`, type: 'info' }
+          }));
+          window.dispatchEvent(new CustomEvent('history-updated'));
+        }
+      } else {
+        const res = await fetch(`${apiUrl}/api/liked-songs/${guildId}/${userId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            track: {
+              title,
+              author,
+              duration: track.duration || 0,
+              artwork,
+              url,
+              identifier
+            }
+          })
+        });
+        if (res.ok) {
+          const newLikedItem = {
+            track: { title, author, duration: track.duration || 0, artwork, url, identifier }
+          };
+          setLikedSongsList(prev => [newLikedItem, ...prev]);
+          window.dispatchEvent(new CustomEvent('show-toast', {
+            detail: { message: `❤️ Añadida a Canciones Favoritas: ${title}`, type: 'success' }
+          }));
+          window.dispatchEvent(new CustomEvent('history-updated'));
+        }
+      }
+    } catch (err) {
+      console.error('[ExploreView] handleToggleLikeSong error:', err);
+    }
+  };
+
+  const isSongLiked = (title: string, author?: string, identifier?: string) => {
+    if (!likedSongsList || likedSongsList.length === 0) return false;
+    return likedSongsList.some(item => {
+      if (identifier && item.track?.identifier === identifier) return true;
+      if (item.track?.title === title && (!author || item.track?.author === author)) return true;
+      return false;
+    });
   };
 
   const playAllLikedSongs = async () => {
@@ -1324,30 +1403,41 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                 <div className="mb-8 mt-2">
                   <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">{getGreeting()}</h2>
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-                    {recentPicks.map((pick, i) => (
-                      <div 
-                        key={i} 
-                        onClick={() => playItem(pick, false)}
-                        onMouseEnter={() => setHoveredArtwork(pick.track?.artwork || pick.artwork || null)}
-                        onMouseLeave={() => setHoveredArtwork(null)}
-                        className="group flex items-center bg-white/5 hover:bg-white/20 transition-all rounded-md overflow-hidden cursor-pointer shadow-sm relative"
-                      >
-                        <img 
-                          src={pick.track?.artwork || pick.artwork || 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'} 
-                          onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'; }}
-                          alt={pick.track?.title || pick.title} 
-                          className="w-12 h-12 md:w-16 md:h-16 object-cover shadow-[0_0_10px_rgba(0,0,0,0.5)]" 
-                        />
-                        <div className="p-3 pr-10 md:p-4 truncate">
-                          <h4 className="text-white font-bold text-sm md:text-base truncate">{pick.track?.title || pick.title}</h4>
+                    {recentPicks.map((pick, i) => {
+                      const pTrack = pick.track || pick;
+                      const isLiked = isSongLiked(pTrack.title, pTrack.author, pTrack.identifier);
+                      return (
+                        <div 
+                          key={i} 
+                          onClick={() => playItem(pick, false)}
+                          onMouseEnter={() => setHoveredArtwork(pTrack.artwork || null)}
+                          onMouseLeave={() => setHoveredArtwork(null)}
+                          className="group flex items-center bg-white/5 hover:bg-white/20 transition-all rounded-md overflow-hidden cursor-pointer shadow-sm relative"
+                        >
+                          <img 
+                            src={pTrack.artwork || 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'} 
+                            onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'; }}
+                            alt={pTrack.title} 
+                            className="w-12 h-12 md:w-16 md:h-16 object-cover shadow-[0_0_10px_rgba(0,0,0,0.5)]" 
+                          />
+                          <div className="p-3 pr-16 md:p-4 truncate">
+                            <h4 className="text-white font-bold text-sm md:text-base truncate">{pTrack.title}</h4>
+                          </div>
+                          <div className="absolute right-3 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 z-10">
+                            <button
+                              onClick={(e) => handleToggleLikeSong(pTrack, e)}
+                              className="w-8 h-8 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center text-white transition-all hover:scale-105 shadow-xl cursor-pointer"
+                              title={isLiked ? "Eliminar de favoritas" : "Añadir a favoritas"}
+                            >
+                              <Heart className={`w-4 h-4 ${isLiked ? 'text-pink-500 fill-pink-500' : 'text-white'}`} />
+                            </button>
+                            <button className="w-10 h-10 bg-[#1ed760] rounded-full flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#1fdf64]">
+                              <Play className="w-5 h-5 text-black ml-1" fill="black" />
+                            </button>
+                          </div>
                         </div>
-                        <div className="absolute right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <button className="w-10 h-10 bg-[#1ed760] rounded-full flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#1fdf64]">
-                            <Play className="w-5 h-5 text-black ml-1" fill="black" />
-                          </button>
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -1390,69 +1480,90 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
               ) : (
                 <div className="space-y-8">
                   {/* Top Result Card (Spotify Style) */}
-                  {searchResults.length > 0 && (
-                    <div>
-                      <h4 className="text-[#a7a7a7] text-xs font-bold uppercase tracking-wider mb-3">Resultado Principal</h4>
-                      <div
-                        onClick={() => playItem(searchResults[0], false)}
-                        onMouseEnter={() => setHoveredArtwork(searchResults[0].artwork || null)}
-                        onMouseLeave={() => setHoveredArtwork(null)}
-                        className="group relative bg-[#181818] hover:bg-[#282828] p-5 rounded-2xl cursor-pointer transition-all duration-300 max-w-xl border border-white/5 hover:border-white/10 flex flex-col md:flex-row items-start md:items-center gap-5 shadow-2xl"
-                      >
-                        <img
-                          src={getCleanArtwork(searchResults[0].artwork)}
-                          onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'; }}
-                          alt={searchResults[0].title}
-                          className="w-24 h-24 md:w-28 md:h-28 rounded-xl object-cover shadow-lg border border-white/10 shrink-0"
-                        />
-                        <div className="flex-1 min-w-0 pr-12">
-                          <h2 className="text-2xl font-black text-white truncate drop-shadow-sm">{searchResults[0].title}</h2>
-                          <div className="flex items-center gap-2 mt-2">
-                            <span className="text-[10px] font-extrabold bg-[#1ed760]/20 text-[#1ed760] px-2.5 py-0.5 rounded-full uppercase tracking-wider">Mejor Coincidencia</span>
-                            <span className="text-sm font-semibold text-[#a7a7a7] truncate">{searchResults[0].author}</span>
+                  {searchResults.length > 0 && (() => {
+                    const topTrack = searchResults[0];
+                    const isTopLiked = isSongLiked(topTrack.title, topTrack.author, topTrack.identifier);
+                    return (
+                      <div>
+                        <h4 className="text-[#a7a7a7] text-xs font-bold uppercase tracking-wider mb-3">Resultado Principal</h4>
+                        <div
+                          onClick={() => playItem(topTrack, false)}
+                          onMouseEnter={() => setHoveredArtwork(topTrack.artwork || null)}
+                          onMouseLeave={() => setHoveredArtwork(null)}
+                          className="group relative bg-[#181818] hover:bg-[#282828] p-5 rounded-2xl cursor-pointer transition-all duration-300 max-w-xl border border-white/5 hover:border-white/10 flex flex-col md:flex-row items-start md:items-center gap-5 shadow-2xl"
+                        >
+                          <img
+                            src={getCleanArtwork(topTrack.artwork)}
+                            onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'; }}
+                            alt={topTrack.title}
+                            className="w-24 h-24 md:w-28 md:h-28 rounded-xl object-cover shadow-lg border border-white/10 shrink-0"
+                          />
+                          <div className="flex-1 min-w-0 pr-12">
+                            <h2 className="text-2xl font-black text-white truncate drop-shadow-sm">{topTrack.title}</h2>
+                            <div className="flex items-center gap-2 mt-2">
+                              <span className="text-[10px] font-extrabold bg-[#1ed760]/20 text-[#1ed760] px-2.5 py-0.5 rounded-full uppercase tracking-wider">Mejor Coincidencia</span>
+                              <span className="text-sm font-semibold text-[#a7a7a7] truncate">{topTrack.author}</span>
+                            </div>
+                          </div>
+                          <div className="absolute right-5 bottom-5 md:static opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex items-center gap-2 z-10">
+                            <button
+                              onClick={(e) => handleToggleLikeSong(topTrack, e)}
+                              className="w-10 h-10 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center text-white transition-all hover:scale-105 shadow-2xl cursor-pointer"
+                              title={isTopLiked ? "Eliminar de favoritas" : "Añadir a favoritas"}
+                            >
+                              <Heart className={`w-5 h-5 ${isTopLiked ? 'text-pink-500 fill-pink-500' : 'text-white'}`} />
+                            </button>
+                            <button className="w-12 h-12 bg-[#1ed760] rounded-full flex items-center justify-center shadow-2xl hover:scale-105 hover:bg-[#1fdf64] transition-all">
+                              <Play className="w-6 h-6 text-black ml-0.5" fill="black" />
+                            </button>
                           </div>
                         </div>
-                        <div className="absolute right-5 bottom-5 md:static opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                          <button className="w-12 h-12 bg-[#1ed760] rounded-full flex items-center justify-center shadow-2xl hover:scale-105 hover:bg-[#1fdf64] transition-all">
-                            <Play className="w-6 h-6 text-black ml-0.5" fill="black" />
-                          </button>
-                        </div>
                       </div>
-                    </div>
-                  )}
+                    );
+                  })()}
 
                   {/* Songs Grid (Spotify 6-Column Responsive Card Grid) */}
                   <div>
                     <h4 className="text-[#a7a7a7] text-xs font-bold uppercase tracking-wider mb-3">Todas las Canciones ({searchResults.length})</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
-                      {searchResults.map((track, i) => (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: Math.min(i * 0.02, 0.4) }}
-                          key={i}
-                          onClick={() => playItem(track, false)}
-                          onMouseEnter={() => setHoveredArtwork(track.artwork || null)}
-                          onMouseLeave={() => setHoveredArtwork(null)}
-                          className="group bg-[#181818] rounded-2xl p-3.5 md:p-4 hover:bg-[#282828] transition-all duration-300 cursor-pointer flex flex-col relative border border-white/5 hover:border-white/10 hover:shadow-2xl"
-                        >
-                          <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-3 shadow-[0_8px_24px_rgba(0,0,0,0.6)] border border-white/5">
-                            <img
-                              src={getCleanArtwork(track.artwork)}
-                              onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'; }}
-                              alt={track.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="absolute bottom-2 right-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
-                              <button className="w-10 h-10 md:w-11 md:h-11 bg-[#1ed760] rounded-full flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#1fdf64] transition-all">
-                                <Play className="w-5 h-5 text-black ml-0.5" fill="black" />
+                      {searchResults.map((track, i) => {
+                        const isLiked = isSongLiked(track.title, track.author, track.identifier);
+                        return (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: Math.min(i * 0.02, 0.4) }}
+                            key={i}
+                            onClick={() => playItem(track, false)}
+                            onMouseEnter={() => setHoveredArtwork(track.artwork || null)}
+                            onMouseLeave={() => setHoveredArtwork(null)}
+                            className="group bg-[#181818] rounded-2xl p-3.5 md:p-4 hover:bg-[#282828] transition-all duration-300 cursor-pointer flex flex-col relative border border-white/5 hover:border-white/10 hover:shadow-2xl"
+                          >
+                            <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-3 shadow-[0_8px_24px_rgba(0,0,0,0.6)] border border-white/5">
+                              <img
+                                src={getCleanArtwork(track.artwork)}
+                                onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500&q=80'; }}
+                                alt={track.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              />
+                              <button
+                                onClick={(e) => handleToggleLikeSong(track, e)}
+                                className="absolute top-2 right-2 p-2 bg-black/70 hover:bg-black/90 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-20 shadow-lg cursor-pointer hover:scale-110"
+                                title={isLiked ? "Eliminar de favoritas" : "Añadir a favoritas"}
+                              >
+                                <Heart className={`w-4 h-4 ${isLiked ? 'text-pink-500 fill-pink-500' : 'text-white'}`} />
                               </button>
+                              <div className="absolute bottom-2 right-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                                <button className="w-10 h-10 md:w-11 md:h-11 bg-[#1ed760] rounded-full flex items-center justify-center shadow-xl hover:scale-105 hover:bg-[#1fdf64] transition-all">
+                                  <Play className="w-5 h-5 text-black ml-0.5" fill="black" />
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <h3 className="text-white font-bold text-sm truncate w-full">{track.title}</h3>
-                          <p className="text-[#a7a7a7] text-xs truncate w-full mt-1 font-medium">{track.author}</p>
-                        </motion.div>
-                      ))}
+                            <h3 className="text-white font-bold text-sm truncate w-full">{track.title}</h3>
+                            <p className="text-[#a7a7a7] text-xs truncate w-full mt-1 font-medium">{track.author}</p>
+                          </motion.div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -1775,6 +1886,8 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                     guildId={guildId}
                     playItem={playItem}
                     onHoverTrack={setHoveredArtwork}
+                    onToggleLike={handleToggleLikeSong}
+                    likedSongsList={likedSongsList}
                   />
                   {idx === 1 && <CarouselBanner queries={PROMO_QUERIES_1} onBannerClick={executeSearch} />}
                   {idx === 4 && <CarouselBanner queries={PROMO_QUERIES_2} onBannerClick={executeSearch} />}

@@ -5,7 +5,7 @@ import { useMusicPlayer } from '../hooks/useMusicPlayer';
 import {
   Play, Pause, SkipForward, SkipBack, Repeat,
   Shuffle, Volume2, Heart, ExternalLink, Music, Search, Link as LinkIcon, Sliders, Square, ListPlus, Disc,
-  Compass, ListMusic, Menu, X, Palette, Paintbrush, Settings, Pencil, Crown, RefreshCw, Info, BarChart3, PictureInPicture2, Keyboard, MoreHorizontal
+  Compass, ListMusic, Menu, X, Palette, Paintbrush, Settings, Pencil, Crown, RefreshCw, Info, BarChart3, PictureInPicture2, Keyboard, MoreHorizontal, Trash2
 } from 'lucide-react';
 import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import ToastContainer from './ToastContainer';
@@ -73,7 +73,7 @@ interface QueueTrack {
   };
 }
 
-function SortableQueueItem({ track, index, formatTime }: { track: QueueTrack; index: number; formatTime: (ms: number) => string }) {
+function SortableQueueItem({ track, index, formatTime, onRemove }: { track: QueueTrack; index: number; formatTime: (ms: number) => string; onRemove?: (index: number) => void }) {
   const {
     attributes,
     listeners,
@@ -103,10 +103,24 @@ function SortableQueueItem({ track, index, formatTime }: { track: QueueTrack; in
           alt={track.title}
           className="w-40 h-40 rounded-xl object-cover shadow-lg"
         />
+        {/* Remove Track Button */}
+        {onRemove && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              onRemove(index);
+            }}
+            className="absolute top-2 left-2 p-1.5 bg-red-600/80 hover:bg-red-600 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-20 shadow-lg cursor-pointer hover:scale-110"
+            title="Eliminar de la cola"
+          >
+            <Trash2 className="w-4 h-4" />
+          </button>
+        )}
         <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center">
           <div className="text-center">
             <span className="text-white font-bold text-3xl block">{index + 1}</span>
-            <span className="text-white/80 text-xs">in queue</span>
+            <span className="text-white/80 text-xs">en cola</span>
           </div>
         </div>
 
@@ -190,7 +204,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     handleVolumeChange,
     handleLoopChange,
     handleAutoplayToggle,
-    handleMove
+    handleMove,
+    handleRemoveTrack
   } = useMusicPlayer(guildId, userId);
 
   const [view, setView] = useState<'player' | 'explore' | 'playlists' | 'overview' | 'premium'>('player');
@@ -1304,14 +1319,11 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
     const { active, over } = event;
 
     if (over && active.id !== over.id) {
-      let oldIndex = -1;
-      let newIndex = -1;
-      setLocalQueue((items) => {
-        oldIndex = items.findIndex((item) => item.id === active.id);
-        newIndex = items.findIndex((item) => item.id === over.id);
-        return arrayMove(items, oldIndex, newIndex);
-      });
+      const oldIndex = localQueue.findIndex((item) => item.id === active.id);
+      const newIndex = localQueue.findIndex((item) => item.id === over.id);
+
       if (oldIndex !== -1 && newIndex !== -1) {
+        setLocalQueue((items) => arrayMove(items, oldIndex, newIndex));
         handleMove(oldIndex, newIndex);
       }
     }
@@ -3142,6 +3154,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                               track={track}
                               index={index}
                               formatTime={formatTime}
+                              onRemove={(idx) => handleRemoveTrack(idx)}
                             />
                           ))}
                         </div>
