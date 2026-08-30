@@ -11,6 +11,7 @@ import { eventHandler } from './events/eventHandler.js';
 import { AutoPoster } from 'topgg-autoposter';
 import WebServer from './server/index.js';
 import { TextChannel, NewsChannel, DMChannel, BaseInteraction, MessageFlags } from 'discord.js';
+import { schedulePoTokenSync } from './utils/potokenSync.js';
 
 // Global patch to ensure EVERY message sent by the bot in Discord is a silent message (SuppressNotifications)
 const patchSilentMessages = () => {
@@ -109,6 +110,14 @@ client.once('clientReady', async() => {
     console.log('🌐 Web Dashboard server started successfully!');
   } catch (error) {
     console.error('❌ Failed to start web server:', error);
+  }
+
+  // Initialize PoToken Sync
+  try {
+    schedulePoTokenSync(process.env.NODELINK_HOST || 'nodelink', process.env.NODELINK_PORT || '2333', process.env.NODELINK_PASSWORD || 'youshallnotpass');
+    console.log('🔄 Scheduled PoToken sync with NodeLink');
+  } catch (err) {
+    console.error('❌ Failed to schedule PoToken sync:', err);
   }
 
   // Setup Discord Rich Presence

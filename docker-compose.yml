@@ -85,6 +85,16 @@ services:
     networks:
       - tussi-network
 
+  # 5. PoToken Provider
+  pot-provider:
+    image: brainicism/bgutil-ytdlp-pot-provider:latest
+    container_name: tussi-pot-provider
+    restart: unless-stopped
+    ports:
+      - "4416:4416"
+    networks:
+      - tussi-network
+
 networks:
   tussi-network:
     name: tussi-network

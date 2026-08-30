@@ -1,0 +1,111 @@
+
+2026-08-30T00:09:13.748260047Z 🚀 Starting Tussi Music Bot...
+2026-08-30T00:09:16.324373868Z ✅ Logged in as TussiMusic#7948
+2026-08-30T00:09:16.328458279Z ✅ Moonlink Is Initialized Successfully
+2026-08-30T00:09:16.343440139Z [Lyrics Service] 🎵 Moonlink v5 lyrics listeners registered
+2026-08-30T00:09:16.344201412Z 🌐 Web Dashboard server started successfully!
+2026-08-30T00:09:16.345059556Z ✅ Discord Rich Presence initialized (Priority: Web > .env, Default: OFF)
+2026-08-30T00:09:16.345370078Z ⏳ Registering global slash commands...
+2026-08-30T00:09:16.346321807Z (node:19) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2026-08-30T00:09:16.346365373Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-08-30T00:09:16.347486165Z [Web Server] Running on http://0.0.0.0:3001
+2026-08-30T00:09:16.347630560Z [Web Server] CORS enabled for: https://tussi.zarpil.dev
+2026-08-30T00:09:16.347832869Z [Web Server] Test the API: curl http://localhost:3001/health
+2026-08-30T00:09:16.366783804Z [MongoDB] Connected successfully
+2026-08-30T00:09:16.383105208Z [Moonlink] Initializing database-dependent features...
+2026-08-30T00:09:16.403938267Z [Premium Cache] Loaded 0 premium users.
+2026-08-30T00:09:16.412539604Z [Moonlink DB] Overwriting node configurations with 1 merged nodes (DB + config.json).
+2026-08-30T00:09:16.412680782Z [Moonlink DB] Node connection verified online: tussi-nodelink
+2026-08-30T00:09:16.416672230Z [State Restoration] Found 0 saved player states to restore.
+2026-08-30T00:09:16.941936734Z ✅ Global slash commands registered successfully!
+2026-08-30T00:09:17.722115782Z [Socket.io] User connected: SWzFzT-0OryZdZ7bAAAC
+2026-08-30T00:09:17.722139118Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T00:09:17.737390901Z [Socket.io] User connected: bLJOusS8p5-ryBF_AAAD
+2026-08-30T00:09:17.737412664Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T00:09:17.795356099Z [Socket.io] User SWzFzT-0OryZdZ7bAAAC joined guild:1494309584322433124
+2026-08-30T00:09:17.800636892Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T00:09:17.813465302Z [Socket.io] User bLJOusS8p5-ryBF_AAAD joined guild:1494309584322433124
+2026-08-30T00:09:17.815884246Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T00:10:43.738490810Z [Socket.io] User bLJOusS8p5-ryBF_AAAD joined guild:1494309584322433124
+2026-08-30T00:10:43.739640800Z [Socket.io] User SWzFzT-0OryZdZ7bAAAC joined guild:1494309584322433124
+2026-08-30T00:10:43.741743149Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T00:10:43.742901495Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T00:10:43.804157038Z [Socket.io] Sync requested by socket: bLJOusS8p5-ryBF_AAAD for guild: 1494309584322433124
+2026-08-30T00:10:43.804184231Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T00:10:43.805614274Z [Socket.io] Sync requested by socket: SWzFzT-0OryZdZ7bAAAC for guild: 1494309584322433124
+2026-08-30T00:10:43.805628813Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T00:11:08.731949045Z [Socket.io] User connected: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:11:08.731971530Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T00:11:08.796527226Z [Socket.io] User connected: H1E-2bSgDoAkoffTAAAJ
+2026-08-30T00:11:08.796546885Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T00:11:08.806157193Z [Socket.io] User EA1eZUSlw-fm5HQgAAAH joined guild:1494309584322433124
+2026-08-30T00:11:08.809546633Z [Socket Handler] Sending current state to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:11:08.809784031Z [Socket Handler] 🎵 Fetching lyrics for socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:11:08.809923036Z [Lyrics Service] ⚠️ No current track
+2026-08-30T00:11:08.839766148Z [Socket.io] User connected: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:11:08.839789103Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T00:11:08.863350327Z [Socket.io] User H1E-2bSgDoAkoffTAAAJ joined guild:1494309584322433124
+2026-08-30T00:11:08.865240608Z [Socket Handler] Sending current state to socket: H1E-2bSgDoAkoffTAAAJ
+2026-08-30T00:11:08.865542544Z [Socket Handler] 🎵 Fetching lyrics for socket: H1E-2bSgDoAkoffTAAAJ
+2026-08-30T00:11:08.865554227Z [Lyrics Service] ⚠️ No current track
+2026-08-30T00:11:08.902827695Z [Socket.io] User JDAbF3B4RR60o5hsAAAK joined guild:1494309584322433124
+2026-08-30T00:11:08.906450736Z [Socket Handler] Sending current state to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:11:08.906581935Z [Socket Handler] 🎵 Fetching lyrics for socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:11:08.906589940Z [Lyrics Service] ⚠️ No current track
+2026-08-30T00:11:14.589138946Z [API] Sending immediate queue update for track: Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti
+2026-08-30T00:11:14.589243532Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T00:11:15.253903837Z [Moonlink Events] trackStart fired for guild 1494309584322433124, track: Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti
+2026-08-30T00:11:15.253947783Z [Moonlink Events] Voice Channel ID: 1540036113517772932
+2026-08-30T00:11:15.255524125Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T00:11:15.256398029Z [Socket Handler] 🎵 Fetching lyrics for: Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:11:15.276393065Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:11:15.276468443Z [Socket Handler] ✅ Emitting lyrics_data with 44 lines to guild: 1494309584322433124
+2026-08-30T00:11:15.351096089Z [Socket.io] Lyrics requested by socket: H1E-2bSgDoAkoffTAAAJ for guild: 1494309584322433124 forceRefresh: false
+2026-08-30T00:11:15.353441758Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:11:15.353461497Z [Socket Handler] ✅ Sending lyrics to requesting socket: H1E-2bSgDoAkoffTAAAJ
+2026-08-30T00:11:15.570781981Z [Moonlink Events] Voice status set successfully
+2026-08-30T00:11:27.029830726Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T00:11:28.675504953Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T00:11:42.918324777Z [Socket.io] User disconnected: SWzFzT-0OryZdZ7bAAAC
+2026-08-30T00:11:42.920113528Z [Socket.io] User disconnected: bLJOusS8p5-ryBF_AAAD
+2026-08-30T00:11:56.383725080Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T00:12:24.932594722Z [Socket.io] User EA1eZUSlw-fm5HQgAAAH joined guild:1494309584322433124
+2026-08-30T00:12:24.937970271Z [Socket Handler] Sending current state to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:24.937994469Z [Socket Handler] 🎵 Fetching lyrics for socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:24.943080989Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:24.943119124Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:24.961746750Z [Socket.io] User JDAbF3B4RR60o5hsAAAK joined guild:1494309584322433124
+2026-08-30T00:12:24.966418992Z [Socket Handler] Sending current state to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:24.966443490Z [Socket Handler] 🎵 Fetching lyrics for socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:24.967384127Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:24.967399126Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:24.999505035Z [Socket.io] Sync requested by socket: EA1eZUSlw-fm5HQgAAAH for guild: 1494309584322433124
+2026-08-30T00:12:25.001305649Z [Socket Handler] Sending current state to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:25.001387040Z [Socket Handler] 🎵 Fetching lyrics for socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:25.003249736Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:25.003264114Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:25.029568502Z [Socket.io] Sync requested by socket: JDAbF3B4RR60o5hsAAAK for guild: 1494309584322433124
+2026-08-30T00:12:25.031675030Z [Socket Handler] Sending current state to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:25.031856398Z [Socket Handler] 🎵 Fetching lyrics for socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:25.035045011Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:25.035134678Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:33.629106796Z [Socket.io] User EA1eZUSlw-fm5HQgAAAH joined guild:1494309584322433124
+2026-08-30T00:12:33.630129044Z [Socket.io] User JDAbF3B4RR60o5hsAAAK joined guild:1494309584322433124
+2026-08-30T00:12:33.634040915Z [Socket Handler] Sending current state to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:33.634232433Z [Socket Handler] 🎵 Fetching lyrics for socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:33.635134473Z [Socket Handler] Sending current state to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:33.635206335Z [Socket Handler] 🎵 Fetching lyrics for socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:33.636317548Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:33.636357076Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:33.638193411Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:33.638205084Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:33.696633937Z [Socket.io] Sync requested by socket: EA1eZUSlw-fm5HQgAAAH for guild: 1494309584322433124
+2026-08-30T00:12:33.697276345Z [Socket.io] Sync requested by socket: JDAbF3B4RR60o5hsAAAK for guild: 1494309584322433124
+2026-08-30T00:12:33.698978304Z [Socket Handler] Sending current state to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:33.699051208Z [Socket Handler] 🎵 Fetching lyrics for socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:33.700936479Z [Socket Handler] Sending current state to socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:33.701279416Z [Socket Handler] 🎵 Fetching lyrics for socket: JDAbF3B4RR60o5hsAAAK
+2026-08-30T00:12:33.702778515Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:33.702791360Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: EA1eZUSlw-fm5HQgAAAH
+2026-08-30T00:12:33.704109091Z [Lyrics Service] ✅ Cache hit (synced): Bad Bunny ft. Chencho Corleone - Me Porto Bonito (Video Oficial) | Un Verano Sin Ti - Bad Bunny
+2026-08-30T00:12:33.704305979Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: JDAbF3B4RR60o5hsAAAK
