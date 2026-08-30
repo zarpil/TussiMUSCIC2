@@ -263,6 +263,31 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
   const [showLyricsCustomizer, setShowLyricsCustomizer] = useState(false);
   const [showMobileMoreMenu, setShowMobileMoreMenu] = useState(false);
 
+  // Secret Easter Egg States
+  const [showEasterEggModal, setShowEasterEggModal] = useState(false);
+  const secretTapCountRef = useRef(0);
+  const secretLastTapRef = useRef(0);
+
+  const handleSecretHeaderTap = () => {
+    const now = Date.now();
+    if (now - secretLastTapRef.current > 2000) {
+      secretTapCountRef.current = 1;
+    } else {
+      secretTapCountRef.current += 1;
+      if (secretTapCountRef.current >= 5) {
+        setShowEasterEggModal(true);
+        setShowMobileMoreMenu(false);
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('show-toast', {
+            detail: { message: '✨ ¡Easter Egg Secreto Desbloqueado! ✨', type: 'success' }
+          }));
+        }
+        secretTapCountRef.current = 0;
+      }
+    }
+    secretLastTapRef.current = now;
+  };
+
   // Keybinds States
   const [keybinds, setKeybinds] = useState<Record<string, string>>(DEFAULT_KEYBINDS);
   const [keybindsEnabled, setKeybindsEnabled] = useState<boolean>(false);
@@ -2117,7 +2142,10 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               className="md:hidden fixed bottom-16 left-0 right-0 z-[80] bg-[#121226]/98 backdrop-blur-3xl border-t border-white/20 rounded-t-3xl p-5 shadow-2xl space-y-4 max-h-[80vh] overflow-y-auto"
             >
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <div className="flex items-center gap-2 text-white font-bold text-sm">
+                <div
+                  onClick={handleSecretHeaderTap}
+                  className="flex items-center gap-2 text-white font-bold text-sm cursor-pointer select-none active:scale-95 transition-transform"
+                >
                   <MoreHorizontal className="w-4 h-4 text-cyan-400" />
                   <span>Menú y Herramientas</span>
                 </div>
@@ -3709,6 +3737,43 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
           border-radius: 10px;
         }
       `}</style>
+
+      {/* Secret Mobile Easter Egg Modal */}
+      <AnimatePresence>
+        {showEasterEggModal && (
+          <div
+            onClick={() => setShowEasterEggModal(false)}
+            className="md:hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-xs sm:max-w-sm w-full bg-gradient-to-br from-pink-900/95 via-purple-950/95 to-black p-8 rounded-3xl border border-pink-500/40 shadow-[0_0_50px_rgba(236,72,153,0.5)] text-center text-white"
+            >
+              <button
+                onClick={() => setShowEasterEggModal(false)}
+                className="absolute top-4 right-4 p-2 text-white/60 hover:text-white bg-white/10 rounded-full cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-pink-500/20 flex items-center justify-center border border-pink-500/50 animate-bounce shadow-[0_0_20px_rgba(244,114,182,0.4)]">
+                <Heart className="w-8 h-8 text-pink-400 fill-pink-400" />
+              </div>
+
+              <span className="text-[10px] font-bold uppercase tracking-widest text-pink-400/80 bg-pink-500/10 px-3 py-1 rounded-full border border-pink-500/20 inline-block mb-3">
+                Mensaje Secreto 🤫
+              </span>
+
+              <p className="text-xl font-extrabold text-pink-200 drop-shadow-[0_2px_12px_rgba(244,114,182,0.9)] leading-relaxed">
+                Para el gay de Alcalá de Chinito 💖
+              </p>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
