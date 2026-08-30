@@ -10,7 +10,7 @@ export async function syncPoToken(nodeHost = 'nodelink', nodePort = '2333', node
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ client: "tv" }),
+      body: JSON.stringify({ client: "web" }),
       timeout: 10000 
     });
     

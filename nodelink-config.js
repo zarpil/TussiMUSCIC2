@@ -335,9 +335,7 @@ export default {
       fallbackSources: [
         'soundcloud',
         'deezer',
-        'jiosaavn',
         'qobuz',
-        'gaana',
         'vkmusic',
         'yandexmusic',
         'audiomack',
@@ -351,6 +349,8 @@ export default {
       clients: {
         search: ['Android'], // Clients used for searching tracks
         playback: [
+          'IOS',
+          'Web',
           'TV'
         ], // Clients used for playback/streaming
         resolve: [
