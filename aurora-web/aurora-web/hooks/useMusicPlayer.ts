@@ -282,8 +282,8 @@ export function useMusicPlayer(guildId: string, userId: string) {
           const isPlayingChanged = prev.isPlaying !== data.isPlaying;
           const diff = Math.abs(prev.position - data.position);
           
-          // Tight alignment threshold (800ms) to ensure lyrics never jump 3-4s forward or backward
-          if (isPlayingChanged || (prev.isPlaying && diff > 800)) {
+          // Realign position only if play state changed or major drift (>3000ms) occurs
+          if (isPlayingChanged || (prev.isPlaying && diff > 3000)) {
             return { 
               ...prev, 
               isPlaying: data.isPlaying,

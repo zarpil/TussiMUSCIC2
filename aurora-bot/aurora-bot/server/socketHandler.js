@@ -113,10 +113,33 @@ class SocketHandler {
         // Send player_sync every 1 second for smooth 60fps interpolation and status tracking
         socket.syncInterval = setInterval(() => {
           const player = this.manager.players.get(guildId);
-          if (player) {
+          if (player && player.current) {
+            const now = Date.now();
+            if (!player.lastSyncTime || typeof player.estimatedPosition !== 'number') {
+              player.lastSyncTime = now;
+              player.estimatedPosition = typeof player.position === 'number' ? player.position : (player.current.position || 0);
+            }
+            if (!player.paused) {
+              const delta = now - player.lastSyncTime;
+              player.estimatedPosition += delta;
+            }
+            player.lastSyncTime = now;
+
+            // Realign if Lavalink position updated by seek or major drift (>3000ms)
+            if (typeof player.position === 'number' && Math.abs(player.estimatedPosition - player.position) > 3000) {
+              player.estimatedPosition = player.position;
+            }
+
             socket.emit('player_sync', {
-              position: typeof player.position === 'number' ? player.position : (player.current?.position || 0),
-              isPlaying: player.current ? !player.paused : false,
+              position: Math.round(player.estimatedPosition),
+              isPlaying: !player.paused,
+              isDestroyed: false,
+              timestamp: now
+            });
+          } else if (player) {
+            socket.emit('player_sync', {
+              position: 0,
+              isPlaying: false,
               isDestroyed: false,
               timestamp: Date.now()
             });
