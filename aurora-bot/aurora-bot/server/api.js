@@ -636,34 +636,7 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
         if (!player.playing && !player.paused && !player.current) {
           player.play();
         }
-        // Send Discord notification
-        // For batch operations (liked songs), only send message for first track
-        if (boundChannel && (!isBatch || batchIndex === 0)) {
-          try {
-            const container = new ContainerBuilder();
-            if (isBatch && batchTotal) {
-              // Batch operation - show playlist message
-              container.addTextDisplayComponents(
-                new TextDisplayBuilder().setContent(
-                  `${queuelist_emoji} Added **${batchTotal}** favorite songs to queue by <@${userId}> (Web Control)`
-                )
-              );
-            } else {
-              // Single track
-              container.addTextDisplayComponents(
-                new TextDisplayBuilder().setContent(
-                  `${music_disc_emoji} Added to queue: **${track.title}** by <@${userId}> (Web Control)`
-                )
-              );
-            }
-            await boundChannel.send({ 
-              components: [container], 
-              flags: [MessageFlags.IsComponentsV2] 
-            });
-          } catch (error) {
-            console.error('[API] Failed to send track message:', error.message);
-          }
-        }
+
         
         // Dynamic import to avoid circular dependencies if any
         import('../log/log.js').then(logger => {

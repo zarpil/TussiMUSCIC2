@@ -1,17 +1,26 @@
 import fetch from 'node-fetch';
 
 export async function syncPoToken(nodeHost = 'nodelink', nodePort = '2333', nodePassword = 'youshallnotpass') {
+  if (process.env.DISABLE_POT_SYNC === 'true') {
+    console.log('[PoToken Sync] Disabled via DISABLE_POT_SYNC environment variable.');
+    return;
+  }
+
+  const providerUrl = (process.env.POT_PROVIDER_URL || 'http://pot-provider:4416').replace(/\/$/, '');
+
   try {
-    console.log('[PoToken Sync] Fetching new poToken from local provider (http://pot-provider:4416/)...');
+    console.log(`[PoToken Sync] Fetching new poToken from local provider (${providerUrl}/get_pot)...`);
     
     // Fetch the token from the pot-provider container
-    const res = await fetch('http://pot-provider:4416/get_pot', { 
+    const res = await fetch(`${providerUrl}/get_pot`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ client: "web" }),
-      timeout: 60000 
+      timeout: 15000 
+    }).catch(err => {
+      throw new Error(`Servicio de PoToken (${providerUrl}) no alcanzable: ${err.message}`);
     });
     
     if (!res.ok) {
@@ -51,7 +60,7 @@ export async function syncPoToken(nodeHost = 'nodelink', nodePort = '2333', node
       console.error(`[PoToken Sync] Failed to update NodeLink: ${patchRes.status} - ${errorText}`);
     }
   } catch (error) {
-    console.error(`[PoToken Sync] Error syncing poToken:`, error.message);
+    console.warn(`[PoToken Sync] ⚠️ Aviso de sincronización poToken: ${error.message}`);
   }
 }
 
