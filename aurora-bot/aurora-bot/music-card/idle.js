@@ -24,8 +24,7 @@ export async function send_idle_panel(client, channel) {
     container.addSeparatorComponents(new SeparatorBuilder().setDivider(true).setSpacing(SeparatorSpacingSize.Small));
 
     // 2. Info / Body
-    const section = new SectionBuilder().addTextDisplayComponents(new TextDisplayBuilder().setContent("No hay nada reproduciéndose actualmente.\\nEscribe el nombre de una canción o un enlace en este canal para empezar a escuchar música."));
-    container.addSectionComponents(section);
+    container.addTextDisplayComponents(new TextDisplayBuilder().setContent("No hay nada reproduciéndose actualmente.\nEscribe el nombre de una canción o un enlace en este canal para empezar a escuchar música."));
     container.addSeparatorComponents(new SeparatorBuilder().setDivider(true).setSpacing(SeparatorSpacingSize.Small));
 
     // 3. Buttons (can reuse the standard ones)
@@ -71,8 +70,7 @@ export async function edit_idle_panel(client, message) {
     container.addSeparatorComponents(new SeparatorBuilder().setDivider(true).setSpacing(SeparatorSpacingSize.Small));
 
     // 2. Info / Body
-    const section = new SectionBuilder().addTextDisplayComponents(new TextDisplayBuilder().setContent("No hay nada reproduciéndose actualmente.\\nEscribe el nombre de una canción o un enlace en este canal para empezar a escuchar música."));
-    container.addSectionComponents(section);
+    container.addTextDisplayComponents(new TextDisplayBuilder().setContent("No hay nada reproduciéndose actualmente.\nEscribe el nombre de una canción o un enlace en este canal para empezar a escuchar música."));
     container.addSeparatorComponents(new SeparatorBuilder().setDivider(true).setSpacing(SeparatorSpacingSize.Small));
 
     // 3. Buttons (can reuse the standard ones)
