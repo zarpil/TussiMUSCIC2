@@ -1,17 +1,12 @@
-FROM node:20-bookworm
+FROM node:20-slim
 
-# Install dependencies
+# Install minimal runtime dependencies
 RUN apt-get update && apt-get install -y \
-    python3 \
-    make \
-    g++ \
+    ca-certificates \
+    fonts-liberation \
+    fontconfig \
+    ffmpeg \
     git \
-    pkg-config \
-    libcairo2-dev \
-    libpango1.0-dev \
-    libjpeg-dev \
-    libgif-dev \
-    librsvg2-dev \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
