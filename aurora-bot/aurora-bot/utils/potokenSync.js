@@ -55,11 +55,9 @@ export async function syncPoToken(nodeHost = 'nodelink', nodePort = '2333', node
   }
 }
 
-export function schedulePoTokenSync(nodeHost, nodePort, nodePassword) {
-  // Wait 10 seconds on startup for NodeLink to be fully ready
-  setTimeout(() => {
-    syncPoToken(nodeHost, nodePort, nodePassword);
-  }, 10000);
+export async function schedulePoTokenSync(nodeHost, nodePort, nodePassword) {
+  // Run immediately on startup and wait for it
+  await syncPoToken(nodeHost, nodePort, nodePassword);
   
   // Run every 6 hours (6 * 60 * 60 * 1000)
   setInterval(() => {

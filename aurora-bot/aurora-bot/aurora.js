@@ -61,6 +61,16 @@ const patchSilentMessages = () => {
 patchSilentMessages();
 
 export const client = new MainClient()
+
+// Initialize PoToken Sync before connecting Moonlink
+try {
+  // schedulePoTokenSync is async now so we can await it
+  await schedulePoTokenSync(process.env.NODELINK_HOST || 'nodelink', process.env.NODELINK_PORT || '2333', process.env.NODELINK_PASSWORD || 'youshallnotpass');
+  console.log('🔄 Scheduled PoToken sync with NodeLink');
+} catch (err) {
+  console.error('❌ Failed to schedule PoToken sync:', err);
+}
+
 await connectMoonlink(client)
 eventHandler(client)
 if(process?.env?.TOPGG_TOKEN)
@@ -110,14 +120,6 @@ client.once('clientReady', async() => {
     console.log('🌐 Web Dashboard server started successfully!');
   } catch (error) {
     console.error('❌ Failed to start web server:', error);
-  }
-
-  // Initialize PoToken Sync
-  try {
-    schedulePoTokenSync(process.env.NODELINK_HOST || 'nodelink', process.env.NODELINK_PORT || '2333', process.env.NODELINK_PASSWORD || 'youshallnotpass');
-    console.log('🔄 Scheduled PoToken sync with NodeLink');
-  } catch (err) {
-    console.error('❌ Failed to schedule PoToken sync:', err);
   }
 
   // Setup Discord Rich Presence
