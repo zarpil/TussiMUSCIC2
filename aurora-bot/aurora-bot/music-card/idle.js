@@ -1,5 +1,5 @@
-import { AttachmentBuilder, MessageFlags, TextDisplayBuilder, ContainerBuilder, MediaGalleryBuilder, MediaGalleryItemBuilder, SeparatorBuilder, SeparatorSpacingSize, SectionBuilder, ActionRowBuilder } from "discord.js";
-import { play_button, stop_button, loopButton, skip_button, musicControlsRow2, filterRow } from "../buttons/buttons.js";
+import { AttachmentBuilder, MessageFlags, TextDisplayBuilder, ContainerBuilder, MediaGalleryBuilder, MediaGalleryItemBuilder, SeparatorBuilder, SeparatorSpacingSize, SectionBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js";
+import { play_button, stop_button, loopButton, skip_button, volumebtn, autoplaybtn, shufflebtn, queuelistbtn } from "../buttons/buttons.js";
 import { music_disc_emoji } from "../emoji/emoji.js";
 import mongoose from 'mongoose';
 import path from 'path';
@@ -8,10 +8,21 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const idleImagePath = path.join(__dirname, '../media/idle.jpg');
 
+async function getWebUrl() {
+  let dbSettings = null;
+  try {
+    if (mongoose.connection && mongoose.connection.db) {
+      dbSettings = await mongoose.connection.db.collection('settings').findOne({ _id: 'site_config' });
+    }
+  } catch (err) {}
+  return dbSettings?.cardWebPlayerUrl || dbSettings?.botInviteUrl || process?.env?.WEB_DASHBOARD_URL || process?.env?.WEB_DASHBOARD_UR || "https://tussi.zarpil.dev/";
+}
+
 export async function send_idle_panel(client, channel) {
   try {
     const attachment = new AttachmentBuilder(idleImagePath, { name: "idle.jpg" });
     const container = new ContainerBuilder();
+    const web_url = await getWebUrl();
 
     // 1. Heading
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`# ${music_disc_emoji} **Esperando canciones...**`));
@@ -32,9 +43,23 @@ export async function send_idle_panel(client, channel) {
       loopButton,
       skip_button
     );
+
+    const webBtn = new ButtonBuilder()
+      .setStyle(ButtonStyle.Link)
+      .setLabel('Panel Web')
+      .setURL(web_url)
+      .setEmoji('🌐');
+
+    const dynamicRow2 = new ActionRowBuilder().addComponents(
+      volumebtn,
+      autoplaybtn,
+      shufflebtn,
+      queuelistbtn,
+      webBtn
+    );
+
     container.addActionRowComponents(dynamicRow1);
-    container.addActionRowComponents(musicControlsRow2);
-    container.addActionRowComponents(filterRow);
+    container.addActionRowComponents(dynamicRow2);
 
     const message = await channel.send({
       components: [container],
@@ -53,6 +78,7 @@ export async function edit_idle_panel(client, message) {
   try {
     const attachment = new AttachmentBuilder(idleImagePath, { name: "idle.jpg" });
     const container = new ContainerBuilder();
+    const web_url = await getWebUrl();
 
     // 1. Heading
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`# ${music_disc_emoji} **Esperando canciones...**`));
@@ -73,9 +99,23 @@ export async function edit_idle_panel(client, message) {
       loopButton,
       skip_button
     );
+
+    const webBtn = new ButtonBuilder()
+      .setStyle(ButtonStyle.Link)
+      .setLabel('Panel Web')
+      .setURL(web_url)
+      .setEmoji('🌐');
+
+    const dynamicRow2 = new ActionRowBuilder().addComponents(
+      volumebtn,
+      autoplaybtn,
+      shufflebtn,
+      queuelistbtn,
+      webBtn
+    );
+
     container.addActionRowComponents(dynamicRow1);
-    container.addActionRowComponents(musicControlsRow2);
-    container.addActionRowComponents(filterRow);
+    container.addActionRowComponents(dynamicRow2);
 
     await message.edit({
       content: '', // Limpiar posible contenido extra

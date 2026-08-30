@@ -1,5 +1,5 @@
-import { AttachmentBuilder,ThumbnailBuilder, MessageFlags, TextDisplayBuilder,ContainerBuilder, MediaGalleryBuilder, MediaGalleryItemBuilder,SeparatorBuilder,SeparatorSpacingSize, SectionBuilder, ActionRowBuilder } from "discord.js";
-import { play_button, pause_button, stop_button, loopButton, skip_button, musicControlsRow2, filterRow } from "../buttons/buttons.js";
+import { AttachmentBuilder,ThumbnailBuilder, MessageFlags, TextDisplayBuilder,ContainerBuilder, MediaGalleryBuilder, MediaGalleryItemBuilder,SeparatorBuilder,SeparatorSpacingSize, SectionBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js";
+import { play_button, pause_button, stop_button, loopButton, skip_button, volumebtn, autoplaybtn, shufflebtn, queuelistbtn } from "../buttons/buttons.js";
 import {cross_emoji, music_disc_emoji} from "../emoji/emoji.js";
 import {Bloom} from "aurora-music-card";
 import 'dotenv/config';
@@ -158,9 +158,22 @@ export async function music_card(client,player,track) {
         skip_button
       );
 
+      const webBtn = new ButtonBuilder()
+        .setStyle(ButtonStyle.Link)
+        .setLabel('Panel Web')
+        .setURL(web_url)
+        .setEmoji('🌐');
+
+      const dynamicRow2 = new ActionRowBuilder().addComponents(
+        volumebtn,
+        autoplaybtn,
+        shufflebtn,
+        queuelistbtn,
+        webBtn
+      );
+
       container.addActionRowComponents(dynamicRow1);
-      container.addActionRowComponents(musicControlsRow2);
-      container.addActionRowComponents(filterRow);
+      container.addActionRowComponents(dynamicRow2);
       needsSeparator = true;
     }
 
