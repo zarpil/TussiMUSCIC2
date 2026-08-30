@@ -1,28 +1,28 @@
 import mongoose from 'mongoose';
 
-export let tick_emoji = `<a:tick:1378702853572530226>`;
-export let cross_emoji = `<a:cross_aur:1468227655319949519>`;
-export let ltr_arrow_emoji = `<a:arrow:1378703040156274688>`;
-export let ltr_arrow_color_emoji = `<a:color_arrow:1378704561782394971>`;
-export let music_disc_emoji = `<a:disc:1466446944846221457>`;
-export let play_button_emoji = `<:aur_play:1378705660400762891>`;
-export let loading_emoji = `<a:salesforce_load:1378703152374616104>`;
-export let volume_down_emoji = `<:down_aur:1378700996317941770>`;
-export let volume_up_emoji = `<:up_aur:1378700925098524742>`;
-export let skip_emoji = `<:next_aur:1378699339316199424>`;
-export let pause_emoji = `<:pause_aur:1378701219752575126>`;
-export let loop_emoji = `<:loop_aur:1378701134729969734>`;
-export let stop_emoji = `<:stop_aur:1378701066769666088>`;
-export let autoplay_emoji = `<:autoplay_aur:1468215550688628849>`;
-export let queue_emoji = `<:loop_aur:1468213848904564879>`;
-export let queuelist_emoji = `<:list_aur:1468216766382608618>`;
-export let lyrics_emoji = `<:lyrics_aur:1468216486895292531>`;
-export let volume_emoji = `<:volume_aur:1468214753150111795>`;
-export let listqueue_emoji = `<:list_aur:1468216766382608618>`;
-export let off_emoji = `<:power_aur:1468214243034665203>`;
-export let song_emoji = `<:track_aur:1468213498680053812>`;
-export let seek_emoji = `<:seek_aur:1468216209018327070>`;
-export let shuffle_emoji = `<:shuffle_aur:1468214974752096307>`;
+export let tick_emoji = `✅`;
+export let cross_emoji = `❌`;
+export let ltr_arrow_emoji = `▶️`;
+export let ltr_arrow_color_emoji = `▶️`;
+export let music_disc_emoji = `🎵`;
+export let play_button_emoji = `▶️`;
+export let loading_emoji = `⏳`;
+export let volume_down_emoji = `🔉`;
+export let volume_up_emoji = `🔊`;
+export let skip_emoji = `⏭️`;
+export let pause_emoji = `⏸️`;
+export let loop_emoji = `🔁`;
+export let stop_emoji = `⏹️`;
+export let autoplay_emoji = `📻`;
+export let queue_emoji = `🔁`;
+export let queuelist_emoji = `📜`;
+export let lyrics_emoji = `📝`;
+export let volume_emoji = `🔊`;
+export let listqueue_emoji = `📜`;
+export let off_emoji = `⏹️`;
+export let song_emoji = `🎶`;
+export let seek_emoji = `⏩`;
+export let shuffle_emoji = `🔀`;
 
 export async function loadEmojisFromDB() {
   try {
