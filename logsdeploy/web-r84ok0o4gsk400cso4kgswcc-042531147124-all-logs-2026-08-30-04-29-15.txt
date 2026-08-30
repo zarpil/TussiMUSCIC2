@@ -1,0 +1,932 @@
+
+> tussi-dashboard@1.0.0 start
+> next start
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 840ms
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[OAuth] Failed to create session: TypeError: fetch failed
+    at node:internal/deps/undici/undici:14976:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1686)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24) {
+  [cause]: Error: connect ECONNREFUSED 10.0.4.6:3001
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '10.0.4.6',
+    port: 3001
+  }
+}
+Discord OAuth error: Error: Failed to create session
+    at _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1964)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24)
+    at async NextNodeServer.renderToResponseImpl (/app/node_modules/next/dist/server/base-server.js:1962:32)
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[OAuth] Failed to create session: TypeError: fetch failed
+    at node:internal/deps/undici/undici:14976:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1686)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24) {
+  [cause]: Error: getaddrinfo ENOTFOUND bot
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+      at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    errno: -3007,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'bot'
+  }
+}
+Discord OAuth error: Error: Failed to create session
+    at _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1964)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24)
+    at async NextNodeServer.renderToResponseImpl (/app/node_modules/next/dist/server/base-server.js:1962:32)
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[OAuth] Failed to create session: TypeError: fetch failed
+    at node:internal/deps/undici/undici:14976:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1686)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24) {
+  [cause]: Error: connect ECONNREFUSED 10.0.4.6:3001
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+      at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '10.0.4.6',
+    port: 3001
+  }
+}
+Discord OAuth error: Error: Failed to create session
+    at _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1964)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24)
+    at async NextNodeServer.renderToResponseImpl (/app/node_modules/next/dist/server/base-server.js:1962:32)
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/commands Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[OAuth] Failed to create session: TypeError: fetch failed
+    at node:internal/deps/undici/undici:14976:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1686)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24) {
+  [cause]: Error: getaddrinfo ENOTFOUND bot
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+      at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    errno: -3007,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'bot'
+  }
+}
+Discord OAuth error: Error: Failed to create session
+    at _ (/app/.next/server/app/api/auth/discord/callback/route.js:1:1964)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38411
+    at async e_.execute (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27880)
+    at async e_.handle (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:39943)
+    at async doRender (/app/node_modules/next/dist/server/base-server.js:1366:42)
+    at async cacheEntry.responseCache.get.routeKind (/app/node_modules/next/dist/server/base-server.js:1588:28)
+    at async NextNodeServer.renderToResponseWithComponentsImpl (/app/node_modules/next/dist/server/base-server.js:1496:28)
+    at async NextNodeServer.renderPageComponent (/app/node_modules/next/dist/server/base-server.js:1924:24)
+    at async NextNodeServer.renderToResponseImpl (/app/node_modules/next/dist/server/base-server.js:1962:32)
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Auth] Failed to get session after 3 attempts: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+Error: connect ECONNREFUSED 10.0.4.6:3001
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '10.0.4.6',
+  port: 3001
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+Failed to proxy http://bot:3001/api/guild/1494309584322433124 Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+Error: getaddrinfo ENOTFOUND bot
+    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)
+    at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  errno: -3007,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'bot'
+}
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed
+[Socket Proxy Route Error]: fetch failed

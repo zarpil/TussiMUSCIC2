@@ -1,0 +1,143 @@
+
+> nodelink@3.8.0 start
+> node --dns-result-order=ipv4first --import tsx src/index.ts
+
+
+   ▄   ████▄ ██▄   ▄███▄   █    ▄█    ▄   █  █▀
+    █  █   █ █  █  █▀   ▀  █    ██     █  █▄█
+██   █ █   █ █   █ ██▄▄    █    ██ ██   █ █▀▄   Cluster Mode
+█ █  █ ▀████ █  █  █▄   ▄▀ ███▄ ▐█ █ █  █ █  █  v3.8.0
+█  █ █       ███▀  ▀███▀       ▀ ▐ █  █ █   █   Powered by PerformanC;
+█   ██                             █   ██  ▀    rewritten by 1Lucas1.apk;
+
+[04:27:14.300] [INFO] >: Git > Checking for updates...
+[04:27:14.310] [WARN] >: Git > Failed to check for updates: Command failed: git fetch
+[04:27:14.419] [INFO] >: Cluster > Primary PID 19 - WorkerManager initialized. Min: 1, Max: 4 workers
+[04:27:14.429] [INFO] >: Cluster > Forking worker 1/1
+[04:27:14.461] [INFO] >: Cluster > Spawned worker 40 (id: 1)
+[04:27:14.494] [INFO] >: Cluster > Scaling check started with interval: 5000ms
+[04:27:14.495] [INFO] >: StatsManager > Initialized.
+[04:27:14.537] [WARN] >: Git > Unable to retrieve git information. Command failed: git rev-parse --abbrev-ref HEAD
+/bin/sh: git: not found
+
+[04:27:14.538] [INFO] >: Server > version 3.8.0
+[04:27:14.538] [INFO] >: Server > git branch: unknown, commit: unknown, committed on: 1969-12-31T23:59:59.999Z
+[04:27:14.644] [INFO] >: Cluster > Event socket server listening at /tmp/nodelink-events-58aa75dc1a6d86e7.sock
+[04:27:14.644] [INFO] >: Cluster > Command socket server listening at /tmp/nodelink-commands-16a8dc84fcdb7e92.sock
+[04:27:14.852] [WARN] >: Server > Non-LTS preview runtime detected (v25.9.0), at or above latest LTS (v24.20.0). Accepted, but behavior may change between releases.
+[04:27:15.081] [INFO] >: StatsManager > Prometheus metrics initialized.
+[04:27:15.081] [INFO] >: PluginManager > Initializing plugins in master context...
+[04:27:15.085] [INFO] >: PluginManager > Plugins processed for master.
+[04:27:15.091] [INFO] >: Git > Checking for updates...
+[04:27:15.102] [WARN] >: Git > Failed to check for updates: Command failed: git fetch
+[04:27:15.108] [INFO] >: SourceCluster > Source server listening at /tmp/nodelink-source-ea23cdd08041e0ea.sock
+[04:27:15.151] [INFO] >: Server > Attempting to listen on host: 0.0.0.0, port: 2333
+[04:27:15.151] [INFO] >: ConnectionManager > Starting connection checks every 300000ms.
+[04:27:15.155] [STARTED] >: Server > Successfully listening on host 0.0.0.0, port 2333
+[04:27:15.450] [INFO] >: StatsManager > Initialized.
+[04:27:15.456] [INFO] >: Worker > Connected to Master event socket
+/bin/sh: git: not found
+[04:27:15.457] [INFO] >: Worker > Connected to Master command socket
+[04:27:15.475] [INFO] >: Sources > Loaded source: amazonmusic
+[04:27:15.503] [INFO] >: Sources > Loaded source: bluesky
+[04:27:15.512] [INFO] >: Sources > Loaded source: rss
+[04:27:15.523] [INFO] >: Sources > Loaded source: songlink
+[04:27:15.538] [INFO] >: Sources > Loaded source: mixcloud
+[04:27:15.569] [INFO] >: Sources > Loaded Audiomack source (official public API).
+[04:27:15.569] [INFO] >: Sources > Loaded source: audiomack
+[04:27:15.600] [INFO] >: Sources > Initializing Deezer source...
+[04:27:15.637] [INFO] >: Sources > Loaded BandCamp source.
+[04:27:15.637] [INFO] >: Sources > Loaded source: bandcamp
+[04:27:15.702] [INFO] >: PluginManager > Initializing plugins in source-worker context...
+[04:27:15.708] [INFO] >: PluginManager > Plugins processed for source-worker.
+[04:27:15.708] [INFO] >: SourceWorker > Starting 1/2 micro-worker(s) for API tasks...
+[04:27:15.715] [INFO] >: SourceCluster > Source worker manager 55 ready
+[04:27:15.720] [INFO] >: Sources > Loaded source: local
+[04:27:15.735] [INFO] >: Sources > Loaded source: http
+[04:27:15.811] [INFO] >: Sources > Loaded Eternalbox source.
+[04:27:15.811] [INFO] >: Sources > Loaded source: eternalbox
+[04:27:15.848] [INFO] >: Sources > Loaded source: vimeo
+[04:27:15.860] [INFO] >: Sources > Loaded iHeartRadio source.
+[04:27:15.860] [INFO] >: Sources > Loaded source: iheartradio
+[04:27:15.875] [INFO] >: Sources > Loaded Telegram source.
+[04:27:15.875] [INFO] >: Sources > Loaded source: telegram
+[04:27:15.884] [INFO] >: Sources > Loaded source: shazam
+[04:27:15.894] [INFO] >: Sources > Loaded Bilibili source (Video, Audio, Live, Space, Lyrics, Login).
+[04:27:15.894] [INFO] >: Sources > Loaded source: bilibili
+[04:27:15.901] [INFO] >: Sources > Loaded Genius source (Video/Audio/Article).
+[04:27:15.901] [INFO] >: Sources > Loaded source: genius
+[04:27:15.914] [INFO] >: Sources > Loaded source: pinterest
+[04:27:15.922] [INFO] >: Sources > Loaded Flowery TTS source.
+[04:27:15.955] [INFO] >: JioSaavn > JioSaavn source initialized.
+[04:27:15.955] [INFO] >: Sources > Loaded source: jiosaavn
+[04:27:15.975] [INFO] >: Sources > Loaded Gaana source.
+[04:27:15.976] [INFO] >: Sources > Loaded source: gaana
+[04:27:15.982] [INFO] >: Sources > Loaded Google TTS source.
+[04:27:15.982] [INFO] >: Sources > Loaded source: google-tts
+[04:27:16.167] [INFO] >: YouTube > Setting up YouTube source...
+[04:27:16.168] [DEBUG] >: YouTube > Initialized clients: Android, AndroidVR, IOS, Music, WebRemix, TV, TVCast, Web, WebEmbedded
+[04:27:16.179] [INFO] >: Sources > Checking Instagram API parameters...
+[04:27:16.189] [INFO] >: Sources > Loaded Kwai source.
+[04:27:16.189] [INFO] >: Sources > Loaded source: kwai
+[04:27:16.264] [INFO] >: Audius > Audius source initialized successfully.
+[04:27:16.264] [INFO] >: Sources > Loaded source: audius
+[04:27:16.303] [INFO] >: Pandora > Fetching tokens from remote provider: https://get.1lucas1apk.fun/pandora/gettoken
+[04:27:16.315] [INFO] >: Sources > Loaded NicoVideo source.
+[04:27:16.315] [INFO] >: Sources > Loaded source: nicovideo
+[04:27:16.321] [INFO] >: Sources > Loaded source: reddit
+[04:27:16.337] [INFO] >: Sources > Loaded Tumblr source.
+[04:27:16.338] [INFO] >: Sources > Loaded source: tumblr
+[04:27:16.379] [INFO] >: Sources > Loaded Last.fm source.
+[04:27:16.379] [INFO] >: Sources > Loaded source: lastfm
+[04:27:16.388] [INFO] >: Sources > Loaded Netease Cloud Music source.
+[04:27:16.388] [INFO] >: Sources > Loaded source: netease
+[04:27:16.397] [INFO] >: Sources > Loaded LetrasMus source.
+[04:27:16.397] [INFO] >: Sources > Loaded source: letrasmus
+[04:27:16.418] [WARN] >: YandexMusic > Missing access token. API resolution disabled; falling back to Song.link.
+[04:27:16.419] [INFO] >: Sources > Loaded source: yandexmusic
+[04:27:16.452] [INFO] >: Monochrome > Initializing latency check for 10 instances...
+[04:27:16.478] [INFO] >: Sources > Google Drive source initialized
+[04:27:16.478] [INFO] >: Sources > Loaded source: googledrive
+[04:27:16.490] [INFO] >: Sources > Loaded source: vkmusic
+[04:27:16.511] [INFO] >: Cluster > Worker 1 (PID 40) ready
+[04:27:16.586] [WARN] >: YandexMusic > Missing access token. API resolution disabled; falling back to Song.link.
+[04:27:16.596] [INFO] >: Sources > Deezer source setup successfully.
+[04:27:16.597] [INFO] >: Sources > Loaded source: deezer
+[04:27:16.603] [DEBUG] >: Sources > SoundCloud client_id (Pb72ranhoyt6gw7hM7TkzUItXlMWSNSo) Found from main page
+[04:27:16.603] [INFO] >: Sources > Loaded SoundCloud (clientId: Pb72ranhoyt6gw7hM7TkzUItXlMWSNSo)
+[04:27:16.603] [INFO] >: Sources > Loaded source: soundcloud
+[04:27:16.624] [INFO] >: Pandora > Successfully initialized with remote tokens (bypass active).
+[04:27:16.624] [INFO] >: Sources > Loaded source: pandora
+[04:27:16.689] [INFO] >: Sources > Loaded Twitter (X) source.
+[04:27:16.689] [INFO] >: Sources > Loaded source: twitter
+[04:27:16.695] [DEBUG] >: YouTube > visitorData refreshed and cached.
+[04:27:16.695] [DEBUG] >: YouTube > Player script URL: /s/player/e937390a/player_embed.vflset/en_US/base.js
+[04:27:16.695] [DEBUG] >: YouTube-Cipher > Explicit player script URL set: https://www.youtube.com/s/player/e937390a/player_embed.vflset/en_US/base.js
+[04:27:16.699] [INFO] >: Spotify > Source initialized. Official: false, Anonymous: true, Mobile: true
+[04:27:16.699] [INFO] >: Sources > Loaded source: spotify
+[04:27:16.724] [INFO] >: Twitch > Twitch source primed. Client ID: kimne78kx3ncx6brgo4mv6wki5h1ko
+[04:27:16.724] [INFO] >: Sources > Loaded source: twitch
+[04:27:16.744] [INFO] >: Tidal > Fetched new token.
+[04:27:16.744] [INFO] >: Sources > Loaded source: tidal
+[04:27:16.766] [INFO] >: Sources > Loaded LazyPy TTS source.
+[04:27:16.766] [INFO] >: Sources > Loaded source: lazypytts
+[04:27:16.777] [INFO] >: Sources > Loaded source: applemusic
+[04:27:16.859] [INFO] >: Monochrome > Source is ready with 10 API (0 reachable) and 10 streaming instances.
+[04:27:16.859] [WARN] >: Monochrome > No reachable Monochrome instances at startup. Source will stay loaded but degraded.
+[04:27:16.859] [INFO] >: Sources > Loaded source: monochrome
+[04:27:16.915] [INFO] >: YouTube-Cipher > Cipher server at https://cipher.kikkia.dev/api is online.
+[04:27:16.915] [INFO] >: YouTube > YouTube source setup complete.
+[04:27:16.915] [INFO] >: Sources > Loaded source: youtube
+[04:27:16.917] [INFO] >: Sources > Loaded Instagram source.
+[04:27:16.917] [INFO] >: Sources > Loaded source: instagram
+[04:27:17.114] [INFO] >: Qobuz > Initialized with appId: 798273057 (UserToken: false)
+[04:27:17.114] [INFO] >: Sources > Loaded source: qobuz
+[04:27:17.224] [INFO] >: Flowery > Default voice set to: Andrew (4ba7bd1b-cb5f-5c3f-9e1c-9ee8be2b0bdd)
+[04:27:17.228] [INFO] >: Sources > Loaded source: flowery
+[04:27:17.259] [INFO] >: StatsManager > Prometheus metrics initialized.
+[04:27:17.259] [INFO] >: PluginManager > Initializing plugins in voice-worker context...
+[04:27:17.260] [INFO] >: PluginManager > Plugins processed for voice-worker.
+[04:27:17.260] [INFO] >: Worker > Worker process 40 started and initialized.
+[04:27:18.338] [NETWORK] >: ConnectionManager > Connection speed: 503.99 Mbps (good). Status: good (quality rating). Download speed: 503.99 Mbps from Cachefly. Time to first byte (TTFB, how fast the server starts sending data): 30ms. DNS lookup (name resolution) is online via google.com in 7ms. Ping (round-trip latency) to 1.1.1.1 averages 3ms with 0% packet loss. Network connection: Ethernet on interface eth0 with IP 10.0.14.2, gateway 10.0.4.1, DNS servers 127.0.0.11.
+[04:27:19.665] [WARN] >: Monochrome > No reachable Monochrome instances at startup. Source will stay loaded but degraded.
+[04:27:19.665] [INFO] >: SourceWorker > Micro-worker 1 is ready.
