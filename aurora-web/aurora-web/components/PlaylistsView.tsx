@@ -226,7 +226,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
         if (i === 0) {
           const data = await response.json();
           if (response.status === 403 && data.requiresWebLink) {
-            window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ Please run /web-link command in Discord first to set a notification channel!', type: 'error' } }));
+            window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!', type: 'error' } }));
             break;
           }
           if (!data.success) {
@@ -256,7 +256,7 @@ export default function PlaylistsView({ guildId, userId, isPremium, premiumSyste
       });
       const data = await response.json();
       if (response.status === 403 && data.requiresWebLink) {
-        window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ Please run /web-link command in Discord first to set a notification channel!', type: 'error' } }));
+        window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!', type: 'error' } }));
         return;
       }
       if (data.success) {

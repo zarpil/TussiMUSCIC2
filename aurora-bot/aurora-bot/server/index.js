@@ -91,7 +91,7 @@ class WebServer {
       await initializeDbFeatures(this.client);
     } catch (error) {
       console.error('[MongoDB] Connection error:', error.message);
-      console.log('[MongoDB] The bot will continue running, but /web-link command will not work until MongoDB is connected.');
+      console.log('[MongoDB] The bot will continue running, but /setup command will not work until MongoDB is connected.');
     }
   }
 

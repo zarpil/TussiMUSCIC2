@@ -983,7 +983,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
         // Channel not set - show error
         const event = new CustomEvent('show-toast', {
           detail: {
-            message: '⚠️ Please run /web-link command in Discord first to set a notification channel!',
+            message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!',
             type: 'error'
           }
         });
@@ -1044,7 +1044,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
             // Channel not set - show error
             const event = new CustomEvent('show-toast', {
               detail: {
-                message: '⚠️ Please run /web-link command in Discord first to set a notification channel!',
+                message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!',
                 type: 'error'
               }
             });
@@ -1357,7 +1357,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
         // Channel not set - show error
         const event = new CustomEvent('show-toast', {
           detail: {
-            message: '⚠️ Please run /web-link command in Discord first to set a notification channel!',
+            message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!',
             type: 'error'
           }
         });

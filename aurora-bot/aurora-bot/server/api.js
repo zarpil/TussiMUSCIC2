@@ -223,9 +223,9 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
         category: 'Music'
       },
       {
-        name: 'web-link',
-        description: 'Link channel for web notifications',
-        usage: '/web-link',
+        name: 'setup',
+        description: 'Set up the music request panel',
+        usage: '/setup canal:#channel',
         category: 'Settings'
       }
     ];

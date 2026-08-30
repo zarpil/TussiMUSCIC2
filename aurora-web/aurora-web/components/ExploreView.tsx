@@ -755,7 +755,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
           if (response.status === 403 && data.requiresWebLink) {
             window.dispatchEvent(new CustomEvent('show-toast', {
               detail: {
-                message: '⚠️ Please run /web-link command in Discord first to set a notification channel!',
+                message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!',
                 type: 'error'
               }
             }));
@@ -1110,7 +1110,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
         });
         const data = await response.json();
         if (data.requiresWebLink) {
-          window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ Please run /web-link command in Discord first to set a notification channel!', type: 'error' } }));
+          window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!', type: 'error' } }));
           return;
         }
         if (data.success || (response.ok && !data.error)) {
@@ -1143,7 +1143,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
         });
         const data = await response.json();
         if (data.requiresWebLink) {
-          window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ Please run /web-link command in Discord first to set a notification channel!', type: 'error' } }));
+          window.dispatchEvent(new CustomEvent('show-toast', { detail: { message: '⚠️ ¡Por favor, ejecuta el comando /setup en Discord primero para crear el panel de música!', type: 'error' } }));
           return;
         }
         if (data.success || (response.ok && !data.error)) {
