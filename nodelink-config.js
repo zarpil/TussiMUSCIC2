@@ -349,6 +349,8 @@ export default {
       clients: {
         search: ['Android'], // Clients used for searching tracks
         playback: [
+          'Music',
+          'WebRemix',
           'WebEmbedded',
           'TVCast',
           'AndroidVR',
