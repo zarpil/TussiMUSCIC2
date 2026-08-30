@@ -26,7 +26,9 @@ export async function Shuffle(client,interaction)
         }
         player.shuffle();
         container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Cola mezclada`))
-        containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} La cola actual fue mezclada por <@${interaction.user.id}>`))
         await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});
-        return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]})
+        if (!player.isRequestChannelPanel) {
+          containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} La cola actual fue mezclada por <@${interaction.user.id}>`))
+          return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
+        }
 }

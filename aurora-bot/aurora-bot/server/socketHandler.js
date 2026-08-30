@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import { MessageFlags, ContainerBuilder, TextDisplayBuilder } from 'discord.js';
 import LyricsService from '../services/lyricsService.js';
 import { music_card } from '../music-card/card.js';
+import { resetPanelToIdle } from '../music-card/idle.js';
 import { 
   tick_emoji, 
   skip_emoji, 
@@ -395,6 +396,7 @@ class SocketHandler {
 
             player.queue.clear();
             player.stop();
+            await resetPanelToIdle(this.client, guildId, player);
 
             if (!is247) {
               player.destroy();

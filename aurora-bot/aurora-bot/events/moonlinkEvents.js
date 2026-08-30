@@ -3,7 +3,7 @@ import setVoiceStatus from "../utils/setVoiceStatus.js";
 import { music_card } from "../music-card/card.js";
 import { tick_emoji } from "../emoji/emoji.js";
 import { send_log } from "../log/log.js";
-import { edit_idle_panel } from "../music-card/idle.js";
+import { edit_idle_panel, resetPanelToIdle } from "../music-card/idle.js";
 import fs from "fs";
 import path from "path";
 
@@ -228,6 +228,9 @@ export async function moonlinkEvents(client) {
     // Always delete saved player state when queue finishes so ended tracks are never restored on restart
     await deletePlayerState(player.guildId);
 
+    // Reset panel to idle as soon as queue ends
+    await resetPanelToIdle(client, player.guildId, player);
+
     // Check if 24/7 mode is enabled for this guild
     try {
       const GuildConfig = (await import('../models/Guild.js')).default;
@@ -426,9 +429,7 @@ export async function moonlinkEvents(client) {
     }
     
     // Reset the panel to idle if it was a request channel panel
-    if (player.isRequestChannelPanel && player.musicCard) {
-      await edit_idle_panel(client, player.musicCard);
-    }
+    await resetPanelToIdle(client, player.guildId, player);
     
     console.log(`[State Sync] Deleted player state and flushed VC time for guild ${player.guildId} due to playerDestroyed event`);
   });

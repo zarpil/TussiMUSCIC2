@@ -87,3 +87,25 @@ export async function edit_idle_panel(client, message) {
     console.error("[Idle Panel] Error editing idle panel:", err);
   }
 }
+
+export async function resetPanelToIdle(client, guildId, player) {
+  try {
+    if (player?.musicCard) {
+      await edit_idle_panel(client, player.musicCard);
+      return;
+    }
+    const GuildConfig = (await import('../models/Guild.js')).default;
+    const config = await GuildConfig.findOne({ guildId });
+    if (config?.requestChannel?.channelId && config?.requestChannel?.messageId) {
+      const channel = await client.channels.fetch(config.requestChannel.channelId).catch(() => null);
+      if (channel) {
+        const msg = await channel.messages.fetch(config.requestChannel.messageId).catch(() => null);
+        if (msg) {
+          await edit_idle_panel(client, msg);
+        }
+      }
+    }
+  } catch (err) {
+    console.error('[Idle Reset] Error resetting panel to idle:', err);
+  }
+}

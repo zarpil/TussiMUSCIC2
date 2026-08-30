@@ -44,9 +44,12 @@ export async function volume_up(client, interaction) {
         return await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
     }
         containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Ajustado con éxito`));
-        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Volumen ajustado a:** ${player.volume}%** por <@${requester}>`));
         await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
-        return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]})
+        if (!player.isRequestChannelPanel) {
+          container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Volumen ajustado a:** ${player.volume}%** por <@${requester}>`));
+          return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]});
+        }
+        return;
 
 }
 
@@ -79,7 +82,10 @@ export async function volume_down(client, interaction) {
         return await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
     }
         containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Ajustado con éxito`));
-        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Volumen ajustado a:** ${player.volume}%** por <@${requester}>`));
         await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
-        return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]})
+        if (!player.isRequestChannelPanel) {
+          container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Volumen ajustado a:** ${player.volume}%** por <@${requester}>`));
+          return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]});
+        }
+        return;
 }

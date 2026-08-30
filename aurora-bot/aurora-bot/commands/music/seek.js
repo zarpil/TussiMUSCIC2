@@ -80,8 +80,10 @@ modal.addComponents(
     player.seek(milliseconds);
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Posición cambiada`))
     await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});
-    containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Tiempo ajustado a: **${formatDuration(milliseconds)}** por <@${interaction.user.id}>`))
-    return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]})
+    if (!player.isRequestChannelPanel) {
+      containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Tiempo ajustado a: **${formatDuration(milliseconds)}** por <@${interaction.user.id}>`))
+      return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
+    }
 
   }
 

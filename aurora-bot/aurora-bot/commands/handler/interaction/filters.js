@@ -111,20 +111,22 @@ export async function setfilter(interaction, client) {
         containerExtra.addTextDisplayComponents(
           new TextDisplayBuilder().setContent(`${tick_emoji} Done`),
         );
-        container.addTextDisplayComponents(
-          new TextDisplayBuilder().setContent(
-            `${tick_emoji} Filters Cleared By <@${interaction.user.id}>`,
-          ),
-        );
         await interaction.editReply({
           components: [containerExtra],
           flags: [MessageFlags.IsComponentsV2],
         });
-        return await interaction.channel.send({
-          components: [container],
-          flags: [MessageFlags.IsComponentsV2],
-        });
-        break;
+        if (!player.isRequestChannelPanel) {
+          container.addTextDisplayComponents(
+            new TextDisplayBuilder().setContent(
+              `${tick_emoji} Filters Cleared By <@${interaction.user.id}>`,
+            ),
+          );
+          return await interaction.channel.send({
+            components: [container],
+            flags: [MessageFlags.IsComponentsV2],
+          });
+        }
+        return;
 
       default:
         container.addTextDisplayComponents(
@@ -142,17 +144,20 @@ export async function setfilter(interaction, client) {
   containerExtra.addTextDisplayComponents(
     new TextDisplayBuilder().setContent(`${tick_emoji} Done`),
   );
-  container.addTextDisplayComponents(
-    new TextDisplayBuilder().setContent(
-      `${tick_emoji} Filters applied: ${appliedFilter} by <@${interaction.user.id}>`,
-    ),
-  );
   await interaction.editReply({
     components: [containerExtra],
     flags: [MessageFlags.IsComponentsV2],
   });
-  return await interaction.channel.send({
-    components: [container],
-    flags: [MessageFlags.IsComponentsV2],
-  });
+  if (!player.isRequestChannelPanel) {
+    container.addTextDisplayComponents(
+      new TextDisplayBuilder().setContent(
+        `${tick_emoji} Filters applied: ${appliedFilter} by <@${interaction.user.id}>`,
+      ),
+    );
+    return await interaction.channel.send({
+      components: [container],
+      flags: [MessageFlags.IsComponentsV2],
+    });
+  }
+}
 }

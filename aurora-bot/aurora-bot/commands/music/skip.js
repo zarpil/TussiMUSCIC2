@@ -41,6 +41,8 @@ export async function skip_track(client, interaction) {
     
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Saltada con éxito`))
     await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});
-    containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Canción saltada: **${currentTrack.title}** por <@${interaction.user.id}>`));
-    return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]})
+    if (!player.isRequestChannelPanel) {
+      containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Canción saltada: **${currentTrack.title}** por <@${interaction.user.id}>`));
+      return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
+    }
 }

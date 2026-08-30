@@ -45,9 +45,12 @@ export async function loopOff(client,interaction)
     {
         player.setLoop('off');
         containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Desactivado`))
-        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`La repetición fue desactivada por <@${interaction.user.id}>`))
         await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
-        return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]})
+        if (!player.isRequestChannelPanel) {
+          container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`La repetición fue desactivada por <@${interaction.user.id}>`))
+          return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]});
+        }
+        return;
     }
     else
     {
@@ -75,9 +78,12 @@ export async function loopTrack(client,interaction)
     {
         player.setLoop('track');
         containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Repetición de canción activada`))
-        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`La repetición de esta canción fue activada por <@${interaction.user.id}>`))
         await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
-        return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]})
+        if (!player.isRequestChannelPanel) {
+          container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`La repetición de esta canción fue activada por <@${interaction.user.id}>`))
+          return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]});
+        }
+        return;
     }
     else
     {
@@ -104,9 +110,12 @@ export async function loopQueue(client,interaction)
     {
         player.setLoop('queue');
         containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Repetición de cola activada`))
-        container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`La repetición de toda la cola fue activada por <@${interaction.user.id}>`))
         await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
-        return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]})
+        if (!player.isRequestChannelPanel) {
+          container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`La repetición de toda la cola fue activada por <@${interaction.user.id}>`))
+          return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]});
+        }
+        return;
     }
     else
     {

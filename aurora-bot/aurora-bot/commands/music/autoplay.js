@@ -48,7 +48,9 @@ export async function Autoplay(client, interaction) {
   player.setAutoPlay(!isAutoplay);
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Actualizado`))
     await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});
-    containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} La reproducción automática está ahora **${!isAutoplay ? "activada" : "desactivada"}** por <@${interaction.user.id}>`,));
-    return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]})
+    if (!player.isRequestChannelPanel) {
+      containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} La reproducción automática está ahora **${!isAutoplay ? "activada" : "desactivada"}** por <@${interaction.user.id}>`,));
+      return await interaction.channel.send({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
+    }
 
 }

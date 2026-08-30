@@ -1,5 +1,7 @@
 import { MessageFlags, SlashCommandBuilder,ContainerBuilder,TextDisplayBuilder} from "discord.js";
 import { cross_emoji, tick_emoji } from '../../emoji/emoji.js';
+import { resetPanelToIdle } from '../../music-card/idle.js';
+
 export const stopcmd = new SlashCommandBuilder()
     .setName('stop')
     .setDescription('Detiene la música y vacía la cola');
@@ -20,8 +22,12 @@ export default async function stop_music(client, interaction) {
 
     player.stop();
     player.queue.clear();
+    await resetPanelToIdle(client, interaction.guild.id, player);
+
     containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Detenido con éxito`));
     await interaction.editReply({components:[containerExtra], flags: [MessageFlags.IsComponentsV2]});
-    container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Reproducción detenida y cola limpiada por <@${interaction.user.id}>`));
-    return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]});
+    if (!player.isRequestChannelPanel) {
+      container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Reproducción detenida y cola limpiada por <@${interaction.user.id}>`));
+      return await interaction.channel.send({components:[container], flags: [MessageFlags.IsComponentsV2]});
+    }
 }

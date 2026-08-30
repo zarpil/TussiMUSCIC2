@@ -58,8 +58,10 @@ export default async function playmusic(client, interaction) {
         player.queue.add(searchResult.tracks);
         container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Añadido con éxito`))
         await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});
-        containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Playlist **[${searchResult.playlistInfo.name}](${searchResult.tracks[0].uri})** (${searchResult.tracks.length} canciones) añadida a la cola por <@${interaction.user.id}>.`));
-        await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+        if (!player.isRequestChannelPanel) {
+          containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Playlist **[${searchResult.playlistInfo.name}](${searchResult.tracks[0].uri})** (${searchResult.tracks.length} canciones) añadida a la cola por <@${interaction.user.id}>.`));
+          await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+        }
         
         send_log(`🎵 **${interaction.user.tag}** añadió la playlist **${searchResult.playlistInfo.name}** en **${interaction.guild.name}**`);
         
@@ -75,8 +77,10 @@ export default async function playmusic(client, interaction) {
         await player.queue.add(searchResult.tracks[0]);
         container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Añadido con éxito`))
         await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});
-        containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Añadida **[${searchResult.tracks[0].title}](${searchResult.tracks[0].uri})** por <@${interaction.user.id}>`))
-        await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+        if (!player.isRequestChannelPanel) {
+          containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Añadida **[${searchResult.tracks[0].title}](${searchResult.tracks[0].uri})** por <@${interaction.user.id}>`))
+          await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+        }
         
         send_log(`🎵 **${interaction.user.tag}** reprodujo **${searchResult.tracks[0].title}** en **${interaction.guild.name}**`);
         
