@@ -5,10 +5,18 @@ export async function syncPoToken(nodeHost = 'nodelink', nodePort = '2333', node
     console.log('[PoToken Sync] Fetching new poToken from local provider (http://pot-provider:4416/)...');
     
     // Fetch the token from the pot-provider container
-    const res = await fetch('http://pot-provider:4416/', { timeout: 10000 });
+    const res = await fetch('http://pot-provider:4416/get_pot', { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ client: "tv" }),
+      timeout: 10000 
+    });
     
     if (!res.ok) {
-      throw new Error(`Provider returned status ${res.status}`);
+      const errText = await res.text();
+      throw new Error(`Provider returned status ${res.status}: ${errText}`);
     }
     
     const data = await res.json();
