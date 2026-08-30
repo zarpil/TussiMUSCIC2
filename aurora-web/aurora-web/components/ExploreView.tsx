@@ -1847,78 +1847,84 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
 
       {/* Onboarding Preferences Overlay (First Time Welcome) */}
       {!onboardingCompleted && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-4">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            className="bg-[#121212] border border-white/10 p-6 md:p-8 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar-vertical shadow-2xl relative z-50"
+            className="bg-[#121212] border border-white/10 p-5 sm:p-6 md:p-8 rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl relative z-50 overflow-hidden"
           >
-            <h2 className="text-3xl font-black text-white tracking-tight mb-2">Bienvenido a Explorar en {siteName}</h2>
-            <p className="text-white/60 text-sm mb-6">Selecciona tus idiomas y géneros musicales favoritos para personalizar tu panel. Puedes elegir varios o continuar con la configuración por defecto.</p>
+            {/* Modal Header */}
+            <div className="shrink-0 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">Bienvenido a Explorar en {siteName}</h2>
+              <p className="text-white/60 text-xs sm:text-sm">Selecciona tus idiomas y géneros musicales favoritos para personalizar tu panel. Puedes elegir varios o continuar con la configuración por defecto.</p>
+            </div>
             
-            {/* Languages Selection */}
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-white mb-3">Idiomas Favoritos</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {['Spanish', 'English', 'French', 'Japanese', 'German', 'Korean', 'Italian', 'Portuguese'].map((lang) => {
-                  const label = lang === 'Spanish' ? 'Español' : lang === 'English' ? 'Inglés' : lang === 'French' ? 'Francés' : lang === 'Japanese' ? 'Japonés' : lang === 'German' ? 'Alemán' : lang === 'Korean' ? 'Coreano' : lang === 'Italian' ? 'Italiano' : 'Portugués';
-                  const selected = prefLangs.includes(lang);
-                  return (
-                    <button
-                      key={lang}
-                      onClick={() => {
-                        setPrefLangs(prev => 
-                          prev.includes(lang) ? prev.filter(l => l !== lang) : [...prev, lang]
-                        );
-                      }}
-                      className={`py-2 px-4 rounded-xl text-xs font-bold border transition-all duration-300 cursor-pointer ${
-                        selected 
-                          ? 'bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20' 
-                          : 'bg-white/5 text-white/70 border-white/5 hover:bg-white/10 hover:border-white/10'
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
+            {/* Modal Scrollable Body */}
+            <div className="flex-1 overflow-y-auto custom-scrollbar-vertical pr-1 space-y-6">
+              {/* Languages Selection */}
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3">Idiomas Favoritos</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {['Spanish', 'English', 'French', 'Japanese', 'German', 'Korean', 'Italian', 'Portuguese'].map((lang) => {
+                    const label = lang === 'Spanish' ? 'Español' : lang === 'English' ? 'Inglés' : lang === 'French' ? 'Francés' : lang === 'Japanese' ? 'Japonés' : lang === 'German' ? 'Alemán' : lang === 'Korean' ? 'Coreano' : lang === 'Italian' ? 'Italiano' : 'Portugués';
+                    const selected = prefLangs.includes(lang);
+                    return (
+                      <button
+                        key={lang}
+                        onClick={() => {
+                          setPrefLangs(prev => 
+                            prev.includes(lang) ? prev.filter(l => l !== lang) : [...prev, lang]
+                          );
+                        }}
+                        className={`py-2 px-3 sm:px-4 rounded-xl text-xs font-bold border transition-all duration-300 cursor-pointer ${
+                          selected 
+                            ? 'bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20' 
+                            : 'bg-white/5 text-white/70 border-white/5 hover:bg-white/10 hover:border-white/10'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Genres Selection */}
+              <div>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3">Géneros Favoritos</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {['Pop', 'Hip-Hop', 'Rock', 'Electronic', 'R&B', 'Lofi', 'Classical', 'J-Pop/Anime', 'Metal', 'Jazz', 'K-Pop', 'Blues', 'Folk'].map((genre) => {
+                    const selected = prefGenres.includes(genre);
+                    return (
+                      <button
+                        key={genre}
+                        onClick={() => {
+                          setPrefGenres(prev => 
+                            prev.includes(genre) ? prev.filter(g => g !== genre) : [...prev, genre]
+                          );
+                        }}
+                        className={`py-2 px-3 sm:px-4 rounded-xl text-xs font-bold border transition-all duration-300 cursor-pointer ${
+                          selected 
+                            ? 'bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20' 
+                            : 'bg-white/5 text-white/70 border-white/5 hover:bg-white/10 hover:border-white/10'
+                        }`}
+                      >
+                        {genre}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
-            {/* Genres Selection */}
-            <div className="mb-8">
-              <h3 className="text-lg font-bold text-white mb-3">Géneros Favoritos</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                {['Pop', 'Hip-Hop', 'Rock', 'Electronic', 'R&B', 'Lofi', 'Classical', 'J-Pop/Anime', 'Metal', 'Jazz', 'K-Pop', 'Blues', 'Folk'].map((genre) => {
-                  const selected = prefGenres.includes(genre);
-                  return (
-                    <button
-                      key={genre}
-                      onClick={() => {
-                        setPrefGenres(prev => 
-                          prev.includes(genre) ? prev.filter(g => g !== genre) : [...prev, genre]
-                        );
-                      }}
-                      className={`py-2 px-4 rounded-xl text-xs font-bold border transition-all duration-300 cursor-pointer ${
-                        selected 
-                          ? 'bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20' 
-                          : 'bg-white/5 text-white/70 border-white/5 hover:bg-white/10 hover:border-white/10'
-                      }`}
-                    >
-                      {genre}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Actions */}
-            <div className="flex items-center justify-end gap-3 border-t border-white/5 pt-6">
+            {/* Sticky Actions Footer */}
+            <div className="shrink-0 pt-4 border-t border-white/10 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2 sm:gap-3 bg-[#121212] z-20 mt-2">
               <button
                 onClick={() => {
                   localStorage.setItem(`aurora_onboarding_completed_${userId}`, 'true');
                   setOnboardingCompleted(true);
                 }}
-                className="px-6 py-2 rounded-full text-sm font-semibold text-white/60 hover:text-white transition-colors cursor-pointer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white/60 hover:text-white hover:bg-white/5 transition-all text-center cursor-pointer"
               >
                 Omitir y Usar por Defecto
               </button>
@@ -1930,7 +1936,7 @@ export default function ExploreView({ guildId, userId, isPremium }: { guildId: s
                   setOnboardingCompleted(true);
                   window.dispatchEvent(new CustomEvent('history-updated'));
                 }}
-                className="px-8 py-2 rounded-full text-sm font-bold bg-[#1ed760] text-black hover:scale-105 transition-all shadow-lg cursor-pointer"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-[#1ed760] text-black hover:scale-105 transition-all shadow-lg text-center cursor-pointer"
               >
                 Guardar Preferencias
               </button>

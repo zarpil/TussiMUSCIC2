@@ -1996,7 +1996,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               }`}
           >
             <Disc className="w-5 h-5" />
-            <span className="text-[10px] mt-1">Player</span>
+            <span className="text-[10px] mt-1">Reproductor</span>
           </button>
 
           <button
@@ -2005,7 +2005,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               }`}
           >
             <Compass className="w-5 h-5" />
-            <span className="text-[10px] mt-1">Explore</span>
+            <span className="text-[10px] mt-1">Explorar</span>
           </button>
 
           <button
@@ -2014,7 +2014,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               }`}
           >
             <ListMusic className="w-5 h-5" />
-            <span className="text-[10px] mt-1">Playlists</span>
+            <span className="text-[10px] mt-1">Listas</span>
           </button>
 
           <button
@@ -2023,7 +2023,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               }`}
           >
             <BarChart3 className="w-5 h-5" />
-            <span className="text-[10px] mt-1">Overview</span>
+            <span className="text-[10px] mt-1">Resumen</span>
           </button>
 
           {premiumSystemActive && !isPremium && (
@@ -2046,7 +2046,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   }`}
               >
                 <Paintbrush className="w-5 h-5" />
-                <span className="text-[10px] mt-1">Themes</span>
+                <span className="text-[10px] mt-1">Temas</span>
               </button>
 
               <button
@@ -2055,7 +2055,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   }`}
               >
                 <Palette className="w-5 h-5" />
-                <span className="text-[10px] mt-1">Lyrics</span>
+                <span className="text-[10px] mt-1">Letras</span>
               </button>
 
               <button
@@ -2064,7 +2064,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   }`}
               >
                 <Pencil className="w-5 h-5" />
-                <span className="text-[10px] mt-1">Edit</span>
+                <span className="text-[10px] mt-1">Editar</span>
               </button>
             </>
           )}
@@ -2076,7 +2076,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               }`}
           >
             <MoreHorizontal className="w-5 h-5" />
-            <span className="text-[10px] mt-1">More</span>
+            <span className="text-[10px] mt-1">Más</span>
           </button>
         </div>
       </div>
@@ -2102,7 +2102,7 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div className="flex items-center gap-2 text-white font-bold text-sm">
                   <MoreHorizontal className="w-4 h-4 text-cyan-400" />
-                  <span>More Menu & Tools</span>
+                  <span>Menú y Herramientas</span>
                 </div>
                 <button
                   onClick={() => setShowMobileMoreMenu(false)}
@@ -2120,8 +2120,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 >
                   <Disc className="w-5 h-5 text-cyan-400 shrink-0" />
                   <div>
-                    <div className="text-xs font-bold">Player</div>
-                    <div className="text-[9px] text-white/40">Music Controls</div>
+                    <div className="text-xs font-bold">Reproductor</div>
+                    <div className="text-[9px] text-white/40">Controles de música</div>
                   </div>
                 </button>
 
@@ -2132,8 +2132,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 >
                   <Compass className="w-5 h-5 text-cyan-400 shrink-0" />
                   <div>
-                    <div className="text-xs font-bold">Explore</div>
-                    <div className="text-[9px] text-white/40">Search Music</div>
+                    <div className="text-xs font-bold">Explorar</div>
+                    <div className="text-[9px] text-white/40">Buscar música</div>
                   </div>
                 </button>
 
@@ -2144,8 +2144,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 >
                   <ListMusic className="w-5 h-5 text-cyan-400 shrink-0" />
                   <div>
-                    <div className="text-xs font-bold">Playlists</div>
-                    <div className="text-[9px] text-white/40">Your Collections</div>
+                    <div className="text-xs font-bold">Listas</div>
+                    <div className="text-[9px] text-white/40">Tus colecciones</div>
                   </div>
                 </button>
 
@@ -2156,8 +2156,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 >
                   <BarChart3 className="w-5 h-5 text-cyan-400 shrink-0" />
                   <div>
-                    <div className="text-xs font-bold">Overview</div>
-                    <div className="text-[9px] text-white/40">VC & Leaderboard</div>
+                    <div className="text-xs font-bold">Resumen</div>
+                    <div className="text-[9px] text-white/40">Estadísticas de voz</div>
                   </div>
                 </button>
 
@@ -2168,8 +2168,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                   >
                     <Crown className="w-5 h-5 shrink-0 text-amber-400" />
                     <div>
-                      <div className="text-xs font-bold">Upgrade to Premium 👑</div>
-                      <div className="text-[9px] text-amber-400/70">Unlock themes, likes & layout customization</div>
+                      <div className="text-xs font-bold">Obtener Premium 👑</div>
+                      <div className="text-[9px] text-amber-400/70">Desbloquea temas, me gusta y personalización</div>
                     </div>
                   </button>
                 )}
@@ -2183,8 +2183,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                     >
                       <Paintbrush className="w-5 h-5 text-amber-400 shrink-0" />
                       <div>
-                        <div className="text-xs font-bold">Themes</div>
-                        <div className="text-[9px] text-white/40">Background HSL</div>
+                        <div className="text-xs font-bold">Temas</div>
+                        <div className="text-[9px] text-white/40">Fondo personalizado</div>
                       </div>
                     </button>
 
@@ -2195,8 +2195,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                     >
                       <Palette className="w-5 h-5 text-amber-400 shrink-0" />
                       <div>
-                        <div className="text-xs font-bold">Lyrics Style</div>
-                        <div className="text-[9px] text-white/40">Glow & Font</div>
+                        <div className="text-xs font-bold">Estilo de Letras</div>
+                        <div className="text-[9px] text-white/40">Brillo y fuente</div>
                       </div>
                     </button>
 
@@ -2207,8 +2207,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                     >
                       <Pencil className="w-5 h-5 text-amber-400 shrink-0" />
                       <div>
-                        <div className="text-xs font-bold">{isEditMode ? 'Exit Edit' : 'Edit Layout'}</div>
-                        <div className="text-[9px] text-white/40">Drag Widgets</div>
+                        <div className="text-xs font-bold">{isEditMode ? 'Salir de Edición' : 'Editar Diseño'}</div>
+                        <div className="text-[9px] text-white/40">Organizar widgets</div>
                       </div>
                     </button>
 
@@ -2218,8 +2218,8 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                     >
                       <Keyboard className="w-5 h-5 text-amber-400 shrink-0" />
                       <div>
-                        <div className="text-xs font-bold">Shortcuts</div>
-                        <div className="text-[9px] text-white/40">Keybinds Manager</div>
+                        <div className="text-xs font-bold">Atajos</div>
+                        <div className="text-[9px] text-white/40">Teclas rápidas</div>
                       </div>
                     </button>
                   </>
@@ -2231,9 +2231,9 @@ export default function ModernPlayer({ guildId, userId }: { guildId: string; use
                 >
                   <div className="flex items-center gap-2">
                     <Menu className="w-4 h-4" />
-                    <span>Open Side Navigation Drawer</span>
+                    <span>Abrir menú lateral completo</span>
                   </div>
-                  <span className="text-[10px] text-cyan-400/60">Full Menu & Profile</span>
+                  <span className="text-[10px] text-cyan-400/60">Menú y Perfil</span>
                 </button>
               </div>
             </motion.div>

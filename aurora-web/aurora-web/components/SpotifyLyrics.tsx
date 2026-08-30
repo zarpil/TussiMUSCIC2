@@ -184,7 +184,7 @@ export default function SpotifyLyrics({
               {/* Header */}
               <div className="flex items-center justify-between p-4 bg-transparent border-b border-white/10">
                 <div>
-                  <h3 className="text-2xl font-bold text-white drop-shadow-md">Lyrics</h3>
+                  <h3 className="text-2xl font-bold text-white drop-shadow-md">Letra en Vivo</h3>
                   <p className="text-xs text-white/60 mt-0.5">{trackTitle}</p>
                 </div>
                 <button
@@ -216,7 +216,7 @@ export default function SpotifyLyrics({
                       transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                       className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full mb-4"
                     />
-                    <p className="text-white/60">Loading lyrics...</p>
+                    <p className="text-white/60">Cargando letra...</p>
                   </div>
                 )}
 
@@ -224,7 +224,7 @@ export default function SpotifyLyrics({
                   <div className="flex flex-col items-center justify-center h-full text-center">
                     <Music2 className="w-20 h-20 text-white/20 mb-4" />
                     <p className="text-white/70 text-lg font-semibold">{error}</p>
-                    <p className="text-white/40 text-sm mt-2">Lyrics not available for this track</p>
+                    <p className="text-white/40 text-sm mt-2">Letra no disponible para esta canción</p>
                   </div>
                 )}
 
@@ -287,7 +287,7 @@ export default function SpotifyLyrics({
                     className="px-4 py-2 rounded-full backdrop-blur-2xl bg-white/15 hover:bg-white/25 border border-white/20 text-white font-semibold text-xs flex items-center gap-2 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:scale-105 active:scale-95"
                   >
                     <RefreshCw className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
-                    <span>Re-Sync View</span>
+                    <span>Re-sincronizar vista</span>
                   </button>
                 )}
                 <button
@@ -302,7 +302,7 @@ export default function SpotifyLyrics({
                   className="px-4 py-2 rounded-full backdrop-blur-2xl bg-amber-400/20 hover:bg-amber-400/30 border border-amber-400/40 text-amber-300 font-semibold text-xs flex items-center gap-2 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all cursor-pointer hover:scale-105 active:scale-95"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
-                  <span>Re-Fetch Synced Lyrics</span>
+                  <span>Buscar letra sincronizada</span>
                 </button>
               </div>
             </div>
