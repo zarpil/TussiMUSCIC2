@@ -349,9 +349,10 @@ export default {
       clients: {
         search: ['Android'], // Clients used for searching tracks
         playback: [
-          'TV',
-          'Web',
-          'WebEmbedded'
+          'WebEmbedded',
+          'TVCast',
+          'AndroidVR',
+          'Web'
         ], // Clients used for playback/streaming
         resolve: [
           'AndroidVR',
