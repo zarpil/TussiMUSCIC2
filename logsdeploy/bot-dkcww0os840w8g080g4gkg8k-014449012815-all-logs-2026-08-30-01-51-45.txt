@@ -1,0 +1,116 @@
+
+2026-08-30T01:47:59.323289489Z 🚀 Starting Tussi Music Bot...
+2026-08-30T01:48:01.909852105Z [PoToken Sync] Fetching new poToken from local provider (http://pot-provider:4416/)...
+2026-08-30T01:48:11.923742933Z [PoToken Sync] Error syncing poToken: network timeout at: http://pot-provider:4416/get_pot
+2026-08-30T01:48:11.925375726Z 🔄 Scheduled PoToken sync with NodeLink
+2026-08-30T01:48:12.684046033Z ✅ Logged in as TussiMusic#7948
+2026-08-30T01:48:12.684552422Z ✅ Moonlink Is Initialized Successfully
+2026-08-30T01:48:12.698458319Z [Lyrics Service] 🎵 Moonlink v5 lyrics listeners registered
+2026-08-30T01:48:12.698882456Z 🌐 Web Dashboard server started successfully!
+2026-08-30T01:48:12.699566947Z ✅ Discord Rich Presence initialized (Priority: Web > .env, Default: OFF)
+2026-08-30T01:48:12.700405181Z ⏳ Registering global slash commands...
+2026-08-30T01:48:12.700426153Z (node:19) DeprecationWarning: The ready event has been renamed to clientReady to distinguish it from the gateway READY event and will only emit under that name in v15. Please use clientReady instead.
+2026-08-30T01:48:12.700432696Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-08-30T01:48:12.701074933Z [Web Server] Running on http://0.0.0.0:3001
+2026-08-30T01:48:12.701126385Z [Web Server] CORS enabled for: https://tussi.zarpil.dev
+2026-08-30T01:48:12.701133679Z [Web Server] Test the API: curl http://localhost:3001/health
+2026-08-30T01:48:12.708560979Z [MongoDB] Connected successfully
+2026-08-30T01:48:12.721389058Z [Moonlink] Initializing database-dependent features...
+2026-08-30T01:48:12.736920192Z [Premium Cache] Loaded 0 premium users.
+2026-08-30T01:48:12.745270102Z [Moonlink DB] Overwriting node configurations with 1 merged nodes (DB + config.json).
+2026-08-30T01:48:12.745280172Z [Moonlink DB] Node connection verified online: tussi-nodelink
+2026-08-30T01:48:12.750419145Z [State Restoration] Found 0 saved player states to restore.
+2026-08-30T01:48:13.390913776Z ✅ Global slash commands registered successfully!
+2026-08-30T01:48:19.229973070Z [Session] Created session for user 1018617208554934332
+2026-08-30T01:48:19.654382678Z [Socket.io] User connected: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:48:19.654405684Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T01:48:19.686112755Z [User Guilds API] Checking guilds for user 1018617208554934332
+2026-08-30T01:48:19.686136101Z [User Guilds API] Bot is in 1 guilds
+2026-08-30T01:48:19.686312068Z [User Guilds API] User is in 1 guilds with the bot
+2026-08-30T01:48:19.740764282Z [Socket.io] User nJy5SR2pmZirqN1PAAAC joined guild:1494309584322433124
+2026-08-30T01:48:19.746139752Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T01:48:21.122456003Z [Socket.io] User connected: tPI885A5mh5D0x95AAAF
+2026-08-30T01:48:21.122475722Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T01:48:21.123135544Z [Socket.io] User connected: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:48:21.123141776Z [Socket.io] Authenticated user: 1018617208554934332
+2026-08-30T01:48:21.201406730Z [Socket.io] User tPI885A5mh5D0x95AAAF joined guild:1494309584322433124
+2026-08-30T01:48:21.201432371Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T01:48:21.202229975Z [Socket.io] User 728h-AWZfzNRLsagAAAG joined guild:1494309584322433124
+2026-08-30T01:48:21.204741873Z [Socket Handler] No player active for guild: 1494309584322433124
+2026-08-30T01:49:46.734324528Z [Socket.io] User 728h-AWZfzNRLsagAAAG joined guild:1494309584322433124
+2026-08-30T01:49:46.735855580Z [Socket.io] User nJy5SR2pmZirqN1PAAAC joined guild:1494309584322433124
+2026-08-30T01:49:46.740149635Z [Socket Handler] Sending current state to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:46.740418376Z [Socket Handler] 🎵 Fetching lyrics for socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:46.740576969Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:46.741231310Z [Socket Handler] Sending current state to socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:46.741365375Z [Socket Handler] 🎵 Fetching lyrics for socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:46.741372198Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:46.814102097Z [Socket.io] Sync requested by socket: nJy5SR2pmZirqN1PAAAC for guild: 1494309584322433124
+2026-08-30T01:49:46.815549975Z [Socket.io] Sync requested by socket: 728h-AWZfzNRLsagAAAG for guild: 1494309584322433124
+2026-08-30T01:49:46.817602566Z [Socket Handler] Sending current state to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:46.817716491Z [Socket Handler] 🎵 Fetching lyrics for socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:46.817722052Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:46.818261958Z [Socket Handler] Sending current state to socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:46.818363027Z [Socket Handler] 🎵 Fetching lyrics for socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:46.818409870Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:47.698188822Z [Socket.io] User nJy5SR2pmZirqN1PAAAC joined guild:1494309584322433124
+2026-08-30T01:49:47.699153997Z [Socket.io] User 728h-AWZfzNRLsagAAAG joined guild:1494309584322433124
+2026-08-30T01:49:47.702279637Z [Socket Handler] Sending current state to socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:47.702355075Z [Socket Handler] 🎵 Fetching lyrics for socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:47.702361969Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:47.702812398Z [Socket Handler] Sending current state to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:47.702886023Z [Socket Handler] 🎵 Fetching lyrics for socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:47.702904450Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:47.763247741Z [Socket.io] Sync requested by socket: nJy5SR2pmZirqN1PAAAC for guild: 1494309584322433124
+2026-08-30T01:49:47.765272106Z [Socket.io] Sync requested by socket: 728h-AWZfzNRLsagAAAG for guild: 1494309584322433124
+2026-08-30T01:49:47.768204003Z [Socket Handler] Sending current state to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:47.768244563Z [Socket Handler] 🎵 Fetching lyrics for socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:49:47.768249363Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:47.768252469Z [Socket Handler] Sending current state to socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:47.768255475Z [Socket Handler] 🎵 Fetching lyrics for socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:49:47.768259824Z [Lyrics Service] ⚠️ No current track
+2026-08-30T01:49:57.423289227Z [API] Sending immediate queue update for track: NUEVAYoL
+2026-08-30T01:49:57.423766679Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T01:50:01.001951737Z [Socket.io] Lyrics requested by socket: tPI885A5mh5D0x95AAAF for guild: 1494309584322433124 forceRefresh: false
+2026-08-30T01:50:01.008424813Z [Lyrics Service] ✅ Cache hit (synced): NUEVAYoL - Bad Bunny
+2026-08-30T01:50:01.008495543Z [Socket Handler] ✅ Sending lyrics to requesting socket: tPI885A5mh5D0x95AAAF
+2026-08-30T01:50:09.043080404Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T01:50:10.146810676Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T01:50:10.559831134Z [Moonlink Events] trackEnd fired for guild 1494309584322433124, reason: stopped
+2026-08-30T01:50:10.560472761Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T01:50:10.680424342Z [State Sync] Deleted player state and flushed VC time for guild 1494309584322433124 due to playerDestroyed event
+2026-08-30T01:50:10.681213670Z [State Sync] Deleted player state and flushed VC time for guild 1494309584322433124 due to playerDestroyed event
+2026-08-30T01:50:10.981186745Z [Moonlink Events] Voice status cleared successfully
+2026-08-30T01:50:10.982278730Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T01:50:13.922526546Z [API] Sending immediate queue update for track: NUEVAYoL
+2026-08-30T01:50:13.922551546Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T01:50:15.064723070Z [Moonlink Events] trackStart fired for guild 1494309584322433124, track: NUEVAYoL
+2026-08-30T01:50:15.064742298Z [Moonlink Events] Voice Channel ID: 1540036113517772932
+2026-08-30T01:50:15.066410851Z [Queue Update] Sending 0 tracks for guild 1494309584322433124
+2026-08-30T01:50:15.066430280Z [Socket Handler] 🎵 Fetching lyrics for: NUEVAYoL - Bad Bunny
+2026-08-30T01:50:15.074122532Z [Lyrics Service] ✅ Cache hit (synced): NUEVAYoL - Bad Bunny
+2026-08-30T01:50:15.074281626Z [Socket Handler] ✅ Emitting lyrics_data with 63 lines to guild: 1494309584322433124
+2026-08-30T01:50:15.155757297Z [Socket.io] Lyrics requested by socket: tPI885A5mh5D0x95AAAF for guild: 1494309584322433124 forceRefresh: false
+2026-08-30T01:50:15.160474257Z [Lyrics Service] ✅ Cache hit (synced): NUEVAYoL - Bad Bunny
+2026-08-30T01:50:15.160497432Z [Socket Handler] ✅ Sending lyrics to requesting socket: tPI885A5mh5D0x95AAAF
+2026-08-30T01:50:15.383519006Z [Moonlink Events] Voice status set successfully
+2026-08-30T01:51:28.160988270Z [Socket.io] User nJy5SR2pmZirqN1PAAAC joined guild:1494309584322433124
+2026-08-30T01:51:28.162863952Z [Socket.io] User 728h-AWZfzNRLsagAAAG joined guild:1494309584322433124
+2026-08-30T01:51:28.166599314Z [Socket Handler] Sending current state to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:51:28.166631658Z [Socket Handler] 🎵 Fetching lyrics for socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:51:28.169722378Z [Lyrics Service] ✅ Cache hit (synced): NUEVAYoL - Bad Bunny
+2026-08-30T01:51:28.169907724Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:51:28.171637238Z [Socket Handler] Sending current state to socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:51:28.171763367Z [Socket Handler] 🎵 Fetching lyrics for socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:51:28.174326315Z [Lyrics Service] ✅ Cache hit (synced): NUEVAYoL - Bad Bunny
+2026-08-30T01:51:28.174365012Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:51:28.230508994Z [Socket.io] Sync requested by socket: nJy5SR2pmZirqN1PAAAC for guild: 1494309584322433124
+2026-08-30T01:51:28.232029726Z [Socket.io] Sync requested by socket: 728h-AWZfzNRLsagAAAG for guild: 1494309584322433124
+2026-08-30T01:51:28.233538584Z [Socket Handler] Sending current state to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:51:28.233645144Z [Socket Handler] 🎵 Fetching lyrics for socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:51:28.234561974Z [Socket Handler] Sending current state to socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:51:28.234662492Z [Socket Handler] 🎵 Fetching lyrics for socket: 728h-AWZfzNRLsagAAAG
+2026-08-30T01:51:28.240236093Z [Lyrics Service] ✅ Cache hit (synced): NUEVAYoL - Bad Bunny
+2026-08-30T01:51:28.240256984Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: nJy5SR2pmZirqN1PAAAC
+2026-08-30T01:51:28.240377492Z [Lyrics Service] ✅ Cache hit (synced): NUEVAYoL - Bad Bunny
+2026-08-30T01:51:28.240383765Z [Socket Handler] ✅ Emitting cached lyrics directly to socket: 728h-AWZfzNRLsagAAAG

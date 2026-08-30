@@ -11,7 +11,7 @@ export async function syncPoToken(nodeHost = 'nodelink', nodePort = '2333', node
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ client: "web" }),
-      timeout: 10000 
+      timeout: 60000 
     });
     
     if (!res.ok) {
