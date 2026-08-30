@@ -1,5 +1,6 @@
 import { SlashCommandBuilder, MessageFlags, EmbedBuilder,ContainerBuilder,TextDisplayBuilder } from 'discord.js';
 import { cross_emoji, tick_emoji } from '../../emoji/emoji.js';
+import { music_card } from '../../music-card/card.js';
 
 export const pausecmd = new SlashCommandBuilder()
   .setName('pause')
@@ -31,9 +32,14 @@ export default async function pause_music(client, interaction) {
     if (client.webServer?.socketHandler) {
       client.webServer.socketHandler.sendQueueUpdate(player);
     }
+    if (player.current) {
+      await music_card(client, player, player.current);
+    }
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Pausado con éxito`));
     await interaction.editReply({components:[container],flags: [MessageFlags.IsComponentsV2]});
-    containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Canción pausada por <@${interaction.user.id}>`))
-    return await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+    if (!player.isRequestChannelPanel) {
+      containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Canción pausada por <@${interaction.user.id}>`))
+      return await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+    }
 }
 

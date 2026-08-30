@@ -3,6 +3,7 @@ import PremiumUser from '../models/PremiumUser.js';
 import mongoose from 'mongoose';
 import { MessageFlags, ContainerBuilder, TextDisplayBuilder } from 'discord.js';
 import LyricsService from '../services/lyricsService.js';
+import { music_card } from '../music-card/card.js';
 import { 
   tick_emoji, 
   skip_emoji, 
@@ -301,6 +302,7 @@ class SocketHandler {
           this.broadcastStateUpdate(guildId);
           await this.sendBotMessage(boundChannel, `${pause_emoji} Canción pausada por <@${userId}> (Control Web)`);
           this.sendQueueUpdate(player);
+          if (player.current) await music_card(this.client, player, player.current);
           break;
 
         case 'resume':
@@ -313,6 +315,7 @@ class SocketHandler {
           this.broadcastStateUpdate(guildId);
           await this.sendBotMessage(boundChannel, `${play_button_emoji} Canción reanudada por <@${userId}> (Control Web)`);
           this.sendQueueUpdate(player);
+          if (player.current) await music_card(this.client, player, player.current);
           break;
 
         case 'seek':

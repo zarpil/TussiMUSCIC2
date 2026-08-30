@@ -1,5 +1,7 @@
 import { SlashCommandBuilder, MessageFlags,ContainerBuilder,TextDisplayBuilder } from 'discord.js';
 import { cross_emoji, tick_emoji } from '../../emoji/emoji.js';
+import { music_card } from '../../music-card/card.js';
+
 export const resumecmd = new SlashCommandBuilder()
   .setName('resume')
   .setDescription('Reanuda la canción pausada');
@@ -31,10 +33,15 @@ export async function song_resume(client, interaction) {
     if (client.webServer?.socketHandler) {
       client.webServer.socketHandler.sendQueueUpdate(player);
     }
+    if (player.current) {
+      await music_card(client, player, player.current);
+    }
     container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Reanudado con éxito`));
     await interaction.editReply({components:[container],flags: [MessageFlags.IsComponentsV2]});
-    containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Canción reanudada por <@${interaction.user.id}>`))
-    return await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+    if (!player.isRequestChannelPanel) {
+      containerExtra.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Canción reanudada por <@${interaction.user.id}>`))
+      return await interaction.channel.send({components:[containerExtra],flags: [MessageFlags.IsComponentsV2]});
+    }
 }
 
  

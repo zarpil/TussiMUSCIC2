@@ -1,5 +1,5 @@
-import { AttachmentBuilder,ThumbnailBuilder, MessageFlags, TextDisplayBuilder,ContainerBuilder, MediaGalleryBuilder, MediaGalleryItemBuilder,SeparatorBuilder,SeparatorSpacingSize, SectionBuilder  } from "discord.js";
-import {musicControlsRow1,musicControlsRow2,filterRow,} from "../buttons/buttons.js";
+import { AttachmentBuilder,ThumbnailBuilder, MessageFlags, TextDisplayBuilder,ContainerBuilder, MediaGalleryBuilder, MediaGalleryItemBuilder,SeparatorBuilder,SeparatorSpacingSize, SectionBuilder, ActionRowBuilder } from "discord.js";
+import { play_button, pause_button, stop_button, loopButton, skip_button, musicControlsRow2, filterRow } from "../buttons/buttons.js";
 import {cross_emoji, music_disc_emoji} from "../emoji/emoji.js";
 import {Bloom} from "aurora-music-card";
 import 'dotenv/config';
@@ -55,15 +55,15 @@ export async function music_card(client,player,track) {
   const next_song_name = track_size === 0 ? cross_emoji : player.queue.all[0].title;
 
   // Custom configurations
-  const cardHeading = dbSettings?.cardHeading !== undefined ? dbSettings.cardHeading : "# {music_disc_emoji} **Now Playing**";
-  const cardBody = dbSettings?.cardBody !== undefined ? dbSettings.cardBody : "●  **Track Title: ** **[{title} - {artist}]({track_uri})**\n●  **Source: ** {source} \n●  **Duration: ** {duration} \n● **Next Song:** {next_song}\n● **Number Of Songs:** {songs_count} \n● **Requested by: ** <@{requester_id}>";
-  const cardSupportLabel = dbSettings?.cardSupportLabel || "Support Server";
-  const cardWebPlayerLabel = dbSettings?.cardWebPlayerLabel || "Web Player";
+  const cardHeading = dbSettings?.cardHeading !== undefined ? dbSettings.cardHeading : "# {music_disc_emoji} **Reproduciendo ahora**";
+  const cardBody = dbSettings?.cardBody !== undefined ? dbSettings.cardBody : "●  **Título: ** **[{title} - {artist}]({track_uri})**\n●  **Fuente: ** {source} \n●  **Duración: ** {duration} \n● **Siguiente canción:** {next_song}\n● **Canciones en cola:** {songs_count} \n● **Pedida por: ** <@{requester_id}>";
+  const cardSupportLabel = dbSettings?.cardSupportLabel || "Servidor de Soporte";
+  const cardWebPlayerLabel = dbSettings?.cardWebPlayerLabel || "Panel Web";
   const cardShowHeading = dbSettings?.cardShowHeading !== undefined ? dbSettings.cardShowHeading : true;
   const cardShowTrackImage = dbSettings?.cardShowTrackImage !== undefined ? dbSettings.cardShowTrackImage : true;
   const cardShowInfo = dbSettings?.cardShowInfo !== undefined ? dbSettings.cardShowInfo : true;
   const cardShowButtons = dbSettings?.cardShowButtons !== undefined ? dbSettings.cardShowButtons : true;
-  const cardShowLinks = dbSettings?.cardShowLinks !== undefined ? dbSettings.cardShowLinks : true;
+  const cardShowLinks = false;
   const cardSeparatorStyle = dbSettings?.cardSeparatorStyle || "divider";
   const cardSeparatorSize = dbSettings?.cardSeparatorSize || "small";
 
@@ -150,7 +150,15 @@ export async function music_card(client,player,track) {
     // 4. Buttons
     if (cardShowButtons) {
       if (needsSeparator) container.addSeparatorComponents(createSeparator());
-      container.addActionRowComponents(musicControlsRow1);
+      const playPauseBtn = player.paused ? play_button : pause_button;
+      const dynamicRow1 = new ActionRowBuilder().addComponents(
+        playPauseBtn,
+        stop_button,
+        loopButton,
+        skip_button
+      );
+
+      container.addActionRowComponents(dynamicRow1);
       container.addActionRowComponents(musicControlsRow2);
       container.addActionRowComponents(filterRow);
       needsSeparator = true;
