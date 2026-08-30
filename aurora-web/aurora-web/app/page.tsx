@@ -6,7 +6,6 @@ import AuroraBackground from '../components/AuroraBackground';
 import CursorGlow from '../components/CursorGlow';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
-import ShowcaseSection from '../components/ShowcaseSection';
 import FeaturesSection from '../components/FeaturesSection';
 import CommandsSection from '../components/CommandsSection';
 import DiscordJoinSection from '../components/DiscordJoinSection';
@@ -58,7 +57,6 @@ export default function Home() {
       <main>
         <HeroSection settings={settings} />
         <AboutSection settings={settings} />
-        <ShowcaseSection />
         <FeaturesSection settings={settings} />
         <CommandsSection />
         <DiscordJoinSection settings={settings} />
