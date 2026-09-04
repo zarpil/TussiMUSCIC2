@@ -17,7 +17,9 @@ import {
   Info,
   ShieldCheck,
   Activity,
-  Headphones
+  Headphones,
+  History,
+  Calendar
 } from 'lucide-react';
 
 interface ServerOverviewViewProps {
@@ -205,11 +207,29 @@ export default function ServerOverviewView({
   }
 
   const guild = overviewData?.guild || { name: 'Discord Server', memberCount: 0, icon: 'https://cdn.discordapp.com/embed/avatars/0.png' };
-  const stats = overviewData?.stats || { totalVcHours: 0, userActivity: [], topSongs: [] };
+  const stats = overviewData?.stats || { totalVcHours: 0, userActivity: [], topSongs: [], history: [] };
   const twentyFourSeven = overviewData?.twentyFourSeven || { enabled: false, voiceChannelName: null, isConnected: false };
 
   const userActivity = stats.userActivity || [];
   const topSongs = stats.topSongs || [];
+  const history = stats.history || [];
+
+  const formatTimeAgo = (dateInput: any) => {
+    if (!dateInput) return '';
+    try {
+      const diffMs = Date.now() - new Date(dateInput).getTime();
+      const diffSecs = Math.floor(diffMs / 1000);
+      if (diffSecs < 60) return 'Hace un momento';
+      const diffMins = Math.floor(diffSecs / 60);
+      if (diffMins < 60) return `Hace ${diffMins} min`;
+      const diffHours = Math.floor(diffMins / 60);
+      if (diffHours < 24) return `Hace ${diffHours} h`;
+      const diffDays = Math.floor(diffHours / 24);
+      return `Hace ${diffDays} d`;
+    } catch {
+      return '';
+    }
+  };
 
   return (
     <div className="w-full space-y-8 p-4 sm:p-6 md:p-10 pt-24 md:pt-28 bg-[#090a0f] text-white rounded-3xl min-h-screen">
@@ -531,6 +551,93 @@ export default function ServerOverviewView({
             )}
           </div>
         </div>
+      </div>
+
+      {/* Historial de Canciones Reproducidas (Últimos 7 Días) */}
+      <div className="bg-[#12141d] border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+          <div className="flex items-center gap-3.5">
+            <div className="p-3 bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 rounded-2xl shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+              <History className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white tracking-tight flex items-center gap-2.5">
+                Historial de Reproducción
+                <span className="text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2.5 py-0.5 rounded-full font-black uppercase">
+                  Última semana
+                </span>
+              </h3>
+              <p className="text-xs text-white/50 mt-0.5">Canciones reproducidas recientemente en este servidor</p>
+            </div>
+          </div>
+
+          {history.length > 0 && (
+            <div className="flex items-center gap-2 text-xs font-mono text-cyan-400/90 bg-cyan-500/10 px-3 py-1.5 rounded-xl border border-cyan-500/20 w-fit">
+              <Calendar className="w-3.5 h-3.5" />
+              <span>{history.length} pistas registradas</span>
+            </div>
+          )}
+        </div>
+
+        {history.length === 0 ? (
+          <div className="py-14 text-center text-white/40 text-xs bg-white/5 rounded-2xl border border-dashed border-white/10 p-8">
+            <History className="w-12 h-12 text-white/20 mx-auto mb-3" />
+            <p className="font-bold text-white/70 text-sm mb-1">Aún no hay historial de reproducción reciente</p>
+            <p className="text-[11px] text-white/40 max-w-sm mx-auto">
+              A medida que pongas música en el bot durante la semana, aparecerán aquí las últimas canciones reproducidas y quién las pidió.
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[520px] overflow-y-auto pr-1 select-none custom-scrollbar">
+            {history.map((song: any, index: number) => (
+              <div
+                key={index}
+                onClick={() => onPlayTrack && onPlayTrack(song.url || `${song.title} ${song.author}`)}
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 transition cursor-pointer group border border-white/5 hover:border-cyan-500/30"
+              >
+                <div className="flex items-center gap-3.5 min-w-0">
+                  <div className="relative shrink-0">
+                    <SongArtworkImage song={song} />
+                    <div className="absolute inset-0 bg-black/40 rounded-xl opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
+                      <Play className="w-4 h-4 text-cyan-400 fill-current" />
+                    </div>
+                  </div>
+
+                  <div className="truncate min-w-0">
+                    <h4 className="font-bold text-white text-xs sm:text-sm truncate group-hover:text-cyan-400 transition">
+                      {song.title}
+                    </h4>
+                    <div className="flex items-center gap-2 text-white/50 text-[11px] truncate mt-0.5">
+                      <span className="truncate">{song.author}</span>
+                      {song.requestedBy?.username && (
+                        <>
+                          <span className="text-white/20">•</span>
+                          <span className="text-white/40 truncate text-[10px]">
+                            Por @{song.requestedBy.username}
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2.5 shrink-0 pl-2 text-right">
+                  {song.playedAt && (
+                    <span className="text-[10px] font-medium text-white/40 group-hover:text-cyan-300 transition">
+                      {formatTimeAgo(song.playedAt)}
+                    </span>
+                  )}
+                  <button
+                    className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 opacity-0 group-hover:opacity-100 transition hover:bg-cyan-500 hover:text-black shrink-0"
+                    title="Reproducir de nuevo"
+                  >
+                    <Play className="w-3.5 h-3.5 fill-current" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

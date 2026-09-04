@@ -79,6 +79,39 @@ export async function recordTrackStart(guildId, track) {
       }
     }
 
+    if (!config.stats.history) config.stats.history = [];
+
+    // Clean up history older than 7 days
+    const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    config.stats.history = config.stats.history.filter(h => h.playedAt && new Date(h.playedAt).getTime() > oneWeekAgo);
+
+    // Track playback history
+    if (track && track.title) {
+      const artwork = (track.artwork && !track.artwork.includes('discordapp.com/embed/avatars')) ? track.artwork : '';
+      const url = track.url || '';
+      const duration = track.duration || 0;
+      
+      const historyEntry = {
+        title: track.title.trim(),
+        author: track.author || 'Unknown Artist',
+        artwork: artwork,
+        url: url,
+        duration: duration,
+        requestedBy: requester ? {
+          userId: requester.id || requester.username || 'unknown',
+          username: requester.username || requester.tag || 'Discord User',
+          avatar: requester.avatar || ''
+        } : null,
+        playedAt: new Date()
+      };
+
+      // Add to front of history and cap at 100 entries
+      config.stats.history.unshift(historyEntry);
+      if (config.stats.history.length > 100) {
+        config.stats.history = config.stats.history.slice(0, 100);
+      }
+    }
+
     if (!config.stats.vcConnectedAt) {
       config.stats.vcConnectedAt = new Date();
     }

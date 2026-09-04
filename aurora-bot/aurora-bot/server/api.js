@@ -751,6 +751,12 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
         ? (guild.memberCount || guild.approximateMemberCount || (guild.members?.cache?.size || 0))
         : 0;
 
+      // Filter history to last 7 days and limit to last 50 tracks
+      const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+      const recentHistory = (config.stats?.history || [])
+        .filter(h => h.playedAt && new Date(h.playedAt).getTime() > oneWeekAgo)
+        .slice(0, 50);
+
       res.json({
         success: true,
         guild: {
@@ -763,7 +769,8 @@ export function setupAPIRoutes(app, client, manager, getSocketHandler = null) {
           totalVcMs,
           totalVcHours: parseFloat(totalVcHours),
           userActivity: sortedUsers,
-          topSongs: sortedSongs
+          topSongs: sortedSongs,
+          history: recentHistory
         },
         twentyFourSeven
       });

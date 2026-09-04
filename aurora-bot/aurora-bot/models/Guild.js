@@ -15,6 +15,20 @@ const topSongSchema = new mongoose.Schema({
   count: { type: Number, default: 0 }
 }, { _id: false });
 
+const historySongSchema = new mongoose.Schema({
+  title: String,
+  author: String,
+  artwork: String,
+  url: String,
+  duration: Number,
+  requestedBy: {
+    userId: String,
+    username: String,
+    avatar: String
+  },
+  playedAt: { type: Date, default: Date.now }
+}, { _id: false });
+
 const guildConfigSchema = new mongoose.Schema({
   guildId: {
     type: String,
@@ -53,7 +67,8 @@ const guildConfigSchema = new mongoose.Schema({
     totalVcMs: { type: Number, default: 0 },
     vcConnectedAt: { type: Date, default: null },
     userActivity: [userActivitySchema],
-    topSongs: [topSongSchema]
+    topSongs: [topSongSchema],
+    history: [historySongSchema]
   }
 }, {
   timestamps: true

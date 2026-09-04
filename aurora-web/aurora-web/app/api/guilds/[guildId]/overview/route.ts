@@ -60,7 +60,8 @@ export async function GET(
         totalVcMs: 0,
         totalVcHours: 0,
         userActivity: [],
-        topSongs: []
+        topSongs: [],
+        history: []
       },
       twentyFourSeven: {
         enabled: false,
