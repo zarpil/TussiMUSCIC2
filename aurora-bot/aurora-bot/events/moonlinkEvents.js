@@ -26,7 +26,7 @@ export async function flushVcConnectedTime(guildId) {
   }
 }
 
-export async function recordTrackStart(guildId, track) {
+export async function recordTrackStart(guildId, track, client = null) {
   try {
     const GuildConfig = (await import('../models/Guild.js')).default;
     let config = await GuildConfig.findOne({ guildId });
@@ -38,20 +38,38 @@ export async function recordTrackStart(guildId, track) {
     if (!config.stats.userActivity) config.stats.userActivity = [];
     if (!config.stats.topSongs) config.stats.topSongs = [];
 
+    // Resolve requester object if it's a string user ID
+    let requester = track?.requester;
+    if (typeof requester === 'string' && requester) {
+      const cachedUser = client?.users?.cache?.get(requester);
+      if (cachedUser) {
+        requester = cachedUser;
+      } else if (client?.users?.fetch) {
+        try {
+          requester = await client.users.fetch(requester);
+        } catch (_) {
+          requester = { id: requester, username: 'Discord User' };
+        }
+      } else {
+        requester = { id: requester, username: 'Discord User' };
+      }
+    }
+
     // Track requester user activity
-    const requester = track?.requester;
     if (requester && (requester.id || requester.username || requester.tag)) {
       const userId = requester.id || requester.username || 'unknown';
+      const userTag = requester.tag || requester.username || 'Discord User';
+      const userAvatar = requester.avatar || (typeof requester.displayAvatarURL === 'function' ? requester.displayAvatarURL() : '');
       const existingUser = config.stats.userActivity.find(u => u.userId === userId);
       if (existingUser) {
         existingUser.count += 1;
-        if (requester.username || requester.tag) existingUser.username = requester.username || requester.tag;
-        if (requester.avatar) existingUser.avatar = requester.avatar;
+        existingUser.username = userTag;
+        if (userAvatar) existingUser.avatar = userAvatar;
       } else {
         config.stats.userActivity.push({
           userId: userId,
-          username: requester.username || requester.tag || 'Discord User',
-          avatar: requester.avatar || '',
+          username: userTag,
+          avatar: userAvatar,
           count: 1
         });
       }
@@ -99,8 +117,8 @@ export async function recordTrackStart(guildId, track) {
         duration: duration,
         requestedBy: requester ? {
           userId: requester.id || requester.username || 'unknown',
-          username: requester.username || requester.tag || 'Discord User',
-          avatar: requester.avatar || ''
+          username: requester.tag || requester.username || 'Discord User',
+          avatar: requester.avatar || (typeof requester.displayAvatarURL === 'function' ? requester.displayAvatarURL() : '')
         } : null,
         playedAt: new Date()
       };
@@ -236,7 +254,7 @@ export async function moonlinkEvents(client) {
     }
 
     // Record playback statistics
-    recordTrackStart(player.guildId, track);
+    recordTrackStart(player.guildId, track, client);
 
     // Save player state to DB
     await savePlayerState(player);

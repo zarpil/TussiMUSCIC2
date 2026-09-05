@@ -59,12 +59,22 @@ client.on('messageCreate', async (message) => {
 
       switch (searchResult.loadType) {
         case "playlist":
+          for (const track of searchResult.tracks) {
+            track.requester = message.author;
+          }
           player.queue.add(searchResult.tracks);
+          if (client.webServer?.socketHandler) {
+            client.webServer.socketHandler.sendQueueUpdate(player);
+          }
           if (!player.playing && !player.paused) player.play();
           break;
         case "search":
         case "track":
+          searchResult.tracks[0].requester = message.author;
           player.queue.add(searchResult.tracks[0]);
+          if (client.webServer?.socketHandler) {
+            client.webServer.socketHandler.sendQueueUpdate(player);
+          }
           if (!player.playing && !player.paused) player.play();
           break;
         case "empty":

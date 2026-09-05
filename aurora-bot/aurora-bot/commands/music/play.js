@@ -55,6 +55,9 @@ export default async function playmusic(client, interaction) {
     // Handle different load types
     switch (searchResult.loadType) {
       case "playlist":
+        for (const track of searchResult.tracks) {
+          track.requester = interaction.user;
+        }
         player.queue.add(searchResult.tracks);
         container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Añadido con éxito`))
         await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});
@@ -74,6 +77,7 @@ export default async function playmusic(client, interaction) {
         break;
       case "search":
       case "track":
+        searchResult.tracks[0].requester = interaction.user;
         await player.queue.add(searchResult.tracks[0]);
         container.addTextDisplayComponents(new TextDisplayBuilder().setContent(`${tick_emoji} Añadido con éxito`))
         await interaction.editReply({components:[container], flags: [MessageFlags.IsComponentsV2]});

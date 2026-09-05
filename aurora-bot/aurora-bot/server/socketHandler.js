@@ -41,6 +41,34 @@ class SocketHandler {
     this.setupMoonlinkListeners();
   }
 
+  serializeRequester(requester) {
+    if (!requester) {
+      return { tag: 'Unknown', id: null, avatar: null };
+    }
+
+    // If requester is a string user ID
+    if (typeof requester === 'string') {
+      const user = this.client?.users?.cache?.get(requester);
+      if (user) {
+        return {
+          tag: user.tag || user.username || 'Discord User',
+          id: user.id,
+          avatar: user.avatar || (typeof user.displayAvatarURL === 'function' ? user.displayAvatarURL() : null)
+        };
+      }
+      return { tag: 'Discord User', id: requester, avatar: null };
+    }
+
+    const tag = requester.tag || requester.username || (requester.id ? `User ${requester.id}` : 'Unknown');
+    const id = requester.id || null;
+    let avatar = requester.avatar || null;
+    if (!avatar && typeof requester.displayAvatarURL === 'function') {
+      avatar = requester.displayAvatarURL();
+    }
+
+    return { tag, id, avatar };
+  }
+
   setupSocketListeners() {
     this.io.on('connection', (socket) => {
       console.log(`[Socket.io] User connected: ${socket.id}`);
@@ -521,11 +549,7 @@ class SocketHandler {
         duration: track.duration,
         artwork: track.artworkUrl || track.thumbnail || 'https://via.placeholder.com/500',
         url: track.url || track.uri,
-        requester: {
-          tag: track.requester?.tag || track.requester?.username || 'Unknown',
-          id: track.requester?.id || null,
-          avatar: track.requester?.avatar || null
-        },
+        requester: this.serializeRequester(track.requester),
         position: 0,
         volume: player.volume,
         paused: player.paused,
@@ -602,11 +626,7 @@ class SocketHandler {
       author: t.author,
       duration: t.duration,
       artwork: t.artworkUrl || t.thumbnail || 'https://via.placeholder.com/500',
-      requester: {
-        tag: t.requester?.tag || t.requester?.username || 'Unknown',
-        id: t.requester?.id || null,
-        avatar: t.requester?.avatar || null
-      }
+      requester: this.serializeRequester(t.requester)
     }));
 
     console.log(`[Queue Update] Sending ${queueData.length} tracks for guild ${player.guildId}`);
@@ -644,22 +664,14 @@ class SocketHandler {
         artwork: player.current.artworkUrl || player.current.thumbnail || 'https://via.placeholder.com/500',
         url: player.current.url || player.current.uri,
         position: currentPosition,
-        requester: {
-          tag: player.current.requester?.tag || player.current.requester?.username || 'Unknown',
-          id: player.current.requester?.id || null,
-          avatar: player.current.requester?.avatar || null
-        }
+        requester: this.serializeRequester(player.current.requester)
       } : null,
       queue: queueTracks.map(t => ({
         title: t.title,
         author: t.author,
         duration: t.duration,
         artwork: t.artworkUrl || t.thumbnail || 'https://via.placeholder.com/500',
-        requester: {
-          tag: t.requester?.tag || t.requester?.username || 'Unknown',
-          id: t.requester?.id || null,
-          avatar: t.requester?.avatar || null
-        }
+        requester: this.serializeRequester(t.requester)
       })),
       settings: {
         volume: player.volume,
